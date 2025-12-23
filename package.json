@@ -1,0 +1,33 @@
+{
+  "name": "tower",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "dependencies": {
+    "@emotion/cache": "^11.14.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/icons-material": "^7.3.6",
+    "@mui/material": "^7.3.5",
+    "aos": "^2.3.4",
+    "formik": "^2.4.9",
+    "next": "16.0.7",
+    "react": "19.2.1",
+    "react-dom": "19.2.1",
+    "react-hot-toast": "^2.6.0",
+    "react-slick": "^0.31.0",
+    "react-spinners": "^0.17.0",
+    "slick-carousel": "^1.8.1",
+    "sweetalert2": "^11.26.3",
+    "yup": "^1.7.1"
+  },
+  "devDependencies": {
+    "eslint": "^9",
+    "eslint-config-next": "16.0.7"
+  }
+}
