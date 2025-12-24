@@ -12,6 +12,7 @@ import {
   secondaryColor,
   offWhiteColor,
   offBlackText,
+  offBlackTextLight,
 } from '@/components/utils/Colors';
 
 const ServiceStats = () => {
@@ -129,7 +130,7 @@ const ServiceStats = () => {
                   sx={{
                     fontSize: { xs: '1rem', md: '1.25rem' },
                     fontWeight: 600,
-                    color: offWhiteColor,
+                    color: offBlackTextLight,
                     fontFamily: "'Quicksand', sans-serif",
                   }}
                 >
