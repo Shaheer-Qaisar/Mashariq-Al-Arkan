@@ -439,8 +439,9 @@ const ClientTestimonials = () => {
                     }}
                   >
                     <Card
+                    
                       sx={{
-                         height: { xs:380, sm: 400, md: 420 },
+                         height: { xs:450, sm: 400, md: 420 },
                          my: 2,
                         display: "flex",
                         flexDirection: "column",
@@ -493,10 +494,8 @@ const ClientTestimonials = () => {
                         <Box
                           sx={{
                             display: "flex",
-                            display: "flex",
-                            gap: 2,
-                            mt: "auto",
-                            pt: 3,
+                            gap: 1,
+                            pt: 1,
                           }}
                         >
                           <Box
@@ -527,7 +526,7 @@ const ClientTestimonials = () => {
                           sx={{
                             color: offBlackTextLight,
                             lineHeight: 1.8,
-                            fontSize: { xs: "0.95rem", md: "1rem" },
+                            fontSize: { xs: "0.85rem", md: "1rem" },
                             mb: 3,
                             fontStyle: "italic",
                           }}
@@ -536,7 +535,7 @@ const ClientTestimonials = () => {
                         </Typography>
 
                         {/* Rating */}
-                        <Box sx={{ mb: 3 }}>
+                        <Box sx={{ mb: {xs:1,sm:3} }}>
                           <Rating
                             value={testimonial.rating}
                             readOnly
@@ -574,7 +573,7 @@ const ClientTestimonials = () => {
                               sx={{
                                 fontWeight: 600,
                                 color: offBlackText,
-                                fontSize: "1.1rem",
+                                fontSize: {xs:"0.85rem",sm:"1.1rem"},
                                 mb: 0.5,
                               }}
                             >
@@ -584,7 +583,7 @@ const ClientTestimonials = () => {
                               variant="body2"
                               sx={{
                                 color: offBlackTextLight,
-                                fontSize: "0.9rem",
+                                fontSize: {xs:"0.75rem",sm:"0.9rem"},
                               }}
                             >
                               {testimonial.position}
