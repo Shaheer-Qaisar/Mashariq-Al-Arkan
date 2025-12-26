@@ -67,7 +67,7 @@ const ServicesCards = () => {
       title: "Wireless Solutions",
       description:
         "Automated window blind systems with smart home integration capabilities.",
-      image: "/images/wireless6.jpeg",
+      image: "/images/wireless/wireless6.jpeg",
     },
     {
       id: 8,
@@ -81,7 +81,7 @@ const ServicesCards = () => {
       title: "Garage Doors",
       description:
         "Automated garage door systems with smart controls and safety features.",
-      image: "/images/automation1.jpg",
+      image: "/images/home-banner/garage-door-1.webp",
     }
     
   ];

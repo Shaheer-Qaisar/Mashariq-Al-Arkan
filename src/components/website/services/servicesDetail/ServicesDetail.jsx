@@ -56,42 +56,42 @@ const services = [
         title: "Structured Cabling",
         description:
           "Structured cabling supports data, voice, and video networks. It provides organized and scalable infrastructure. Improves performance and reliability. Simplifies maintenance and upgrades. Suitable for all building types.",
-        image: "/images/cable5.jpg ",
+        image: "/images/cable/cable5.jpg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Cable Management",
         description:
           "Cable management organizes and protects network cables. Improves safety and appearance. Reduces signal interference and damage. Facilitates easy troubleshooting. Essential for professional installations.",
-        image: "/images/cable6.jpg ",
+        image: "/images/cable/cable6.jpg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Network Revamping",
         description:
           "Network revamping upgrades outdated infrastructure. Improves speed, security, and efficiency. Minimizes downtime during upgrades. Adapts systems to modern requirements. Cost-effective modernization solution.",
-        image: "/images/cable7.webp",
+        image: "/images/cable/cable7.webp",
         icon: <HomeOutlinedIcon />,
       },
       {
-        title: "CCTV Integration",
+        title: "Cable Testing & Certification",
         description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/cable1.webp',
+          "Cable testing ensures performance and compliance with standards. Identifies faults and verifies installation quality. Provides certification for network reliability. Essential for new and existing cabling systems.",
+        image: '/images/cable/cable1.webp',
         icon: <CameraAltOutlinedIcon />,
       },
       {
-        title: "Network Management",
+        title: "Cable Monitoring & Management",
         description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/cable2.jpg',
+          "Cloud-based management for multi-site installations with real-time alerts and reports.Helps in proactive maintenance and performance optimization.",
+        image: '/images/cable/cable2.jpg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.",
-        image: '/images/cable3.jpg',
+        image: '/images/cable/cable3.jpg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -134,59 +134,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/cable1.webp",
+        image: "/images/cable/cable15.jpeg",
         caption: "Structured Cabling\nCommercial installation",
       },
       {
-        image: "/images/cable2.jpg",
+        image: "/images/cable/cable16.jpeg",
         caption: "Network Infrastructure\nOffice setup",
       },
       {
-        image: "/images/cable3.jpg",
+        image: "/images/cable/cable17.jpeg",
         caption: "Fiber Cabling\nHigh-speed networks",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable19.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable18.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable4.jpg",
         caption: "Cable Management\nClean routing",
       },
        {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable20.jpeg",
         caption: "Cable Management\nClean routing",
       },
        {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable8.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable9.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable10.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable11.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable12.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable13.jpeg",
         caption: "Cable Management\nClean routing",
       },
       {
-        image: "/images/cable4.jpg",
+        image: "/images/cable/cable14.jpeg",
         caption: "Cable Management\nClean routing",
       },
     ],
@@ -212,42 +212,42 @@ const services = [
         title: "Automatic Parking Barriers",
         description:
           "Automatic parking barriers control vehicle movement efficiently. They improve parking safety and organization. Designed for high-traffic locations. Can integrate with ticketing or access systems. Reliable and durable in daily operation.",
-        image: "/images/parking1.jpg ",
+        image: "/images/parking/parking1.jpg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Parking Guidance Systems",
         description:
           "Parking guidance systems help drivers locate available slots quickly. Sensors and displays reduce search time and congestion. These systems improve overall parking efficiency. Commonly used in commercial complexes. Easy to maintain and operate.",
-        image: "/images/parking2.jpeg ",
+        image: "/images/parking/parking2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Ticketing and Payment Systems",
         description:
           "Ticketing systems automate entry, exit, and billing processes. They support cashless and digital payment options. Reduce manual effort and operational errors. Improve revenue tracking and reporting. Seamlessly integrate with parking infrastructure.",
-        image: "/images/parking3.jpg ",
+        image: "/images/parking/parking3.jpg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "ANPR Systems",
         description:
           "Automatic Number Plate Recognition systems enable ticketless vehicle access. They improve security and monitoring accuracy. Suitable for commercial and restricted areas. Provide real-time data and reporting. Enhance operational efficiency.",
-        image: "/images/parking2.jpeg ",
+        image: "/images/parking/parking4.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
-        title: "CCTV Integration",
+        title: "Security CCTV Integration",
         description:
           "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/parking6.jpeg',
+        image: '/images/parking/parking12.jpeg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/parking7.jpg',
+        image: '/images/parking/parking5.jpg',
         icon: <LanOutlinedIcon />,
       },
     ],
@@ -299,58 +299,58 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/parking4.jpeg",
+        image: "/images/parking/parking6.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
-        image: "/images/parking5.jpg",
+        image: "/images/parking/parking7.jpg",
         caption: "Access Control\nEntry management",
       },
       {
-        image: "/images/parking6.jpeg",
+        image: "/images/parking/parking8.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
-        image: "/images/parking7.jpg",
+        image: "/images/parking/parking9.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
       },
         {
-        image: "/images/parking4.jpeg",
+        image: "/images/parking/parking10.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
-        image: "/images/parking5.jpg",
+        image: "/images/parking/parking11.jpeg",
         caption: "Access Control\nEntry management",
       },
       {
-        image: "/images/parking6.jpeg",
+        image: "/images/parking/parking13.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
-        image: "/images/parking7.jpg",
+        image: "/images/parking/parking14.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
       },
         {
-        image: "/images/parking4.jpeg",
+        image: "/images/parking/parking15.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
-        image: "/images/parking5.jpg",
+        image: "/images/parking/parking16.jpeg",
         caption: "Access Control\nEntry management",
       },
       {
-        image: "/images/parking6.jpeg",
+        image: "/images/parking/parking17.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
-        image: "/images/parking7.jpg",
+        image: "/images/parking/parking18.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
       },  {
-        image: "/images/parking4.jpeg",
+        image: "/images/parking/parking19.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
-        image: "/images/parking5.jpg",
+        image: "/images/parking/parking20.jpeg",
         caption: "Access Control\nEntry management",
       },
      
@@ -372,21 +372,21 @@ const services = [
         title: "CCTV Camera Systems",
         description:
           "CCTV systems provide 24/7 video surveillance. Support indoor and outdoor monitoring. Improve security and incident investigation. Allow remote viewing and recording. Available in IP and analog options.",
-        image: "/images/security1.jpg ",
+        image: "/images/security/security1.jpg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Walk-Through Security Terminals",
         description:
           "Walk-through terminals ensure controlled security screening. Commonly used in high-security locations and events. They detect unauthorized items effectively. Improve safety compliance. Designed for continuous usage.",
-        image: "/images/security2.jpg ",
+        image: "/images/security/security2.jpg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Intrusion and Alarm Systems",
         description:
           "Intrusion alarms detect unauthorized access attempts. Provide instant alerts and notifications. Improve round-the-clock property security. Can be integrated with CCTV systems. Suitable for homes and businesses.",
-        image: "/images/security3.jpg ",
+        image: "/images/security/security3.jpg ",
         icon: <HomeOutlinedIcon />,
       },
       {
@@ -394,20 +394,20 @@ const services = [
         description:
           "Intercom systems allow secure visitor communication. Video functionality improves access verification. Enhance entry management and safety. Suitable for apartments and offices. Easy to operate and maintain.",
         icon: <HomeOutlinedIcon />,
-        image:"/images/security5.jpeg ",
+        image:"/images/security/security4.jpeg ",
       },
       {
         title: "CCTV Integration",
         description:
           "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/security6.jpeg',
+        image: '/images/security/security5.jpeg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/security7.jpeg',
+        image: '/images/security/security6.jpeg',
         icon: <LanOutlinedIcon />,
       },
     ],
@@ -455,59 +455,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/security4.jpeg",
+        image: "/images/security/security7.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
       },
       {
-        image: "/images/security5.jpeg",
+        image: "/images/security/security8.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
       },
       {
-        image: "/images/security6.jpeg",
+        image: "/images/security/security9.jpeg",
         caption: "Monitoring Room\nLive feeds",
       },
       {
-        image: "/images/security7.jpeg",
+        image: "/images/security/security10.jpeg",
         caption: "AI Detection\nSmart alerts",
       },
       {
-        image: "/images/security4.jpeg",
+        image: "/images/security/security11.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
       },
       {
-        image: "/images/security5.jpeg",
+        image: "/images/security/security12.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
       },
       {
-        image: "/images/security6.jpeg",
+        image: "/images/security/security13.jpeg",
         caption: "Monitoring Room\nLive feeds",
       },
       {
-        image: "/images/security7.jpeg",
+        image: "/images/security/security14.jpeg",
         caption: "AI Detection\nSmart alerts",
       },
       {
-        image: "/images/security4.jpeg",
+        image: "/images/security/security15.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
       },
       {
-        image: "/images/security5.jpeg",
+        image: "/images/security/security16.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
       },
       {
-        image: "/images/security6.jpeg",
+        image: "/images/security/security17.jpeg",
         caption: "Monitoring Room\nLive feeds",
       },
       {
-        image: "/images/security7.jpeg",
+        image: "/images/security/security18.jpeg",
         caption: "AI Detection\nSmart alerts",
       },
       {
-        image: "/images/security4.jpeg",
+        image: "/images/security/security19.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
       },
       {
-        image: "/images/security5.jpeg",
+        image: "/images/security/security20.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
       },
      
@@ -521,48 +521,48 @@ const services = [
     title: "Building Maintenance Services",
     description:
       "Building maintenance services ensure the smooth functioning, safety, and long-term durability of residential, commercial, and industrial properties. These services focus on preventive care, quick repairs, and operational efficiency. Regular maintenance reduces breakdown risks and unexpected expenses. Solutions are customized according to building size and usage. Skilled professionals ensure quality and compliance with standards.",
-    image: "/images/maintainance1.jpg",
+    image: "/images/maintainance/maintainance1.jpg",
     divisions: [
       {
         title: "Electrical Maintenance",
         description:
           "Electrical maintenance involves inspection, repair, and replacement of wiring, panels, and fixtures. It ensures uninterrupted power supply and minimizes electrical hazards. Preventive checks help avoid short circuits and equipment failure. All work follows safety and regulatory standards. Suitable for residential, commercial, and industrial buildings.",
-        image: "/images/maintainance2.jpeg ",
+        image: "/images/maintainance/maintainance2.jpeg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Plumbing and Water Systems",
         description:
           "Plumbing services include maintenance of pipelines, pumps, water tanks, and drainage systems. The focus is on preventing leaks, blockages, and pressure issues. Regular inspections reduce water wastage and structural damage. Emergency repair services are also available. Durable materials ensure long-term reliability.",
-        image: "/images/maintenance3.jpeg ",
+        image: "/images/maintainance/maintenance3.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "HVAC Maintenance",
         description:
           "HVAC maintenance ensures efficient performance of air conditioning and ventilation systems. Services include cleaning, gas refilling, and system optimization. Well-maintained HVAC systems improve indoor air quality. Routine servicing reduces energy consumption and breakdowns. Ideal for homes, offices, and commercial spaces.",
-        image: "/images/maintainance5.jpeg ",
+        image: "/images/maintainance/maintainance5.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "General Civil Maintenance",
         description:
           "Civil maintenance covers minor repairs, painting, tiling, and structural finishing work. It helps maintain the building’s appearance and safety. Cracks and wear are addressed before they worsen. Quality materials are used for durability. These services enhance property value and aesthetics.",
-        image: "/images/maintainance4.jpeg ",
+        image: "/images/maintainance/maintainance4.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "Preventive Maintenance Programs",
         description:
           "Preventive maintenance programs are designed to detect issues early. Scheduled inspections minimize downtime and major repair costs. Maintenance records and reports are regularly updated. Programs are customized to building requirements. This approach ensures long-term operational stability.",
-        image: "/images/maintainance7.jpeg ",
+        image: "/images/maintainance/maintainance6.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: '/images/maintainance2.jpeg',
+        image: '/images/maintainance/maintainance7.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -612,59 +612,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/maintainance5.jpeg",
+        image: "/images/maintainance/maintainance8.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
       },
       {
-        image: "/images/maintainance6.jpeg",
+        image: "/images/maintainance/maintainance9.jpeg",
         caption: "Electrical Works\nSystem upgrades",
       },
       {
-        image: "/images/maintainance7.jpeg",
+        image: "/images/residential/residential5.jpeg",
         caption: "HVAC Service\nCooling systems",
       },
       {
-        image: "/images/maintainance8.jpeg",
+        image: "/images/maintainance/maintainance11.jpeg",
         caption: "Emergency Repair\nRapid response",
       },
         {
-        image: "/images/maintainance5.jpeg",
+        image: "/images/residential/residential1.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
       },
       {
-        image: "/images/maintainance6.jpeg",
+        image: "/images/maintainance/maintainance13.jpeg",
         caption: "Electrical Works\nSystem upgrades",
       },
       {
-        image: "/images/maintainance7.jpeg",
+        image: "/images/maintainance/maintainance14.jpeg",
         caption: "HVAC Service\nCooling systems",
       },
       {
-        image: "/images/maintainance8.jpeg",
+        image: "/images/residential/residential2.jpeg",
         caption: "Emergency Repair\nRapid response",
       },
         {
-        image: "/images/maintainance5.jpeg",
+        image: "/images/maintainance/maintainance16.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
       },
       {
-        image: "/images/maintainance6.jpeg",
+        image: "/images/maintainance/maintainance10.jpeg",
         caption: "Electrical Works\nSystem upgrades",
       },
       {
-        image: "/images/maintainance7.jpeg",
+        image: "/images/maintainance/maintainance4.jpeg",
         caption: "HVAC Service\nCooling systems",
       },
       {
-        image: "/images/maintainance8.jpeg",
+        image: "/images/residential/residential3.jpeg",
         caption: "Emergency Repair\nRapid response",
       },
         {
-        image: "/images/maintainance5.jpeg",
+        image: "/images/residential/residential4.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
       },
       {
-        image: "/images/maintainance6.jpeg",
+        image: "/images/maintainance/maintainance15.jpeg",
         caption: "Electrical Works\nSystem upgrades",
       },
       
@@ -684,42 +684,42 @@ const services = [
         title: "Access Control Systems",
         description:
           "Access control systems regulate entry using cards, biometrics, or PIN codes. They provide centralized monitoring and access logs. These systems improve security and accountability. Easily scalable for multiple doors. Ideal for offices, buildings, and gated communities.",
-        image: "/images/lock1.jpeg ",
+        image: "/images/locks/lock1.jpeg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Road Barriers and Rollers",
         description:
           "Road barriers and rollers control vehicle entry and exit points. They enhance traffic management and site security. Automated systems ensure smooth and fast operation. Commonly used in parking areas and commercial zones. Built for high-traffic environments.",
-        image: "/images/lock2.jpeg ",
+        image: "/images/locks/lock2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Advance Locking Mechanisms",
         description:
           "Advanced locking mechanisms use electronic and mechanical components for enhanced security. Features include auto-locking, tamper alerts, and emergency override. Designed for durability and reliability. Suitable for high-security applications. Easy to integrate with existing systems.",
-        image: "/images/lock3.jpeg ",
+        image: "/images/locks/lock3.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
-        title: "CCTV Integration",
+        title: "Lock Installation & Maintenance",
         description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/lock4.jpg',
+          "Professional installation and 24/7 maintenance by certified technicians.Include regular check-ups and emergency repairs.Ensure optimal performance and longevity of locking systems.",
+        image: '/images/locks/lock4.jpg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/lock5.jpeg',
+          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of locking systems.Enhances security monitoring and user management.",
+        image: '/images/locks/lock5.jpeg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
-          "Professional installation and 24/7 maintenance by certified technicians.",
-        image: '/images/lock6.jpeg',
+          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
+        image: '/images/locks/lock6.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -760,59 +760,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/lock4.jpg",
+        image: "/images/locks/lock7.jpeg",
         caption: "Smart Lock\nResidential setup",
       },
       {
-        image: "/images/lock5.jpeg",
+        image: "/images/locks/lock8.jpeg",
         caption: "Biometric Access\nOffice security",
       },
       {
-        image: "/images/lock6.jpeg",
+        image: "/images/locks/lock9.jpeg",
         caption: "Mobile Control\nRemote access",
       },
       {
-        image: "/images/lock7.jpeg",
+        image: "/images/locks/lock10.jpeg",
         caption: "Keyless Entry\nModern locking",
       },
       {
-        image: "/images/lock4.jpg",
+        image: "/images/locks/lock11.jpeg",
         caption: "Smart Lock\nResidential setup",
       },
       {
-        image: "/images/lock5.jpeg",
+        image: "/images/locks/lock12.jpeg",
         caption: "Biometric Access\nOffice security",
       },
       {
-        image: "/images/lock6.jpeg",
+        image: "/images/locks/lock13.jpeg",
         caption: "Mobile Control\nRemote access",
       },
       {
-        image: "/images/lock7.jpeg",
+        image: "/images/locks/lock14.jpeg",
         caption: "Keyless Entry\nModern locking",
       },
       {
-        image: "/images/lock4.jpg",
+        image: "/images/locks/lock15.jpeg",
         caption: "Smart Lock\nResidential setup",
       },
       {
-        image: "/images/lock5.jpeg",
+        image: "/images/locks/lock5.jpeg",
         caption: "Biometric Access\nOffice security",
       },
       {
-        image: "/images/lock6.jpeg",
+        image: "/images/locks/lock4.jpg",
         caption: "Mobile Control\nRemote access",
       },
       {
-        image: "/images/lock7.jpeg",
+        image: "/images/locks/lock3.jpeg",
         caption: "Keyless Entry\nModern locking",
       },
       {
-        image: "/images/lock4.jpg",
+        image: "/images/locks/lock2.jpeg",
         caption: "Smart Lock\nResidential setup",
       },
       {
-        image: "/images/lock5.jpeg",
+        image: "/images/locks/lock1.jpeg",
         caption: "Biometric Access\nOffice security",
       },
      
@@ -832,42 +832,42 @@ const services = [
         title: "Automatic Gates",
         description:
           "Automatic swing and sliding gates provide secure and controlled entry. They can be operated using remotes, sensors, or access cards. These gates are built for frequent usage and durability. Suitable for homes, offices, and industrial facilities. Weather-resistant designs ensure long service life.",
-        image: "/images/automation1.jpg ",
+        image: "/images/automation/automation1.jpg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Automatic Garage Shutters",
         description:
           "Automatic garage shutters offer secure and space-efficient access. Motorized operation allows smooth and effortless use. They improve property safety and convenience. Suitable for residential and commercial parking areas. Built using strong and durable materials.",
-        image: "/images/automation2.jpeg ",
+        image: "/images/automation/automation2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Window Shutters",
         description:
           "Window shutters provide protection against unauthorized access and weather conditions. Available in manual and automated options. They help reduce noise and improve insulation. Designed to match modern architectural needs. Suitable for homes and commercial buildings.",
-        image: "/images/automation3.jpeg ",
+        image: "/images/automation/automation3.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
-        title: "CCTV Integration",
+        title: "Blind Automation",
         description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/automation4.jpg',
+          "Automated blinds offer convenient light and privacy control. They can be operated via remote, app, or voice commands. These systems enhance interior comfort and energy efficiency. Suitable for homes, offices, and hospitality settings. Available in various styles and materials.",
+        image: '/images/automation/automation4.jpg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/automation5.jpeg',
+          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of automation systems.Enhances security monitoring and user management.",
+        image: '/images/automation/automation5.jpeg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
-          "Professional installation and 24/7 maintenance by certified technicians.",
-        image: '/images/automation6.jpeg',
+          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
+        image: '/images/automation/automation6.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -917,59 +917,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/automation4.jpg",
+        image: "/images/automation/automation7.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/automation/automation8.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/automation/automation6.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/automation/automation9.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/automation/automation10.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/automation/automation11.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/residential/residential1.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/automation/automation12.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/residential/residential2.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/automation/automation13.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/residential/residential3.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/automation/automation14.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/automation/automation15.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/automation/automation16.jpeg",
         caption: "Automation Panels\nCentral control",
       },
      
@@ -983,48 +983,48 @@ const services = [
     title: "Wireless Solutions",
     description:
       "Wireless solutions provide high-performance and seamless connectivity. Designed for wide coverage and stability. Improve mobility and productivity. Suitable for offices, buildings, and campuses. Secure and scalable deployment.",
-    image: "/images/wireless6.jpeg",
+    image: "/images/wireless/wireless6.jpeg",
     divisions: [
       {
         title: "Wireless Network Setup",
         description:
           "Wireless network setup ensures strong signal coverage and reliability. Access points are placed strategically. Supports multiple devices efficiently. Improves user experience. Designed for secure performance.",
-        image: "/images/wireless.jpeg ",
+        image: "/images/wireless/wireless.jpeg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Network Optimization and Security",
         description:
           "Network optimization improves speed and reliability. Security measures protect against cyber threats. Includes firewall and bandwidth management. Enhances overall network performance. Ideal for business environments.",
-        image: "/images/wireless2.jpeg ",
+        image: "/images/wireless/wireless2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Longrange Wi-Fi Solutions",
         description:
           "Long-range Wi-Fi solutions extend connectivity over large areas. Suitable for campuses and outdoor spaces. Utilizes high-gain antennas and repeaters. Ensures stable connections. Supports multiple users simultaneously.",
-        image: "/images/wireless3.jpeg ",
+        image: "/images/wireless/wireless3.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
-        title: "CCTV Integration",
+        title: "Device Integration",
         description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/wireless4.jpeg',
+          "Device integration allows seamless connectivity of various smart devices. Supports IoT applications and smart building systems. Enhances automation and control. Improves operational efficiency.",
+        image: '/images/wireless/wireless4.jpeg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/wireless5.jpeg',
+          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of wireless networks.Enhances security monitoring and user management.",
+        image: '/images/wireless/wireless5.jpeg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
-          "Professional installation and 24/7 maintenance by certified technicians.",
-        image: '/images/wireless6.jpeg',
+          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
+        image: '/images/wireless/wireless6.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1065,59 +1065,59 @@ const services = [
 
     galleryImages: [
       {
-        image: "/images/wireless4.jpeg",
+        image: "/images/wireless/wireless7.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/wireless/wireless8.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/wireless/wireless9.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/wireless/wireless10.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
        {
-        image: "/images/wireless4.jpeg",
+        image: "/images/wireless/wireless11.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/wireless/wireless12.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/wireless/wireless13.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/wireless/wireless.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
        {
-        image: "/images/wireless4.jpeg",
+        image: "/images/wireless/wireless2.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/wireless/wireless3.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/wireless/wireless4.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/wireless/wireless5.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
        {
-        image: "/images/wireless4.jpeg",
+        image: "/images/wireless/wireless6.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/automation/automation14.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
     ],
@@ -1137,42 +1137,42 @@ const services = [
         title: "Motorized Window Blinds",
         description:
           "Motorized window blinds offer effortless control using remotes or smart devices. Provide smooth and silent operation. Ideal for large windows and modern interiors. Enhance convenience and luxury.",
-        image: "/images/wireless.jpeg ",
+        image: "/images/window/window1.jpeg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Manual Window Blinds",
         description:
           "Manual blinds provide reliable and cost-effective light control. Available in various styles and materials. Easy to operate and maintain. Suitable for residential and office spaces.",
-        image: "/images/wireless2.jpeg ",
+        image: "/images/window/window2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Smart Blind Automation",
         description:
           "Smart blind automation allows scheduling and remote control. Integrates with smart home systems. Improves energy efficiency and convenience. Ideal for modern buildings.",
-        image: "/images/wireless3.jpeg ",
+        image: "/images/window/window3.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "Smart Home Integration",
         description:
           "Window blinds integrate seamlessly with smart home platforms. Enables voice control and automation routines. Enhances comfort and energy savings.",
-        image: '/images/residential4.jpeg',
+        image: '/images/window/window5.jpeg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Centralized Control",
         description:
           "Centralized control systems manage multiple blinds simultaneously. Suitable for offices, hotels, and large residences. Improves operational efficiency.",
-        image: '/images/residential5.jpeg',
+        image: '/images/window/window6.jpeg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Expert installation ensures smooth functionality. Maintenance services ensure durability and performance. Includes adjustments and replacements.",
-        image: '/images/residential3.jpeg',
+        image: '/images/window/window7.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1209,59 +1209,59 @@ const services = [
     ],
     galleryImages: [
       {
-        image: "/images/wireless4.jpeg",
+        image: "/images/window/window8.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/window/window9.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/residential/residential1.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/window/window10.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
       {
-        image: "/images/wireless4.jpeg",
+        image: "/images/window/window11.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/residential/residential2.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/window/window12.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/window/window13.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
       {
-        image: "/images/wireless4.jpeg",
+        image: "/images/residential/residential3.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/window/window14.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
-        image: "/images/wireless6.jpeg",
+        image: "/images/window/window15.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
-        image: "/images/wireless7.jpeg",
+        image: "/images/window/window16.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
       {
-        image: "/images/wireless4.jpeg",
+        image: "/images/window/window17.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
-        image: "/images/wireless5.jpeg",
+        image: "/images/window/window18.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
     ],
@@ -1288,42 +1288,42 @@ const services = [
         title: "Automatic Garage Doors",
         description:
           "Automatic garage doors offer smooth and secure entry using motorized systems. They can be operated via remote control, wall switches, or smart devices. Designed for frequent use with safety sensors and locking mechanisms. Ideal for homes, apartments, and commercial garages. Built to withstand heavy usage and weather conditions.",
-        image: "/images/automation1.jpg ",
+        image: "/images/garage/garage1.jpeg ",
         icon: <SecurityOutlinedIcon />,
       },
       {
         title: "Rolling Shutter Garage Doors",
         description:
           "Rolling shutter garage doors provide space-saving and high-security access. The vertical rolling design maximizes interior space. Motorized operation ensures effortless opening and closing. Suitable for residential garages, shops, and warehouses. Manufactured using strong and corrosion-resistant materials.",
-        image: "/images/automation2.jpeg ",
+        image: "/images/garage/garage2.jpeg ",
         icon: <SettingsOutlinedIcon />,
       },
       {
         title: "Sectional Garage Doors",
         description:
           "Sectional garage doors open vertically and slide along ceiling tracks. They offer excellent insulation and smooth operation. Designed to improve energy efficiency and noise reduction. Suitable for modern homes and commercial facilities. Customizable designs match architectural styles.",
-        image: "/images/automation3.jpeg ",
+        image: "/images/garage/garage3.jpeg ",
         icon: <HomeOutlinedIcon />,
       },
       {
         title: "Smart Garage Door Integration",
         description:
           "Smart integration enables remote monitoring and control of garage doors. Supports mobile apps, access logs, and safety alerts. Enhances convenience and security. Ideal for smart homes and commercial facilities.",
-        image: '/images/automation4.jpg',
+        image: '/images/garage/garage4.jpeg',
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Remote Monitoring & Control",
         description:
           "Remote monitoring allows real-time status checks and control from anywhere. Helps prevent unauthorized access. Suitable for multi-garage installations and commercial properties.",
-        image: '/images/automation5.jpeg',
+        image: '/images/garage/garage5.jpeg',
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation ensures smooth and safe operation. Regular maintenance extends system lifespan. Includes emergency support and performance inspections.",
-        image: '/images/automation6.jpeg',
+        image: '/images/garage/garage6.jpeg',
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1361,59 +1361,59 @@ const services = [
     ],
     galleryImages: [
       {
-        image: "/images/automation4.jpg",
+        image: "/images/garage/garage7.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/garage/garage8.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/garage/garage9.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/garage/garage10.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/garage/garage11.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/garage/garage12.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/garage/garage13.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/garage/garage14.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/garage/garage15.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/garage/garage16.jpeg",
         caption: "Automation Panels\nCentral control",
       },
       {
-        image: "/images/automation6.jpeg",
+        image: "/images/garage/garage17.jpeg",
         caption: "RFID Systems\nFast access",
       },
       {
-        image: "/images/automation7.jpeg",
+        image: "/images/garage/garage18.jpeg",
         caption: "Integrated Security\nSmart buildings",
       },
       {
-        image: "/images/automation4.jpg",
+        image: "/images/garage/garage19.jpeg",
         caption: "Access Control\nSecure entry",
       },
       {
-        image: "/images/automation5.jpeg",
+        image: "/images/garage/garage20.jpeg",
         caption: "Automation Panels\nCentral control",
       },
     ],
@@ -1466,7 +1466,7 @@ const getColSpan = (index) => {
         sx={{
           position: "relative",
           width: "100%",
-          height: "100vh",
+          height: {xs:"60vh",sm:"100vh"},
           minHeight: "420px",
           overflow: "hidden",
           display: "flex",
@@ -2165,7 +2165,7 @@ const getColSpan = (index) => {
           justifySelf={"center"}
         >
           <Container maxWidth="md" sx={{ textAlign: "center" }}>
-            <Typography variant="h3" sx={{ color: offWhiteColor, mb: 3 }}>
+            <Typography fontSize={[25,40]} fontWeight={600} sx={{ color: offWhiteColor, mb: 3 }}>
               Need this service?
             </Typography>
             <Typography
@@ -2175,8 +2175,9 @@ const getColSpan = (index) => {
               your parking barrier system.
             </Typography>
             <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={3}
+              direction={"row" }
+              gap={3}
+              flexWrap={'wrap'}
               justifyContent="center"
             >
               <Button
@@ -2218,13 +2219,13 @@ const getColSpan = (index) => {
             </Stack>
 
             <Stack
-              direction={{ sm: "row" }}
-              gap={4}
+              direction={"row" }
+              gap={[2,4]}
               justifyContent="center"
               sx={{ mt: 6 }}
-              flexWrap={"wrap"}
+              flexWrap={'wrap'}
             >
-              <Typography sx={{ color: offWhiteColor }}>
+              <Typography sx={{ color: offWhiteColor }} maxWidth={180} >
                 ✓ Free Consultation
               </Typography>
               <Typography sx={{ color: offWhiteColor }}>

@@ -6,8 +6,8 @@ import ServicesCards from './ServicesCards';
 import ServiceProcess from './ServiceProcess';
 import ServiceFeatures from './ServiceFeatures';
 import ServiceStats from './ServiceStats';
-import ServiceTestimonials from './ServiceTestimonials';
 import ServiceFAQ from './ServiceFAQ';
+import ClientTestimonials from '../clients/ClientTestimonials';
 
 const Services = () => {
   return (
@@ -17,7 +17,7 @@ const Services = () => {
       <ServiceProcess />
       <ServiceFeatures />
       <ServiceStats />
-      <ServiceTestimonials />
+      <ClientTestimonials />
       <ServiceFAQ />
     </>
   );
