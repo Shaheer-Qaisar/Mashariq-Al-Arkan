@@ -10,6 +10,7 @@ import Clients from './Clients';
 import OurBrands from '../ourBrands/OurBrands';
 import ServicesCards from '../services/ServicesCards';
 import ProjectsCards from '../projects/ProjectsCards';
+import ClientTestimonials from '../clients/ClientTestimonials';
 
 const HomeMain = () => {
   return (
@@ -20,6 +21,7 @@ const HomeMain = () => {
    <Statistics/>
    <WhyChooseUs/>
    <OurBrands/>
+   <ClientTestimonials/>
    <Clients/>
    <FAQ/>
    <ContactForm/>

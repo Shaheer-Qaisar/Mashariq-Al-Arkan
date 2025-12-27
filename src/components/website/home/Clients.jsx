@@ -28,18 +28,16 @@ const Clients = () => {
 
   // Dummy client logos data
   const clients = [
-    { id: 1, name: 'TechCorp', logo: 'TC' },
-    { id: 2, name: 'SecureNet', logo: 'SN' },
-    { id: 3, name: 'Global Systems', logo: 'GS' },
-    { id: 4, name: 'Innovate Sol.', logo: 'IS' },
-    { id: 5, name: 'Prime Security', logo: 'PS' },
-    { id: 6, name: 'Advanced Tech', logo: 'AT' },
-    { id: 7, name: 'Smart Industries', logo: 'SI' },
-    { id: 8, name: 'Enterprise Plus', logo: 'EP' },
-    { id: 9, name: 'Digital Sol.', logo: 'DS' },
-    { id: 10, name: 'Future Systems', logo: 'FS' },
-    { id: 11, name: 'Mega Corp', logo: 'MC' },
-    { id: 12, name: 'Alpha Industries', logo: 'AI' }, 
+    { id: 1, name: 'Abdul Latif Jamil Group', logo: 'AL' },
+    { id: 2, name: 'Shirka Tamer', logo: 'ST' },
+    { id: 3, name: 'Shirka Nesma', logo: 'SN' },
+    { id: 4, name: 'Hyundai Muhammad Yousaf Nagi', logo: 'H' },
+    { id: 5, name: 'Shirka Jotan Paints', logo: 'SJ' },
+    { id: 6, name: 'Shirka Hemple', logo: 'SH' },
+    { id: 7, name: 'Shura Iceland', logo: 'SI' },
+    { id: 8, name: 'Le Maradian Hotel', logo: 'LM' },
+    { id: 9, name: 'UCIC', logo: 'UC' },
+    { id: 10, name: 'Jaffali', logo: 'J' },
   ];
 
   // Handle mouse movement for background animation

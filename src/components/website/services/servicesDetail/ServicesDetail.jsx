@@ -77,21 +77,21 @@ const services = [
         title: "Cable Testing & Certification",
         description:
           "Cable testing ensures performance and compliance with standards. Identifies faults and verifies installation quality. Provides certification for network reliability. Essential for new and existing cabling systems.",
-        image: '/images/cable/cable1.webp',
+        image: "/images/cable/cable1.webp",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Cable Monitoring & Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.Helps in proactive maintenance and performance optimization.",
-        image: '/images/cable/cable2.jpg',
+        image: "/images/cable/cable2.jpg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.",
-        image: '/images/cable/cable3.jpg',
+        image: "/images/cable/cable3.jpg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -135,58 +135,73 @@ const services = [
     galleryImages: [
       {
         image: "/images/cable/cable15.jpeg",
+        width: { xs: "180px", sm: "300px" },
         caption: "Structured Cabling\nCommercial installation",
       },
       {
         image: "/images/cable/cable16.jpeg",
+        width: { xs: "120px", sm: "270px" },
         caption: "Network Infrastructure\nOffice setup",
       },
       {
         image: "/images/cable/cable17.jpeg",
+        width: { xs: "120px", sm: "300px" },
         caption: "Fiber Cabling\nHigh-speed networks",
       },
       {
         image: "/images/cable/cable19.jpeg",
+        width: { xs: "180px", sm: "270px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable18.jpeg",
+        width: { xs: "180px", sm: "270px" },
         caption: "Cable Management\nClean routing",
       },
       {
+        width: { xs: "120px", sm: "320px" },
+
         image: "/images/cable/cable4.jpg",
         caption: "Cable Management\nClean routing",
       },
-       {
+      {
         image: "/images/cable/cable20.jpeg",
+        width: { xs: "120px", sm: "320px" },
         caption: "Cable Management\nClean routing",
       },
-       {
+      {
         image: "/images/cable/cable8.jpeg",
+        width: { xs: "180px", sm: "275px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable9.jpeg",
+        width: { xs: "180px", sm: "225px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable10.jpeg",
+        width: { xs: "120px", sm: "185px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable11.jpeg",
+        width: { xs: "120px", sm: "330px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable12.jpeg",
+        width: { xs: "180px", sm: "340px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable13.jpeg",
+        width: { xs: "180px", sm: "200px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable14.jpeg",
+        width: { xs: "120px", sm: "300px" },
         caption: "Cable Management\nClean routing",
       },
     ],
@@ -240,14 +255,14 @@ const services = [
         title: "Security CCTV Integration",
         description:
           "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/parking/parking12.jpeg',
+        image: "/images/parking/parking12.jpeg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/parking/parking5.jpg',
+        image: "/images/parking/parking5.jpg",
         icon: <LanOutlinedIcon />,
       },
     ],
@@ -299,63 +314,77 @@ const services = [
 
     galleryImages: [
       {
+        width: { xs: "180px", sm: "300px" },
         image: "/images/parking/parking6.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
+        width: { xs: "120px", sm: "270px" },
         image: "/images/parking/parking7.jpg",
         caption: "Access Control\nEntry management",
       },
       {
+        width: { xs: "120px", sm: "300px" },
         image: "/images/parking/parking8.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
+        width: { xs: "180px", sm: "270px" },
         image: "/images/parking/parking9.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
       },
-        {
+
+      {
+        width: { xs: "180px", sm: "200px" },
         image: "/images/parking/parking10.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
+        width: { xs: "120px", sm: "320px" },
         image: "/images/parking/parking11.jpeg",
         caption: "Access Control\nEntry management",
       },
       {
+        width: { xs: "120px", sm: "320px" },
         image: "/images/parking/parking13.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
+        width: { xs: "180px", sm: "275px" },
         image: "/images/parking/parking14.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
       },
-        {
+
+      {
+        width: { xs: "180px", sm: "225px" },
         image: "/images/parking/parking15.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
+        width: { xs: "120px", sm: "185px" },
         image: "/images/parking/parking16.jpeg",
         caption: "Access Control\nEntry management",
       },
       {
+        width: { xs: "120px", sm: "330px" },
         image: "/images/parking/parking17.jpeg",
         caption: "ANPR Integration\nSmart parking",
       },
       {
+        width: { xs: "180px", sm: "340px" },
         image: "/images/parking/parking18.jpeg",
         caption: "Automated Exit\nHigh traffic flow",
-      },  {
+      },
+      {
+        width: { xs: "180px", sm: "200px" },
         image: "/images/parking/parking19.jpeg",
         caption: "Boom Barrier\nCommercial parking",
       },
       {
+        width: { xs: "120px", sm: "300px" },
         image: "/images/parking/parking20.jpeg",
         caption: "Access Control\nEntry management",
       },
-     
-      
-
     ],
 
     ctaText: "Request Parking Barrier Solution",
@@ -394,20 +423,20 @@ const services = [
         description:
           "Intercom systems allow secure visitor communication. Video functionality improves access verification. Enhance entry management and safety. Suitable for apartments and offices. Easy to operate and maintain.",
         icon: <HomeOutlinedIcon />,
-        image:"/images/security/security4.jpeg ",
+        image: "/images/security/security4.jpeg ",
       },
       {
         title: "CCTV Integration",
         description:
           "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: '/images/security/security5.jpeg',
+        image: "/images/security/security5.jpeg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: '/images/security/security6.jpeg',
+        image: "/images/security/security6.jpeg",
         icon: <LanOutlinedIcon />,
       },
     ],
@@ -456,61 +485,75 @@ const services = [
     galleryImages: [
       {
         image: "/images/security/security7.jpeg",
+        width: { xs: "180px", sm: "300px" },
         caption: "CCTV Installation\nIndoor surveillance",
       },
       {
         image: "/images/security/security8.jpeg",
+        width: { xs: "120px", sm: "270px" },
         caption: "Outdoor Cameras\nPerimeter security",
       },
       {
         image: "/images/security/security9.jpeg",
         caption: "Monitoring Room\nLive feeds",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/security/security10.jpeg",
         caption: "AI Detection\nSmart alerts",
+        width: { xs: "180px", sm: "270px" },
       },
       {
         image: "/images/security/security11.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/security/security12.jpeg",
+        width: { xs: "120px", sm: "320px" },
+
         caption: "Outdoor Cameras\nPerimeter security",
       },
       {
         image: "/images/security/security13.jpeg",
         caption: "Monitoring Room\nLive feeds",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/security/security14.jpeg",
         caption: "AI Detection\nSmart alerts",
+        width: { xs: "180px", sm: "275px" },
       },
       {
         image: "/images/security/security15.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
+        width: { xs: "180px", sm: "225px" },
       },
       {
         image: "/images/security/security16.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/security/security17.jpeg",
         caption: "Monitoring Room\nLive feeds",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/security/security18.jpeg",
         caption: "AI Detection\nSmart alerts",
+        width: { xs: "180px", sm: "340px" },
       },
       {
         image: "/images/security/security19.jpeg",
         caption: "CCTV Installation\nIndoor surveillance",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/security/security20.jpeg",
         caption: "Outdoor Cameras\nPerimeter security",
+        width: { xs: "120px", sm: "300px" },
       },
-     
     ],
 
     ctaText: "Request Security Solution",
@@ -562,7 +605,7 @@ const services = [
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: '/images/maintainance/maintainance7.jpeg',
+        image: "/images/maintainance/maintainance7.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -614,60 +657,73 @@ const services = [
       {
         image: "/images/maintainance/maintainance8.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
+        width: { xs: "180px", sm: "300px" },
       },
       {
         image: "/images/maintainance/maintainance9.jpeg",
         caption: "Electrical Works\nSystem upgrades",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/residential/residential5.jpeg",
         caption: "HVAC Service\nCooling systems",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/maintainance/maintainance11.jpeg",
         caption: "Emergency Repair\nRapid response",
+        width: { xs: "180px", sm: "270px" },
       },
-        {
+      {
         image: "/images/residential/residential1.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/maintainance/maintainance13.jpeg",
         caption: "Electrical Works\nSystem upgrades",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/maintainance/maintainance14.jpeg",
         caption: "HVAC Service\nCooling systems",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/residential/residential2.jpeg",
         caption: "Emergency Repair\nRapid response",
+        width: { xs: "180px", sm: "275px" },
       },
-        {
+      {
         image: "/images/maintainance/maintainance16.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
+        width: { xs: "180px", sm: "225px" },
       },
       {
         image: "/images/maintainance/maintainance10.jpeg",
         caption: "Electrical Works\nSystem upgrades",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/maintainance/maintainance4.jpeg",
         caption: "HVAC Service\nCooling systems",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/residential/residential3.jpeg",
         caption: "Emergency Repair\nRapid response",
+        width: { xs: "180px", sm: "340px" },
       },
-        {
+      {
         image: "/images/residential/residential4.jpeg",
         caption: "Facility Maintenance\nRoutine checks",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/maintainance/maintainance15.jpeg",
         caption: "Electrical Works\nSystem upgrades",
+        width: { xs: "120px", sm: "300px" },
       },
-      
     ],
 
     ctaText: "Request Maintenance Service",
@@ -705,21 +761,21 @@ const services = [
         title: "Lock Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.Include regular check-ups and emergency repairs.Ensure optimal performance and longevity of locking systems.",
-        image: '/images/locks/lock4.jpg',
+        image: "/images/locks/lock4.jpg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of locking systems.Enhances security monitoring and user management.",
-        image: '/images/locks/lock5.jpeg',
+        image: "/images/locks/lock5.jpeg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: '/images/locks/lock6.jpeg',
+        image: "/images/locks/lock6.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -762,60 +818,77 @@ const services = [
       {
         image: "/images/locks/lock7.jpeg",
         caption: "Smart Lock\nResidential setup",
+        width: { xs: "180px", sm: "300px" },
       },
       {
         image: "/images/locks/lock8.jpeg",
+
+        width: { xs: "120px", sm: "270px" },
         caption: "Biometric Access\nOffice security",
       },
       {
         image: "/images/locks/lock9.jpeg",
         caption: "Mobile Control\nRemote access",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/locks/lock10.jpeg",
         caption: "Keyless Entry\nModern locking",
+
+        width: { xs: "180px", sm: "270px" },
       },
       {
         image: "/images/locks/lock11.jpeg",
         caption: "Smart Lock\nResidential setup",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/locks/lock12.jpeg",
         caption: "Biometric Access\nOffice security",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/locks/lock13.jpeg",
         caption: "Mobile Control\nRemote access",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/locks/lock14.jpeg",
         caption: "Keyless Entry\nModern locking",
+        width: { xs: "180px", sm: "275px" },
       },
       {
         image: "/images/locks/lock15.jpeg",
+        width: { xs: "180px", sm: "225px" },
+
         caption: "Smart Lock\nResidential setup",
       },
       {
         image: "/images/locks/lock5.jpeg",
         caption: "Biometric Access\nOffice security",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/locks/lock4.jpg",
         caption: "Mobile Control\nRemote access",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/locks/lock3.jpeg",
         caption: "Keyless Entry\nModern locking",
+        width: { xs: "180px", sm: "340px" },
       },
       {
         image: "/images/locks/lock2.jpeg",
         caption: "Smart Lock\nResidential setup",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/locks/lock1.jpeg",
+        width: { xs: "120px", sm: "300px" },
+
         caption: "Biometric Access\nOffice security",
       },
-     
     ],
 
     ctaText: "Request Digital Lock Solution",
@@ -853,21 +926,21 @@ const services = [
         title: "Blind Automation",
         description:
           "Automated blinds offer convenient light and privacy control. They can be operated via remote, app, or voice commands. These systems enhance interior comfort and energy efficiency. Suitable for homes, offices, and hospitality settings. Available in various styles and materials.",
-        image: '/images/automation/automation4.jpg',
+        image: "/images/automation/automation4.jpg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of automation systems.Enhances security monitoring and user management.",
-        image: '/images/automation/automation5.jpeg',
+        image: "/images/automation/automation5.jpeg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: '/images/automation/automation6.jpeg',
+        image: "/images/automation/automation6.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -919,60 +992,73 @@ const services = [
       {
         image: "/images/automation/automation7.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "300px" },
       },
       {
         image: "/images/automation/automation8.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/automation/automation6.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/automation/automation9.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "270px" },
       },
       {
         image: "/images/automation/automation10.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/automation/automation11.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/residential/residential1.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/automation/automation12.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "275px" },
       },
       {
         image: "/images/residential/residential2.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "225px" },
       },
       {
         image: "/images/automation/automation13.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/residential/residential3.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/automation/automation14.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "340px" },
       },
       {
         image: "/images/automation/automation15.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/automation/automation16.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "300px" },
       },
-     
     ],
 
     ctaText: "Request Automation Solution",
@@ -1010,21 +1096,21 @@ const services = [
         title: "Device Integration",
         description:
           "Device integration allows seamless connectivity of various smart devices. Supports IoT applications and smart building systems. Enhances automation and control. Improves operational efficiency.",
-        image: '/images/wireless/wireless4.jpeg',
+        image: "/images/wireless/wireless4.jpeg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Network Management",
         description:
           "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of wireless networks.Enhances security monitoring and user management.",
-        image: '/images/wireless/wireless5.jpeg',
+        image: "/images/wireless/wireless5.jpeg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: '/images/wireless/wireless6.jpeg',
+        image: "/images/wireless/wireless6.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1065,58 +1151,85 @@ const services = [
 
     galleryImages: [
       {
+        width: { xs: "180px", sm: "300px" },
         image: "/images/wireless/wireless7.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
+        width: { xs: "120px", sm: "270px" },
+
         image: "/images/wireless/wireless8.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
+        width: { xs: "120px", sm: "270px" },
+
         image: "/images/wireless/wireless9.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
+        width: { xs: "180px", sm: "270px" },
+
         image: "/images/wireless/wireless10.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
-       {
+      {
+        width: { xs: "180px", sm: "200px" },
+
         image: "/images/wireless/wireless11.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
+        width: { xs: "120px", sm: "320px" },
+
         image: "/images/wireless/wireless12.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
+        width: { xs: "120px", sm: "320px" },
+
         image: "/images/wireless/wireless13.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
+        width: { xs: "180px", sm: "275px" },
+
         image: "/images/wireless/wireless.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
-       {
+      {
+        width: { xs: "180px", sm: "225px" },
+
         image: "/images/wireless/wireless2.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
+        width: { xs: "120px", sm: "185px" },
+
         image: "/images/wireless/wireless3.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
       {
+        width: { xs: "120px", sm: "330px" },
+
         image: "/images/wireless/wireless4.jpeg",
         caption: "Network Setup\nHigh performance",
       },
       {
+        width: { xs: "180px", sm: "340px" },
+
         image: "/images/wireless/wireless5.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
       },
-       {
+      {
+        width: { xs: "180px", sm: "200px" },
+
         image: "/images/wireless/wireless6.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
+        width: { xs: "120px", sm: "300px" },
+
         image: "/images/automation/automation14.jpeg",
         caption: "Outdoor Access Points\nWide range",
       },
@@ -1158,21 +1271,21 @@ const services = [
         title: "Smart Home Integration",
         description:
           "Window blinds integrate seamlessly with smart home platforms. Enables voice control and automation routines. Enhances comfort and energy savings.",
-        image: '/images/window/window5.jpeg',
+        image: "/images/window/window5.jpeg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Centralized Control",
         description:
           "Centralized control systems manage multiple blinds simultaneously. Suitable for offices, hotels, and large residences. Improves operational efficiency.",
-        image: '/images/window/window6.jpeg',
+        image: "/images/window/window6.jpeg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Expert installation ensures smooth functionality. Maintenance services ensure durability and performance. Includes adjustments and replacements.",
-        image: '/images/window/window7.jpeg',
+        image: "/images/window/window7.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1210,59 +1323,75 @@ const services = [
     galleryImages: [
       {
         image: "/images/window/window8.jpeg",
+        width: { xs: "180px", sm: "300px" },
+
         caption: "Wi-Fi Deployment\nOffice coverage",
       },
       {
         image: "/images/window/window9.jpeg",
+        width: { xs: "120px", sm: "270px" },
+
         caption: "Outdoor Access Points\nWide range",
       },
       {
         image: "/images/residential/residential1.jpeg",
         caption: "Network Setup\nHigh performance",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/window/window10.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
+        width: { xs: "180px", sm: "270px" },
       },
       {
         image: "/images/window/window11.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/residential/residential2.jpeg",
         caption: "Outdoor Access Points\nWide range",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/window/window12.jpeg",
         caption: "Network Setup\nHigh performance",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/window/window13.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
+        width: { xs: "180px", sm: "275px" },
       },
       {
         image: "/images/residential/residential3.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
+        width: { xs: "180px", sm: "225px" },
       },
       {
         image: "/images/window/window14.jpeg",
         caption: "Outdoor Access Points\nWide range",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/window/window15.jpeg",
         caption: "Network Setup\nHigh performance",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/window/window16.jpeg",
         caption: "Wireless Monitoring\nLive analytics",
+        width: { xs: "180px", sm: "340px" },
       },
       {
         image: "/images/window/window17.jpeg",
         caption: "Wi-Fi Deployment\nOffice coverage",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/window/window18.jpeg",
         caption: "Outdoor Access Points\nWide range",
+        width: { xs: "120px", sm: "300px" },
       },
     ],
 
@@ -1309,21 +1438,21 @@ const services = [
         title: "Smart Garage Door Integration",
         description:
           "Smart integration enables remote monitoring and control of garage doors. Supports mobile apps, access logs, and safety alerts. Enhances convenience and security. Ideal for smart homes and commercial facilities.",
-        image: '/images/garage/garage4.jpeg',
+        image: "/images/garage/garage4.jpeg",
         icon: <CameraAltOutlinedIcon />,
       },
       {
         title: "Remote Monitoring & Control",
         description:
           "Remote monitoring allows real-time status checks and control from anywhere. Helps prevent unauthorized access. Suitable for multi-garage installations and commercial properties.",
-        image: '/images/garage/garage5.jpeg',
+        image: "/images/garage/garage5.jpeg",
         icon: <LanOutlinedIcon />,
       },
       {
         title: "Installation & Maintenance",
         description:
           "Professional installation ensures smooth and safe operation. Regular maintenance extends system lifespan. Includes emergency support and performance inspections.",
-        image: '/images/garage/garage6.jpeg',
+        image: "/images/garage/garage6.jpeg",
         icon: <BuildOutlinedIcon />,
       },
     ],
@@ -1363,58 +1492,72 @@ const services = [
       {
         image: "/images/garage/garage7.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "300px" },
       },
       {
         image: "/images/garage/garage8.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/garage/garage9.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "270px" },
       },
       {
         image: "/images/garage/garage10.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "270px" },
       },
       {
         image: "/images/garage/garage11.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/garage/garage12.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/garage/garage13.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "320px" },
       },
       {
         image: "/images/garage/garage14.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "275px" },
       },
       {
         image: "/images/garage/garage15.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "225px" },
       },
       {
         image: "/images/garage/garage16.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "185px" },
       },
       {
         image: "/images/garage/garage17.jpeg",
         caption: "RFID Systems\nFast access",
+        width: { xs: "120px", sm: "330px" },
       },
       {
         image: "/images/garage/garage18.jpeg",
         caption: "Integrated Security\nSmart buildings",
+        width: { xs: "180px", sm: "340px" },
       },
       {
         image: "/images/garage/garage19.jpeg",
         caption: "Access Control\nSecure entry",
+        width: { xs: "180px", sm: "200px" },
       },
       {
         image: "/images/garage/garage20.jpeg",
         caption: "Automation Panels\nCentral control",
+        width: { xs: "120px", sm: "300px" },
       },
     ],
 
@@ -1429,8 +1572,6 @@ const services = [
   },
 ];
 
-
-
 /* =========================
    COMPONENT
 ========================= */
@@ -1440,22 +1581,6 @@ const ServicesDetail = () => {
   const numericId = id ? Number.parseInt(id || "", 10) : NaN;
 
   const service = services.find((s) => s.id === numericId);
-const getRowSpan = (index) => {
-  // Tall cards pattern (matches the reference image)
-  if ([2, 6, 9].includes(index)) return "span 2";
-  if ([4, 10].includes(index)) return "span 2";
-  return "span 1";
-};
-const getColSpan = (index) => {
-    // First row → 5 images
-    if (index < 5) return "span 4"; // 5 × 4 = 20
-
-    // Second row → 5 images
-    if (index < 10) return "span 4";
-
-    // Third row → 4 images
-    return "span 5"; // 4 × 5 = 20
-  };
 
   return (
     <Box sx={{ backgroundColor: offWhiteColor, minHeight: "100vh" }}>
@@ -1466,7 +1591,7 @@ const getColSpan = (index) => {
         sx={{
           position: "relative",
           width: "100%",
-          height: {xs:"60vh",sm:"100vh"},
+          height: { xs: "60vh", sm: "100vh" },
           minHeight: "420px",
           overflow: "hidden",
           display: "flex",
@@ -1898,11 +2023,7 @@ const getColSpan = (index) => {
 
         {/* Seamless Integrations & Use Cases */}
         <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
-          <Grid
-            container
-            spacing={6}
-            justifyContent="center"
-          >
+          <Grid container spacing={6} justifyContent="center">
             {/* LEFT COLUMN — INTEGRATIONS */}
             <Grid item xs={12} md={6}>
               <Stack spacing={3} mb={4} alignItems={["center", "flex-start"]}>
@@ -2039,117 +2160,117 @@ const getColSpan = (index) => {
             </Grid>
           </Grid>
         </Container>
-       {/* Gallery */}
- <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
-      {/* Header */}
-      <Box sx={{ textAlign: "center", mb: 4 }}>
-        <Chip
-          label="Gallery"
-          sx={{
-            bgcolor: "#f0f0f0",
-            fontWeight: 600,
-            borderRadius: "50px",
-            px: 3,
-            py: 2,
-          }}
-        />
-      </Box>
-
-      <Typography
-        variant="h4"
-        sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
-      >
-        Our Latest Projects
-      </Typography>
-
-      <Typography
-        sx={{
-          textAlign: "center",
-          mb: 6,
-          color: "text.secondary",
-          maxWidth: 800,
-          mx: "auto",
-        }}
-      >
-        Explore our professional installations and completed solutions.
-      </Typography>
-
-      {/* Gallery Grid */}
-      <Box
-        sx={{
-          display: "grid",
-          gap: 2,
-          gridTemplateColumns: {
-            xs: "repeat(2, 1fr)",   // mobile
-            sm: "repeat(3, 1fr)",   // tablet
-            md: "repeat(20, 1fr)",  // desktop (layout magic here)
-          },
-        }}
-      >
-        {(service?.galleryImages || []).map((img, index) => (
-          <Box
-            key={index}
-            sx={{
-              gridColumn: {
-                xs: "span 1",
-                sm: "span 1",
-                md: getColSpan(index),
-              },
-              height: 220, // ✅ SAME HEIGHT FOR ALL IMAGES
-              borderRadius: "18px",
-              overflow: "hidden",
-              boxShadow: "0 6px 18px rgba(0,0,0,0.12)",
-              position: "relative",
-              cursor: "pointer",
-            }}
-          >
-            {/* Image */}
-            <Box
-              component="img"
-              src={img.image}
-              alt={img.caption}
+        {/* Gallery */}
+        <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+          {/* Header */}
+          <Box sx={{ textAlign: "center", mb: 4 }}>
+            <Chip
+              label="Gallery"
               sx={{
-                width: "100%",
-                height: "100%",
-                objectFit: "cover",
-                transition: "transform 0.5s ease",
+                bgcolor: "#f0f0f0",
+                fontWeight: 600,
+                borderRadius: "50px",
+                px: { xs: 1, sm: 3 },
+                py: 2,
               }}
             />
+          </Box>
 
-            {/* Hover Overlay */}
-            <Box
-              sx={{
-                position: "absolute",
-                inset: 0,
-                bgcolor: "rgba(0,0,0,0.65)",
-                display: "flex",
-                alignItems: "flex-end",
-                justifyContent: "center",
-                opacity: 0,
-                transition: "opacity 0.4s ease",
-                p: 2,
-                "&:hover": {
-                  opacity: 1,
-                },
-              }}
-            >
-              <Typography
+          <Typography
+            variant="h4"
+            sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
+          >
+            Our Latest Projects
+          </Typography>
+
+          <Typography
+            sx={{
+              textAlign: "center",
+              mb: 6,
+              color: "text.secondary",
+              maxWidth: 800,
+              mx: "auto",
+            }}
+          >
+            Explore our professional installations and completed solutions.
+          </Typography>
+
+          {/* Gallery Grid */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: { xs: "10px", sm: "15px" },
+              justifyContent: "center",
+              border: 1,
+            }}
+          >
+            {(service?.galleryImages || []).map((img, index) => (
+              <Box
+                key={index}
                 sx={{
-                  color: "#fff",
-                  fontWeight: 600,
-                  fontSize: "0.95rem",
-                  textAlign: "center",
-                  whiteSpace: "pre-line",
+                  width: {
+                    xs: `${img.width.xs}` || "180px",
+                    sm: `${img.width.sm}` || "260px",
+                  },
+                  height: "220px",
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  position: "relative",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                  cursor: "pointer",
+                  flexShrink: 0,
+
+                  "&:hover img": {
+                    transform: "scale(1.08)",
+                  },
                 }}
               >
-                {img.caption}
-              </Typography>
-            </Box>
-          </Box>
-        ))}
-      </Box>
-    </Container>
+                <Box
+                  component="img"
+                  src={img.image}
+                  alt={img.caption}
+                  sx={{
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                    transition: "transform 0.5s ease",
+                  }}
+                />
 
+                {/* Hover Overlay */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    bgcolor: "rgba(0,0,0,0.65)",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "center",
+                    opacity: 0,
+                    transition: "opacity 0.4s ease",
+                    p: 2,
+                    "&:hover": {
+                      opacity: 1,
+                    },
+                  }}
+                >
+                  <Typography
+                    sx={{
+                      color: "#fff",
+                      fontWeight: 600,
+                      fontSize: "0.95rem",
+                      textAlign: "center",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {img.caption}
+                  </Typography>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Container>
 
         {/* CTA Section */}
         <Box
@@ -2165,7 +2286,11 @@ const getColSpan = (index) => {
           justifySelf={"center"}
         >
           <Container maxWidth="md" sx={{ textAlign: "center" }}>
-            <Typography fontSize={[25,40]} fontWeight={600} sx={{ color: offWhiteColor, mb: 3 }}>
+            <Typography
+              fontSize={[25, 40]}
+              fontWeight={600}
+              sx={{ color: offWhiteColor, mb: 3 }}
+            >
               Need this service?
             </Typography>
             <Typography
@@ -2175,9 +2300,9 @@ const getColSpan = (index) => {
               your parking barrier system.
             </Typography>
             <Stack
-              direction={"row" }
+              direction={"row"}
               gap={3}
-              flexWrap={'wrap'}
+              flexWrap={"wrap"}
               justifyContent="center"
             >
               <Button
@@ -2219,13 +2344,13 @@ const getColSpan = (index) => {
             </Stack>
 
             <Stack
-              direction={"row" }
-              gap={[2,4]}
+              direction={"row"}
+              gap={[2, 4]}
               justifyContent="center"
               sx={{ mt: 6 }}
-              flexWrap={'wrap'}
+              flexWrap={"wrap"}
             >
-              <Typography sx={{ color: offWhiteColor }} maxWidth={180} >
+              <Typography sx={{ color: offWhiteColor }} maxWidth={180}>
                 ✓ Free Consultation
               </Typography>
               <Typography sx={{ color: offWhiteColor }}>

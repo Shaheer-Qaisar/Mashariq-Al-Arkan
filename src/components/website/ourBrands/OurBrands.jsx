@@ -16,38 +16,67 @@ import {
 
 const brands = [
   {
-    src: '/images/our-brands/faac.png',
-    alt: 'FAAC',
+    src: '/images/our-brands/came.png',
+    alt: 'CAME',
   },
   {
-    src: '/images/our-brands/block-axess.png',
-    alt: 'Block Axess',
+    src: '/images/our-brands/bft.png',
+    alt: 'BFT',
   },
   // Duplicate to simulate more logos for now
   {
-    src: '/images/our-brands/faac.png',
-    alt: 'FAAC 2',
+    src: '/images/our-brands/somfy.png',
+    alt: 'Somfy',
   },
   {
-    src: '/images/our-brands/block-axess.png',
-    alt: 'Block Axess 2',
+    src: '/images/our-brands/liftMaster.png',
+    alt: 'Lift Master',
   },
   {
-    src: '/images/our-brands/faac.png',
-    alt: 'FAAC 3',
+    src: '/images/our-brands/herklith.png',
+    alt: 'Herklith',
   },
   {
-    src: '/images/our-brands/block-axess.png',
+    src: '/images/our-brands/somar.png',
     alt: 'Block Axess 3',
   },
   {
-    src: '/images/our-brands/faac.png',
-    alt: 'FAAC 4',
+    src: '/images/our-brands/jielong.jpg',
+    alt: 'Jielong',
   },
   {
-    src: '/images/our-brands/block-axess.png',
-    alt: 'Block Axess 4',
+    src: '/images/our-brands/acm.png',
+    alt: 'ACM',
   },
+   {
+    src: '/images/our-brands/rib.png',
+    alt: 'RIB',
+  },
+   {
+    src: '/images/our-brands/zkteco.png',
+    alt: 'ZKTECO',
+  },
+   {
+    src: '/images/our-brands/dahua.png',
+    alt: 'Dahua',
+  },
+   {
+    src: '/images/our-brands/hikvision.svg',
+    alt: 'Hikvision',
+  },
+   {
+    src: '/images/our-brands/schneider.png',
+    alt: 'Schneider.png',
+  },
+   {
+    src: '/images/our-brands/siemens.png',
+    alt: 'SIEMENS',
+  },
+   {
+    src: '/images/our-brands/honeywall.png',
+    alt: 'Honeywall',
+  },
+  
 ];
 
 // Keyframes for continuous scrolling
