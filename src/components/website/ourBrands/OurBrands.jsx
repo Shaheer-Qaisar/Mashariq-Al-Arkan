@@ -41,7 +41,7 @@ const brands = [
     alt: 'Block Axess 3',
   },
   {
-    src: '/images/our-brands/jielong.jpg',
+    src: '/images/our-brands/jielong.png',
     alt: 'Jielong',
   },
   {
