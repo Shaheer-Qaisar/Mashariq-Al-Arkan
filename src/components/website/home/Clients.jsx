@@ -28,16 +28,16 @@ const Clients = () => {
 
   // Dummy client logos data
   const clients = [
-    { id: 1, name: 'Abdul Latif Jamil Group', logo: 'AL' },
-    { id: 2, name: 'Shirka Tamer', logo: 'ST' },
-    { id: 3, name: 'Shirka Nesma', logo: 'SN' },
-    { id: 4, name: 'Hyundai Muhammad Yousaf Nagi', logo: 'H' },
-    { id: 5, name: 'Shirka Jotan Paints', logo: 'SJ' },
-    { id: 6, name: 'Shirka Hemple', logo: 'SH' },
-    { id: 7, name: 'Shura Iceland', logo: 'SI' },
-    { id: 8, name: 'Le Maradian Hotel', logo: 'LM' },
-    { id: 9, name: 'UCIC', logo: 'UC' },
-    { id: 10, name: 'Jaffali', logo: 'J' },
+    { id: 1, name: 'Abdul Latif Jamil Group', logo: '/images/clients/client1.png' },
+    { id: 2, name: 'Shirka Tamer', logo: '/images/clients/client2.png' },
+    { id: 3, name: 'Shirka Nesma', logo: '/images/clients/client3.svg' },
+    { id: 4, name: 'Hyundai Muhammad Yousaf Nagi', logo: '/images/clients/client4.jpg' },
+    { id: 5, name: 'Shirka Jotan Paints', logo: '/images/clients/client5.png' },
+    { id: 6, name: 'Shirka Hemple', logo: '/images/clients/client6.jpg' },
+    { id: 7, name: 'Shura Iceland', logo: '/images/clients/client7.png' },
+    { id: 8, name: 'Le Maradian Hotel', logo: '/images/clients/client8.png' },
+    { id: 9, name: 'UCIC', logo: '/images/clients/client9.png' },
+    { id: 10, name: 'Jaffali', logo: '/images/clients/client10.svg' },
   ];
 
   // Handle mouse movement for background animation
@@ -230,7 +230,7 @@ const Clients = () => {
                       },
                     }}
                   >
-                    {client.logo}
+                    <img alt='img' src={client.logo} height={'70px'} width={'70px'}/>
                   </Box>
                   {/* Client Name */}
                   <Typography
