@@ -23,7 +23,6 @@ const brands = [
     src: '/images/our-brands/bft.png',
     alt: 'BFT',
   },
-  // Duplicate to simulate more logos for now
   {
     src: '/images/our-brands/somfy.png',
     alt: 'Somfy',
@@ -73,7 +72,7 @@ const brands = [
     alt: 'SIEMENS',
   },
    {
-    src: '/images/our-brands/honeywall.png',
+    src: '/images/our-brands/honeywell.png',
     alt: 'Honeywall',
   },
   
@@ -85,13 +84,13 @@ const scrollLeft = keyframes`
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 `;
 
 const scrollRight = keyframes`
   0% {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
   100% {
     transform: translateX(0);
