@@ -34,7 +34,7 @@ const Clients = () => {
     { id: 4, name: 'Hyundai Muhammad Yousaf Nagi', logo: '/images/clients/client4.jpg' },
     { id: 5, name: 'Shirka Jotan Paints', logo: '/images/clients/client5.png' },
     { id: 6, name: 'Shirka Hemple', logo: '/images/clients/client6.jpg' },
-    { id: 7, name: 'Shura Iceland', logo: '/images/clients/client7.png' },
+    { id: 7, name: 'Shura Iceland', logo: '/images/clients/client7.svg' },
     { id: 8, name: 'Le Maradian Hotel', logo: '/images/clients/client8.png' },
     { id: 9, name: 'UCIC', logo: '/images/clients/client9.png' },
     { id: 10, name: 'Jaffali', logo: '/images/clients/client10.svg' },
