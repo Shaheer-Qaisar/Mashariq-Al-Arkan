@@ -49,7 +49,7 @@ const clients = [
   {
     id: 4,
     name: "Hyundai Muhammad Yousaf Nagi",
-    logo: "/images/clients/client4.jpg",
+    logo: "/images/clients/client4.png",
     href: "https://www.hyundai.com",
   },
   {
@@ -61,7 +61,7 @@ const clients = [
   {
     id: 6,
     name: "Shirka Hemple",
-    logo: "/images/clients/client6.jpg",
+    logo: "/images/clients/client6.png",
     href: "https://www.hempel.com",
   },
   {

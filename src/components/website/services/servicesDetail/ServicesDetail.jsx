@@ -1585,13 +1585,13 @@ const ServicesDetail = () => {
   return (
     <Box sx={{ backgroundColor: offWhiteColor, minHeight: "100vh" }}>
       {/* =====================
-          BANNER (UNCHANGED)
+          BANNER 
       ====================== */}
       <Box
         sx={{
           position: "relative",
           width: "100%",
-          height: { xs: "60vh", sm: "100vh" },
+          height: { xs: "70vh", sm: "100vh" },
           minHeight: "420px",
           overflow: "hidden",
           display: "flex",
@@ -1781,7 +1781,7 @@ const ServicesDetail = () => {
         </Container>
 
         {/* Stats Section */}
-        <Box mt={10}>
+        <Box my={5}>
           <Container maxWidth="lg">
             <Grid
               container
@@ -1798,8 +1798,8 @@ const ServicesDetail = () => {
                   boxShadow={5}
                   width={250}
                   sx={{
-                    px: 5,
-                    py: 3,
+                    px: {xs:1,sm:3},
+                    py: {xs:1.5,sm:3},
                     borderRadius: "16px",
                     bgcolor: "white",
                   }}
@@ -1809,7 +1809,7 @@ const ServicesDetail = () => {
                     sx={{
                       color: primaryColor,
                       fontWeight: 700,
-                      fontSize: { xs: "2.5rem", md: "3rem" },
+                      fontSize: { xs: "2.2rem", md: "3rem" },
                     }}
                   >
                     {stat.value}
@@ -1818,7 +1818,7 @@ const ServicesDetail = () => {
                     sx={{
                       color: offBlackTextLight,
                       mt: 1,
-                      fontSize: "1.4rem",
+                      fontSize: "1.2rem",
                     }}
                   >
                     {stat.label}
@@ -1872,14 +1872,14 @@ const ServicesDetail = () => {
             spacing={4}
             justifyContent={"center"}
             justifySelf={"center"}
-            maxWidth={800}
+            maxWidth={[800,800,1000,1200]}
           >
             {service.features.map((feature, index) => {
               const icons = ["✓", "🛡️", "⚡", "🔧"];
               const icon = icons[index];
 
               return (
-                <Grid item xs={12} sm={6} key={index} width={["90%", 300]}>
+                <Grid item xs={12} sm={6} key={index} width={["90%", 320,400,500]}>
                   <Box
                     sx={{
                       bgcolor: "white",
@@ -2057,13 +2057,13 @@ const ServicesDetail = () => {
                 maxWidth={["100%", "100%", "100%", 500, 550]}
               >
                 {service.integrationItems.map((item, index) => (
-                  <Grid item xs={12} sm={6} key={index} width={[180, 220]}>
+                  <Grid item xs={12} sm={6} key={index} width={[150, 220]}>
                     <Box
                       sx={{
                         bgcolor: "#fff",
                         borderRadius: 3,
                         px: { xs: 1, sm: 1 },
-                        py: 2.5,
+                        py: {xs:1,sm:2.5},
                         display: "flex",
                         alignItems: "center",
                         gap: 2,
@@ -2121,15 +2121,15 @@ const ServicesDetail = () => {
               </Typography>
 
               {/* Use case chips — 2 per row */}
-              <Grid container spacing={2} mb={4}>
+              <Grid container spacing={[1,2]} mb={4} >
                 {service.useCases.map((item, index) => (
                   <Grid item xs={12} sm={6} key={index}>
                     <Chip
                       label={item}
                       sx={{
                         width: "fit-content",
-                        px: 3,
-                        py: 1.8,
+                        px: {xs:1,sm:3},
+                        py: {xs:1,sm:1.8},
                         borderRadius: "999px",
                         bgcolor: "#fff",
                         border: "1px solid #E0E0E0",
@@ -2202,7 +2202,6 @@ const ServicesDetail = () => {
               flexWrap: "wrap",
               gap: { xs: "10px", sm: "15px" },
               justifyContent: "center",
-              border: 1,
             }}
           >
             {(service?.galleryImages || []).map((img, index) => (
