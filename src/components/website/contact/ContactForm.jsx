@@ -1,6 +1,7 @@
-'use client';
+"use client";
+import ReCAPTCHA from "react-google-recaptcha";
 
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   Box,
   Container,
@@ -14,7 +15,7 @@ import {
   MenuItem,
   FormControl,
   InputLabel,
-} from '@mui/material';
+} from "@mui/material";
 import {
   Email,
   LocationOn,
@@ -22,8 +23,8 @@ import {
   Facebook,
   LinkedIn,
   Instagram,
-} from '@mui/icons-material';
-import toast, { Toaster } from 'react-hot-toast';
+} from "@mui/icons-material";
+import toast, { Toaster } from "react-hot-toast";
 import {
   primaryColor,
   secondaryColor,
@@ -33,15 +34,15 @@ import {
   offWhiteText,
   offBlackText,
   offBlackTextLight,
-} from '@/components/utils/Colors';
+} from "@/components/utils/Colors";
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    service: '',
-    message: '',
+    name: "",
+    phone: "",
+    email: "",
+    service: "",
+    message: "",
   });
 
   const handleChange = (e) => {
@@ -55,91 +56,113 @@ const ContactForm = () => {
     e.preventDefault();
     try {
       // Handle form submission here
-      console.log('Form submitted:', formData);
-      
+      console.log("Form submitted:", formData);
+
       // Simulate API call - replace with actual API call
       await new Promise((resolve) => setTimeout(resolve, 1000));
-      
-      toast.success('Your response has been submitted, we will contact you shortly.');
-      
+
+      toast.success(
+        "Your response has been submitted, we will contact you shortly."
+      );
+
       // Reset form
       setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        service: '',
-        message: '',
+        name: "",
+        phone: "",
+        email: "",
+        service: "",
+        message: "",
       });
     } catch (error) {
-      toast.error('Something went wrong while submitting the response. Please try again later.');
+      toast.error(
+        "Something went wrong while submitting the response. Please try again later."
+      );
     }
   };
 
   const services = [
-    'Building Maintenance',
-    'Automation & Access Control',
-    'Parking Solutions',
-    'Security & Surveillance',
-    'Network & Cabling',
-    'Wireless Solutions',
+    "Building Maintenance",
+    "Automation & Access Control",
+    "Parking Solutions",
+    "Security & Surveillance",
+    "Network & Cabling",
+    "Wireless Solutions",
   ];
 
   const contactInfo = [
     {
       icon: Email,
-      title: 'Email', 
-      value: 'info@mashariq-alarkan.com',
-      link: 'mailto:info@mashariq-alarkan.com',
+      title: "Email",
+      value: "info@mashariq-alarkan.com",
+      link: "mailto:info@mashariq-alarkan.com",
     },
     {
       icon: LocationOn,
-      title: 'Office', 
-      value: 'King Fahd Road, Riyadh, Saudi Arabia.',
-      link: '#',
+      title: "Office",
+      value: "King Fahd Road, Riyadh, Saudi Arabia.",
+      link: "#",
     },
     {
       icon: Phone,
-      title: 'Phone', 
-      value: '+966 12 345 6789',
-      link: 'tel:+966123456789',
+      title: "Phone",
+      value: "+966 12 345 6789",
+      link: "tel:+966123456789",
     },
   ];
 
   const socialLinks = [
-    { icon: LinkedIn, url: 'https://linkedin.com' },
-    { icon: Instagram, url: 'https://instagram.com' },
-    { icon: Facebook, url: 'https://facebook.com' },
+    { icon: LinkedIn, url: "https://linkedin.com" },
+    { icon: Instagram, url: "https://instagram.com" },
+    { icon: Facebook, url: "https://facebook.com" },
   ];
+
+  // captcha info
+  const [captchaVerified, setCaptchaVerified] = useState(false);
+
+  const handleCaptchaChange = (value) => {
+    setCaptchaVerified(!!value);
+  };
 
   return (
     <Box
       sx={{
         backgroundColor: offWhiteColor,
         py: { xs: 6, md: 10 },
-        minHeight: '80vh',
+        minHeight: "80vh",
       }}
     >
       <Toaster position="top-right" />
-      <Container  >
+      <Container>
         <Grid container spacing={6} alignItems="flex-start">
           {/* Left Side - Contact Information */}
-          <Grid size={[12,12,6]} data-aos="zoom-in" >
+          <Grid size={[12, 12, 6]} data-aos="zoom-in">
             <Box>
               {/* Heading */}
               <Typography
                 variant="h1"
                 component="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', sm: '3rem', md: '3rem', lg: '3.7rem' },
+                  fontSize: {
+                    xs: "2.5rem",
+                    sm: "3rem",
+                    md: "3rem",
+                    lg: "3.7rem",
+                  },
                   fontWeight: 700,
                   lineHeight: 1.2,
                   mb: 4,
                 }}
               >
-                <Box component="span" sx={{ color: secondaryColor, display: 'block' }}>
+                <Box
+                  component="span"
+                  sx={{ color: secondaryColor, display: "block" }}
+                >
                   Let's Discuss
                 </Box>
-                <Box component="span" sx={{ color: offBlackText, display: 'block' }}>
+                <Box
+                  component="span"
+                  sx={{ color: offBlackText, display: "block" }}
+                >
                   something COOL together
                 </Box>
               </Typography>
@@ -150,20 +173,29 @@ const ContactForm = () => {
                   const IconComponent = info.icon;
                   return (
                     <Box key={index}>
-                      <Box sx={{ display: 'flex', alignItems: 'flex-start', gap: 2, mb: 1 }}>
+                      <Box
+                        sx={{
+                          display: "flex",
+                          alignItems: "flex-start",
+                          gap: 2,
+                          mb: 1,
+                        }}
+                      >
                         <Box
                           sx={{
                             width: 50,
                             height: 50,
-                            borderRadius: '12px',
+                            borderRadius: "12px",
                             backgroundColor: secondaryLight,
-                            display: 'flex',
-                            alignItems: 'center',
-                            justifyContent: 'center',
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
                             flexShrink: 0,
                           }}
                         >
-                          <IconComponent sx={{ color: secondaryColor, fontSize: '1.8rem' }} />
+                          <IconComponent
+                            sx={{ color: secondaryColor, fontSize: "1.8rem" }}
+                          />
                         </Box>
                         <Box sx={{ flex: 1 }}>
                           <Typography
@@ -171,23 +203,23 @@ const ContactForm = () => {
                             sx={{
                               color: offBlackText,
                               fontWeight: 600,
-                              fontSize: '1.3rem', 
+                              fontSize: "1.3rem",
                             }}
                           >
                             {info.title}
                           </Typography>
-                         
+
                           <Typography
                             component="a"
                             href={info.link}
                             sx={{
                               color: secondaryColor,
-                              fontSize: '1rem',
+                              fontSize: "1rem",
                               fontWeight: 500,
-                              textDecoration: 'none',
-                              '&:hover': {
+                              textDecoration: "none",
+                              "&:hover": {
                                 color: secondaryHover,
-                                textDecoration: 'underline',
+                                textDecoration: "underline",
                               },
                             }}
                           >
@@ -201,7 +233,7 @@ const ContactForm = () => {
               </Stack>
 
               {/* Social Media Icons */}
-              <Box sx={{ display: 'flex', gap: 2 }}>
+              <Box sx={{ display: "flex", gap: 2 }}>
                 {socialLinks.map((social, index) => {
                   const IconComponent = social.icon;
                   return (
@@ -216,12 +248,12 @@ const ContactForm = () => {
                         height: 50,
                         backgroundColor: secondaryLight,
                         color: secondaryColor,
-                        '&:hover': {
+                        "&:hover": {
                           backgroundColor: secondaryColor,
                           color: offWhiteColor,
-                          transform: 'translateY(-3px)',
+                          transform: "translateY(-3px)",
                         },
-                        transition: 'all 0.3s ease',
+                        transition: "all 0.3s ease",
                       }}
                     >
                       <IconComponent />
@@ -233,15 +265,15 @@ const ContactForm = () => {
           </Grid>
 
           {/* Right Side - Contact Form */}
-          <Grid size={{ xs: 12, md: 6 }} data-aos="zoom-in" >
+          <Grid size={{ xs: 12, md: 6 }} data-aos="zoom-in">
             <Box
               component="form"
               onSubmit={handleSubmit}
               sx={{
                 backgroundColor: offWhiteColor,
                 p: { xs: 3, md: 4 },
-                borderRadius: '16px',
-                boxShadow: '0 4px 20px rgba(0, 0, 0, 0.08)',
+                borderRadius: "16px",
+                boxShadow: "0 4px 20px rgba(0, 0, 0, 0.08)",
               }}
             >
               <Typography
@@ -250,7 +282,7 @@ const ContactForm = () => {
                   color: offBlackText,
                   fontWeight: 600,
                   mb: 3,
-                  fontSize: { xs: '1.5rem', md: '1.8rem' },
+                  fontSize: { xs: "1.5rem", md: "1.8rem" },
                 }}
               >
                 Send us a message
@@ -268,19 +300,19 @@ const ContactForm = () => {
                       onChange={handleChange}
                       required
                       sx={{
-                        '& .MuiOutlinedInput-root': {
-                          borderRadius: '8px',
-                          '& fieldset': {
-                            borderColor: '#e0e0e0',
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "8px",
+                          "& fieldset": {
+                            borderColor: "#e0e0e0",
                           },
-                          '&:hover fieldset': {
+                          "&:hover fieldset": {
                             borderColor: secondaryColor,
                           },
-                          '&.Mui-focused fieldset': {
+                          "&.Mui-focused fieldset": {
                             borderColor: secondaryColor,
                           },
                         },
-                        '& .MuiInputLabel-root.Mui-focused': {
+                        "& .MuiInputLabel-root.Mui-focused": {
                           color: secondaryColor,
                         },
                       }}
@@ -296,19 +328,19 @@ const ContactForm = () => {
                       onChange={handleChange}
                       required
                       sx={{
-                        '& .MuiOutlinedInput-root': {
-                          borderRadius: '8px',
-                          '& fieldset': {
-                            borderColor: '#e0e0e0',
+                        "& .MuiOutlinedInput-root": {
+                          borderRadius: "8px",
+                          "& fieldset": {
+                            borderColor: "#e0e0e0",
                           },
-                          '&:hover fieldset': {
+                          "&:hover fieldset": {
                             borderColor: secondaryColor,
                           },
-                          '&.Mui-focused fieldset': {
+                          "&.Mui-focused fieldset": {
                             borderColor: secondaryColor,
                           },
                         },
-                        '& .MuiInputLabel-root.Mui-focused': {
+                        "& .MuiInputLabel-root.Mui-focused": {
                           color: secondaryColor,
                         },
                       }}
@@ -326,19 +358,19 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   sx={{
-                    '& .MuiOutlinedInput-root': {
-                      borderRadius: '8px',
-                      '& fieldset': {
-                        borderColor: '#e0e0e0',
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "8px",
+                      "& fieldset": {
+                        borderColor: "#e0e0e0",
                       },
-                      '&:hover fieldset': {
+                      "&:hover fieldset": {
                         borderColor: secondaryColor,
                       },
-                      '&.Mui-focused fieldset': {
+                      "&.Mui-focused fieldset": {
                         borderColor: secondaryColor,
                       },
                     },
-                    '& .MuiInputLabel-root.Mui-focused': {
+                    "& .MuiInputLabel-root.Mui-focused": {
                       color: secondaryColor,
                     },
                   }}
@@ -349,19 +381,19 @@ const ContactForm = () => {
                   fullWidth
                   required
                   sx={{
-                    '& .MuiOutlinedInput-root': {
-                      borderRadius: '8px',
-                      '& fieldset': {
-                        borderColor: '#e0e0e0',
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "8px",
+                      "& fieldset": {
+                        borderColor: "#e0e0e0",
                       },
-                      '&:hover fieldset': {
+                      "&:hover fieldset": {
                         borderColor: secondaryColor,
                       },
-                      '&.Mui-focused fieldset': {
+                      "&.Mui-focused fieldset": {
                         borderColor: secondaryColor,
                       },
                     },
-                    '& .MuiInputLabel-root.Mui-focused': {
+                    "& .MuiInputLabel-root.Mui-focused": {
                       color: secondaryColor,
                     },
                   }}
@@ -392,44 +424,52 @@ const ContactForm = () => {
                   onChange={handleChange}
                   required
                   sx={{
-                    '& .MuiOutlinedInput-root': {
-                      borderRadius: '8px',
-                      '& fieldset': {
-                        borderColor: '#e0e0e0',
+                    "& .MuiOutlinedInput-root": {
+                      borderRadius: "8px",
+                      "& fieldset": {
+                        borderColor: "#e0e0e0",
                       },
-                      '&:hover fieldset': {
+                      "&:hover fieldset": {
                         borderColor: secondaryColor,
                       },
-                      '&.Mui-focused fieldset': {
+                      "&.Mui-focused fieldset": {
                         borderColor: secondaryColor,
                       },
                     },
-                    '& .MuiInputLabel-root.Mui-focused': {
+                    "& .MuiInputLabel-root.Mui-focused": {
                       color: secondaryColor,
                     },
                   }}
                 />
+                {/* CAPTCHA */}
+                <Box sx={{ display: "flex", justifyContent: {xs:"center",sm:"flex-start"},alignSelf:{xs:"center",sm:"flex-start"} }} maxWidth={[280,350]}>
+                  <ReCAPTCHA
+                    sitekey="6LcvwT4sAAAAAHiTvP-GIVGs7NbcMVbdpdu8XjaA"
+                    onChange={handleCaptchaChange}
+                  />
+                </Box>
 
                 {/* Submit Button */}
                 <Button
                   type="submit"
                   variant="contained"
                   fullWidth
+                  disabled={!captchaVerified}
                   sx={{
                     backgroundColor: secondaryColor,
                     color: offWhiteColor,
                     fontWeight: 600,
-                    fontSize: '1rem',
+                    fontSize: "1rem",
                     py: 1.5,
-                    borderRadius: '8px',
-                    textTransform: 'none',
+                    borderRadius: "8px",
+                    textTransform: "none",
                     boxShadow: `0 4px 15px ${secondaryLight}`,
-                    '&:hover': {
+                    "&:hover": {
                       backgroundColor: secondaryHover,
                       boxShadow: `0 6px 20px ${secondaryLight}`,
-                      transform: 'translateY(-2px)',
+                      transform: "translateY(-2px)",
                     },
-                    transition: 'all 0.3s ease',
+                    transition: "all 0.3s ease",
                   }}
                 >
                   Send Message
@@ -444,4 +484,3 @@ const ContactForm = () => {
 };
 
 export default ContactForm;
-

@@ -3,7 +3,7 @@
 'use client';
 
 import React, { useState, useEffect, useRef } from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import { Box, Container, Link, Typography } from '@mui/material';
 import { keyframes } from '@emotion/react';
 import Image from 'next/image';
 import {
@@ -16,67 +16,82 @@ import {
 
 const brands = [
   {
-    src: '/images/our-brands/came.png',
-    alt: 'CAME',
+    src: "/images/our-brands/came.png",
+    alt: "CAME",
+    href: "https://www.came.com",
   },
   {
-    src: '/images/our-brands/bft.png',
-    alt: 'BFT',
+    src: "/images/our-brands/bft.png",
+    alt: "BFT",
+    href: "https://www.bft-automation.com",
   },
   {
-    src: '/images/our-brands/somfy.png',
-    alt: 'Somfy',
+    src: "/images/our-brands/somfy.png",
+    alt: "Somfy",
+    href: "https://www.somfy.com",
   },
   {
-    src: '/images/our-brands/liftMaster.png',
-    alt: 'Lift Master',
+    src: "/images/our-brands/liftMaster.png",
+    alt: "Lift Master",
+    href: "https://www.liftmaster.com",
   },
   {
-    src: '/images/our-brands/herklith.png',
-    alt: 'Herklith',
+    src: "/images/our-brands/herklith.png",
+    alt: "Herklith",
+    href: "https://www.heras.com", // Parent brand
   },
   {
-    src: '/images/our-brands/somar.png',
-    alt: 'Block Axess 3',
+    src: "/images/our-brands/somar.png",
+    alt: "Block Axess 3",
+    href: "https://www.somar.com.tr",
   },
   {
-    src: '/images/our-brands/jielong.png',
-    alt: 'Jielong',
+    src: "/images/our-brands/jielong.png",
+    alt: "Jielong",
+    href: "https://www.jielong.com",
   },
   {
-    src: '/images/our-brands/acm.png',
-    alt: 'ACM',
+    src: "/images/our-brands/acm.png",
+    alt: "ACM",
+    href: "https://www.acm-automation.com",
   },
-   {
-    src: '/images/our-brands/rib.png',
-    alt: 'RIB',
+  {
+    src: "/images/our-brands/rib.png",
+    alt: "RIB",
+    href: "https://www.rib-gates.com",
   },
-   {
-    src: '/images/our-brands/zkteco.png',
-    alt: 'ZKTECO',
+  {
+    src: "/images/our-brands/zkteco.png",
+    alt: "ZKTECO",
+    href: "https://www.zkteco.com",
   },
-   {
-    src: '/images/our-brands/dahua.png',
-    alt: 'Dahua',
+  {
+    src: "/images/our-brands/dahua.png",
+    alt: "Dahua",
+    href: "https://www.dahuasecurity.com",
   },
-   {
-    src: '/images/our-brands/hikvision.svg',
-    alt: 'Hikvision',
+  {
+    src: "/images/our-brands/hikvision.svg",
+    alt: "Hikvision",
+    href: "https://www.hikvision.com",
   },
-   {
-    src: '/images/our-brands/schneider.png',
-    alt: 'Schneider.png',
+  {
+    src: "/images/our-brands/schneider.png",
+    alt: "Schneider",
+    href: "https://www.se.com",
   },
-   {
-    src: '/images/our-brands/siemens.png',
-    alt: 'SIEMENS',
+  {
+    src: "/images/our-brands/siemens.png",
+    alt: "SIEMENS",
+    href: "https://www.siemens.com",
   },
-   {
-    src: '/images/our-brands/honeywell.png',
-    alt: 'Honeywall',
+  {
+    src: "/images/our-brands/honeywell.png",
+    alt: "Honeywell",
+    href: "https://www.honeywell.com",
   },
-  
 ];
+
 
 // Keyframes for continuous scrolling
 const scrollLeft = keyframes`
@@ -386,7 +401,10 @@ const BrandItem = ({ brand }) => {
         boxSizing: 'border-box',
     }}
     >
-      <Box 
+      <a
+       href={brand.href}
+       target="_blank"
+  rel="noopener noreferrer"
         sx={{
           width: '100%', 
           display: 'flex',
@@ -415,7 +433,7 @@ const BrandItem = ({ brand }) => {
             objectFit: 'contain',
           }}
         />
-      </Box>
+      </a>
     </Box>
   );
 };
