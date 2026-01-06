@@ -11,13 +11,16 @@ import {
   Stack,
   Card,
   CardContent,
-  Paper
+  Paper,
 } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 import PhoneIcon from "@mui/icons-material/Phone";
-
+import MonitorIcon from '@mui/icons-material/Monitor';
+import DevicesIcon from '@mui/icons-material/Devices';
+import MicIcon from '@mui/icons-material/Mic';
+import LightbulbIcon from '@mui/icons-material/Lightbulb';
 import {
   primaryColor,
   primaryLight,
@@ -48,7 +51,26 @@ import HomeIcon from "@mui/icons-material/Home";
 import CloudIcon from "@mui/icons-material/Cloud";
 import SupportAgentIcon from "@mui/icons-material/SupportAgent";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
-
+import SettingsIcon from "@mui/icons-material/Settings";
+import Inventory2Icon from "@mui/icons-material/Inventory2";
+import StraightenIcon from "@mui/icons-material/Straighten";
+import SpeedIcon from "@mui/icons-material/Speed";
+import DirectionsCarIcon from "@mui/icons-material/DirectionsCar";
+import SmartphoneIcon from "@mui/icons-material/Smartphone";
+import KeyIcon from '@mui/icons-material/Key';
+import BuildIcon from "@mui/icons-material/Build";
+import SdStorageIcon from '@mui/icons-material/SdStorage';
+import AcUnitIcon from '@mui/icons-material/AcUnit'; // HVAC / Air conditioning
+import ElectricalServicesIcon from '@mui/icons-material/ElectricalServices'; // Electrical systems
+import WaterIcon from '@mui/icons-material/Water'; // Plumbing / water systems
+import FireExtinguisherIcon from '@mui/icons-material/FireExtinguisher'; // Fire safety
+import SmartToyIcon from '@mui/icons-material/SmartToy'; // Smart building / IoT
+import BoltIcon from '@mui/icons-material/Bolt'; // Energy management
+import OfficeIcon from '@mui/icons-material/HomeWork';
+import ToolsIcon from '@mui/icons-material/Construction';
+import ScheduleIcon from '@mui/icons-material/EventNote';
+import FingerprintIcon from '@mui/icons-material/Fingerprint';
+import BatteryFullIcon from '@mui/icons-material/BatteryFull';
 /* =========================
    SERVICES DATA
 ========================= */
@@ -58,125 +80,144 @@ const services = [
     id: 1,
     title: "Network and Cable Solutions",
     description:
-      "Network and cabling solutions provide reliable and secure data connectivity. Designed for scalability and performance. Proper infrastructure reduces downtime. Suitable for offices and residential buildings. Built according to industry standards.",
+      "Professional network and structured cabling solutions designed to deliver reliable, high-speed, and secure connectivity. Our systems are scalable, standards-compliant, and optimized for long-term performance in offices, buildings, and campuses.",
     image: "/images/home-banner/cables-1.jpg",
-    // divisions: [
-    //   {
-    //     title: "Structured Cabling",
-    //     description:
-    //       "Structured cabling supports data, voice, and video networks. It provides organized and scalable infrastructure. Improves performance and reliability. Simplifies maintenance and upgrades. Suitable for all building types.",
-    //     image: "/images/cable/cable5.jpg ",
-    //     icon: <SecurityOutlinedIcon />,
-    //   },
-    //   {
-    //     title: "Cable Management",
-    //     description:
-    //       "Cable management organizes and protects network cables. Improves safety and appearance. Reduces signal interference and damage. Facilitates easy troubleshooting. Essential for professional installations.",
-    //     image: "/images/cable/cable6.jpg ",
-    //     icon: <SettingsOutlinedIcon />,
-    //   },
-    //   {
-    //     title: "Network Revamping",
-    //     description:
-    //       "Network revamping upgrades outdated infrastructure. Improves speed, security, and efficiency. Minimizes downtime during upgrades. Adapts systems to modern requirements. Cost-effective modernization solution.",
-    //     image: "/images/cable/cable7.webp",
-    //     icon: <HomeOutlinedIcon />,
-    //   },
-    //   {
-    //     title: "Cable Testing & Certification",
-    //     description:
-    //       "Cable testing ensures performance and compliance with standards. Identifies faults and verifies installation quality. Provides certification for network reliability. Essential for new and existing cabling systems.",
-    //     image: "/images/cable/cable1.webp",
-    //     icon: <CameraAltOutlinedIcon />,
-    //   },
-    //   {
-    //     title: "Cable Monitoring & Management",
-    //     description:
-    //       "Cloud-based management for multi-site installations with real-time alerts and reports.Helps in proactive maintenance and performance optimization.",
-    //     image: "/images/cable/cable2.jpg",
-    //     icon: <LanOutlinedIcon />,
-    //   },
-    //   {
-    //     title: "Installation & Maintenance",
-    //     description:
-    //       "Professional installation and 24/7 maintenance by certified technicians.",
-    //     image: "/images/cable/cable3.jpg",
-    //     icon: <BuildOutlinedIcon />,
-    //   },
-    // ],
-    highlightServices: [{
-    title: "Access Control",
-    subtitle: "RFID & biometric entry with real-time monitoring",
-    image: "/images/parking/parking1.jpg",
-  },
-  {
-    title: "CCTV & ANPR",
-    subtitle: "Surveillance with plate recognition",
-    image: "/images/parking/parking2.jpeg",
-  }],
-  highlightText:[
-    {title:"Complete Parking Security Solutions",description:" End-to-end systems for commercial, residential, and industrial applications."}
-  ],
-  featureCards:[
-     {
-    title: "Barrier Systems",
-    description: "Precision-engineered heavy-duty mechanisms",
-    icon: <SecurityIcon />,
-  },
-  {
-    title: "Residential",
-    description: "App-controlled barriers for modern homes",
-    icon: <HomeIcon />,
-  },
-  {
-    title: "Cloud Management",
-    description: "Multi-site control with live dashboards",
-    icon: <CloudIcon />,
-  },
-  {
-    title: "Support 24/7",
-    description: "Expert installation & rapid response",
-    icon: <SupportAgentIcon />,
-  }
-  ],
+
+    highlightServices: [
+      {
+        title: "Structured Cabling",
+        subtitle: "Organized copper & fiber cabling systems",
+        image: "/images/cable/cable15.jpeg",
+      },
+      {
+        title: "Fiber Networks",
+        subtitle: "High-speed backbone & data transmission",
+        image: "/images/cable/cable17.jpeg",
+      },
+    ],
+
+    highlightText: [
+      {
+        title: "Reliable Network Infrastructure",
+        description:
+          "Designed to support high data loads, future expansion, and uninterrupted connectivity.",
+      },
+    ],
+
+    specsContent: [
+      {
+        header: {
+          chip: "Technical Specs",
+          title: "Built for ",
+          highlight: "Connectivity",
+          description:
+            "Enterprise-grade components engineered for speed, stability, and scalability.",
+        },
+        cards: [
+          {
+            id: "01",
+            label: "CABLING TYPE",
+            value: "Fiber / Cat6 / Cat6A",
+            icon: "settings",
+            color: "#3b82f6",
+          },
+          {
+            id: "02",
+            label: "STANDARDS",
+            value: "TIA / ISO / IEEE",
+            icon: "material",
+            color: "#10b981",
+          },
+          {
+            id: "03",
+            label: "APPLICATION",
+            value: "Office & Building Networks",
+            icon: "building",
+            color: "#8b5cf6",
+          },
+          {
+            id: "04",
+            label: "BANDWIDTH",
+            value: "Up to 10 Gbps",
+            icon: "measure",
+            color: "#f97316",
+          },
+          {
+            id: "05",
+            label: "TOPOLOGY",
+            value: "Star / Backbone",
+            icon: "speed",
+            color: "#fb7185",
+          },
+          {
+            id: "06",
+            label: "MANAGEMENT",
+            value: "Labeled & Documented",
+            icon: "wifi",
+            color: "#06b6d4",
+          },
+        ],
+      },
+    ],
+
+    integrations: [
+      { title: "Servers", icon: <CloudIcon />, hoverColor: "#06b6d4" },
+      { title: "Switches", icon: <ApartmentIcon />, hoverColor: "#6366f1" },
+      { title: "Wi-Fi Systems", icon: <WifiIcon />, hoverColor: "#3b82f6" },
+      {
+        title: "Security Systems",
+        icon: <SecurityIcon />,
+        hoverColor: "#22c55e",
+      },
+    ],
+
+    featureCards: [
+      {
+        title: "Clean Cabling",
+        description: "Neat routing & professional labeling",
+        icon: <SecurityIcon />,
+      },
+      {
+        title: "High Speed",
+        description: "Optimized for data-heavy environments",
+        icon: <CloudIcon />,
+      },
+      {
+        title: "Scalable Design",
+        description: "Easy future expansion",
+        icon: <ApartmentIcon />,
+      },
+      {
+        title: "Expert Support",
+        description: "Installation & testing included",
+        icon: <SupportAgentIcon />,
+      },
+    ],
+
     stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
+      { value: "700+", label: "NETWORKS DEPLOYED" },
+      { value: "99%", label: "UPTIME", highlight: true },
+      { value: "24/7", label: "SUPPORT" },
+      { value: "15+", label: "YEARS EXPERIENCE" },
     ],
 
     features: [
-      "Structured cabling for offices & buildings",
-      "High-quality fiber & copper installations",
-      "Neat cable management & labeling",
-      "Scalable future-ready infrastructure",
-    ],
-    featureDescrip:[
-      {description:"Automated parking barrier systems for secure and efficient access control, designed for commercial and residential parking facilities."}
+      "Structured copper & fiber cabling",
+      "Server room & rack setup",
+      "Testing & certification",
+      "Future-ready network design",
     ],
 
-    specs: [
+    featureDescrip: [
       {
-        label: "Cable Types",
-        value: "Cat6, Cat6A, Fiber Optic",
-        icons: SettingsOutlinedIcon,
-      },
-      { label: "Standards", value: "TIA/EIA, ISO", icons: SquareIcon },
-      {
-        label: "Applications",
-        value: "Offices, Data Centers, Homes",
-        icons: MarginOutlinedIcon,
+        description:
+          "We design and deploy enterprise-grade network infrastructure ensuring reliability, performance, and clean cable management.",
       },
     ],
-
-    useCases: [
-      "Corporate Offices",
-      "Data Centers",
-      "Hospitals",
-      "Residential Buildings",
-      "Hotels",
-      "Industrial Facilities",
+    featureImg: [
+      {
+        image: "/images/cable/cable6.jpg",
+      },
     ],
 
     galleryImages: [
@@ -253,13 +294,6 @@ const services = [
       },
     ],
 
-    integrationItems: [
-      { label: "Network Switches", icon: <SettingsOutlinedIcon /> },
-      { label: "Server Racks", icon: <ApartmentIcon /> },
-      { label: "IP Cameras", icon: <CameraAltIcon /> },
-      { label: "Wi-Fi Systems", icon: <WifiIcon /> },
-    ],
-
     ctaText: "Request Cable Installation",
   },
 
@@ -269,94 +303,170 @@ const services = [
     description:
       "Parking management solutions optimize space usage and traffic flow. These systems improve user convenience and reduce congestion. Automation minimizes manual handling and errors. Solutions are scalable for small and large facilities. Suitable for malls, offices, and public parking areas.",
     image: "/images/home-banner/parking-barrier.jpg",
-    divisions: [
+
+    highlightServices: [
       {
-        title: "Automatic Parking Barriers",
-        description:
-          "Automatic parking barriers control vehicle movement efficiently. They improve parking safety and organization. Designed for high-traffic locations. Can integrate with ticketing or access systems. Reliable and durable in daily operation.",
-        image: "/images/parking/parking1.jpg ",
-        icon: <SecurityOutlinedIcon />,
+        title: "Access Control",
+        subtitle: "RFID & biometric entry with real-time monitoring",
+        image: "/images/parking/parking1.jpg",
       },
       {
-        title: "Parking Guidance Systems",
+        title: "CCTV & ANPR",
+        subtitle: "Surveillance with plate recognition",
+        image: "/images/parking/parking2.jpeg",
+      },
+    ],
+    highlightText: [
+      {
+        title: "Complete Parking Security Solutions",
         description:
-          "Parking guidance systems help drivers locate available slots quickly. Sensors and displays reduce search time and congestion. These systems improve overall parking efficiency. Commonly used in commercial complexes. Easy to maintain and operate.",
-        image: "/images/parking/parking2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
+          " End-to-end systems for commercial, residential, and industrial applications.",
+      },
+    ],
+    specsContent: [
+      {
+        header: {
+          chip: "Technical Specs",
+          title: "Designed for ",
+          highlight: "Parking Systems",
+          description:
+            "High-performance, reliable, and secure parking and access control solutions for commercial and residential facilities.",
+        },
+        cards: [
+          {
+            id: "01",
+            label: "OPERATION",
+            value: "Automatic / Manual / Remote",
+            icon: "settings",
+            color: "#3b82f6",
+          },
+          {
+            id: "02",
+            label: "MATERIAL",
+            value: "Heavy-Duty Galvanized Steel",
+            icon: "material",
+            color: "#10b981",
+          },
+          {
+            id: "03",
+            label: "USE CASE",
+            value: "Commercial, Residential & Industrial",
+            icon: "building",
+            color: "#8b5cf6",
+          },
+          {
+            id: "04",
+            label: "ARM LENGTH",
+            value: "3m / 4.5m / 6m / Custom",
+            icon: "measure",
+            color: "#f97316",
+          },
+          {
+            id: "05",
+            label: "SPEED",
+            value: "1.5 - 6 Seconds per Operation",
+            icon: "speed",
+            color: "#fb7185",
+          },
+          {
+            id: "06",
+            label: "CONNECTIVITY",
+            value: "WiFi / Bluetooth / RFID / Cloud Integration",
+            icon: "wifi",
+            color: "#06b6d4",
+          },
+        ],
+      },
+    ],
+
+    integrations: [
+      {
+        title: "Parking Systems",
+        icon: <DirectionsCarIcon />,
+        hoverColor: "#3b82f6",
       },
       {
-        title: "Ticketing and Payment Systems",
-        description:
-          "Ticketing systems automate entry, exit, and billing processes. They support cashless and digital payment options. Reduce manual effort and operational errors. Improve revenue tracking and reporting. Seamlessly integrate with parking infrastructure.",
-        image: "/images/parking/parking3.jpg ",
-        icon: <HomeOutlinedIcon />,
+        title: "Access Cards",
+        icon: <CreditCardIcon />,
+        hoverColor: "#10b981",
       },
       {
-        title: "ANPR Systems",
-        description:
-          "Automatic Number Plate Recognition systems enable ticketless vehicle access. They improve security and monitoring accuracy. Suitable for commercial and restricted areas. Provide real-time data and reporting. Enhance operational efficiency.",
-        image: "/images/parking/parking4.jpeg ",
-        icon: <HomeOutlinedIcon />,
+        title: "ANPR Cameras",
+        icon: <CameraAltIcon />,
+        hoverColor: "#8b5cf6",
       },
       {
-        title: "Security CCTV Integration",
-        description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: "/images/parking/parking12.jpeg",
-        icon: <CameraAltOutlinedIcon />,
+        title: "Remote Access",
+        icon: <WifiIcon />,
+        hoverColor: "#f97316",
       },
       {
-        title: "Network Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: "/images/parking/parking5.jpg",
-        icon: <LanOutlinedIcon />,
+        title: "Mobile Apps",
+        icon: <SmartphoneIcon />,
+        hoverColor: "#ec4899",
+      },
+      {
+        title: "BMS Systems",
+        icon: <ApartmentIcon />,
+        hoverColor: "#6366f1",
+      },
+      {
+        title: "Cloud Platforms",
+        icon: <CloudIcon />,
+        hoverColor: "#06b6d4",
+      },
+      {
+        title: "Security Systems",
+        icon: <SecurityIcon />,
+        hoverColor: "#22c55e",
+      },
+    ],
+    featureCards: [
+      {
+        title: "Barrier Systems",
+        description: "Precision-engineered heavy-duty mechanisms",
+        icon: <SecurityIcon />,
+      },
+      {
+        title: "Residential",
+        description: "App-controlled barriers for modern homes",
+        icon: <HomeIcon />,
+      },
+      {
+        title: "Cloud Management",
+        description: "Multi-site control with live dashboards",
+        icon: <CloudIcon />,
+      },
+      {
+        title: "Support 24/7",
+        description: "Expert installation & rapid response",
+        icon: <SupportAgentIcon />,
       },
     ],
     stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
+      { value: "500+", label: "INSTALLATIONS" },
+      { value: "98%", label: "SATISFACTION RATE", highlight: true },
+      { value: "24/7", label: "SUPPORT" },
+      { value: "15+", label: "YEARS EXPERIENCE" },
     ],
+
     features: [
-      "Automatic boom & flap barriers",
-      "RFID, ticket & ANPR integration",
-      "High-speed motor operation",
-      "Weather-resistant design",
+      "Automated barrier systems for efficient entry ",
+      "RFID & biometric access control integration",
+      "Durable, weather-resistant construction ",
+      "Scalable solutions for multi-level ",
     ],
 
-    specs: [
+    featureDescrip: [
       {
-        label: "Barrier Type",
-        value: "Boom, Flap, Bollard",
-        icons: SettingsOutlinedIcon,
-      },
-      {
-        label: "Control Options",
-        value: "RFID, Remote, Ticketing",
-        icons: SquareIcon,
-      },
-      {
-        label: "Usage",
-        value: "Commercial & Residential",
-        icons: MarginOutlinedIcon,
+        description:
+          "Automated parking barrier systems for secure and efficient access control, designed for commercial and residential parking facilities.",
       },
     ],
-
-    integrationItems: [
-      { label: "Parking Management", icon: <LocalParkingIcon /> },
-      { label: "Access Cards", icon: <CreditCardIcon /> },
-      { label: "ANPR Cameras", icon: <CameraAltIcon /> },
-      { label: "Remote Monitoring", icon: <WifiIcon /> },
-    ],
-
-    useCases: [
-      "Shopping Malls",
-      "Office Parking",
-      "Residential Societies",
-      "Hospitals",
-      "Hotels",
+    featureImg: [
+      {
+        image: "/images/parking/parking16.jpeg",
+      },
     ],
 
     galleryImages: [
@@ -443,91 +553,170 @@ const services = [
     description:
       "Security and surveillance solutions protect people, property, and assets. These systems provide real-time monitoring and threat detection. Integrated technologies improve response time. Suitable for residential, commercial, and industrial environments. Designed for reliability and scalability.",
     image: "/images/home-banner/camera-1.jpg",
-    divisions: [
+
+    highlightServices: [
       {
-        title: "CCTV Camera Systems",
-        description:
-          "CCTV systems provide 24/7 video surveillance. Support indoor and outdoor monitoring. Improve security and incident investigation. Allow remote viewing and recording. Available in IP and analog options.",
-        image: "/images/security/security1.jpg ",
-        icon: <SecurityOutlinedIcon />,
+        title: "Access Control",
+        subtitle: "RFID & biometric entry with real-time monitoring",
+        image: "/images/security/security1.jpg",
       },
       {
-        title: "Walk-Through Security Terminals",
-        description:
-          "Walk-through terminals ensure controlled security screening. Commonly used in high-security locations and events. They detect unauthorized items effectively. Improve safety compliance. Designed for continuous usage.",
-        image: "/images/security/security2.jpg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Intrusion and Alarm Systems",
-        description:
-          "Intrusion alarms detect unauthorized access attempts. Provide instant alerts and notifications. Improve round-the-clock property security. Can be integrated with CCTV systems. Suitable for homes and businesses.",
-        image: "/images/security/security3.jpg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Intercom and Video Door Phones",
-        description:
-          "Intercom systems allow secure visitor communication. Video functionality improves access verification. Enhance entry management and safety. Suitable for apartments and offices. Easy to operate and maintain.",
-        icon: <HomeOutlinedIcon />,
-        image: "/images/security/security4.jpeg ",
-      },
-      {
-        title: "CCTV Integration",
-        description:
-          "Seamless integration with CCTV systems including ANPR for enhanced parking security.",
-        image: "/images/security/security5.jpeg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Network Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.",
-        image: "/images/security/security6.jpeg",
-        icon: <LanOutlinedIcon />,
+        title: "CCTV & ANPR",
+        subtitle: "Surveillance with plate recognition",
+        image: "/images/security/security4.jpeg",
       },
     ],
+    highlightText: [
+      {
+        title: "Comprehensive Security & Surveillance Solutions",
+        description:
+          "End-to-end security systems for commercial, residential, and industrial facilities, including CCTV, access control, and monitoring.",
+      },
+    ],
+
+    specsContent: [
+      {
+        header: {
+          chip: "Technical Specs",
+          title: "Engineered to ",
+          highlight: "Protect",
+          description:
+            "High-quality materials and advanced technology for reliable surveillance and access control.",
+        },
+        cards: [
+          {
+            id: "01",
+            label: "CAMERA TYPES",
+            value: "CCTV, IP, PTZ",
+            icon: "camera",
+            color: "#3b82f6",
+          },
+          {
+            id: "02",
+            label: "STORAGE",
+            value: "Cloud / Local NVR",
+            icon: "storage",
+            color: "#10b981",
+          },
+          {
+            id: "03",
+            label: "USE CASE",
+            value: "Residential, Commercial, Industrial",
+            icon: "building",
+            color: "#8b5cf6",
+          },
+          {
+            id: "04",
+            label: "ACCESS CONTROL",
+            value: "RFID, Biometric, PIN",
+            icon: "key",
+            color: "#f97316",
+          },
+          {
+            id: "05",
+            label: "CONNECTIVITY",
+            value: "WiFi / Ethernet / PoE",
+            icon: "wifi",
+            color: "#06b6d4",
+          },
+          {
+            id: "06",
+            label: "MONITORING",
+            value: "24/7 Live Surveillance",
+            icon: "monitor",
+            color: "#fb7185",
+          },
+        ],
+      },
+    ],
+
+    integrations: [
+      {
+        title: "CCTV Cameras",
+        icon: <CameraAltIcon />,
+        hoverColor: "#3b82f6",
+      },
+      {
+        title: "Access Cards & Biometric",
+        icon: <CreditCardIcon />,
+        hoverColor: "#10b981",
+      },
+      {
+        title: "Remote Monitoring",
+        icon: <WifiIcon />,
+        hoverColor: "#f97316",
+      },
+      {
+        title: "Cloud Storage",
+        icon: <CloudIcon />,
+        hoverColor: "#06b6d4",
+      },
+      {
+        title: "Alarm Systems",
+        icon: <SecurityIcon />,
+        hoverColor: "#22c55e",
+      },
+      {
+        title: "Smart Gate & Barrier Control",
+        icon: <DirectionsCarIcon />,
+        hoverColor: "#8b5cf6",
+      },
+      {
+        title: "Mobile App Access",
+        icon: <SmartphoneIcon />,
+        hoverColor: "#ec4899",
+      },
+      {
+        title: "BMS Integration",
+        icon: <ApartmentIcon />,
+        hoverColor: "#6366f1",
+      },
+    ],
+
+    featureCards: [
+      {
+        title: "24/7 Surveillance",
+        description: "Continuous monitoring for total security coverage",
+        icon: <CameraAltIcon />,
+      },
+      {
+        title: "Smart Access Control",
+        description: "Biometric, RFID, and PIN-enabled secure entry",
+        icon: <KeyIcon />,
+      },
+      {
+        title: "Cloud Management",
+        description: "Remote management with live dashboards and alerts",
+        icon: <CloudIcon />,
+      },
+      {
+        title: "Rapid Support",
+        description: "Professional installation & emergency response",
+        icon: <SupportAgentIcon />,
+      },
+    ],
+
     stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
+      { value: "1000+", label: "CAMERAS INSTALLED" },
+      { value: "99%", label: "SATISFACTION RATE", highlight: true },
+      { value: "24/7", label: "MONITORING" },
+      { value: "10+", label: "YEARS EXPERIENCE" },
     ],
+
     features: [
-      "HD & AI-based surveillance cameras",
-      "24/7 monitoring & recording",
-      "Remote access via mobile & web",
-      "Scalable security architecture",
+      "High-resolution CCTV and IP cameras for clear imaging",
+      "Advanced analytics with motion detection and alerts",
+      "Integrated access control systems with biometric/RFID",
+      "Cloud-enabled storage for scalable security management",
     ],
 
-    specs: [
+    featureDescrip: [
       {
-        label: "Camera Types",
-        value: "IP, PTZ, Dome, Bullet",
-        icons: SettingsOutlinedIcon,
-      },
-      { label: "Recording", value: "NVR / Cloud Storage", icons: SquareIcon },
-      {
-        label: "Monitoring",
-        value: "Local & Remote",
-        icons: MarginOutlinedIcon,
+        description:
+          "Complete security and surveillance solutions combining CCTV, access control, and monitoring systems to protect residential, commercial, and industrial properties.",
       },
     ],
-
-    integrationItems: [
-      { label: "Mobile Monitoring", icon: <PhoneIphoneIcon /> },
-      { label: "Access Control", icon: <CreditCardIcon /> },
-      { label: "Alarm Systems", icon: <ApartmentIcon /> },
-      { label: "Cloud Storage", icon: <WifiIcon /> },
-    ],
-
-    useCases: [
-      "Banks",
-      "Retail Stores",
-      "Warehouses",
-      "Offices",
-      "Residential Buildings",
-    ],
+    featureImg: [{ image: "/images/security/security7.jpeg" }],
 
     galleryImages: [
       {
@@ -612,92 +801,173 @@ const services = [
     description:
       "Building maintenance services ensure the smooth functioning, safety, and long-term durability of residential, commercial, and industrial properties. These services focus on preventive care, quick repairs, and operational efficiency. Regular maintenance reduces breakdown risks and unexpected expenses. Solutions are customized according to building size and usage. Skilled professionals ensure quality and compliance with standards.",
     image: "/images/maintainance/maintainance1.jpg",
-    divisions: [
-      {
-        title: "Electrical Maintenance",
-        description:
-          "Electrical maintenance involves inspection, repair, and replacement of wiring, panels, and fixtures. It ensures uninterrupted power supply and minimizes electrical hazards. Preventive checks help avoid short circuits and equipment failure. All work follows safety and regulatory standards. Suitable for residential, commercial, and industrial buildings.",
-        image: "/images/maintainance/maintainance2.jpeg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Plumbing and Water Systems",
-        description:
-          "Plumbing services include maintenance of pipelines, pumps, water tanks, and drainage systems. The focus is on preventing leaks, blockages, and pressure issues. Regular inspections reduce water wastage and structural damage. Emergency repair services are also available. Durable materials ensure long-term reliability.",
-        image: "/images/maintainance/maintenance3.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "HVAC Maintenance",
-        description:
-          "HVAC maintenance ensures efficient performance of air conditioning and ventilation systems. Services include cleaning, gas refilling, and system optimization. Well-maintained HVAC systems improve indoor air quality. Routine servicing reduces energy consumption and breakdowns. Ideal for homes, offices, and commercial spaces.",
-        image: "/images/maintainance/maintainance5.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "General Civil Maintenance",
-        description:
-          "Civil maintenance covers minor repairs, painting, tiling, and structural finishing work. It helps maintain the building’s appearance and safety. Cracks and wear are addressed before they worsen. Quality materials are used for durability. These services enhance property value and aesthetics.",
-        image: "/images/maintainance/maintainance4.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Preventive Maintenance Programs",
-        description:
-          "Preventive maintenance programs are designed to detect issues early. Scheduled inspections minimize downtime and major repair costs. Maintenance records and reports are regularly updated. Programs are customized to building requirements. This approach ensures long-term operational stability.",
-        image: "/images/maintainance/maintainance6.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: "/images/maintainance/maintainance7.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
-    stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
-    ],
-    features: [
-      "Electrical & mechanical maintenance",
-      "Preventive & corrective services",
-      "Emergency response support",
-      "Facility management solutions",
-    ],
+    highlightServices: [
+  {
+    title: "Facility Maintenance",
+    subtitle: "Comprehensive building upkeep and preventive maintenance",
+    image: "/images/maintainance/maintainance2.jpeg",
+  },
+  {
+    title: "HVAC & Electrical Systems",
+    subtitle: "Installation, repair, and regular checks for optimal performance",
+    image: "/images/maintainance/maintainance4.jpeg",
+  },
+],
 
-    specs: [
+highlightText: [
+  {
+    title: "Complete Building & Maintenance Solutions",
+    description:
+      "End-to-end services for construction, maintenance, and operational efficiency for commercial, residential, and industrial buildings.",
+  },
+],
+
+specsContent: [
+  {
+    header: {
+      chip: "Technical Specs",
+      title: "Engineered to ",
+      highlight: "Last",
+      description:
+        "Premium materials and professional craftsmanship ensure long-term reliability for buildings and facilities.",
+    },
+    cards: [
       {
-        label: "Service Type",
-        value: "Preventive & Corrective",
-        icons: SettingsOutlinedIcon,
+        id: "01",
+        label: "STRUCTURE",
+        value: "Concrete, Steel, Timber",
+        icon: "building",
+        color: "#3b82f6",
       },
       {
-        label: "Coverage",
-        value: "Residential & Commercial",
-        icons: SquareIcon,
+        id: "02",
+        label: "MATERIALS",
+        value: "High-grade construction materials",
+        icon: "material",
+        color: "#10b981",
       },
       {
-        label: "Availability",
-        value: "24/7 Support",
-        icons: MarginOutlinedIcon,
+        id: "03",
+        label: "USE CASE",
+        value: "Residential, Commercial, Industrial",
+        icon: "office",
+        color: "#8b5cf6",
+      },
+      {
+        id: "04",
+        label: "SERVICES",
+        value: "Repair, Renovation, Upgrades",
+        icon: "tools",
+        color: "#f97316",
+      },
+      {
+        id: "05",
+        label: "SCHEDULE",
+        value: "Routine / Preventive / Emergency",
+        icon: "schedule",
+        color: "#fb7185",
+      },
+      {
+        id: "06",
+        label: "MONITORING",
+        value: "Smart sensors & periodic inspections",
+        icon: "monitor",
+        color: "#06b6d4",
       },
     ],
+  },
+],
 
-    integrationItems: [
-      { label: "HVAC Systems", icon: <ApartmentIcon /> },
-      { label: "Electrical Systems", icon: <SettingsOutlinedIcon /> },
-      { label: "Safety Systems", icon: <CameraAltIcon /> },
-    ],
+integrations: [
+  {
+    title: "HVAC Systems",
+    icon: <AcUnitIcon />,
+    hoverColor: "#3b82f6",
+  },
+  {
+    title: "Electrical Networks",
+    icon: <ElectricalServicesIcon />,
+    hoverColor: "#10b981",
+  },
+  {
+    title: "Plumbing & Water Systems",
+    icon: <WaterIcon />,
+    hoverColor: "#8b5cf6",
+  },
+  {
+    title: "Fire Safety Systems",
+    icon: <FireExtinguisherIcon />,
+    hoverColor: "#f97316",
+  },
+  {
+    title: "Smart Building Integration",
+    icon: <SmartToyIcon />,
+    hoverColor: "#ec4899",
+  },
+  {
+    title: "Cloud Monitoring",
+    icon: <CloudIcon />,
+    hoverColor: "#06b6d4",
+  },
+  {
+    title: "Security & Surveillance",
+    icon: <SecurityIcon />,
+    hoverColor: "#22c55e",
+  },
+  {
+    title: "Energy Management",
+    icon: <BoltIcon />,
+    hoverColor: "#6366f1",
+  },
+],
 
-    useCases: [
-      "Office Buildings",
-      "Shopping Malls",
-      "Hospitals",
-      "Residential Towers",
+featureCards: [
+  {
+    title: "Preventive Maintenance",
+    description: "Regular checks to prevent breakdowns and prolong building life",
+    icon: <SupportAgentIcon />,
+  },
+  {
+    title: "Renovation & Upgrades",
+    description: "Modernizing facilities to enhance efficiency and aesthetics",
+    icon: <HomeIcon />,
+  },
+  {
+    title: "Smart Building Solutions",
+    description: "IoT-enabled monitoring and automation for energy & operations",
+    icon: <CloudIcon />,
+  },
+  {
+    title: "24/7 Support",
+    description: "Rapid response for emergencies and routine maintenance",
+    icon: <SupportAgentIcon />,
+  },
+],
+
+stats: [
+  { value: "1000+", label: "PROJECTS COMPLETED" },
+  { value: "99%", label: "CLIENT SATISFACTION", highlight: true },
+  { value: "24/7", label: "SUPPORT" },
+  { value: "20+", label: "YEARS EXPERIENCE" },
+],
+
+features: [
+  "Comprehensive building repair and maintenance services",
+  "Efficient HVAC, electrical, plumbing, and fire safety solutions",
+  "Smart monitoring and IoT-enabled management systems",
+  "Customizable maintenance plans for long-term facility health",
+],
+
+featureDescrip: [
+  {
+    description:
+      "End-to-end building services covering construction, preventive maintenance, system upgrades, and smart management for residential, commercial, and industrial properties.",
+  },
+],
+    featureImg: [
+      {
+        image: "/images/maintainance/maintainance8.jpeg",
+      },
     ],
 
     galleryImages: [
@@ -782,85 +1052,143 @@ const services = [
     description:
       "Digital door locks provide keyless entry using fingerprint, PIN, card, or mobile app access. They enhance security and access control. User-friendly systems allow easy management. Suitable for homes, offices, and rental apartments. Designed with advanced safety features.",
     image: "/images/home-banner/digital-lock.jpg",
-    divisions: [
-      {
-        title: "Access Control Systems",
-        description:
-          "Access control systems regulate entry using cards, biometrics, or PIN codes. They provide centralized monitoring and access logs. These systems improve security and accountability. Easily scalable for multiple doors. Ideal for offices, buildings, and gated communities.",
-        image: "/images/locks/lock1.jpeg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Road Barriers and Rollers",
-        description:
-          "Road barriers and rollers control vehicle entry and exit points. They enhance traffic management and site security. Automated systems ensure smooth and fast operation. Commonly used in parking areas and commercial zones. Built for high-traffic environments.",
-        image: "/images/locks/lock2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Advance Locking Mechanisms",
-        description:
-          "Advanced locking mechanisms use electronic and mechanical components for enhanced security. Features include auto-locking, tamper alerts, and emergency override. Designed for durability and reliability. Suitable for high-security applications. Easy to integrate with existing systems.",
-        image: "/images/locks/lock3.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Lock Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.Include regular check-ups and emergency repairs.Ensure optimal performance and longevity of locking systems.",
-        image: "/images/locks/lock4.jpg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Network Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of locking systems.Enhances security monitoring and user management.",
-        image: "/images/locks/lock5.jpeg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: "/images/locks/lock6.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
-    stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
-    ],
-    features: [
-      "Keyless entry systems",
-      "Mobile & biometric access",
-      "High-security encryption",
-      "Modern & durable designs",
-    ],
 
-    specs: [
+    highlightServices: [
+  {
+    title: "Smart Access Control",
+    subtitle: "Fingerprint, PIN, RFID, or mobile app entry for secure access",
+    image: "/images/locks/lock1.jpeg",
+  },
+  {
+    title: "CCTV Integration",
+    subtitle: "Monitor entry points in real-time with connected cameras",
+    image: "/images/locks/lock2.jpeg",
+  },
+],
+
+highlightText: [
+  {
+    title: "Complete Digital Lock Solutions",
+    description:
+      "End-to-end keyless security systems for residential, commercial, and rental properties.",
+  },
+],
+
+specsContent: [
+  {
+    header: {
+      chip: "Technical Specs",
+      title: "Built to ",
+      highlight: "Secure",
+      description:
+        "High-quality materials and advanced electronics for reliable and tamper-proof access control.",
+    },
+    cards: [
       {
-        label: "Access Type",
-        value: "Fingerprint, PIN, Mobile",
-        icons: SettingsOutlinedIcon,
+        id: "01",
+        label: "ACCESS MODES",
+        value: "Fingerprint / PIN / Card / Mobile App",
+        icon: "fingerprint",
+        color: "#3b82f6",
       },
-      { label: "Connectivity", value: "Bluetooth / Wi-Fi", icons: SquareIcon },
       {
-        label: "Applications",
-        value: "Homes & Offices",
-        icons: MarginOutlinedIcon,
+        id: "02",
+        label: "MATERIAL",
+        value: "Stainless Steel / Zinc Alloy",
+        icon: "material",
+        color: "#10b981",
+      },
+      {
+        id: "03",
+        label: "USE CASE",
+        value: "Homes, Offices, Apartments",
+        icon: "building",
+        color: "#8b5cf6",
+      },
+      {
+        id: "04",
+        label: "BATTERY LIFE",
+        value: "6-12 months",
+        icon: "battery",
+        color: "#f97316",
+      },
+      {
+        id: "05",
+        label: "RESPONSE TIME",
+        value: "Instant / <1 sec",
+        icon: "speed",
+        color: "#fb7185",
+      },
+      {
+        id: "06",
+        label: "CONNECTIVITY",
+        value: "WiFi / Bluetooth / NFC",
+        icon: "wifi",
+        color: "#06b6d4",
       },
     ],
+  },
+],
 
-    integrationItems: [
-      { label: "Mobile App", icon: <PhoneIphoneIcon /> },
-      { label: "Smart Home", icon: <ApartmentIcon /> },
-      { label: "Access Logs", icon: <CreditCardIcon /> },
+integrations: [
+  { title: "Mobile App Control", icon: <SmartphoneIcon />, hoverColor: "#3b82f6" },
+  { title: "CCTV Systems", icon: <CameraAltIcon />, hoverColor: "#10b981" },
+  { title: "Building Management Systems", icon: <ApartmentIcon />, hoverColor: "#8b5cf6" },
+  { title: "Remote Access", icon: <WifiIcon />, hoverColor: "#f97316" },
+  { title: "Cloud Platform Monitoring", icon: <CloudIcon />, hoverColor: "#ec4899" },
+  { title: "Security Alarms", icon: <SecurityIcon />, hoverColor: "#06b6d4" },
+  { title: "Smart Door Sensors", icon: <BoltIcon />, hoverColor: "#6366f1" },
+  { title: "Access Logs & Analytics", icon: <SupportAgentIcon />, hoverColor: "#22c55e" },
+],
+
+featureCards: [
+  {
+    title: "Keyless Entry",
+    description: "No physical keys needed, reducing risk of theft or loss",
+    icon: <SecurityIcon />,
+  },
+  {
+    title: "Residential & Commercial",
+    description: "Solutions for homes, apartments, offices, and co-working spaces",
+    icon: <HomeIcon />,
+  },
+  {
+    title: "Cloud Management",
+    description: "Monitor access and manage users from anywhere via cloud dashboard",
+    icon: <CloudIcon />,
+  },
+  {
+    title: "24/7 Support",
+    description: "Expert installation & rapid troubleshooting for peace of mind",
+    icon: <SupportAgentIcon />,
+  },
+],
+
+stats: [
+  { value: "1000+", label: "LOCKS INSTALLED" },
+  { value: "99%", label: "SATISFACTION RATE", highlight: true },
+  { value: "24/7", label: "SUPPORT" },
+  { value: "10+", label: "YEARS EXPERIENCE" },
+],
+
+features: [
+  "Keyless entry with PIN, fingerprint, or RFID",
+  "Mobile app control and remote monitoring",
+  "Tamper-proof construction with high-quality materials",
+  "Scalable for single doors or large multi-door installations",
+],
+
+featureDescrip: [
+  {
+    description:
+      "Advanced digital door locks for homes, offices, and apartments, offering secure, user-friendly, and connected access control solutions.",
+  },
+],
+    featureImg:[
+      {
+        image:"/images/locks/lock7.jpeg"
+      }
     ],
-
-    useCases: ["Residential Homes", "Apartments", "Hotels", "Office Cabins"],
-
     galleryImages: [
       {
         image: "/images/locks/lock7.jpeg",
@@ -947,94 +1275,155 @@ const services = [
     description:
       "Automation and access control systems enhance security, convenience, and operational efficiency. These solutions provide controlled access and automated operation. They are ideal for residential, commercial, and industrial environments. Modern systems offer monitoring and remote control features. Designed for reliability and long-term performance.",
     image: "/images/home-banner/garage-door-1.webp",
-    divisions: [
-      {
-        title: "Automatic Gates",
-        description:
-          "Automatic swing and sliding gates provide secure and controlled entry. They can be operated using remotes, sensors, or access cards. These gates are built for frequent usage and durability. Suitable for homes, offices, and industrial facilities. Weather-resistant designs ensure long service life.",
-        image: "/images/automation/automation1.jpg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Automatic Garage Shutters",
-        description:
-          "Automatic garage shutters offer secure and space-efficient access. Motorized operation allows smooth and effortless use. They improve property safety and convenience. Suitable for residential and commercial parking areas. Built using strong and durable materials.",
-        image: "/images/automation/automation2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Window Shutters",
-        description:
-          "Window shutters provide protection against unauthorized access and weather conditions. Available in manual and automated options. They help reduce noise and improve insulation. Designed to match modern architectural needs. Suitable for homes and commercial buildings.",
-        image: "/images/automation/automation3.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Blind Automation",
-        description:
-          "Automated blinds offer convenient light and privacy control. They can be operated via remote, app, or voice commands. These systems enhance interior comfort and energy efficiency. Suitable for homes, offices, and hospitality settings. Available in various styles and materials.",
-        image: "/images/automation/automation4.jpg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Network Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of automation systems.Enhances security monitoring and user management.",
-        image: "/images/automation/automation5.jpeg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: "/images/automation/automation6.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
-    stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
-    ],
-    features: [
-      "Centralized access management",
-      "RFID, biometric & mobile control",
-      "Seamless system integration",
-      "Scalable automation solutions",
-    ],
 
-    specs: [
-      {
-        label: "Control Types",
-        value: "RFID, Biometric, Mobile",
-        icons: SettingsOutlinedIcon,
-      },
-      {
-        label: "Integration",
-        value: "CCTV, Parking, Doors",
-        icons: SquareIcon,
-      },
-      {
-        label: "Usage",
-        value: "Commercial & Residential",
-        icons: MarginOutlinedIcon,
-      },
-    ],
+     highlightServices: [
+    {
+      title: "Access Control",
+      subtitle: "Smart RFID, biometric & PIN-based entry systems",
+      image: "/images/automation/automation1.jpg",
+    },
+    {
+      title: "CCTV & ANPR",
+      subtitle: "Intelligent surveillance with license plate recognition",
+      image: "/images/automation/automation2.jpeg",
+    },
+  ],
 
-    integrationItems: [
-      { label: "Smart Doors", icon: <ApartmentIcon /> },
-      { label: "CCTV Systems", icon: <CameraAltIcon /> },
-      { label: "Parking Control", icon: <LocalParkingIcon /> },
-      { label: "Mobile Access", icon: <PhoneIphoneIcon /> },
-    ],
+  highlightText: [
+    {
+      title: "Complete Automation & Access Control",
+      description:
+        "End-to-end solutions for commercial, residential, and industrial security and automation needs.",
+    },
+  ],
 
-    useCases: [
-      "Corporate Offices",
-      "Residential Societies",
-      "Industrial Facilities",
-    ],
+  specsContent: [
+    {
+      header: {
+        chip: "Technical Specs",
+        title: "Engineered for ",
+        highlight: "Security & Efficiency",
+        description:
+          "High-performance components combined with smart technology for reliable access control and automation.",
+      },
+      cards: [
+        {
+          id: "01",
+          label: "OPERATION",
+          value: "Automatic / Remote / Manual",
+          icon: "settings",
+          color: "#3b82f6",
+        },
+        {
+          id: "02",
+          label: "MATERIAL",
+          value: "Industrial-Grade Steel & Polycarbonate",
+          icon: "material",
+          color: "#10b981",
+        },
+        {
+          id: "03",
+          label: "USE CASE",
+          value: "Residential, Commercial & Industrial",
+          icon: "building",
+          color: "#8b5cf6",
+        },
+        {
+          id: "04",
+          label: "SENSOR RANGE",
+          value: "0.5m – 6m",
+          icon: "measure",
+          color: "#f97316",
+        },
+        {
+          id: "05",
+          label: "RESPONSE TIME",
+          value: "Instant / <2 Seconds",
+          icon: "speed",
+          color: "#fb7185",
+        },
+        {
+          id: "06",
+          label: "CONNECTIVITY",
+          value: "WiFi / Bluetooth / NFC / Cloud",
+          icon: "wifi",
+          color: "#06b6d4",
+        },
+      ],
+    },
+  ],
 
+  integrations: [
+    {
+      title: "Smart Parking",
+      icon: <DirectionsCarIcon />,
+      hoverColor: "#3b82f6",
+    },
+    {
+      title: "Access Cards & Keypads",
+      icon: <CreditCardIcon />,
+      hoverColor: "#10b981",
+    },
+    {
+      title: "ANPR Cameras",
+      icon: <CameraAltIcon />,
+      hoverColor: "#8b5cf6",
+    },
+    { title: "Remote Control", icon: <WifiIcon />, hoverColor: "#f97316" },
+    { title: "Mobile Apps", icon: <SmartphoneIcon />, hoverColor: "#ec4899" },
+    { title: "BMS Integration", icon: <ApartmentIcon />, hoverColor: "#6366f1" },
+    { title: "Cloud Platforms", icon: <CloudIcon />, hoverColor: "#06b6d4" },
+    { title: "Security Systems", icon: <SecurityIcon />, hoverColor: "#22c55e" },
+  ],
+
+  featureCards: [
+    {
+      title: "Automated Barriers",
+      description: "Durable & precise mechanisms for smooth entry control",
+      icon: <SecurityIcon />,
+    },
+    {
+      title: "Residential Access",
+      description: "Smart, app-controlled entry for homes and gated communities",
+      icon: <HomeIcon />,
+    },
+    {
+      title: "Cloud Management",
+      description: "Centralized dashboards for multi-site control & monitoring",
+      icon: <CloudIcon />,
+    },
+    {
+      title: "24/7 Support",
+      description: "Expert installation, maintenance, and rapid response",
+      icon: <SupportAgentIcon />,
+    },
+  ],
+
+  stats: [
+    { value: "1000+", label: "SYSTEMS INSTALLED" },
+    { value: "99%", label: "CUSTOMER SATISFACTION", highlight: true },
+    { value: "24/7", label: "SUPPORT & MONITORING" },
+    { value: "20+", label: "YEARS EXPERIENCE" },
+  ],
+
+  features: [
+    "Smart access control for doors, gates, and parking",
+    "Seamless integration with cloud and mobile apps",
+    "High-quality biometric, RFID & PIN systems",
+    "Scalable solutions for future automation upgrades",
+  ],
+
+  featureDescrip: [
+    {
+      description:
+        "Advanced automation and access control systems ensure secure, efficient, and convenient management of residential, commercial, and industrial facilities.",
+    },
+  ],
+  featureImg:[
+    {
+      image:"/images/automation/automation7.jpeg"
+    }
+],
     galleryImages: [
       {
         image: "/images/automation/automation7.jpeg",
@@ -1117,84 +1506,143 @@ const services = [
     description:
       "Wireless solutions provide high-performance and seamless connectivity. Designed for wide coverage and stability. Improve mobility and productivity. Suitable for offices, buildings, and campuses. Secure and scalable deployment.",
     image: "/images/wireless/wireless6.jpeg",
-    divisions: [
-      {
-        title: "Wireless Network Setup",
-        description:
-          "Wireless network setup ensures strong signal coverage and reliability. Access points are placed strategically. Supports multiple devices efficiently. Improves user experience. Designed for secure performance.",
-        image: "/images/wireless/wireless.jpeg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Network Optimization and Security",
-        description:
-          "Network optimization improves speed and reliability. Security measures protect against cyber threats. Includes firewall and bandwidth management. Enhances overall network performance. Ideal for business environments.",
-        image: "/images/wireless/wireless2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Longrange Wi-Fi Solutions",
-        description:
-          "Long-range Wi-Fi solutions extend connectivity over large areas. Suitable for campuses and outdoor spaces. Utilizes high-gain antennas and repeaters. Ensures stable connections. Supports multiple users simultaneously.",
-        image: "/images/wireless/wireless3.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Device Integration",
-        description:
-          "Device integration allows seamless connectivity of various smart devices. Supports IoT applications and smart building systems. Enhances automation and control. Improves operational efficiency.",
-        image: "/images/wireless/wireless4.jpeg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Network Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.Offers remote access and control of wireless networks.Enhances security monitoring and user management.",
-        image: "/images/wireless/wireless5.jpeg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.We ensure all systems function optimally year-round.Additional support includes emergency repairs and routine check-ups.",
-        image: "/images/wireless/wireless6.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
-    stats: [
-      { label: "Projects Completed", value: "500+" },
-      { label: "Client Satisfaction", value: "98%" },
-      { label: "Support Availability", value: "24/7" },
-      { label: "Years of Experience", value: "15+" },
-    ],
-    features: [
-      "Enterprise Wi-Fi deployment",
-      "High-speed internet coverage",
-      "Secure wireless access",
-      "Scalable network design",
-    ],
 
-    specs: [
-      {
-        label: "Technology",
-        value: "Wi-Fi 6 / Mesh",
-        icons: SettingsOutlinedIcon,
-      },
-      { label: "Coverage", value: "Indoor & Outdoor", icons: SquareIcon },
-      {
-        label: "Security",
-        value: "WPA3 Encryption",
-        icons: MarginOutlinedIcon,
-      },
-    ],
+    highlightServices: [
+    {
+      title: "Wireless Access Control",
+      subtitle: "Smart RFID, biometric & PIN entry with real-time monitoring",
+      image: "/images/wireless/wireless2.jpeg",
+    },
+    {
+      title: "Wireless Surveillance",
+      subtitle: "CCTV & ANPR cameras with cloud connectivity",
+      image: "/images/wireless/wireless3.jpeg",
+    },
+  ],
 
-    integrationItems: [
-      { label: "Network Switches", icon: <SettingsOutlinedIcon /> },
-      { label: "Cloud Management", icon: <WifiIcon /> },
-      { label: "Security Systems", icon: <CameraAltIcon /> },
-    ],
+  highlightText: [
+    {
+      title: "Complete Wireless Solutions",
+      description:
+        "End-to-end wireless systems for commercial, residential, and industrial applications, ensuring seamless automation and connectivity.",
+    },
+  ],
 
-    useCases: ["Offices", "Hotels", "Campuses", "Retail Spaces"],
+  specsContent: [
+    {
+      header: {
+        chip: "Technical Specs",
+        title: "Designed for ",
+        highlight: "Wireless Excellence",
+        description:
+          "Advanced wireless engineering meets premium materials for secure, reliable, and scalable solutions.",
+      },
+      cards: [
+        {
+          id: "01",
+          label: "OPERATION",
+          value: "Automatic / Remote / Mobile App",
+          icon: "settings",
+          color: "#3b82f6",
+        },
+        {
+          id: "02",
+          label: "MATERIAL",
+          value: "Durable Polycarbonate & Aluminum",
+          icon: "material",
+          color: "#10b981",
+        },
+        {
+          id: "03",
+          label: "USE CASE",
+          value: "Residential, Commercial & Industrial",
+          icon: "building",
+          color: "#8b5cf6",
+        },
+        {
+          id: "04",
+          label: "WIRELESS RANGE",
+          value: "Up to 100m",
+          icon: "measure",
+          color: "#f97316",
+        },
+        {
+          id: "05",
+          label: "RESPONSE TIME",
+          value: "Instant / <1 Second",
+          icon: "speed",
+          color: "#fb7185",
+        },
+        {
+          id: "06",
+          label: "CONNECTIVITY",
+          value: "WiFi / Bluetooth / Zigbee / Cloud",
+          icon: "wifi",
+          color: "#06b6d4",
+        },
+      ],
+    },
+  ],
+
+  integrations: [
+    { title: "Smart Homes", icon: <HomeIcon />, hoverColor: "#3b82f6" },
+    { title: "IoT Devices", icon: <DevicesIcon />, hoverColor: "#10b981" },
+    { title: "Cloud Platforms", icon: <CloudIcon />, hoverColor: "#8b5cf6" },
+    { title: "Mobile Apps", icon: <SmartphoneIcon />, hoverColor: "#f97316" },
+    { title: "Security Systems", icon: <SecurityIcon />, hoverColor: "#ec4899" },
+    { title: "BMS Integration", icon: <ApartmentIcon />, hoverColor: "#6366f1" },
+    { title: "Remote Management", icon: <WifiIcon />, hoverColor: "#06b6d4" },
+    { title: "Automation Controllers", icon: <SettingsIcon />, hoverColor: "#22c55e" },
+  ],
+
+  featureCards: [
+    {
+      title: "Wireless Access",
+      description: "Seamless entry control without wires or complex cabling",
+      icon: <SecurityIcon />,
+    },
+    {
+      title: "Smart Homes & Offices",
+      description: "App-controlled devices for modern residential & commercial spaces",
+      icon: <HomeIcon />,
+    },
+    {
+      title: "Cloud & Remote Management",
+      description: "Control multiple sites from a single dashboard",
+      icon: <CloudIcon />,
+    },
+    {
+      title: "24/7 Support",
+      description: "Expert assistance and rapid troubleshooting anytime",
+      icon: <SupportAgentIcon />,
+    },
+  ],
+
+  stats: [
+    { value: "800+", label: "SYSTEMS DEPLOYED" },
+    { value: "99%", label: "CUSTOMER SATISFACTION", highlight: true },
+    { value: "24/7", label: "REMOTE MONITORING" },
+    { value: "10+", label: "YEARS EXPERIENCE" },
+  ],
+
+  features: [
+    "Wireless access control for doors, gates, and barriers",
+    "Integration with IoT and cloud-based platforms",
+    "Smart mobile app management for multiple devices",
+    "Scalable systems ready for future automation upgrades",
+  ],
+
+  featureDescrip: [
+    {
+      description:
+        "Advanced wireless solutions for secure, efficient, and fully automated management of residential, commercial, and industrial environments.",
+    },
+  ],
+  featureImg:[
+    {
+      image:"/images/wireless/wireless7.jpeg"
+    }
+  ],
 
     galleryImages: [
       {
@@ -1292,80 +1740,139 @@ const services = [
 
     image: "/images/home-banner/window-blind.jpg",
 
-    divisions: [
-      {
-        title: "Motorized Window Blinds",
-        description:
-          "Motorized window blinds offer effortless control using remotes or smart devices. Provide smooth and silent operation. Ideal for large windows and modern interiors. Enhance convenience and luxury.",
-        image: "/images/window/window1.jpeg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Manual Window Blinds",
-        description:
-          "Manual blinds provide reliable and cost-effective light control. Available in various styles and materials. Easy to operate and maintain. Suitable for residential and office spaces.",
-        image: "/images/window/window2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Smart Blind Automation",
-        description:
-          "Smart blind automation allows scheduling and remote control. Integrates with smart home systems. Improves energy efficiency and convenience. Ideal for modern buildings.",
-        image: "/images/window/window3.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Smart Home Integration",
-        description:
-          "Window blinds integrate seamlessly with smart home platforms. Enables voice control and automation routines. Enhances comfort and energy savings.",
-        image: "/images/window/window5.jpeg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Centralized Control",
-        description:
-          "Centralized control systems manage multiple blinds simultaneously. Suitable for offices, hotels, and large residences. Improves operational efficiency.",
-        image: "/images/window/window6.jpeg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Expert installation ensures smooth functionality. Maintenance services ensure durability and performance. Includes adjustments and replacements.",
-        image: "/images/window/window7.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
+   highlightServices: [
+    {
+      title: "Motorized Blinds",
+      subtitle: "Automated roller, Venetian, and vertical blinds",
+      image: "/images/window/window2.jpeg",
+    },
+    {
+      title: "Smart Control",
+      subtitle: "App, remote, and voice-controlled shading solutions",
+      image: "/images/window/window3.jpeg",
+    },
+  ],
 
-    features: [
-      "Light & privacy control",
-      "Motorized & manual options",
-      "Smart home compatibility",
-      "Modern and elegant designs",
-    ],
+  highlightText: [
+    {
+      title: "Complete Window Blinds Solutions",
+      description:
+        "End-to-end smart shading systems for homes, offices, and commercial spaces, combining comfort, style, and automation.",
+    },
+  ],
 
-    specs: [
-      {
-        label: "Blind Types",
-        value: "Roller, Vertical, Venetian",
-        icons: SettingsOutlinedIcon,
+  specsContent: [
+    {
+      header: {
+        chip: "Technical Specs",
+        title: "Designed for ",
+        highlight: "Comfort & Control",
+        description:
+          "Premium materials and advanced motorization ensure smooth, reliable, and quiet operation.",
       },
-      {
-        label: "Control",
-        value: "Manual, Remote, Smart App",
-        icons: SquareIcon,
-      },
-      {
-        label: "Applications",
-        value: "Homes & Offices",
-        icons: MarginOutlinedIcon,
-      },
-    ],
+      cards: [
+        {
+          id: "01",
+          label: "OPERATION",
+          value: "Automatic / Remote / App-Controlled",
+          icon: "settings",
+          color: "#3b82f6",
+        },
+        {
+          id: "02",
+          label: "MATERIAL",
+          value: "Aluminum, Fabric, Wood",
+          icon: "material",
+          color: "#10b981",
+        },
+        {
+          id: "03",
+          label: "USE CASE",
+          value: "Residential & Commercial",
+          icon: "building",
+          color: "#8b5cf6",
+        },
+        {
+          id: "04",
+          label: "WIDTH RANGE",
+          value: "0.5m – 4m",
+          icon: "measure",
+          color: "#f97316",
+        },
+        {
+          id: "05",
+          label: "SPEED",
+          value: "5 – 15 Seconds per Cycle",
+          icon: "speed",
+          color: "#fb7185",
+        },
+        {
+          id: "06",
+          label: "CONNECTIVITY",
+          value: "WiFi / Bluetooth / Zigbee / Voice Assistants",
+          icon: "wifi",
+          color: "#06b6d4",
+        },
+      ],
+    },
+  ],
 
-    integrationItems: [
-      { label: "Smart Home Systems", icon: <SettingsOutlinedIcon /> },
-      { label: "Mobile Control", icon: <WifiIcon /> },
-      { label: "Automation Platforms", icon: <CameraAltIcon /> },
+  integrations: [
+    { title: "Smart Homes", icon: <HomeIcon />, hoverColor: "#3b82f6" },
+    { title: "Mobile Apps", icon: <SmartphoneIcon />, hoverColor: "#10b981" },
+    { title: "Voice Control", icon: <MicIcon />, hoverColor: "#8b5cf6" },
+    { title: "Cloud Platforms", icon: <CloudIcon />, hoverColor: "#f97316" },
+    { title: "BMS Integration", icon: <ApartmentIcon />, hoverColor: "#ec4899" },
+    { title: "Lighting & HVAC Systems", icon: <LightbulbIcon />, hoverColor: "#6366f1" },
+    { title: "Energy Management", icon: <BoltIcon />, hoverColor: "#06b6d4" },
+    { title: "Security Systems", icon: <SecurityIcon />, hoverColor: "#22c55e" },
+  ],
+
+  featureCards: [
+    {
+      title: "Automated Blinds",
+      description: "Smooth and quiet motorized operation for comfort and style",
+      icon: <SettingsIcon />,
+    },
+    {
+      title: "Smart Home Integration",
+      description: "Control multiple blinds via app or voice commands",
+      icon: <HomeIcon />,
+    },
+    {
+      title: "Energy Efficiency",
+      description: "Optimize natural light and reduce cooling/heating costs",
+      icon: <CloudIcon />,
+    },
+    {
+      title: "24/7 Support",
+      description: "Professional installation and responsive assistance",
+      icon: <SupportAgentIcon />,
+    },
+  ],
+
+  stats: [
+    { value: "1000+", label: "BLINDS INSTALLED" },
+    { value: "99%", label: "CUSTOMER SATISFACTION", highlight: true },
+    { value: "24/7", label: "REMOTE SUPPORT" },
+    { value: "15+", label: "YEARS EXPERIENCE" },
+  ],
+
+  features: [
+    "Motorized blinds for windows, skylights, and large glass facades",
+    "Integration with smart home and building management systems",
+    "Control via mobile apps, remote, and voice assistants",
+    "Energy-saving and stylish shading solutions",
+  ],
+
+  featureDescrip: [
+    {
+      description:
+        "Advanced window blinds solutions offering automated, app-controlled, and voice-assisted shading for homes and commercial spaces, combining convenience, aesthetics, and energy efficiency.",
+    },
+  ],
+    featureImg:[
+      {image:"/images/window/window8.jpeg"}
     ],
     galleryImages: [
       {
@@ -1442,13 +1949,6 @@ const services = [
       },
     ],
 
-    useCases: [
-      "Residential Homes",
-      "Office Spaces",
-      "Hotels",
-      "Commercial Buildings",
-    ],
-
     ctaText: "Request Window Blinds Solution",
   },
   {
@@ -1459,82 +1959,143 @@ const services = [
 
     image: "/images/home-banner/garage-door-1.webp",
 
-    divisions: [
-      {
-        title: "Automatic Garage Doors",
+   highlightServices: [
+    {
+      title: "Automatic Garage Doors",
+      subtitle: "Motorized doors with remote, app, and smart controls",
+      image: "/images/garage/garage2.jpeg",
+    },
+    {
+      title: "Smart Security Systems",
+      subtitle: "Integrated CCTV, sensors, and access monitoring",
+      image: "/images/garage/garage3.jpeg",
+    },
+  ],
+
+  highlightText: [
+    {
+      title: "Complete Garage Door Solutions",
+      description:
+        "End-to-end systems for residential, commercial, and industrial garage doors, combining security, automation, and convenience.",
+    },
+  ],
+
+  specsContent: [
+    {
+      header: {
+        chip: "Technical Specs",
+        title: "Engineered for ",
+        highlight: "Reliability & Safety",
         description:
-          "Automatic garage doors offer smooth and secure entry using motorized systems. They can be operated via remote control, wall switches, or smart devices. Designed for frequent use with safety sensors and locking mechanisms. Ideal for homes, apartments, and commercial garages. Built to withstand heavy usage and weather conditions.",
-        image: "/images/garage/garage1.jpeg ",
-        icon: <SecurityOutlinedIcon />,
+          "High-quality materials and precision engineering ensure smooth, durable, and secure garage door operation.",
       },
+      cards: [
+        {
+          id: "01",
+          label: "OPERATION",
+          value: "Automatic / Remote / Manual",
+          icon: "settings",
+          color: "#3b82f6",
+        },
+        {
+          id: "02",
+          label: "MATERIAL",
+          value: "Galvanized Steel / Aluminum / Wood",
+          icon: "material",
+          color: "#10b981",
+        },
+        {
+          id: "03",
+          label: "USE CASE",
+          value: "Residential & Commercial",
+          icon: "building",
+          color: "#8b5cf6",
+        },
+        {
+          id: "04",
+          label: "DOOR SIZE",
+          value: "Up to 6m Width / 4.5m Height",
+          icon: "measure",
+          color: "#f97316",
+        },
+        {
+          id: "05",
+          label: "SPEED",
+          value: "3 – 10 Seconds per Cycle",
+          icon: "speed",
+          color: "#fb7185",
+        },
+        {
+          id: "06",
+          label: "CONNECTIVITY",
+          value: "WiFi / Bluetooth / App / Remote",
+          icon: "wifi",
+          color: "#06b6d4",
+        },
+      ],
+    },
+  ],
+
+  integrations: [
+    { title: "Smart Homes", icon: <HomeIcon />, hoverColor: "#3b82f6" },
+    { title: "Mobile Apps", icon: <SmartphoneIcon />, hoverColor: "#10b981" },
+    { title: "Remote Access", icon: <WifiIcon />, hoverColor: "#8b5cf6" },
+    { title: "CCTV Integration", icon: <CameraAltIcon />, hoverColor: "#f97316" },
+    { title: "BMS & Automation", icon: <ApartmentIcon />, hoverColor: "#ec4899" },
+    { title: "Cloud Monitoring", icon: <CloudIcon />, hoverColor: "#6366f1" },
+    { title: "Security Systems", icon: <SecurityIcon />, hoverColor: "#06b6d4" },
+    { title: "Energy Management", icon: <BoltIcon />, hoverColor: "#22c55e" },
+  ],
+
+  featureCards: [
+    {
+      title: "Motorized Garage Doors",
+      description: "Smooth and quiet operation for residential and commercial spaces",
+      icon: <SettingsIcon />,
+    },
+    {
+      title: "Smart Control",
+      description: "Operate doors via app, remote, or smart home systems",
+      icon: <HomeIcon />,
+    },
+    {
+      title: "Safety & Security",
+      description: "Integrated sensors, alarms, and CCTV for complete protection",
+      icon: <SecurityIcon />,
+    },
+    {
+      title: "24/7 Support",
+      description: "Professional installation and responsive assistance",
+      icon: <SupportAgentIcon />,
+    },
+  ],
+
+  stats: [
+    { value: "700+", label: "GARAGE DOORS INSTALLED" },
+    { value: "99%", label: "CUSTOMER SATISFACTION", highlight: true },
+    { value: "24/7", label: "REMOTE MONITORING" },
+    { value: "15+", label: "YEARS EXPERIENCE" },
+  ],
+
+  features: [
+    "Motorized and automated garage doors for homes and commercial facilities",
+    "Integration with mobile apps and smart home systems",
+    "High-quality materials ensuring durability and smooth operation",
+    "Safety sensors, alarms, and smart monitoring for full protection",
+  ],
+
+  featureDescrip: [
+    {
+      description:
+        "Advanced garage door solutions providing automation, security, and smart control for residential, commercial, and industrial spaces.",
+    },
+  ],
+    featureImg:[
       {
-        title: "Rolling Shutter Garage Doors",
-        description:
-          "Rolling shutter garage doors provide space-saving and high-security access. The vertical rolling design maximizes interior space. Motorized operation ensures effortless opening and closing. Suitable for residential garages, shops, and warehouses. Manufactured using strong and corrosion-resistant materials.",
-        image: "/images/garage/garage2.jpeg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Sectional Garage Doors",
-        description:
-          "Sectional garage doors open vertically and slide along ceiling tracks. They offer excellent insulation and smooth operation. Designed to improve energy efficiency and noise reduction. Suitable for modern homes and commercial facilities. Customizable designs match architectural styles.",
-        image: "/images/garage/garage3.jpeg ",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Smart Garage Door Integration",
-        description:
-          "Smart integration enables remote monitoring and control of garage doors. Supports mobile apps, access logs, and safety alerts. Enhances convenience and security. Ideal for smart homes and commercial facilities.",
-        image: "/images/garage/garage4.jpeg",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Remote Monitoring & Control",
-        description:
-          "Remote monitoring allows real-time status checks and control from anywhere. Helps prevent unauthorized access. Suitable for multi-garage installations and commercial properties.",
-        image: "/images/garage/garage5.jpeg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation ensures smooth and safe operation. Regular maintenance extends system lifespan. Includes emergency support and performance inspections.",
-        image: "/images/garage/garage6.jpeg",
-        icon: <BuildOutlinedIcon />,
-      },
+        image:"/images/garage/garage7.jpeg"
+      }
     ],
 
-    features: [
-      "Automated opening & closing",
-      "High-strength and weather-resistant materials",
-      "Smart & remote control compatibility",
-      "Safe, smooth, and silent operation",
-    ],
-
-    specs: [
-      {
-        label: "Door Types",
-        value: "Sectional, Rolling, Automatic",
-        icons: SettingsOutlinedIcon,
-      },
-      {
-        label: "Control Options",
-        value: "Remote, Wall Switch, Mobile App",
-        icons: SquareIcon,
-      },
-      {
-        label: "Usage",
-        value: "Residential & Commercial",
-        icons: MarginOutlinedIcon,
-      },
-    ],
-
-    integrationItems: [
-      { label: "Smart Home Systems", icon: <ApartmentIcon /> },
-      { label: "CCTV Systems", icon: <CameraAltIcon /> },
-      { label: "Access Control", icon: <LocalParkingIcon /> },
-      { label: "Mobile Access", icon: <PhoneIphoneIcon /> },
-    ],
     galleryImages: [
       {
         image: "/images/garage/garage7.jpeg",
@@ -1608,13 +2169,6 @@ const services = [
       },
     ],
 
-    useCases: [
-      "Residential Garages",
-      "Commercial Parking",
-      "Warehouses",
-      "Industrial Facilities",
-    ],
-
     ctaText: "Request Garage Door Solution",
   },
 ];
@@ -1623,12 +2177,47 @@ const services = [
    COMPONENT
 ========================= */
 const ServicesDetail = () => {
+  const renderIcon = (icon) => {
+    switch (icon) {
+      case "settings":
+        return <SettingsIcon />;
+         case "office":
+        return <OfficeIcon />;
+        case "fingerprint":
+        return <FingerprintIcon />;
+        case "battery":
+        return <BatteryFullIcon/>;
+         case "tools":
+        return <ToolsIcon />;
+         case "schedule":
+        return <ScheduleIcon />;
+         case "camera":
+        return <CameraAltOutlinedIcon />;
+         case "storage":
+        return <SdStorageIcon />;
+         case "key":
+        return <KeyIcon />;
+         case "monitor":
+        return <MonitorIcon />;
+      case "material":
+        return <BuildIcon />;
+      case "building":
+        return <ApartmentIcon />;
+      case "measure":
+        return <StraightenIcon />;
+      case "speed":
+        return <SpeedIcon />;
+      case "wifi":
+        return <WifiIcon />;
+      default:
+        return null;
+    }
+  };
   const params = useParams();
   const id = params?.id;
   const numericId = id ? Number.parseInt(id || "", 10) : NaN;
 
   const service = services.find((s) => s.id === numericId);
-
   return (
     <Box sx={{ backgroundColor: offWhiteColor, minHeight: "100vh" }}>
       {/* =====================
@@ -1697,368 +2286,239 @@ const ServicesDetail = () => {
       </Box>
 
       <>
-     {/* Higlights and Featuring cards */}
-<Box
-  sx={{
-    my: 15,
-    px: { xs: 2, md: 4 },
-    justifySelf: "center",
-  }}
-  maxWidth="lg"
->
-  <Stack
-    direction={{ xs: "column", lg: "row" }}
-    gap={4}
-    justifyContent="center"
-    alignItems={{ xs: "center", lg: "flex-start" }}
-  >
-    {/* LEFT CONTENT */}
-    {service.highlightText.map((item, index) => (
-      <Grid
-        item
-        key={index}
-        xs={12}
-        md={5}
-        sx={{
-          textAlign: { xs: "center", lg: "left" },
-        }}
-      >
-        <Chip
-          label="Our Services"
+        {/* Higlights and Featuring cards */}
+        <Box
           sx={{
-            mb: 2,
-            fontWeight: 600,
-            backgroundColor: "#0f1c3f",
-            color: "#fff",
+            my: 15,
+            px: { xs: 2, md: 4 },
+            justifySelf: "center",
           }}
-        />
-
-        <Typography
-          sx={{
-            fontWeight: 700,
-            mb: 2,
-            lineHeight: 1.2,
-            fontSize:{xs:35,sm:45},
-            maxWidth: 450,
-            mx: { xs: "auto", lg: 0 },
-          }}
+          maxWidth="lg"
         >
-          {item.title}
-        </Typography>
-
-        <Typography
-          sx={{
-            color: "#6b7280",
-            maxWidth: 420,
-            mx: { xs: "auto", lg: 0 },
-          }}
-        >
-          {item.description}
-        </Typography>
-      </Grid>
-    ))}
-
-    {/* RIGHT IMAGE CARDS */}
-    <Grid item xs={12} md={7}>
-      <Stack
-        direction="row"
-        gap={5}
-        flexWrap={{ xs: "wrap", lg: "nowrap" }}
-        justifyContent={{ xs: "center", lg: "flex-start" }}
-      >
-        {service.highlightServices.map((item, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Box
-              sx={{
-                position: "relative",
-                height: 240,
-                borderRadius: 4,
-                overflow: "hidden",
-                boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
-                minWidth: { xs: "100%", sm: 320 },
-                maxWidth: { xs: 360, lg: "unset" },
-              }}
-            >
-              <Box
-                component="img"
-                src={item.image}
-                alt={item.title}
+          <Stack
+            direction={{ xs: "column", lg: "row" }}
+            gap={4}
+            justifyContent="center"
+            alignItems={{ xs: "center", lg: "flex-start" }}
+          >
+            {/* LEFT CONTENT */}
+            {service.highlightText.map((item, index) => (
+              <Grid
+                item
+                key={index}
+                xs={12}
+                md={5}
                 sx={{
-                  width: "100%",
-                  height: "100%",
-                  objectFit: "cover",
-                }}
-              />
-
-              <Box
-                sx={{
-                  position: "absolute",
-                  inset: 0,
-                  background:
-                    "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
-                  display: "flex",
-                  alignItems: "flex-end",
-                  p: 2,
+                  textAlign: { xs: "center", lg: "left" },
                 }}
               >
-                <Box>
-                  <Typography
-                    sx={{
-                      color: "#fff",
-                      fontWeight: 700,
-                      fontSize: "1rem",
-                    }}
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    sx={{
-                      color: "#d1d5db",
-                      fontSize: "0.85rem",
-                    }}
-                  >
-                    {item.subtitle}
-                  </Typography>
-                </Box>
-              </Box>
-            </Box>
+                <Chip
+                  label="Our Services"
+                  sx={{
+                    mb: 2,
+                    fontWeight: 600,
+                    backgroundColor: "#0f1c3f",
+                    color: "#fff",
+                  }}
+                />
+
+                <Typography
+                  sx={{
+                    fontWeight: 700,
+                    mb: 2,
+                    lineHeight: 1.2,
+                    fontSize: { xs: 35, sm: 45 },
+                    maxWidth: 450,
+                    mx: { xs: "auto", lg: 0 },
+                  }}
+                >
+                  {item.title}
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#6b7280",
+                    maxWidth: 420,
+                    mx: { xs: "auto", lg: 0 },
+                  }}
+                >
+                  {item.description}
+                </Typography>
+              </Grid>
+            ))}
+
+            {/* RIGHT IMAGE CARDS */}
+            <Grid item xs={12} md={7}>
+              <Stack
+                direction="row"
+                gap={5}
+                flexWrap={{ xs: "wrap", lg: "nowrap" }}
+                justifyContent={{ xs: "center", lg: "flex-start" }}
+              >
+                {service.highlightServices.map((item, index) => (
+                  <Grid item xs={12} sm={6} key={index}>
+                    <Box
+                      sx={{
+                        position: "relative",
+                        height: 240,
+                        borderRadius: 4,
+                        overflow: "hidden",
+                        boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+                        minWidth: { xs: "100%", sm: 320 },
+                        maxWidth: { xs: 360, lg: "unset" },
+                      }}
+                    >
+                      <Box
+                        component="img"
+                        src={item.image}
+                        alt={item.title}
+                        sx={{
+                          width: "100%",
+                          height: "100%",
+                          objectFit: "cover",
+                        }}
+                      />
+
+                      <Box
+                        sx={{
+                          position: "absolute",
+                          inset: 0,
+                          background:
+                            "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
+                          display: "flex",
+                          alignItems: "flex-end",
+                          p: 2,
+                        }}
+                      >
+                        <Box>
+                          <Typography
+                            sx={{
+                              color: "#fff",
+                              fontWeight: 700,
+                              fontSize: "1rem",
+                            }}
+                          >
+                            {item.title}
+                          </Typography>
+                          <Typography
+                            sx={{
+                              color: "#d1d5db",
+                              fontSize: "0.85rem",
+                            }}
+                          >
+                            {item.subtitle}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    </Box>
+                  </Grid>
+                ))}
+              </Stack>
+            </Grid>
+          </Stack>
+
+          {/* FEATURE CARDS */}
+          <Grid container spacing={3} sx={{ mt: 6 }} justifyContent="center">
+            {service.featureCards.map((card, index) => (
+              <Grid item xs={12} sm={6} md={3} key={index}>
+                <Card
+                  sx={{
+                    height: "100%",
+                    borderRadius: 4,
+                    boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+                    transition: "0.3s ease",
+                    minWidth: 250,
+                    maxWidth: { xs: "100%", sm: 260 },
+                    mx: "auto",
+                    "&:hover": {
+                      transform: "translateY(-6px)",
+                      boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
+                    },
+                  }}
+                >
+                  <CardContent sx={{ p: 3 }}>
+                    <Box
+                      sx={{
+                        width: 42,
+                        height: 42,
+                        borderRadius: 2,
+                        backgroundColor: "#eef2ff",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        mb: 2,
+                      }}
+                    >
+                      {card.icon}
+                    </Box>
+
+                    <Typography sx={{ fontWeight: 700, mb: 1 }}>
+                      {card.title}
+                    </Typography>
+
+                    <Typography sx={{ color: "#6b7280", fontSize: "0.9rem" }}>
+                      {card.description}
+                    </Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
           </Grid>
-        ))}
-      </Stack>
-    </Grid>
-  </Stack>
-
-  {/* FEATURE CARDS */}
-  <Grid
-    container
-    spacing={3}
-    sx={{ mt: 6 }}
-    justifyContent="center"
-  >
-    {service.featureCards.map((card, index) => (
-      <Grid item xs={12} sm={6} md={3} key={index}>
-        <Card
-          sx={{
-            height: "100%",
-            borderRadius: 4,
-            boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
-            transition: "0.3s ease",
-            minWidth: 250,
-            maxWidth: { xs: "100%", sm: 260 },
-            mx: "auto",
-            "&:hover": {
-              transform: "translateY(-6px)",
-              boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
-            },
-          }}
-        >
-          <CardContent sx={{ p: 3 }}>
-            <Box
-              sx={{
-                width: 42,
-                height: 42,
-                borderRadius: 2,
-                backgroundColor: "#eef2ff",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                mb: 2,
-              }}
-            >
-              {card.icon}
-            </Box>
-
-            <Typography sx={{ fontWeight: 700, mb: 1 }}>
-              {card.title}
-            </Typography>
-
-            <Typography sx={{ color: "#6b7280", fontSize: "0.9rem" }}>
-              {card.description}
-            </Typography>
-          </CardContent>
-        </Card>
-      </Grid>
-    ))}
-  </Grid>
-</Box>
-
-  {/* Premium Access Control Solution */}
-<Box sx={{ my: { xs: 8, md: 12 }, px: { xs: 2, md: 4 } }}>
-  <Stack
-    direction={{ xs: "column", lg: "row" }}   //  responsive only
-    gap={{ xs: 5, lg: 6 }}
-    maxWidth="lg"
-    mx="auto"
-    alignItems={{ xs: "center", lg: "flex-start" }}
-  >
-    {/* IMAGE SECTION */}
-    <Box
-      sx={{
-        width: { xs: "100%", sm: "85%", lg: "auto" },
-        minWidth: { lg: 430 },                 //  only on large
-        maxWidth: { lg: 500 },
-      }}
-    >
-      <Box
-        sx={{
-          position: "relative",
-          borderRadius: 4,
-          overflow: "hidden",
-          boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
-        }}
-      >
-        <Box
-          component="img"
-          src="/images/parking/parking1.jpg"
-          alt="Access Control"
-          sx={{
-            width: "100%",
-            height: { xs: 240, sm: 320, md: 360, lg: 420 },
-            objectFit: "cover",
-          }}
-        />
-
-        {/* ORANGE BADGE */}
-        <Box
-          sx={{
-            position: "absolute",
-            bottom: 24,
-            right: 24,
-            backgroundColor: "#f59e0b",
-            color: "#000",
-            px: 3,
-            py: 2,
-            borderRadius: 3,
-            boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
-            textAlign: "center",
-            minWidth: 120,
-          }}
-        >
-          <Typography sx={{ fontWeight: 800, fontSize: "1.5rem" }}>
-            100%
-          </Typography>
-          <Typography sx={{ fontSize: "0.85rem", fontWeight: 600 }}>
-            Quality Assured
-          </Typography>
         </Box>
-      </Box>
-    </Box>
 
-    {/* CONTENT SECTION */}
-    {
-      service.featureDescrip.map((item,index)=>{
-        return(
-           <Box
-           key={index}
-      sx={{
-        width: "100%",
-        maxWidth: 800,
-        textAlign: { xs: "center", lg: "left" },
-      }}
-    >
-      <Chip
-        label="WHY CHOOSE US"
-        sx={{
-          mb: 2,
-          backgroundColor: "#fde68a",
-          color: "#92400e",
-          fontWeight: 700,
-        }}
-      />
-
-      <Typography
-        sx={{
-          fontWeight: 800,
-          lineHeight: 1.2,
-          mb: 2,
-          fontSize:{xs:30,sm:45}
-        }}
-      >
-        Premium Access <br /> Control Solutions
-      </Typography>
-
-      <Typography
-        sx={{
-          color: "#6b7280",
-          maxWidth: 480,
-          mx: { xs: "auto", lg: 0 },   //  center on mobile
-          mb: 4,
-        }}
-      >
-      {item.description}
-      </Typography>
-
-      {/* FEATURES GRID */}
-      <Grid container spacing={2} justifyContent={['center','center','center','flex-start']}>
-        {service.features.map((feature, index) => (
-          <Grid item xs={12} sm={6} key={index}>
-            <Paper
-              elevation={0}
-              sx={{
-                p: 2,
-                display: "flex",
-                alignItems: "center",
-                gap: 1.5,
-                borderRadius: 2,
-                border: "1px solid #e5e7eb",
-                justifyContent: { xs: "center", sm: "flex-start" },
-              }}
-            >
-              <CheckCircleIcon sx={{ color: "#0f1c3f" }} />
-              <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
-                {feature}
-              </Typography>
-            </Paper>
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-        )
-      })
-    }
-   
-  </Stack>
-</Box>
-
-        {/* Stats Section */}
-        <Box my={5}>
-          <Container maxWidth="lg">
-            <Grid
-              container
-              spacing={4}
-              justifyContent="center"
-              textAlign="center"
-            >
-              {(service.stats || []).map((stat, index) => (
+        {/* Stats Section  */}
+        <Box
+          sx={{
+            backgroundColor: "#1b2a4a",
+            py: { xs: 3, md: 4 },
+          }}
+        >
+          <Container>
+            <Grid container alignItems="center" justifyContent="space-between">
+              {service.stats.map((stat, index) => (
                 <Grid
                   item
                   xs={12}
-                  sm={4}
+                  sm={6}
+                  md={3}
                   key={index}
-                  boxShadow={5}
-                  width={250}
                   sx={{
-                    px: {xs:1,sm:3},
-                    py: {xs:1.5,sm:3},
-                    borderRadius: "16px",
-                    bgcolor: "white",
+                    textAlign: "center",
+                    position: "relative",
+                    py: { xs: 2, md: 0 },
+
+                    /* Vertical divider on desktop only */
+                    "&::after": {
+                      content: index !== stat.length - 1 ? '""' : "none",
+                      position: "absolute",
+                      right: -10,
+                      top: "50%",
+                      transform: "translateY(-50%)",
+                      height: "40px",
+                      width: "1px",
+                      backgroundColor: "rgba(207, 207, 207, 0.62)",
+                      display: { xs: "none", md: "block" },
+                    },
                   }}
                 >
                   <Typography
-                    variant="h3"
                     sx={{
-                      color: primaryColor,
-                      fontWeight: 700,
-                      fontSize: { xs: "2.2rem", md: "3rem" },
+                      fontSize: { xs: "2rem", md: "2.6rem" },
+                      fontWeight: 800,
+                      color: stat.highlight ? "#facc15" : "#ffffff",
+                      lineHeight: 1,
                     }}
                   >
                     {stat.value}
                   </Typography>
+
                   <Typography
                     sx={{
-                      color: offBlackTextLight,
-                      mt: 1,
-                      fontSize: "1.2rem",
+                      mt: 0.5,
+                      fontSize: "0.75rem",
+                      letterSpacing: "0.12em",
+                      color: "#e5e7eb",
+                      fontWeight: 600,
                     }}
                   >
                     {stat.label}
@@ -2069,337 +2529,400 @@ const ServicesDetail = () => {
           </Container>
         </Box>
 
-        {/* Features - With Icons */}
-        <Container
-          maxWidth="lg"
-          sx={{ py: { xs: 6, md: 10 }, justifyContent: "center" }}
-        >
-          <Box sx={{ textAlign: "center", mb: 4 }}>
-            <Chip
-              label="About This Service"
+        {/* Premium Access Control Solution */}
+        <Box sx={{ my: { xs: 8, md: 12 }, px: { xs: 2, md: 4 } }}  justifyItems={'center'} >
+          <Stack
+            direction={{ xs: "column", lg: "row" }} //  responsive only
+            gap={{ xs: 5, lg: 6 }}
+            mx="auto"
+            alignItems={{ xs: "center", lg: "flex-start" }}
+          >
+            {/* IMAGE SECTION */}
+            <Box
               sx={{
-                bgcolor: primaryLight,
-                color: primaryColor,
-                fontWeight: 600,
-                borderRadius: "50px",
-                px: 3,
-                py: 2.5,
+                width: { xs: "100%", sm: "85%", lg: "auto" },
+                minWidth: { lg: 430 }, //  only on large
+                maxWidth: { lg: 500 },
               }}
-            />
-          </Box>
-
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
-          >
-            Premium Access Control Solutions
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: "center",
-              mb: 8,
-              color: offBlackTextLight,
-              maxWidth: 800,
-              mx: "auto",
-            }}
-          >
-            Automated parking barrier systems for secure and efficient access
-            control, designed for commercial and residential parking facilities.
-          </Typography>
-
-          <Grid
-            container
-            spacing={4}
-            justifyContent={"center"}
-            justifySelf={"center"}
-            maxWidth={[800,800,1000,1200]}
-          >
-            {service.features.map((feature, index) => {
-              const icons = ["✓", "🛡️", "⚡", "🔧"];
-              const icon = icons[index];
-
-              return (
-                <Grid item xs={12} sm={6} key={index} width={["90%", 320,400,500]}>
+            >
+              {service.featureImg.map((item, index) => {
+                return (
                   <Box
+                    key={index}
                     sx={{
-                      bgcolor: "white",
-                      borderRadius: "16px",
-                      p: 2,
-                      boxShadow: 2,
-                      display: "flex",
-                      alignItems: "center",
-                      gap: 1,
-                      height: "100%",
+                      position: "relative",
+                      borderRadius: 4,
+                      overflow: "hidden",
+                      boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
                     }}
                   >
                     <Box
+                      component="img"
+                      src={item.image}
+                      alt="Access Control"
                       sx={{
-                        bgcolor: primaryLight + "33",
-                        width: 56,
-                        height: 56,
-                        borderRadius: "12px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        flexShrink: 0,
+                        width: "100%",
+                        height: { xs: 240, sm: 320, md: 360, lg: 420 },
+                        objectFit: "cover",
+                      }}
+                    />
+
+                    {/* ORANGE BADGE */}
+                    <Box
+                      sx={{
+                        position: "absolute",
+                        bottom: 24,
+                        right: 24,
+                        backgroundColor: "#f59e0b",
+                        color: "#000",
+                        px: 3,
+                        py: 2,
+                        borderRadius: 3,
+                        boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
+                        textAlign: "center",
+                        minWidth: 120,
                       }}
                     >
-                      <Typography
-                        sx={{ fontSize: "1.8rem", color: primaryColor }}
-                      >
-                        {icon}
+                      <Typography sx={{ fontWeight: 800, fontSize: "1.5rem" }}>
+                        100%
+                      </Typography>
+                      <Typography sx={{ fontSize: "0.85rem", fontWeight: 600 }}>
+                        Quality Assured
                       </Typography>
                     </Box>
-                    <Typography
-                      sx={{
-                        fontWeight: 600,
-                        fontSize: "1.1rem",
-                        color: offBlackText,
-                      }}
-                    >
-                      {feature}
-                    </Typography>
                   </Box>
-                </Grid>
-              );
-            })}
-          </Grid>
-        </Container>
-
-        {/* Specifications - With Icons */}
-        <Box sx={{ bgcolor: "#f9f9f9", py: { xs: 6, md: 10 } }}>
-          <Container maxWidth="lg">
-            <Box sx={{ textAlign: "center", mb: 4 }}>
-              <Chip
-                label="Technical Details"
-                sx={{
-                  bgcolor: primaryLight,
-                  color: primaryColor,
-                  fontWeight: 600,
-                  borderRadius: "50px",
-                  px: 3,
-                  py: 2.5,
-                }}
-              />
+                );
+              })}
             </Box>
 
-            <Typography
-              variant="h4"
-              sx={{ textAlign: "center", mb: 6, fontWeight: 700 }}
-            >
-              Specifications
-            </Typography>
+            {/* CONTENT SECTION */}
+            {service.featureDescrip.map((item, index) => {
+              return (
+                <Box
+                  key={index}
+                  sx={{
+                    width: "100%",
+                    maxWidth: 1000,
+                    textAlign: { xs: "center", lg: "left" },
+                  }}
+                >
+                  <Chip
+                    label="WHY CHOOSE US"
+                    sx={{
+                      mb: 2,
+                      backgroundColor: "#fde68a",
+                      color: "#92400e",
+                      fontWeight: 700,
+                    }}
+                  />
 
-            <Grid container spacing={4} justifyContent="center">
-              {service.specs.map((spec, index) => {
-                const IconComponent = spec.icons;
-                return (
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
-                    md={4}
-                    key={index}
-                    width={["90%", 350]}
+                  <Typography
+                    sx={{
+                      fontWeight: 800,
+                      lineHeight: 1.2,
+                      mb: 2,
+                      fontSize: { xs: 30, sm: 45 },
+                    }}
                   >
-                    <Stack
-                      sx={{
-                        bgcolor: "white",
-                        borderRadius: "20px",
-                        p: 4,
-                        boxShadow: 2,
-                        gap: 1.5,
-                      }}
-                    >
+                    Premium Access <br /> Control Solutions
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#6b7280",
+                      maxWidth: 480,
+                      mx: { xs: "auto", lg: 0 }, //  center on mobile
+                      mb: 4,
+                    }}
+                  >
+                    {item.description}
+                  </Typography>
+
+                  {/* FEATURES GRID */}
+                  <Grid
+                    container
+                    spacing={2}
+                    justifyContent={[
+                      "center",
+                      "center",
+                      "center",
+                      "flex-start",
+                    ]}
+                  >
+                    {service.features.map((feature, index) => (
+                      <Grid item xs={12} sm={6} key={index}>
+                        <Paper
+                          elevation={0}
+                          sx={{
+                            p: 2,
+                            display: "flex",
+                            alignItems: "center",
+                            gap: 1.5,
+                            borderRadius: 2,
+                            border: "1px solid #e5e7eb",
+                            justifyContent: { xs: "center", sm: "flex-start" },
+                          }}
+                        >
+                          <CheckCircleIcon sx={{ color: "#0f1c3f" }} />
+                          <Typography
+                            sx={{ fontSize: "0.9rem", fontWeight: 500 }}
+                          >
+                            {feature}
+                          </Typography>
+                        </Paper>
+                      </Grid>
+                    ))}
+                  </Grid>
+                </Box>
+              );
+            })}
+          </Stack>
+        </Box>
+
+        {/* Technical Specs  */}
+        <Box
+          sx={{
+            background: "radial-gradient(circle at top, #111827, #020617)",
+            py: { xs: 8, md: 12 },
+          }}
+        >
+          <Container maxWidth="lg">
+            {service.specsContent.map((section, idx) => (
+              <Box key={idx}>
+                {/* HEADER */}
+                <Stack
+                  spacing={2}
+                  alignItems="center"
+                  textAlign="center"
+                  mb={6}
+                >
+                  <Chip
+                    label={section.header.chip}
+                    sx={{
+                      backgroundColor: "#1f2937",
+                      color: "#e5e7eb",
+                      fontWeight: 600,
+                    }}
+                  />
+
+                  <Typography
+                    variant="h3"
+                    sx={{
+                      fontWeight: 800,
+                      color: "#fff",
+                      fontSize: { xs: "2rem", md: "2.8rem" },
+                    }}
+                  >
+                    {section.header.title}
+                    <Box component="span" sx={{ color: "#facc15" }}>
+                      {section.header.highlight}
+                    </Box>
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      color: "#9ca3af",
+                      maxWidth: 520,
+                      fontSize: "0.95rem",
+                    }}
+                  >
+                    {section.header.description}
+                  </Typography>
+                </Stack>
+
+                {/* CARDS */}
+                <Grid container spacing={3}>
+                  {section.cards.map((item) => (
+                    <Grid item xs={12} sm={6} md={4} key={item.id}>
                       <Box
                         sx={{
-                          width: 43,
-                          height: 43,
-                          backgroundColor: primaryLight,
-                          alignItems: "center",
-                          justifyContent: "center",
-                          borderRadius: "12px",
-                          display: "flex",
-                          color: primaryColor,
+                          position: "relative",
+                          p: 3,
+                          height: "100%",
+                          borderRadius: "16px",
+                          border: "1px solid #1f2937",
+                          background:
+                            "linear-gradient(180deg, #0b1220, #020617)",
+                          transition: "all 0.35s ease",
+                          cursor: "pointer",
+
                           "&:hover": {
-                            backgroundColor: primaryDark,
-                            cursor: "pointer",
-                            transition: "0.5s",
-                            color: offWhiteColor,
+                            borderColor: "#facc15",
+                            transform: "translateY(-6px)",
+                          },
+
+                          "&:hover .spec-number": {
+                            color: "#facc15",
                           },
                         }}
                       >
-                        <IconComponent sx={{ fontSize: "1.4rem" }} />
-                      </Box>
+                        {/* NUMBER */}
+                        <Typography
+                          className="spec-number"
+                          sx={{
+                            position: "absolute",
+                            top: 12,
+                            right: 16,
+                            fontSize: "3rem",
+                            fontWeight: 800,
+                            color: "rgba(255,255,255,0.04)",
+                            transition: "color 0.35s ease",
+                          }}
+                        >
+                          {item.id}
+                        </Typography>
 
-                      <Stack spacing={0}>
+                        {/* ICON */}
+                        <Box
+                          sx={{
+                            width: 44,
+                            height: 44,
+                            borderRadius: "12px",
+                            backgroundColor: item.color,
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            mb: 2,
+                            color: "#fff",
+                          }}
+                        >
+                          {renderIcon(item.icon)}
+                        </Box>
+
+                        {/* TEXT */}
                         <Typography
                           sx={{
-                            fontSize: "1rem",
+                            color: "#9ca3af",
+                            fontSize: "0.75rem",
                             fontWeight: 600,
-                            color: primaryColor,
+                            letterSpacing: "0.08em",
+                            mb: 0.5,
                           }}
                         >
-                          {spec.label}
+                          {item.label}
                         </Typography>
 
                         <Typography
                           sx={{
-                            fontSize: "1.1rem",
+                            color: "#fff",
                             fontWeight: 700,
-                            color: offBlackText,
+                            fontSize: "1rem",
                           }}
                         >
-                          {spec.value}
+                          {item.value}
                         </Typography>
-                      </Stack>
-                    </Stack>
-                  </Grid>
-                );
-              })}
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Box>
+            ))}
+          </Container>
+        </Box>
+
+        {/* Seamless integrations  */}
+        <Box sx={{ py: { xs: 8, md: 12 }, backgroundColor: "#ffffff" }}>
+          <Container maxWidth="lg">
+            {/* HEADER */}
+            <Stack spacing={2} alignItems="center" textAlign="center" mb={6}>
+              <Chip
+                label="Connectivity"
+                sx={{
+                  backgroundColor: "#eef2f7",
+                  fontWeight: 600,
+                  color: "#111827",
+                }}
+              />
+
+              <Typography
+                variant="h3"
+                sx={{
+                  fontWeight: 800,
+                  fontSize: { xs: "2rem", md: "2.8rem" },
+                  color: "#0f172a",
+                }}
+              >
+                Seamless Integrations
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "#64748b",
+                  maxWidth: 600,
+                  fontSize: "0.95rem",
+                }}
+              >
+                Connect with your existing infrastructure. Our systems work with
+                leading platforms and technologies.
+              </Typography>
+            </Stack>
+
+            {/* CARDS */}
+            <Grid container spacing={3} justifyContent="center">
+              {service.integrations.map((item, index) => (
+                <Grid
+                  item
+                  xs={6} // 2 per row on mobile
+                  sm={4}
+                  md={3}
+                  key={index}
+                  sx={{ display: "flex", justifyContent: "center" }}
+                >
+                  <Box
+                    sx={{
+                      width: 180, // fixed width
+                      height: 120,
+                      borderRadius: "14px",
+                      border: "1.5px solid #e5e7eb",
+                      display: "flex",
+                      flexDirection: "column",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      gap: 1.2,
+                      transition: "all 0.3s ease",
+                      cursor: "pointer",
+
+                      "&:hover": {
+                        borderColor: item.hoverColor,
+                        boxShadow: `0 8px 20px ${item.hoverColor}22`,
+                      },
+                    }}
+                  >
+                    {/* ICON */}
+                    <Box
+                      sx={{
+                        width: 42,
+                        height: 42,
+                        borderRadius: "10px",
+                        backgroundColor: "#f1f5f9",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        color: "#64748b",
+                        fontSize: "1.4rem",
+                      }}
+                    >
+                      {item.icon}
+                    </Box>
+
+                    {/* TEXT */}
+                    <Typography
+                      sx={{
+                        fontWeight: 600,
+                        fontSize: "0.85rem",
+                        color: "#0f172a",
+                        textAlign: "center",
+                      }}
+                    >
+                      {item.title}
+                    </Typography>
+                  </Box>
+                </Grid>
+              ))}
             </Grid>
           </Container>
         </Box>
 
-        {/* Seamless Integrations & Use Cases */}
-        <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } }}>
-          <Grid container spacing={6} justifyContent="center">
-            {/* LEFT COLUMN — INTEGRATIONS */}
-            <Grid item xs={12} md={6}>
-              <Stack spacing={3} mb={4} alignItems={["center", "flex-start"]}>
-                <Chip
-                  label="Connectivity"
-                  sx={{
-                    mb: 2,
-                    bgcolor: "#e6e6e6",
-                    fontWeight: 600,
-                    px: 3,
-                    py: 1.8,
-                    borderRadius: "999px",
-                    maxWidth: 150,
-                  }}
-                />
-
-                <Typography
-                  variant="h4"
-                  fontWeight={700}
-                  mb={4}
-                  textAlign={["center", "flex-start"]}
-                >
-                  Seamless Integrations
-                </Typography>
-              </Stack>
-
-              <Grid
-                container
-                gap={[2, 3]}
-                justifyContent={["center", "flex-start"]}
-                maxWidth={["100%", "100%", "100%", 500, 550]}
-              >
-                {service.integrationItems.map((item, index) => (
-                  <Grid item xs={12} sm={6} key={index} width={[150, 220]}>
-                    <Box
-                      sx={{
-                        bgcolor: "#fff",
-                        borderRadius: 3,
-                        px: { xs: 1, sm: 1 },
-                        py: {xs:1,sm:2.5},
-                        display: "flex",
-                        alignItems: "center",
-                        gap: 2,
-                        boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
-                        minHeight: { xs: 80, sm: 100 },
-                      }}
-                    >
-                      <Box
-                        sx={{
-                          width: { xs: 30, sm: 44 },
-                          height: { xs: 30, sm: 44 },
-                          borderRadius: 2,
-                          bgcolor: primaryLight + "33",
-                          color: primaryColor,
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          flexShrink: 0,
-                        }}
-                      >
-                        {item.icon}
-                      </Box>
-
-                      <Typography fontWeight={600} fontSize={[14, 18]}>
-                        {item.label}
-                      </Typography>
-                    </Box>
-                  </Grid>
-                ))}
-              </Grid>
-            </Grid>
-
-            {/* RIGHT COLUMN — USE CASES */}
-            <Grid
-              item
-              xs={12}
-              md={6}
-              maxWidth={["100%", "100%", "100%", 500, 550]}
-            >
-              <Chip
-                label="Applications"
-                sx={{
-                  mb: 2,
-                  bgcolor: primaryLight,
-                  color: primaryColor,
-                  fontWeight: 600,
-                  px: 3,
-                  py: 1.8,
-                  borderRadius: "999px",
-                }}
-              />
-
-              <Typography variant="h4" fontWeight={700} mb={4}>
-                Use Cases
-              </Typography>
-
-              {/* Use case chips — 2 per row */}
-              <Grid container spacing={[1,2]} mb={4} >
-                {service.useCases.map((item, index) => (
-                  <Grid item xs={12} sm={6} key={index}>
-                    <Chip
-                      label={item}
-                      sx={{
-                        width: "fit-content",
-                        px: {xs:1,sm:3},
-                        py: {xs:1,sm:1.8},
-                        borderRadius: "999px",
-                        bgcolor: "#fff",
-                        border: "1px solid #E0E0E0",
-                        fontWeight: 500,
-                      }}
-                    />
-                  </Grid>
-                ))}
-              </Grid>
-
-              {/* Custom Solutions — full width */}
-              <Box
-                sx={{
-                  bgcolor: "#fff",
-                  borderRadius: 4,
-                  p: { xs: 4, md: 5 },
-                  boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-                }}
-              >
-                <Typography variant="h6" fontWeight={700} mb={1}>
-                  Custom Solutions
-                </Typography>
-                <Typography color={offBlackTextLight} lineHeight={1.7}>
-                  Don’t see your use case? We offer customized barrier solutions
-                  tailored to your specific requirements and infrastructure.
-                </Typography>
-              </Box>
-            </Grid>
-          </Grid>
-        </Container>
         {/* Gallery */}
         <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
           {/* Header */}
