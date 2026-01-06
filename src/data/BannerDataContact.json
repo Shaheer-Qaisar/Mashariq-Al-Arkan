@@ -1,0 +1,47 @@
+{
+  "background": {
+    "image": "/images/contact/contact-banner3.jpg",
+    "overlayColor": "rgba(0, 0, 0, 0.73)"
+  },
+  "container": {
+    "maxWidth": "lg",
+    "paddingX": { "xs": 3, "md": 4 }
+  },
+  "heading": {
+    "lines": [
+      {
+        "text": "Get In ",
+        "highlight": {
+          "text": "Touch",
+          "color": "primaryColor"
+        }
+      },
+      {
+        "text": "",
+        "highlight": {
+          "text": "Contact",
+          "color": "secondaryColor"
+        }
+      },
+      {
+        "text": " Us Today",
+        "highlight": null
+      }
+    ],
+    "fontSize": { "xs": "2.5rem", "sm": "3.5rem", "md": "4rem", "lg": "5rem" },
+    "fontWeight": 700,
+    "color": "offWhiteColor",
+    "lineHeight": 1.2,
+    "marginBottom": 1
+  },
+  "subheading": {
+    "text": "Ready to discuss your project? Reach out to our team for expert consultation, custom solutions, and reliable support for all your security and automation needs.",
+    "fontSize": { "xs": "1rem", "sm": "1.2rem", "md": "1.4rem" },
+    "fontWeight": 400,
+    "color": "offWhiteColor",
+    "maxWidth": "800px",
+    "lineHeight": 1.6,
+    "marginBottom": 2,
+    "textShadow": "1px 1px 4px rgba(0, 0, 0, 0.5)"
+  }
+}

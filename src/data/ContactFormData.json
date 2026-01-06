@@ -1,0 +1,49 @@
+{
+  "heading": {
+    "lines": [
+      { "text": "Let's Discuss", "color": "secondaryColor" },
+      { "text": "something COOL together", "color": "offBlackText" }
+    ],
+    "fontSize": { "xs": "2.5rem", "sm": "3rem", "md": "3rem", "lg": "3.7rem" },
+    "fontWeight": 700,
+    "lineHeight": 1.2,
+    "marginBottom": 4
+  },
+  "services": [
+    "Building Maintenance",
+    "Automation & Access Control",
+    "Parking Solutions",
+    "Security & Surveillance",
+    "Network & Cabling",
+    "Wireless Solutions"
+  ],
+  "contactInfo": [
+    {
+      "icon": "Email",
+      "title": "Email",
+      "value": "info@mashariq-alarkan.com",
+      "link": "mailto:info@mashariq-alarkan.com"
+    },
+    {
+      "icon": "LocationOn",
+      "title": "Office",
+      "value": "King Fahd Road, Riyadh, Saudi Arabia.",
+      "link": "#"
+    },
+    {
+      "icon": "Phone",
+      "title": "Phone",
+      "value": "+966 12 345 6789",
+      "link": "tel:+966123456789"
+    }
+  ],
+  "socialLinks": [
+    { "icon": "LinkedIn", "url": "https://linkedin.com" },
+    { "icon": "Instagram", "url": "https://instagram.com" },
+    { "icon": "Facebook", "url": "https://facebook.com" }
+  ],
+  "form": {
+    "heading": "Send us a message",
+    "captchaSiteKey": "6LcvwT4sAAAAAHiTvP-GIVGs7NbcMVbdpdu8XjaA"
+  }
+}

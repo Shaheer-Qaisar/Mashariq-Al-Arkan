@@ -1,0 +1,36 @@
+{
+  "backgroundImage": "/images/about/about-banner2.jpg",
+  "overlayColor": "rgba(0, 0, 0, 0.73)",
+  "heading": [
+    {
+      "text": "About",
+      "color": "primaryColor"
+    },
+    {
+      "text": "Us",
+      "color": "offWhiteColor"
+    },
+    {
+      "text": "Mashariq",
+      "color": "secondaryColor"
+    },
+    {
+      "text": "Al-Arkan",
+      "color": "offWhiteColor"
+    }
+  ],
+  "headingFont": {
+    "fontSize": { "xs": "2.5rem", "sm": "3.5rem", "md": "4rem", "lg": "5rem" },
+    "fontWeight": 700,
+    "lineHeight": 1.2
+  },
+  "subheading": {
+    "text": "Leading provider of end-to-end entrance systems and security solutions. We design, supply, install, and maintain comprehensive building automation and security systems across Saudi Arabia.",
+    "fontSize": { "xs": "1rem", "sm": "1.2rem", "md": "1.4rem" },
+    "fontWeight": 400,
+    "color": "offWhiteColor",
+    "maxWidth": "800px",
+    "lineHeight": 1.6,
+    "textShadow": "1px 1px 4px rgba(0, 0, 0, 0.5)"
+  }
+}

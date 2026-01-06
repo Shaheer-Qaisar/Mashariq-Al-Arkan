@@ -1,18 +1,31 @@
 'use client';
 
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import {
   primaryColor,
   secondaryColor,
-  offWhiteColor,
+  offWhiteColor
 } from '@/components/utils/Colors';
+import bannerData from '@/data/BannerDataContact.json';
 
 const Banner = () => {
+  const { background, container, heading, subheading } = bannerData;
+
+  // Map JSON color names to actual imported colors
+  const getColor = (colorName) => {
+    switch (colorName) {
+      case 'primaryColor':
+        return primaryColor;
+      case 'secondaryColor':
+        return secondaryColor;
+      case 'offWhiteColor':
+        return offWhiteColor;
+      default:
+        return colorName;
+    }
+  };
+
   return (
     <Box
       sx={{
@@ -22,13 +35,13 @@ const Banner = () => {
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
       }}
     >
       {/* Background Image */}
       <Box
         component="img"
-        src="/images/contact/contact-banner3.jpg"
+        src={background.image}
         alt="Contact Banner"
         sx={{
           position: 'absolute',
@@ -37,7 +50,7 @@ const Banner = () => {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          zIndex: 0,
+          zIndex: 0
         }}
       />
 
@@ -49,19 +62,19 @@ const Banner = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.73)',
-          zIndex: 1,
+          backgroundColor: background.overlayColor,
+          zIndex: 1
         }}
       />
 
       {/* Content */}
       <Container
-        maxWidth="lg"
+        maxWidth={container.maxWidth}
         sx={{
           position: 'relative',
           zIndex: 2,
           textAlign: 'center',
-          px: { xs: 3, md: 4 },
+          px: container.paddingX
         }}
       >
         <Box
@@ -69,7 +82,7 @@ const Banner = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 3,
+            gap: 3
           }}
         >
           {/* Heading */}
@@ -77,22 +90,24 @@ const Banner = () => {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' },
-              fontWeight: 700,
-              color: offWhiteColor,
-              lineHeight: 1.2,
-              mb: 1,
+              fontSize: heading.fontSize,
+              fontWeight: heading.fontWeight,
+              color: getColor(heading.color),
+              lineHeight: heading.lineHeight,
+              mb: heading.marginBottom
             }}
           >
-            Get In{' '}
-            <Box component="span" sx={{ color: primaryColor }}>
-              Touch
-            </Box>
-            <br />
-            <Box component="span" sx={{ color: secondaryColor }}>
-              Contact
-            </Box>{' '}
-            Us Today
+            {heading.lines.map((line, idx) => (
+              <React.Fragment key={idx}>
+                {line.text}
+                {line.highlight && (
+                  <Box component="span" sx={{ color: getColor(line.highlight.color) }}>
+                    {line.highlight.text}
+                  </Box>
+                )}
+                <br />
+              </React.Fragment>
+            ))}
           </Typography>
 
           {/* Subheading */}
@@ -100,17 +115,16 @@ const Banner = () => {
             variant="h5"
             component="p"
             sx={{
-              fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
-              fontWeight: 400,
-              color: offWhiteColor,
-              maxWidth: '800px',
-              lineHeight: 1.6,
-              mb: 2,
-              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
+              fontSize: subheading.fontSize,
+              fontWeight: subheading.fontWeight,
+              color: getColor(subheading.color),
+              maxWidth: subheading.maxWidth,
+              lineHeight: subheading.lineHeight,
+              mb: subheading.marginBottom,
+              textShadow: subheading.textShadow
             }}
           >
-            Ready to discuss your project? Reach out to our team for expert consultation, 
-            custom solutions, and reliable support for all your security and automation needs.
+            {subheading.text}
           </Typography>
         </Box>
       </Container>
@@ -119,4 +133,3 @@ const Banner = () => {
 };
 
 export default Banner;
-

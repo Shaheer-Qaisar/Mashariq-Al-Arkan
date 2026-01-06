@@ -1,18 +1,23 @@
 'use client';
 
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import {
   primaryColor,
   secondaryColor,
-  offWhiteColor,
+  offWhiteColor
 } from '@/components/utils/Colors';
+import BannerDataAbout from '@/data/BannerDataAbout.json';
+
+const colorMap = {
+  primaryColor,
+  secondaryColor,
+  offWhiteColor
+};
 
 const Banner = () => {
+  const { backgroundImage, overlayColor, heading, headingFont, subheading } = BannerDataAbout;
+
   return (
     <Box
       sx={{
@@ -22,13 +27,13 @@ const Banner = () => {
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center',
+        justifyContent: 'center'
       }}
     >
       {/* Background Image */}
       <Box
         component="img"
-        src="/images/about/about-banner2.jpg"
+        src={backgroundImage}
         alt="About Banner"
         sx={{
           position: 'absolute',
@@ -37,7 +42,7 @@ const Banner = () => {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          zIndex: 0,
+          zIndex: 0
         }}
       />
 
@@ -49,8 +54,8 @@ const Banner = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.73)',
-          zIndex: 1,
+          backgroundColor: overlayColor,
+          zIndex: 1
         }}
       />
 
@@ -61,7 +66,7 @@ const Banner = () => {
           position: 'relative',
           zIndex: 2,
           textAlign: 'center',
-          px: { xs: 3, md: 4 },
+          px: { xs: 3, md: 4 }
         }}
       >
         <Box
@@ -69,7 +74,7 @@ const Banner = () => {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            gap: 3,
+            gap: 3
           }}
         >
           {/* Heading */}
@@ -77,22 +82,18 @@ const Banner = () => {
             variant="h1"
             component="h1"
             sx={{
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' },
-              fontWeight: 700,
+              fontSize: headingFont.fontSize,
+              fontWeight: headingFont.fontWeight,
               color: offWhiteColor,
-              lineHeight: 1.2,
-              mb: 1,
+              lineHeight: headingFont.lineHeight,
+              mb: 1
             }}
           >
-            <Box component="span" sx={{ color: primaryColor }}>
-              About
-            </Box>{' '}
-            Us
-            <br />
-            <Box component="span" sx={{ color: secondaryColor }}>
-              Mashariq
-            </Box>{' '}
-            Al-Arkan
+            {heading.map((h, i) => (
+              <Box key={i} component="span" sx={{ color: colorMap[h.color] }}>
+                {h.text}{' '}
+              </Box>
+            ))}
           </Typography>
 
           {/* Subheading */}
@@ -100,18 +101,16 @@ const Banner = () => {
             variant="h5"
             component="p"
             sx={{
-              fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
-              fontWeight: 400,
-              color: offWhiteColor,
-              maxWidth: '800px',
-              lineHeight: 1.6,
+              fontSize: subheading.fontSize,
+              fontWeight: subheading.fontWeight,
+              color: colorMap[subheading.color],
+              maxWidth: subheading.maxWidth,
+              lineHeight: subheading.lineHeight,
               mb: 2,
-              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
+              textShadow: subheading.textShadow
             }}
           >
-            Leading provider of end-to-end entrance systems and security solutions. 
-            We design, supply, install, and maintain comprehensive building automation 
-            and security systems across Saudi Arabia.
+            {subheading.text}
           </Typography>
         </Box>
       </Container>
@@ -120,4 +119,3 @@ const Banner = () => {
 };
 
 export default Banner;
-

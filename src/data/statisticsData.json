@@ -1,0 +1,52 @@
+{
+  "section": {
+    "backgroundGradient": {
+      "from": "offWhiteColor",
+      "to": "primaryLight"
+    }
+  },
+  "heading": [
+    {
+      "text": "Proven Track Record",
+      "color": "primaryColor",
+      "display": "block"
+    },
+    {
+      "text": "of Excellence",
+      "color": "primaryColor",
+      "display": "block"
+    }
+  ],
+  "headingFont": {
+    "fontSize": { "xs": "2rem", "md": "2.5rem", "lg": "3rem" },
+    "fontWeight": 700,
+    "lineHeight": 1.2,
+    "marginBottom": 3
+  },
+  "description": {
+    "text": "Harness the power of cutting-edge security technology and innovative entrance systems to protect your assets and deliver comprehensive, high-impact security solutions for residential, commercial, and industrial projects.",
+    "color": "offBlackTextLight",
+    "fontSize": { "xs": "0.95rem", "md": "1.1rem" },
+    "lineHeight": 1.7,
+    "marginBottom": 4,
+    "maxWidth": "90%"
+  },
+  "button": {
+    "text": "Talk to Expert",
+    "link": "/contact",
+    "gradient": { "from": "primaryColor", "to": "primaryLight" },
+    "hoverGradient": { "from": "primaryHover", "to": "primaryColor" },
+    "color": "offWhiteColor",
+    "fontWeight": 600,
+    "fontSize": "1rem",
+    "padding": { "px": 4, "py": 1 },
+    "borderRadius": 100,
+    "textTransform": "none"
+  },
+  "stats": [
+    { "value": 500, "suffix": "+", "label": "Projects Delivered" },
+    { "value": 98, "suffix": "%", "label": "Client Satisfaction" },
+    { "value": 85, "suffix": "%", "label": "Repeat Clients" },
+    { "value": 15, "suffix": "+", "label": "Years of Experience" }
+  ]
+}

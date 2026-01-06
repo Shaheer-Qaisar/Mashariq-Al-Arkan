@@ -1,0 +1,76 @@
+{
+  "section": {
+    "backgroundGradient": {
+      "from": "offWhiteColor",
+      "to": "secondaryLight"
+    },
+    "padding": { "xs": 6, "md": 10 }
+  },
+  "heading": [
+    {
+      "text": "Why",
+      "color": "offBlackText",
+      "display": "block"
+    },
+    {
+      "text": "Choose Us?",
+      "color": "secondaryColor",
+      "display": "block"
+    }
+  ],
+  "headingFont": {
+    "fontSize": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
+    "fontWeight": 700,
+    "lineHeight": 1.2,
+    "marginBottom": 3
+  },
+  "description": {
+    "text": "Mashariq Al-Arkan delivers innovative security and automation solutions with cutting-edge technology and expertise. We ensure seamless integration, customized strategies, and reliable support. Choose us for efficiency, performance, and future-ready security solutions.",
+    "color": "offBlackTextLight",
+    "fontSize": { "xs": "0.95rem", "md": "1.1rem" },
+    "lineHeight": 1.8,
+    "marginBottom": 4
+  },
+  "button": {
+    "text": "Explore More",
+    "link": "/services",
+    "gradient": { "from": "secondaryColor", "to": "secondaryLight" },
+    "hoverGradient": { "from": "secondaryHover", "to": "secondaryColor" },
+    "color": "offWhiteColor",
+    "fontWeight": 600,
+    "fontSize": "1rem",
+    "padding": { "px": 4, "py": 1.5 },
+    "borderRadius": "8px",
+    "textTransform": "none"
+  },
+  "benefits": [
+    {
+      "id": 0,
+      "title": "Multi-Industry Expertise",
+      "description": "With extensive experience across residential, commercial, and industrial sectors, our team delivers security and automation solutions informed by real-world industry insights.",
+      "highlighted": true,
+      "icon": "Business"
+    },
+    {
+      "id": 1,
+      "title": "Tailored, Scalable Solutions",
+      "description": "We understand that each project faces unique security challenges. That's why we take a personalized approach—partnering closely with you to develop custom solutions",
+      "highlighted": false,
+      "icon": "Settings"
+    },
+    {
+      "id": 2,
+      "title": "Excellence in Delivery",
+      "description": "From our rigorous installation standards to our responsive support, we're committed to exceeding expectations at every step.",
+      "highlighted": false,
+      "icon": "CheckCircle"
+    },
+    {
+      "id": 3,
+      "title": "Full Regulatory Compliance",
+      "description": "In an era of heightened security standards and industry oversight, we ensure that all solutions align with the latest regulations and best practices.",
+      "highlighted": false,
+      "icon": "Shield"
+    }
+  ]
+}
