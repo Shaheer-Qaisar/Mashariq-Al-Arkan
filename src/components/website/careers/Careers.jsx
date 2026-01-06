@@ -2,12 +2,13 @@
 
 import Banner from './Banner';
 import Jobs from './Jobs';
-
+import CareerForm from './CareerForm';
 const Careers = () => {
   return (
     <>
       <Banner />
-      <Jobs />
+      {/* <Jobs /> */}
+      <CareerForm />
     </>
   );
 };

@@ -10,6 +10,8 @@ import {
   Chip,
   Stack,
   Card,
+  CardContent,
+  Paper
 } from "@mui/material";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -41,9 +43,16 @@ import LanOutlinedIcon from "@mui/icons-material/LanOutlined";
 import BuildOutlinedIcon from "@mui/icons-material/BuildOutlined";
 import { bool } from "yup";
 import { blue, blueGrey } from "@mui/material/colors";
+import SecurityIcon from "@mui/icons-material/Security";
+import HomeIcon from "@mui/icons-material/Home";
+import CloudIcon from "@mui/icons-material/Cloud";
+import SupportAgentIcon from "@mui/icons-material/SupportAgent";
+import CheckCircleIcon from "@mui/icons-material/CheckCircle";
+
 /* =========================
    SERVICES DATA
 ========================= */
+
 const services = [
   {
     id: 1,
@@ -51,50 +60,85 @@ const services = [
     description:
       "Network and cabling solutions provide reliable and secure data connectivity. Designed for scalability and performance. Proper infrastructure reduces downtime. Suitable for offices and residential buildings. Built according to industry standards.",
     image: "/images/home-banner/cables-1.jpg",
-    divisions: [
-      {
-        title: "Structured Cabling",
-        description:
-          "Structured cabling supports data, voice, and video networks. It provides organized and scalable infrastructure. Improves performance and reliability. Simplifies maintenance and upgrades. Suitable for all building types.",
-        image: "/images/cable/cable5.jpg ",
-        icon: <SecurityOutlinedIcon />,
-      },
-      {
-        title: "Cable Management",
-        description:
-          "Cable management organizes and protects network cables. Improves safety and appearance. Reduces signal interference and damage. Facilitates easy troubleshooting. Essential for professional installations.",
-        image: "/images/cable/cable6.jpg ",
-        icon: <SettingsOutlinedIcon />,
-      },
-      {
-        title: "Network Revamping",
-        description:
-          "Network revamping upgrades outdated infrastructure. Improves speed, security, and efficiency. Minimizes downtime during upgrades. Adapts systems to modern requirements. Cost-effective modernization solution.",
-        image: "/images/cable/cable7.webp",
-        icon: <HomeOutlinedIcon />,
-      },
-      {
-        title: "Cable Testing & Certification",
-        description:
-          "Cable testing ensures performance and compliance with standards. Identifies faults and verifies installation quality. Provides certification for network reliability. Essential for new and existing cabling systems.",
-        image: "/images/cable/cable1.webp",
-        icon: <CameraAltOutlinedIcon />,
-      },
-      {
-        title: "Cable Monitoring & Management",
-        description:
-          "Cloud-based management for multi-site installations with real-time alerts and reports.Helps in proactive maintenance and performance optimization.",
-        image: "/images/cable/cable2.jpg",
-        icon: <LanOutlinedIcon />,
-      },
-      {
-        title: "Installation & Maintenance",
-        description:
-          "Professional installation and 24/7 maintenance by certified technicians.",
-        image: "/images/cable/cable3.jpg",
-        icon: <BuildOutlinedIcon />,
-      },
-    ],
+    // divisions: [
+    //   {
+    //     title: "Structured Cabling",
+    //     description:
+    //       "Structured cabling supports data, voice, and video networks. It provides organized and scalable infrastructure. Improves performance and reliability. Simplifies maintenance and upgrades. Suitable for all building types.",
+    //     image: "/images/cable/cable5.jpg ",
+    //     icon: <SecurityOutlinedIcon />,
+    //   },
+    //   {
+    //     title: "Cable Management",
+    //     description:
+    //       "Cable management organizes and protects network cables. Improves safety and appearance. Reduces signal interference and damage. Facilitates easy troubleshooting. Essential for professional installations.",
+    //     image: "/images/cable/cable6.jpg ",
+    //     icon: <SettingsOutlinedIcon />,
+    //   },
+    //   {
+    //     title: "Network Revamping",
+    //     description:
+    //       "Network revamping upgrades outdated infrastructure. Improves speed, security, and efficiency. Minimizes downtime during upgrades. Adapts systems to modern requirements. Cost-effective modernization solution.",
+    //     image: "/images/cable/cable7.webp",
+    //     icon: <HomeOutlinedIcon />,
+    //   },
+    //   {
+    //     title: "Cable Testing & Certification",
+    //     description:
+    //       "Cable testing ensures performance and compliance with standards. Identifies faults and verifies installation quality. Provides certification for network reliability. Essential for new and existing cabling systems.",
+    //     image: "/images/cable/cable1.webp",
+    //     icon: <CameraAltOutlinedIcon />,
+    //   },
+    //   {
+    //     title: "Cable Monitoring & Management",
+    //     description:
+    //       "Cloud-based management for multi-site installations with real-time alerts and reports.Helps in proactive maintenance and performance optimization.",
+    //     image: "/images/cable/cable2.jpg",
+    //     icon: <LanOutlinedIcon />,
+    //   },
+    //   {
+    //     title: "Installation & Maintenance",
+    //     description:
+    //       "Professional installation and 24/7 maintenance by certified technicians.",
+    //     image: "/images/cable/cable3.jpg",
+    //     icon: <BuildOutlinedIcon />,
+    //   },
+    // ],
+    highlightServices: [{
+    title: "Access Control",
+    subtitle: "RFID & biometric entry with real-time monitoring",
+    image: "/images/parking/parking1.jpg",
+  },
+  {
+    title: "CCTV & ANPR",
+    subtitle: "Surveillance with plate recognition",
+    image: "/images/parking/parking2.jpeg",
+  }],
+  highlightText:[
+    {title:"Complete Parking Security Solutions",description:" End-to-end systems for commercial, residential, and industrial applications."}
+  ],
+  featureCards:[
+     {
+    title: "Barrier Systems",
+    description: "Precision-engineered heavy-duty mechanisms",
+    icon: <SecurityIcon />,
+  },
+  {
+    title: "Residential",
+    description: "App-controlled barriers for modern homes",
+    icon: <HomeIcon />,
+  },
+  {
+    title: "Cloud Management",
+    description: "Multi-site control with live dashboards",
+    icon: <CloudIcon />,
+  },
+  {
+    title: "Support 24/7",
+    description: "Expert installation & rapid response",
+    icon: <SupportAgentIcon />,
+  }
+  ],
     stats: [
       { label: "Projects Completed", value: "500+" },
       { label: "Client Satisfaction", value: "98%" },
@@ -107,6 +151,9 @@ const services = [
       "High-quality fiber & copper installations",
       "Neat cable management & labeling",
       "Scalable future-ready infrastructure",
+    ],
+    featureDescrip:[
+      {description:"Automated parking barrier systems for secure and efficient access control, designed for commercial and residential parking facilities."}
     ],
 
     specs: [
@@ -1650,135 +1697,328 @@ const ServicesDetail = () => {
       </Box>
 
       <>
-        {/* Divisios and service provided */}
-        <Container
-          maxWidth="lg"
-          sx={{ py: { xs: 6, md: 10 }, justifyContent: "center" }}
+     {/* Higlights and Featuring cards */}
+<Box
+  sx={{
+    my: 15,
+    px: { xs: 2, md: 4 },
+    justifySelf: "center",
+  }}
+  maxWidth="lg"
+>
+  <Stack
+    direction={{ xs: "column", lg: "row" }}
+    gap={4}
+    justifyContent="center"
+    alignItems={{ xs: "center", lg: "flex-start" }}
+  >
+    {/* LEFT CONTENT */}
+    {service.highlightText.map((item, index) => (
+      <Grid
+        item
+        key={index}
+        xs={12}
+        md={5}
+        sx={{
+          textAlign: { xs: "center", lg: "left" },
+        }}
+      >
+        <Chip
+          label="Our Services"
+          sx={{
+            mb: 2,
+            fontWeight: 600,
+            backgroundColor: "#0f1c3f",
+            color: "#fff",
+          }}
+        />
+
+        <Typography
+          sx={{
+            fontWeight: 700,
+            mb: 2,
+            lineHeight: 1.2,
+            fontSize:{xs:35,sm:45},
+            maxWidth: 450,
+            mx: { xs: "auto", lg: 0 },
+          }}
         >
-          <Box sx={{ textAlign: "center", mb: 4 }}>
-            <Chip
-              label="Provided Services"
+          {item.title}
+        </Typography>
+
+        <Typography
+          sx={{
+            color: "#6b7280",
+            maxWidth: 420,
+            mx: { xs: "auto", lg: 0 },
+          }}
+        >
+          {item.description}
+        </Typography>
+      </Grid>
+    ))}
+
+    {/* RIGHT IMAGE CARDS */}
+    <Grid item xs={12} md={7}>
+      <Stack
+        direction="row"
+        gap={5}
+        flexWrap={{ xs: "wrap", lg: "nowrap" }}
+        justifyContent={{ xs: "center", lg: "flex-start" }}
+      >
+        {service.highlightServices.map((item, index) => (
+          <Grid item xs={12} sm={6} key={index}>
+            <Box
               sx={{
-                bgcolor: primaryLight,
-                color: primaryColor,
-                fontWeight: 600,
-                borderRadius: "50px",
-                px: 3,
-                py: 2.5,
+                position: "relative",
+                height: 240,
+                borderRadius: 4,
+                overflow: "hidden",
+                boxShadow: "0 12px 30px rgba(0,0,0,0.15)",
+                minWidth: { xs: "100%", sm: 320 },
+                maxWidth: { xs: 360, lg: "unset" },
               }}
-            />
-          </Box>
+            >
+              <Box
+                component="img"
+                src={item.image}
+                alt={item.title}
+                sx={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                }}
+              />
 
-          <Typography
-            variant="h4"
-            sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
-          >
-            The Services We Offer
-          </Typography>
-          <Typography
-            sx={{
-              textAlign: "center",
-              mb: 8,
-              color: offBlackTextLight,
-              maxWidth: 800,
-              mx: "auto",
-            }}
-          >
-            Our comprehensive range of services is designed to meet all your We
-            provide top-notch solutions tailored to your needs.
-          </Typography>
-
-          <Grid container spacing={4} justifyContent={"center"}>
-            {(service?.divisions || []).map((item, index) => {
-              return (
-                <Grid xs={12} sm={6} md={4} key={index} maxWidth={350}>
-                  <Card
+              <Box
+                sx={{
+                  position: "absolute",
+                  inset: 0,
+                  background:
+                    "linear-gradient(to top, rgba(0,0,0,0.8), transparent)",
+                  display: "flex",
+                  alignItems: "flex-end",
+                  p: 2,
+                }}
+              >
+                <Box>
+                  <Typography
                     sx={{
-                      height: "100%",
-                      borderRadius: 3,
-                      overflow: "hidden",
-                      transition: "all 0.4s ease",
-                      boxShadow: "0 6px 18px rgba(0,0,0,0.08)",
-                      cursor: "pointer",
-
-                      "&:hover": {
-                        boxShadow: "0 16px 40px rgba(0,0,0,0.18)",
-                        transform: "translateY(-6px)",
-
-                        "& .card-image": {
-                          transform: "scale(1.15)",
-                        },
-                      },
+                      color: "#fff",
+                      fontWeight: 700,
+                      fontSize: "1rem",
                     }}
                   >
-                    {/* Image / Icon Section */}
-                    <Box
-                      sx={{
-                        height: 180,
-                        position: "relative",
-                        backgroundColor: item.image ? "transparent" : "#f8f6f2",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        overflow: "hidden",
-                      }}
-                    >
-                      {item.image ? (
-                        <Box
-                          component="img"
-                          src={item.image}
-                          alt={item.title}
-                          className="card-image"
-                          sx={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            transition: "transform 0.5s ease",
-                          }}
-                        />
-                      ) : (
-                        <Box
-                          sx={{
-                            width: 56,
-                            height: 56,
-                            borderRadius: 2,
-                            bgcolor: "#eaeaea",
-                            display: "flex",
-                            alignItems: "center",
-                            justifyContent: "center",
-                            color: "#1f2a44",
-                          }}
-                        >
-                          {item.icon}
-                        </Box>
-                      )}
-                    </Box>
-
-                    {/* Content */}
-                    <Box sx={{ p: 3 }}>
-                      <Typography
-                        variant="h6"
-                        fontWeight={700}
-                        mb={1}
-                        color="#0f1d3a"
-                      >
-                        {item.title}
-                      </Typography>
-
-                      <Typography
-                        variant="body2"
-                        color="text.secondary"
-                        lineHeight={1.6}
-                      >
-                        {item.description}
-                      </Typography>
-                    </Box>
-                  </Card>
-                </Grid>
-              );
-            })}
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "#d1d5db",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {item.subtitle}
+                  </Typography>
+                </Box>
+              </Box>
+            </Box>
           </Grid>
-        </Container>
+        ))}
+      </Stack>
+    </Grid>
+  </Stack>
+
+  {/* FEATURE CARDS */}
+  <Grid
+    container
+    spacing={3}
+    sx={{ mt: 6 }}
+    justifyContent="center"
+  >
+    {service.featureCards.map((card, index) => (
+      <Grid item xs={12} sm={6} md={3} key={index}>
+        <Card
+          sx={{
+            height: "100%",
+            borderRadius: 4,
+            boxShadow: "0 8px 24px rgba(0,0,0,0.06)",
+            transition: "0.3s ease",
+            minWidth: 250,
+            maxWidth: { xs: "100%", sm: 260 },
+            mx: "auto",
+            "&:hover": {
+              transform: "translateY(-6px)",
+              boxShadow: "0 14px 30px rgba(0,0,0,0.12)",
+            },
+          }}
+        >
+          <CardContent sx={{ p: 3 }}>
+            <Box
+              sx={{
+                width: 42,
+                height: 42,
+                borderRadius: 2,
+                backgroundColor: "#eef2ff",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                mb: 2,
+              }}
+            >
+              {card.icon}
+            </Box>
+
+            <Typography sx={{ fontWeight: 700, mb: 1 }}>
+              {card.title}
+            </Typography>
+
+            <Typography sx={{ color: "#6b7280", fontSize: "0.9rem" }}>
+              {card.description}
+            </Typography>
+          </CardContent>
+        </Card>
+      </Grid>
+    ))}
+  </Grid>
+</Box>
+
+  {/* Premium Access Control Solution */}
+<Box sx={{ my: { xs: 8, md: 12 }, px: { xs: 2, md: 4 } }}>
+  <Stack
+    direction={{ xs: "column", lg: "row" }}   //  responsive only
+    gap={{ xs: 5, lg: 6 }}
+    maxWidth="lg"
+    mx="auto"
+    alignItems={{ xs: "center", lg: "flex-start" }}
+  >
+    {/* IMAGE SECTION */}
+    <Box
+      sx={{
+        width: { xs: "100%", sm: "85%", lg: "auto" },
+        minWidth: { lg: 430 },                 //  only on large
+        maxWidth: { lg: 500 },
+      }}
+    >
+      <Box
+        sx={{
+          position: "relative",
+          borderRadius: 4,
+          overflow: "hidden",
+          boxShadow: "0 20px 50px rgba(0,0,0,0.18)",
+        }}
+      >
+        <Box
+          component="img"
+          src="/images/parking/parking1.jpg"
+          alt="Access Control"
+          sx={{
+            width: "100%",
+            height: { xs: 240, sm: 320, md: 360, lg: 420 },
+            objectFit: "cover",
+          }}
+        />
+
+        {/* ORANGE BADGE */}
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 24,
+            right: 24,
+            backgroundColor: "#f59e0b",
+            color: "#000",
+            px: 3,
+            py: 2,
+            borderRadius: 3,
+            boxShadow: "0 12px 30px rgba(0,0,0,0.25)",
+            textAlign: "center",
+            minWidth: 120,
+          }}
+        >
+          <Typography sx={{ fontWeight: 800, fontSize: "1.5rem" }}>
+            100%
+          </Typography>
+          <Typography sx={{ fontSize: "0.85rem", fontWeight: 600 }}>
+            Quality Assured
+          </Typography>
+        </Box>
+      </Box>
+    </Box>
+
+    {/* CONTENT SECTION */}
+    {
+      service.featureDescrip.map((item,index)=>{
+        return(
+           <Box
+           key={index}
+      sx={{
+        width: "100%",
+        maxWidth: 800,
+        textAlign: { xs: "center", lg: "left" },
+      }}
+    >
+      <Chip
+        label="WHY CHOOSE US"
+        sx={{
+          mb: 2,
+          backgroundColor: "#fde68a",
+          color: "#92400e",
+          fontWeight: 700,
+        }}
+      />
+
+      <Typography
+        sx={{
+          fontWeight: 800,
+          lineHeight: 1.2,
+          mb: 2,
+          fontSize:{xs:30,sm:45}
+        }}
+      >
+        Premium Access <br /> Control Solutions
+      </Typography>
+
+      <Typography
+        sx={{
+          color: "#6b7280",
+          maxWidth: 480,
+          mx: { xs: "auto", lg: 0 },   //  center on mobile
+          mb: 4,
+        }}
+      >
+      {item.description}
+      </Typography>
+
+      {/* FEATURES GRID */}
+      <Grid container spacing={2} justifyContent={['center','center','center','flex-start']}>
+        {service.features.map((feature, index) => (
+          <Grid item xs={12} sm={6} key={index}>
+            <Paper
+              elevation={0}
+              sx={{
+                p: 2,
+                display: "flex",
+                alignItems: "center",
+                gap: 1.5,
+                borderRadius: 2,
+                border: "1px solid #e5e7eb",
+                justifyContent: { xs: "center", sm: "flex-start" },
+              }}
+            >
+              <CheckCircleIcon sx={{ color: "#0f1c3f" }} />
+              <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
+                {feature}
+              </Typography>
+            </Paper>
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
+        )
+      })
+    }
+   
+  </Stack>
+</Box>
 
         {/* Stats Section */}
         <Box my={5}>
