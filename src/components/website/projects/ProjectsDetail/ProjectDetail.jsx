@@ -50,6 +50,80 @@ const projects = [
       'Custom-designed solutions for each bay\'s requirements',
       'Comprehensive training for facility staff',
     ],
+      galleryImages: [
+      {
+        image: "/images/cable/cable15.jpeg",
+        width: { xs: "180px", sm: "300px" },
+        caption: "Structured Cabling\nCommercial installation",
+      },
+      {
+        image: "/images/cable/cable16.jpeg",
+        width: { xs: "120px", sm: "270px" },
+        caption: "Network Infrastructure\nOffice setup",
+      },
+      {
+        image: "/images/cable/cable17.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Fiber Cabling\nHigh-speed networks",
+      },
+      {
+        image: "/images/cable/cable19.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable18.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        width: { xs: "120px", sm: "320px" },
+
+        image: "/images/cable/cable4.jpg",
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable20.jpeg",
+        width: { xs: "120px", sm: "320px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable8.jpeg",
+        width: { xs: "180px", sm: "275px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable9.jpeg",
+        width: { xs: "180px", sm: "225px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable10.jpeg",
+        width: { xs: "120px", sm: "185px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable11.jpeg",
+        width: { xs: "120px", sm: "330px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable12.jpeg",
+        width: { xs: "180px", sm: "340px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable13.jpeg",
+        width: { xs: "180px", sm: "200px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable14.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Cable Management\nClean routing",
+      },
+    ],
+
   },
   {
     id: 2,
@@ -78,6 +152,80 @@ const projects = [
       'Comprehensive resident training programs',
       'Custom-designed solutions matching architectural style',
     ],
+      galleryImages: [
+      {
+        image: "/images/cable/cable15.jpeg",
+        width: { xs: "180px", sm: "300px" },
+        caption: "Structured Cabling\nCommercial installation",
+      },
+      {
+        image: "/images/cable/cable16.jpeg",
+        width: { xs: "120px", sm: "270px" },
+        caption: "Network Infrastructure\nOffice setup",
+      },
+      {
+        image: "/images/cable/cable17.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Fiber Cabling\nHigh-speed networks",
+      },
+      {
+        image: "/images/cable/cable19.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable18.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        width: { xs: "120px", sm: "320px" },
+
+        image: "/images/cable/cable4.jpg",
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable20.jpeg",
+        width: { xs: "120px", sm: "320px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable8.jpeg",
+        width: { xs: "180px", sm: "275px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable9.jpeg",
+        width: { xs: "180px", sm: "225px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable10.jpeg",
+        width: { xs: "120px", sm: "185px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable11.jpeg",
+        width: { xs: "120px", sm: "330px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable12.jpeg",
+        width: { xs: "180px", sm: "340px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable13.jpeg",
+        width: { xs: "180px", sm: "200px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable14.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Cable Management\nClean routing",
+      },
+    ],
+
   },
   {
     id: 3,
@@ -106,6 +254,80 @@ const projects = [
       'Seamless integration with campus management systems',
       'Weather-resistant hardware and redundant systems',
     ],
+      galleryImages: [
+      {
+        image: "/images/cable/cable15.jpeg",
+        width: { xs: "180px", sm: "300px" },
+        caption: "Structured Cabling\nCommercial installation",
+      },
+      {
+        image: "/images/cable/cable16.jpeg",
+        width: { xs: "120px", sm: "270px" },
+        caption: "Network Infrastructure\nOffice setup",
+      },
+      {
+        image: "/images/cable/cable17.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Fiber Cabling\nHigh-speed networks",
+      },
+      {
+        image: "/images/cable/cable19.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable18.jpeg",
+        width: { xs: "180px", sm: "270px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        width: { xs: "120px", sm: "320px" },
+
+        image: "/images/cable/cable4.jpg",
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable20.jpeg",
+        width: { xs: "120px", sm: "320px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable8.jpeg",
+        width: { xs: "180px", sm: "275px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable9.jpeg",
+        width: { xs: "180px", sm: "225px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable10.jpeg",
+        width: { xs: "120px", sm: "185px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable11.jpeg",
+        width: { xs: "120px", sm: "330px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable12.jpeg",
+        width: { xs: "180px", sm: "340px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable13.jpeg",
+        width: { xs: "180px", sm: "200px" },
+        caption: "Cable Management\nClean routing",
+      },
+      {
+        image: "/images/cable/cable14.jpeg",
+        width: { xs: "120px", sm: "300px" },
+        caption: "Cable Management\nClean routing",
+      },
+    ],
+
   },
 ];
 
@@ -483,6 +705,117 @@ const ProjectDetail = () => {
             </Card>
           </Grid>
         </Grid>
+
+        {/* Gallery */}
+          <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+                  {/* Header */}
+                  <Box sx={{ textAlign: "center", mb: 4 }}>
+                    <Chip
+                      label="Gallery"
+                      sx={{
+                        bgcolor: "#f0f0f0",
+                        fontWeight: 600,
+                        borderRadius: "50px",
+                        px: { xs: 1, sm: 3 },
+                        py: 2,
+                      }}
+                    />
+                  </Box>
+        
+                  <Typography
+                    variant="h4"
+                    sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
+                  >
+                    Our Latest Projects
+                  </Typography>
+        
+                  <Typography
+                    sx={{
+                      textAlign: "center",
+                      mb: 6,
+                      color: "text.secondary",
+                      maxWidth: 800,
+                      mx: "auto",
+                    }}
+                  >
+                    Explore our professional installations and completed solutions.
+                  </Typography>
+        
+                  {/* Gallery Grid */}
+                  <Box
+                    sx={{
+                      display: "flex",
+                      flexWrap: "wrap",
+                      gap: { xs: "10px", sm: "15px" },
+                      justifyContent: "center",
+                    }}
+                  >
+                    {(project?.galleryImages || []).map((img, index) => (
+                      <Box
+                        key={index}
+                        sx={{
+                          width: {
+                            xs: `${img.width.xs}` || "180px",
+                            sm: `${img.width.sm}` || "260px",
+                          },
+                          height: "220px",
+                          borderRadius: "18px",
+                          overflow: "hidden",
+                          position: "relative",
+                          boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                          cursor: "pointer",
+                          flexShrink: 0,
+        
+                          "&:hover img": {
+                            transform: "scale(1.08)",
+                          },
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          src={img.image}
+                          alt={img.caption}
+                          sx={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                            transition: "transform 0.5s ease",
+                          }}
+                        />
+        
+                        {/* Hover Overlay */}
+                        <Box
+                          sx={{
+                            position: "absolute",
+                            inset: 0,
+                            bgcolor: "rgba(0,0,0,0.65)",
+                            display: "flex",
+                            alignItems: "flex-end",
+                            justifyContent: "center",
+                            opacity: 0,
+                            transition: "opacity 0.4s ease",
+                            p: 2,
+                            "&:hover": {
+                              opacity: 1,
+                            },
+                          }}
+                        >
+                          <Typography
+                            sx={{
+                              color: "#fff",
+                              fontWeight: 600,
+                              fontSize: "0.95rem",
+                              textAlign: "center",
+                              whiteSpace: "pre-line",
+                            }}
+                          >
+                            {img.caption}
+                          </Typography>
+                        </Box>
+                      </Box>
+                    ))}
+                  </Box>
+                </Container>
 
         {/* Call to Action */}
         <Box

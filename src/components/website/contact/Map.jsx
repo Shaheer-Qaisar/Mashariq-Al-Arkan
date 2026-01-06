@@ -124,7 +124,7 @@ const Map = () => {
 
         <Grid container spacing={4}>
           {/* Map Section */}
-          <Grid size={{ xs: 12, lg: 8 }} data-aos="fade-right">
+          <Grid size={{ xs: 12, lg: 8 }} data-aos="fade-right" maxHeight={[400,500]} >
             <Card
               sx={{
                 borderRadius: '24px',
@@ -143,9 +143,10 @@ const Map = () => {
                 sx={{
                   position: 'relative',
                   width: '100%',
-                  height: { xs: '400px', md: '500px' },
+                  height: '100%',
                   overflow: 'hidden',
                 }}
+                
               >
                 <iframe
                   src={googleMapsUrl}

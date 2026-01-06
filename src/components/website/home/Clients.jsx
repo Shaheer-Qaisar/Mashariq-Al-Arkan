@@ -184,7 +184,7 @@ const clients = [
         </Box>
 
         {/* Client Logos Grid */}
-       <Grid container spacing={2} px={[1, 5]}>
+       <Grid container spacing={2} px={[1, 5]} justifyContent={'center'}>
   {clients.map((client) => (
     <Grid
       size={{ xs: 6, sm: 4, md: 3, lg: 2 }}
@@ -208,7 +208,7 @@ const clients = [
             height: "100%",
             minHeight: "140px",
             display: "flex",
-            alignItems: "center",
+            alignItems: "flex-start",
             justifyContent: "center",
             boxShadow: "0 4px 12px rgba(0, 0, 0, 0.04)",
             overflow: "hidden",
@@ -250,8 +250,8 @@ const clients = [
             <Box
               className="logo-container"
               sx={{
-                width: "100px",
-                height: "70px",
+                width: "85px",
+                height: "80px",
                 borderRadius: "16px",
                 background: `linear-gradient(135deg, ${secondaryLight} 0%, ${secondaryColor} 100%)`,
                 display: "flex",
@@ -259,14 +259,14 @@ const clients = [
                 justifyContent: "center",
                 mb: 2,
                 transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                boxShadow: `0 4px 12px ${secondaryLight}`,
+                boxShadow: `0 4px 12px ${secondaryLight}`
               }}
             >
               <img
                 alt={client.name}
                 src={client.logo}
                 height="70"
-                width="100"
+                width="80"
               />
             </Box>
 
