@@ -12,11 +12,11 @@ import {
   offBlackText,
   offBlackTextLight
 } from '@/components/utils/Colors';
-import data from '@/data/faqData.json';
+import aboutData from '@/components/website/about/AboutPageData.json';
 
 const FAQ = () => {
   const [expanded, setExpanded] = useState(1); // Start with second item expanded
-  const { section, tag, heading, headingFont, description, button, faqs } = data;
+  const { section, tag, heading, headingFont, description, button, faqs } = aboutData.faq;
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -42,8 +42,8 @@ const FAQ = () => {
                 color: offBlackText,
                 fontWeight: tag.fontWeight,
                 fontSize: tag.fontSize,
-                px: tag.padding.px,
-                py: tag.padding.py,
+                px: tag.padding,
+                py: tag.padding,
                 borderRadius: tag.borderRadius,
                 mb: tag.marginBottom
               }}

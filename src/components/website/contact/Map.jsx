@@ -20,10 +20,10 @@ import {
   offBlackText,
   offBlackTextLight
 } from '@/components/utils/Colors';
-import mapData from '@/data/MapData.json';
+import mapData from './ContactData.json';
 
 const Map = () => {
-  const { googleMapsUrl, contactDetails, socialLinks } = mapData;
+  const { googleMapsUrl, contactDetails, socialLinks } = mapData.map;
 
   return (
     <Box

@@ -2,316 +2,132 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import {
-  Box,
-  Container,
-  Typography,
-  Button,
-} from '@mui/material';
+import { Box, Container, Typography, Button } from '@mui/material';
 import {
   primaryColor,
-  primaryHover,
   secondaryColor,
   secondaryHover,
   offWhiteColor,
-  offWhiteText,
 } from '@/components/utils/Colors';
-
+import data from './HomeData.json'
 const HomeBanner = () => {
-  const images = [
-    '/images/home-banner/cables-1.jpg',
-    '/images/home-banner/parking-barrier.jpg',
-    '/images/home-banner/construction-site.jpg',
-    '/images/home-banner/camera-1.jpg',
-    '/images/home-banner/digital-lock.jpg',
-    '/images/home-banner/garage-door-1.webp',
-    '/images/home-banner/parking.jpg',
-    '/images/home-banner/window-blind.jpg',
-    '/images/home-banner/garage-door-2.png',
-  ];
+  const { images, typingWords: words, heading, subHeading, cta } = data;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [nextIndex, setNextIndex] = useState(1);
   const [isTransitioning, setIsTransitioning] = useState(false);
-  
-  // Typing animation for words
-  const words = ['Secure', 'Safe', 'Reliable', 'Trusted', 'Resilient'];
+
   const [typedText, setTypedText] = useState('');
   const [showCursor, setShowCursor] = useState(true);
+
   const wordIndexRef = useRef(0);
-  const currentIndexRef = useRef(0);
+  const currentCharIndexRef = useRef(0);
   const isDeletingRef = useRef(false);
 
+  /* Slider effect */
   useEffect(() => {
+    if (!images.length) return;
     const interval = setInterval(() => {
       setIsTransitioning(true);
-      
       setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-        setNextIndex((prevIndex) => (prevIndex + 2) % images.length);
+        setCurrentIndex((prev) => (prev + 1) % images.length);
+        setNextIndex((prev) => (prev + 2) % images.length);
         setIsTransitioning(false);
-      }, 5000); // Transition duration
-    }, 5000); // Change image every 8 seconds
+      }, 500);
+    }, 5000);
 
     return () => clearInterval(interval);
-  }, [images.length]);
+  }, [images]);
 
-  // Typing animation effect
+  /* Typing effect */
   useEffect(() => {
-    let timeoutId;
+    if (!words.length) return;
 
+    let timeoutId;
     const type = () => {
       const currentWord = words[wordIndexRef.current];
-      const currentIndex = currentIndexRef.current;
+      const index = currentCharIndexRef.current;
       const isDeleting = isDeletingRef.current;
-      
-      if (!isDeleting && currentIndex < currentWord.length) {
-        // Typing forward
-        setTypedText(currentWord.slice(0, currentIndex + 1));
-        currentIndexRef.current++;
-        timeoutId = setTimeout(type, 150); // Normal typing speed
-      } else if (!isDeleting && currentIndex === currentWord.length) {
-        // Pause at the end before deleting
+
+      if (!isDeleting && index < currentWord.length) {
+        setTypedText(currentWord.slice(0, index + 1));
+        currentCharIndexRef.current++;
+        timeoutId = setTimeout(type, 150);
+      } else if (!isDeleting && index === currentWord.length) {
         timeoutId = setTimeout(() => {
           isDeletingRef.current = true;
           type();
-        }, 2000); // Wait 2 seconds before deleting
-      } else if (isDeleting && currentIndex > 0) {
-        // Deleting backward (backspace)
-        currentIndexRef.current--;
-        setTypedText(currentWord.slice(0, currentIndexRef.current));
-        timeoutId = setTimeout(type, 100); // Faster deletion speed
-      } else if (isDeleting && currentIndex === 0) {
-        // Move to next word
+        }, 2000);
+      } else if (isDeleting && index > 0) {
+        currentCharIndexRef.current--;
+        setTypedText(currentWord.slice(0, currentCharIndexRef.current));
+        timeoutId = setTimeout(type, 100);
+      } else {
         isDeletingRef.current = false;
         wordIndexRef.current = (wordIndexRef.current + 1) % words.length;
-        currentIndexRef.current = 0; // Reset index for new word
-        timeoutId = setTimeout(type, 500); // Brief pause before typing next word
+        currentCharIndexRef.current = 0;
+        timeoutId = setTimeout(type, 500);
       }
     };
-
     type();
 
-    return () => {
-      if (timeoutId) clearTimeout(timeoutId);
-    };
-  }, []);
+    return () => timeoutId && clearTimeout(timeoutId);
+  }, [words]);
 
-  // Cursor blinking effect
+  /* Cursor blink */
   useEffect(() => {
-    const cursorInterval = setInterval(() => {
+    const interval = setInterval(() => {
       setShowCursor((prev) => !prev);
-    }, 530); // Blink speed
-
-    return () => clearInterval(cursorInterval);
+    }, 530);
+    return () => clearInterval(interval);
   }, []);
 
   const getTransitionStyle = (index) => {
     const isCurrent = index === currentIndex;
     const isNext = index === nextIndex && isTransitioning;
-    
-    // During transition, show both current and next images
-    // After transition, only show the current image
     let opacity = 0;
-    if (isCurrent && !isTransitioning) {
-      opacity = 1; // Current image fully visible when not transitioning
-    } else if (isCurrent && isTransitioning) {
-      opacity = 0; // Current image fades out during transition
-    } else if (isNext && isTransitioning) {
-      opacity = 1; // Next image fades in during transition
-    }
-    
+    if (isCurrent && !isTransitioning) opacity = 1;
+    if (isCurrent && isTransitioning) opacity = 0;
+    if (isNext && isTransitioning) opacity = 1;
+
     return {
       position: 'absolute',
-      top: 0,
-      left: 0,
+      inset: 0,
       width: '100%',
       height: '100%',
       objectFit: 'cover',
-      zIndex: isNext && isTransitioning ? 1 : 0, // Next image on top during transition
       transition: 'opacity 0.5s ease-in-out',
-      opacity: opacity,
+      opacity,
+      zIndex: isNext ? 1 : 0,
       pointerEvents: 'none',
     };
   };
 
   return (
-    <Box
-      sx={{
-        position: 'relative',
-        width: '100%',
-        height: "100vh",
-        minHeight: '500px',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      {/* Background Images with Transitions */}
-      {images.map((image, index) => (
-        <Box
-          key={index}
-          component="img"
-          src={image}
-          alt={`Banner image ${index + 1}`}
-          sx={getTransitionStyle(index)}
-        />
+    <Box sx={{ position: 'relative', width: '100%', height: '100vh', minHeight: '500px', overflow: 'hidden', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      {images.map((img, index) => (
+        <Box key={index} component="img" src={img} alt={`Banner ${index + 1}`} sx={getTransitionStyle(index)} />
       ))}
-
-      {/* Dim Overlay */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.73)',
-          zIndex: 1,
-        }}
-      />
-
-      {/* Content */}
-      <Container
-        maxWidth="lg"
-        sx={{
-          position: 'relative',
-          zIndex: 2,
-          textAlign: 'center',
-          px: { xs: 3, md: 4 },mt: { xs: 10, md: 15 },
-        }}
-        >
-        <Box
-          sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 3,
-          }}
-          >
-          {/* Heading */}
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' },
-              fontWeight: 700,
-              color: offWhiteColor,
-              lineHeight: 1.2,
-              mb: 1,
-              
-            }}
-          >
-            <Box component="span" sx={{ color: primaryColor }}>
-              {typedText}
-              <Box
-                component="span"
-                sx={{
-                  opacity: showCursor ? 1 : 0,
-                  transition: 'opacity 0.3s',
-                }}
-              >
-                |
-              </Box>
-            </Box>{' '}
-            Integrated{' '}
-            <Box component="span" sx={{ color: secondaryColor }}>
-              Solutions
-            </Box>{' '} <br />
-            for Every{' '}
-            <Box component="span" sx={{ color: primaryColor }}>
-              Environment
-            </Box>
-          </Typography>
-
-          {/* Subheading */}
-          <Typography
-            variant="h5"
-            component="p"
-            sx={{
-              fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
-              fontWeight: 400,
-              color: offWhiteColor,
-              maxWidth: '800px',
-              lineHeight: 1.6,
-              mb: 2,
-              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
-              }} 
-
-          >
-       Building maintenance, automation, security, parking, and network solutions engineered for reliability, safety, and performance.
-          </Typography>
-
-          {/* CTA Buttons */}
-          <Box
-            sx={{
-              display: 'flex',
-              flexDirection: { xs: 'column', sm: 'row' },
-              gap: 2,
-              mt: 2,
-              width: { xs: '100%', sm: 'auto' },
-              justifyContent: 'center',
-            }}
-          >
-            {/* Primary CTA */}
-            <Button
-              component={Link}
-              href="/contact"
-              size="small"
-              variant="contained"
-              sx={{
-                backgroundColor: secondaryColor,
-                color: offWhiteColor,
-                fontWeight: 600,
-                fontSize: { xs: '0.85rem', md: '0.9rem' },
-                px: { xs: 2.5, md: 3 },
-                py: { xs: 1, md: 1.25 },
-                borderRadius: '8px',
-                textTransform: 'none',
-                minWidth: { xs: '100%', sm: '150px' },
-                boxShadow: `0 4px 15px rgba(0, 90, 171, 0.4)`,
-                '&:hover': {
-                  backgroundColor: secondaryHover,
-                  boxShadow: `0 6px 20px rgba(0, 90, 171, 0.6)`,
-                  transform: 'translateY(-2px)',
-                },
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Get a Quote
-            </Button>
-
-            {/* Secondary CTA */}
-            <Button
-              component={Link}
-              href="/services"
-              size="small"
-              variant="outlined"
-              sx={{
-                borderColor: offWhiteColor,
-                color: offWhiteColor,
-                fontWeight: 600,
-                fontSize: { xs: '0.85rem', md: '0.9rem' },
-                px: { xs: 2.5, md: 3 },
-                py: { xs: 1, md: 1.25 },
-                borderRadius: '8px',
-                textTransform: 'none',
-                minWidth: { xs: '100%', sm: '150px' },
-                borderWidth: '2px',
-                '&:hover': {
-                  borderColor: primaryColor,
-                  backgroundColor: 'rgba(210, 172, 42, 0.1)',
-                  color: primaryColor,
-                  borderWidth: '2px',
-                  transform: 'translateY(-2px)',
-                },
-                transition: 'all 0.3s ease',
-              }}
-            >
-              Explore Services
-            </Button>
-          </Box>
+      <Box sx={{ position: 'absolute', inset: 0, backgroundColor: 'rgba(0,0,0,0.73)', zIndex: 1 }} />
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 2, textAlign: 'center', px: { xs: 3, md: 4 }, mt: { xs: 10, md: 15 } }}>
+        <Typography variant="h1" sx={{ fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' }, fontWeight: 700, color: offWhiteColor, lineHeight: 1.2 }}>
+          <Box component="span" sx={{ color: primaryColor }}>
+            {typedText}
+            <Box component="span" sx={{ opacity: showCursor ? 1 : 0, ml: '2px' }}>|</Box>
+          </Box>{' '}
+          {heading.middleText}{' '}
+          <Box component="span" sx={{ color: secondaryColor }}>{heading.highlightText}</Box>
+          <br />
+          <Box component="span" sx={{ color: primaryColor }}>{heading.lastLine}</Box>
+        </Typography>
+        <Typography variant="h5" sx={{ mt: 3, color: offWhiteColor, maxWidth: '800px', mx: 'auto', lineHeight: 1.6 }}>{subHeading}</Typography>
+        <Box sx={{ display: 'flex', flexDirection: { xs: 'column', sm: 'row' }, gap: 2, mt: 4, justifyContent: 'center' }}>
+          <Button component={Link} href={cta.primary.link} variant="contained" sx={{ backgroundColor: secondaryColor, color: offWhiteColor, fontWeight: 600, px: 3, py: 1.25, borderRadius: '8px', '&:hover': { backgroundColor: secondaryHover } }}>
+            {cta.primary.label}
+          </Button>
+          <Button component={Link} href={cta.secondary.link} variant="outlined" sx={{ borderColor: offWhiteColor, color: offWhiteColor, fontWeight: 600, px: 3, py: 1.25, borderRadius: '8px', '&:hover': { borderColor: primaryColor, color: primaryColor } }}>
+            {cta.secondary.label}
+          </Button>
         </Box>
       </Container>
     </Box>
@@ -319,4 +135,3 @@ const HomeBanner = () => {
 };
 
 export default HomeBanner;
-

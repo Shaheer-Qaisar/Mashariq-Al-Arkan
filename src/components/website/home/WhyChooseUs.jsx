@@ -13,7 +13,7 @@ import {
   offBlackText,
   offBlackTextLight
 } from '@/components/utils/Colors';
-import data from '@/data/whyChooseUsData';
+import data from '@/components/website/about/AboutPageData.json';
 
 const iconMap = {
   Business,
@@ -33,7 +33,7 @@ const colorMap = {
 };
 
 const WhyChooseUs = () => {
-  const { section, heading, headingFont, description, button, benefits } = data;
+  const { section, heading, headingFont, description, button, benefits } = data.whyChooseUs;
 
   return (
     <Box

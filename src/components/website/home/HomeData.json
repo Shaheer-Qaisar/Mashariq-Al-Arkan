@@ -1,0 +1,30 @@
+{
+  "images": [
+    "/images/home-banner/cables-1.jpg",
+    "/images/home-banner/parking-barrier.jpg",
+    "/images/home-banner/construction-site.jpg",
+    "/images/home-banner/camera-1.jpg",
+    "/images/home-banner/digital-lock.jpg",
+    "/images/home-banner/garage-door-1.webp",
+    "/images/home-banner/parking.jpg",
+    "/images/home-banner/window-blind.jpg",
+    "/images/home-banner/garage-door-2.png"
+  ],
+  "typingWords": ["Secure", "Safe", "Reliable", "Trusted", "Resilient"],
+  "heading": {
+    "middleText": "Integrated",
+    "highlightText": "Solutions",
+    "lastLine": "for Every Environment"
+  },
+  "subHeading": "Building maintenance, automation, security, parking, and network solutions engineered for reliability, safety, and performance.",
+  "cta": {
+    "primary": {
+      "label": "Get a Quote",
+      "link": "/contact"
+    },
+    "secondary": {
+      "label": "Explore Services",
+      "link": "/services"
+    }
+  }
+}

@@ -36,7 +36,7 @@ import {
   offBlackTextLight
 } from '@/components/utils/Colors';
 
-import formDataJson from '@/data/ContactFormData.json';
+import formDataJson from './ContactData.json';
 
 const iconMap = { Email, LocationOn, Phone, Facebook, LinkedIn, Instagram };
 
@@ -61,7 +61,7 @@ const ContactForm = () => {
     }
   };
 
-  const { heading, contactInfo, socialLinks, services, form } = formDataJson;
+  const { heading, contactInfo, socialLinks, services, form } = formDataJson.contactForm;
 
   return (
     <Box sx={{ backgroundColor: offWhiteColor, py: { xs: 6, md: 10 }, minHeight: '80vh' }}>

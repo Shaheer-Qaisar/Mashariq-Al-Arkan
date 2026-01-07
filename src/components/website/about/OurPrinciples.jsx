@@ -14,7 +14,7 @@ import {
   offBlackTextLight
 } from '@/components/utils/Colors';
 
-import principlesData from '@/data/principleData.json';
+import aboutData from './AboutPageData.json';
 // Keyframes for animations
 const fadeInUp = keyframes`
   from { opacity: 0; transform: translateY(40px); }
@@ -48,7 +48,7 @@ const OurPrinciples = () => {
     return () => { if (sectionRef.current) observer.unobserve(sectionRef.current); };
   }, [isVisible]);
 
-  const { sectionHeader, principles, values } = principlesData;
+  const { sectionHeader, principles, values } = aboutData.principles;
 
   return (
     <Box ref={sectionRef} component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: offWhiteColor, overflow: 'hidden' }}>

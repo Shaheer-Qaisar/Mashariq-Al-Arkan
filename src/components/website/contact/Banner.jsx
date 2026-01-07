@@ -7,10 +7,10 @@ import {
   secondaryColor,
   offWhiteColor
 } from '@/components/utils/Colors';
-import bannerData from '@/data/BannerDataContact.json';
+import bannerData from './ContactData.json';
 
 const Banner = () => {
-  const { background, container, heading, subheading } = bannerData;
+  const { background, container, heading, subheading } = bannerData.banner;
 
   // Map JSON color names to actual imported colors
   const getColor = (colorName) => {

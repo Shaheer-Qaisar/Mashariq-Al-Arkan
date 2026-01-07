@@ -1,61 +1,58 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Box, Container, Typography } from '@mui/material';
+import React from "react";
+import { Box, Container, Typography } from "@mui/material";
 import {
   primaryColor,
   secondaryColor,
-  offWhiteColor
-} from '@/components/utils/Colors';
-import BannerDataAbout from '@/data/BannerDataAbout.json';
+  offWhiteColor,
+} from "@/components/utils/Colors";
+import aboutData from "./AboutPageData.json";
 
 const colorMap = {
   primaryColor,
   secondaryColor,
-  offWhiteColor
+  offWhiteColor,
 };
 
 const Banner = () => {
-  const { backgroundImage, overlayColor, heading, headingFont, subheading } = BannerDataAbout;
+  const { backgroundImage, overlayColor, heading, headingFont, subheading } =
+    aboutData.banner;
 
   return (
     <Box
       sx={{
-        position: 'relative',
-        width: '100%',
-        minHeight: '100vh',
-        overflow: 'hidden',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center'
+        position: "relative",
+        width: "100%",
+        minHeight: "100vh",
+        overflow: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      {/* Background Image */}
+      {/* Background */}
       <Box
         component="img"
         src={backgroundImage}
         alt="About Banner"
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          objectFit: 'cover',
-          zIndex: 0
+          position: "absolute",
+          inset: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          zIndex: 0,
         }}
       />
 
-      {/* Dim Overlay */}
+      {/* Overlay */}
       <Box
         sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
+          position: "absolute",
+          inset: 0,
           backgroundColor: overlayColor,
-          zIndex: 1
+          zIndex: 1,
         }}
       />
 
@@ -63,51 +60,56 @@ const Banner = () => {
       <Container
         maxWidth="lg"
         sx={{
-          position: 'relative',
+          position: "relative",
           zIndex: 2,
-          textAlign: 'center',
-          px: { xs: 3, md: 4 }
+          textAlign: "center",
+          px: { xs: 3, md: 4 },
         }}
       >
         <Box
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 3
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+            gap: 3,
           }}
         >
           {/* Heading */}
           <Typography
-            variant="h1"
             component="h1"
             sx={{
-              fontSize: headingFont.fontSize,
-              fontWeight: headingFont.fontWeight,
+              fontSize: headingFont?.fontSize ?? {
+                xs: "2.5rem",
+                sm: "3.5rem",
+                md: "4rem",
+                lg: "5rem",
+              },
+              fontWeight: headingFont?.fontWeight ?? 700,
+              lineHeight: headingFont?.lineHeight ?? 1.2,
               color: offWhiteColor,
-              lineHeight: headingFont.lineHeight,
-              mb: 1
             }}
           >
-            {heading.map((h, i) => (
-              <Box key={i} component="span" sx={{ color: colorMap[h.color] }}>
-                {h.text}{' '}
+            {heading.map((item, index) => (
+              <Box
+                key={index}
+                component="span"
+                sx={{ color: colorMap[item.color] }}
+              >
+                {item.text}{" "}
               </Box>
             ))}
           </Typography>
 
           {/* Subheading */}
           <Typography
-            variant="h5"
             component="p"
             sx={{
               fontSize: subheading.fontSize,
               fontWeight: subheading.fontWeight,
-              color: colorMap[subheading.color],
-              maxWidth: subheading.maxWidth,
               lineHeight: subheading.lineHeight,
-              mb: 2,
-              textShadow: subheading.textShadow
+              maxWidth: subheading.maxWidth,
+              color: colorMap[subheading.color],
+              textShadow: subheading.textShadow,
             }}
           >
             {subheading.text}

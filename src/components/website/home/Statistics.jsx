@@ -11,7 +11,7 @@ import {
   offWhiteColor,
   offBlackTextLight
 } from '@/components/utils/Colors';
-import statisticsData from '@/data/statisticsData.json';
+import statisticsData from '@/components/website/about/AboutPageData.json';
 
 const colorMap = {
   primaryColor,
@@ -26,7 +26,7 @@ const Statistics = () => {
   const [countedValues, setCountedValues] = useState([0, 0, 0, 0]);
   const sectionRef = useRef(null);
 
-  const { heading, headingFont, description, button, stats, section } = statisticsData;
+  const { heading, headingFont, description, button, stats, section } = statisticsData.statistics;
 
   // Intersection Observer
   useEffect(() => {
