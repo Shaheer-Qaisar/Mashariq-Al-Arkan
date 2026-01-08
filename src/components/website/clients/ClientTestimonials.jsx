@@ -35,70 +35,10 @@ const fadeInUp = keyframes`
   }
 `;
 
-const testimonials = [
-  {
-    id: 1,
-    name: "Ahmed Al-Rashid",
-    position: "Facilities Manager",
-    company: "TechCorp Industries",
-    rating: 5,
-    testimonial:
-      "Mashariq Al-Arkan transformed our building security with their comprehensive automation solutions. Their team was professional, efficient, and the results exceeded our expectations.",
-    avatar: "AR",
-  },
-  {
-    id: 2,
-    name: "Fatima Al-Zahra",
-    position: "Operations Director",
-    company: "SecureNet Solutions",
-    rating: 5,
-    testimonial:
-      "The access control system they installed has significantly improved our security protocols. Their ongoing support and maintenance services are exceptional.",
-    avatar: "FZ",
-  },
-  {
-    id: 3,
-    name: "Mohammed Al-Saud",
-    position: "Property Manager",
-    company: "Global Systems",
-    rating: 5,
-    testimonial:
-      "From initial consultation to final installation, Mashariq Al-Arkan demonstrated expertise and commitment. Our parking management system works flawlessly.",
-    avatar: "MS",
-  },
-  {
-    id: 4,
-    name: "Sara Al-Mansouri",
-    position: "IT Director",
-    company: "Innovate Solutions",
-    rating: 5,
-    testimonial:
-      "Their network infrastructure and cabling services are top-notch. The team ensured minimal disruption during installation and delivered on time.",
-    avatar: "SM",
-  },
-  {
-    id: 5,
-    name: "Khalid Al-Mutairi",
-    position: "Security Director",
-    company: "Prime Security",
-    rating: 5,
-    testimonial:
-      "The CCTV and surveillance system installation was seamless. Their technical expertise and customer service are outstanding. Highly recommended!",
-    avatar: "KM",
-  },
-  {
-    id: 6,
-    name: "Noura Al-Harbi",
-    position: "Project Manager",
-    company: "Advanced Tech",
-    rating: 5,
-    testimonial:
-      "Working with Mashariq Al-Arkan has been a pleasure. They delivered our automation project on time and within budget. Excellent communication throughout.",
-    avatar: "NA",
-  },
-];
+import data from './ClientData.json'
 
 const ClientTestimonials = () => {
+  const {sectionHeader,testimonials} =data.testimonialData
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -273,59 +213,21 @@ const ClientTestimonials = () => {
           zIndex: 0,
         }}
       />
-      <Box
-        sx={{
-          position: "absolute",
-          bottom: "-150px",
-          left: "-150px",
-          width: "500px",
-          height: "500px",
-          borderRadius: "50%",
-          background: `radial-gradient(circle, ${primaryLight} 0%, transparent 70%)`,
-          filter: "blur(100px)",
-          opacity: 0.3,
-          zIndex: 0,
-        }}
-      />
-
-      <Container maxWidth="xl" sx={{ position: "relative", zIndex: 1 }}>
-        {/* Section Header */}
-        <Box
-          sx={{
-            textAlign: "center",
-            mb: { xs: 6, md: 10 },
-            opacity: isVisible ? 1 : 0,
-            transform: isVisible ? "translateY(0)" : "translateY(30px)",
-            transition: "all 0.8s ease-out",
-          }}
-        >
+      <Box>
+      <Container maxWidth="xl">
+        <Box textAlign="center">
           <Typography
             variant="h2"
-            component="h2"
-            sx={{
-              fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem", lg: "3.5rem" },
-              fontWeight: 700,
-              color: offBlackText,
-              mb: 2,
-            }}
+            sx={sectionHeader.typography.h2}
           >
-            What Our{" "}
+            {sectionHeader.title.split(sectionHeader.highlight)[0]}
             <Box component="span" sx={{ color: primaryColor }}>
-              Clients
-            </Box>{" "}
-            Say
+              {sectionHeader.highlight}
+            </Box>
+            {sectionHeader.title.split(sectionHeader.highlight)[1]}
           </Typography>
-          <Typography
-            variant="body1"
-            sx={{
-              color: offBlackTextLight,
-              fontSize: { xs: "1rem", md: "1.1rem" },
-              maxWidth: "700px",
-              mx: "auto",
-            }}
-          >
-            Real feedback from satisfied clients who trust us with their
-            security and automation needs
+          <Typography variant="body1" sx={sectionHeader.typography.body1}>
+            {sectionHeader.description}
           </Typography>
         </Box>
 
@@ -656,6 +558,8 @@ const ClientTestimonials = () => {
         </Box>
       </Container>
     </Box>
+    </Box>
+
   );
 };
 

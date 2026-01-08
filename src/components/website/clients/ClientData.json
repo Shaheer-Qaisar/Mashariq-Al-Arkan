@@ -1,0 +1,226 @@
+{
+"banner":{
+  "backgroundImage": "/images/clients/clients-banner.avif",
+  "heading": {
+    "line1": "Our",
+    "highlight1": "Clients",
+    "line2Highlight": "Trusted",
+    "line2": "Partners & Success Stories"
+  },
+  "subHeading": "We're proud to serve a diverse range of clients across Saudi Arabia. From commercial buildings to residential complexes, we deliver trusted security and automation solutions."
+}, 
+ "clients":{
+  "header": {
+    "title": "Meet our top-tier customers",
+    "highlight": "top-tier",
+    "description": "We proudly collaborate with industry-leading organizations across Saudi Arabia, delivering reliable security and automation solutions."
+  },
+  "clientsCards": [
+    {
+      "id": 1,
+      "name": "Abdul Latif Jamil Group",
+      "logo": "/images/clients/client1.png",
+      "href": "https://www.alj.com"
+    },
+    {
+      "id": 2,
+      "name": "Shirka Tamer",
+      "logo": "/images/clients/client2.png",
+      "href": "https://www.tamer.com"
+    },
+    {
+      "id": 3,
+      "name": "Shirka Nesma",
+      "logo": "/images/clients/client3.svg",
+      "href": "https://www.nesma.com"
+    },
+    {
+      "id": 4,
+      "name": "Hyundai Muhammad Yousaf Nagi",
+      "logo": "/images/clients/client4.png",
+      "href": "https://www.hyundai.com"
+    },
+    {
+      "id": 5,
+      "name": "Shirka Jotan Paints",
+      "logo": "/images/clients/client5.png",
+      "href": "https://www.jotun.com"
+    },
+    {
+      "id": 6,
+      "name": "Shirka Hemple",
+      "logo": "/images/clients/client6.png",
+      "href": "https://www.hempel.com"
+    },
+    {
+      "id": 7,
+      "name": "Shura Iceland",
+      "logo": "/images/clients/client7.svg",
+      "href": "https://www.shura.is"
+    },
+    {
+      "id": 8,
+      "name": "Le Maradian Hotel",
+      "logo": "/images/clients/client8.png",
+      "href": "https://www.marriott.com"
+    },
+    {
+      "id": 9,
+      "name": "UCIC",
+      "logo": "/images/clients/client9.png",
+      "href": "https://www.ucic.com"
+    },
+    {
+      "id": 10,
+      "name": "Jaffali",
+      "logo": "/images/clients/client10.svg",
+      "href": "https://www.juffali.com"
+    }
+  ]
+},
+"testimonialData":{
+  "sectionHeader": {
+    "title": "What Our Clients Say",
+    "highlight": "Clients",
+    "description": "Real feedback from satisfied clients who trust us with their security and automation needs",
+    "typography": {
+      "h2": {
+        "fontSize": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
+        "fontWeight": 700,
+        "color": "offBlackText",
+        "mb": 2
+      },
+      "body1": {
+        "fontSize": { "xs": "1rem", "md": "1.1rem" },
+        "color": "offBlackTextLight",
+        "maxWidth": "700px",
+        "mx": "auto"
+      }
+    }
+  },
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Ahmed Al-Rashid",
+      "position": "Facilities Manager",
+      "company": "TechCorp Industries",
+      "rating": 5,
+      "testimonial": "Mashariq Al-Arkan transformed our building security with their comprehensive automation solutions. Their team was professional, efficient, and the results exceeded our expectations.",
+      "avatar": "AR"
+    },
+    {
+      "id": 2,
+      "name": "Fatima Al-Zahra",
+      "position": "Operations Director",
+      "company": "SecureNet Solutions",
+      "rating": 5,
+      "testimonial": "The access control system they installed has significantly improved our security protocols. Their ongoing support and maintenance services are exceptional.",
+      "avatar": "FZ"
+    },
+    {
+      "id": 3,
+      "name": "Mohammed Al-Saud",
+      "position": "Property Manager",
+      "company": "Global Systems",
+      "rating": 5,
+      "testimonial": "From initial consultation to final installation, Mashariq Al-Arkan demonstrated expertise and commitment. Our parking management system works flawlessly.",
+      "avatar": "MS"
+    },
+    {
+      "id": 4,
+      "name": "Sara Al-Mansouri",
+      "position": "IT Director",
+      "company": "Innovate Solutions",
+      "rating": 5,
+      "testimonial": "Their network infrastructure and cabling services are top-notch. The team ensured minimal disruption during installation and delivered on time.",
+      "avatar": "SM"
+    },
+    {
+      "id": 5,
+      "name": "Khalid Al-Mutairi",
+      "position": "Security Director",
+      "company": "Prime Security",
+      "rating": 5,
+      "testimonial": "The CCTV and surveillance system installation was seamless. Their technical expertise and customer service are outstanding. Highly recommended!",
+      "avatar": "KM"
+    },
+    {
+      "id": 6,
+      "name": "Noura Al-Harbi",
+      "position": "Project Manager",
+      "company": "Advanced Tech",
+      "rating": 5,
+      "testimonial": "Working with Mashariq Al-Arkan has been a pleasure. They delivered our automation project on time and within budget. Excellent communication throughout.",
+      "avatar": "NA"
+    }
+  ]
+},
+"benefitsData":{
+  
+  "sectionHeader": {
+    "title": "Partnership",
+    "highlight": "Benefits",
+    "description": "Why leading businesses choose Mashariq Al-Arkan as their trusted security and automation partner",
+    "titleFontSize": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
+    "titleFontWeight": 700,
+    "descriptionFontSize": { "xs": "1rem", "md": "1.1rem" }
+  },
+  "benefits": [
+    {
+      "id": 1,
+      "title": "Trusted Partnership",
+      "description": "We build long-term relationships with our clients, ensuring consistent quality and reliability in every project.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 0,
+      "icon": "Handshake"
+    },
+    {
+      "id": 2,
+      "title": "Enhanced Security",
+      "description": "Comprehensive security solutions that protect your assets, people, and data with cutting-edge technology.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 100,
+      "icon": "Shield"
+    },
+    {
+      "id": 3,
+      "title": "Fast Implementation",
+      "description": "Efficient project execution with minimal disruption to your operations, delivered on time and within budget.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 200,
+      "icon": "Speed"
+    },
+    {
+      "id": 4,
+      "title": "24/7 Support",
+      "description": "Round-the-clock technical support and maintenance services to keep your systems running smoothly.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 300,
+      "icon": "Support"
+    },
+    {
+      "id": 5,
+      "title": "Certified Solutions",
+      "description": "All our products and services meet international standards and certifications for quality assurance.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 400,
+      "icon": "Verified"
+    },
+    {
+      "id": 6,
+      "title": "Scalable Growth",
+      "description": "Solutions designed to grow with your business, easily expandable and adaptable to future needs.",
+      "color": "#FF5722",
+      "lightColor": "#FF8A50",
+      "delay": 500,
+      "icon": "TrendingUp"
+    }
+  ]
+}
+
+}

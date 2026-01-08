@@ -1,18 +1,18 @@
 'use client';
 
 import React from 'react';
-import {
-  Box,
-  Container,
-  Typography,
-} from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import {
   primaryColor,
   secondaryColor,
   offWhiteColor,
 } from '@/components/utils/Colors';
 
+import bannerData from './ClientData.json';
+
 const Banner = () => {
+  const { backgroundImage, heading, subHeading } = bannerData.banner;
+
   return (
     <Box
       sx={{
@@ -28,12 +28,11 @@ const Banner = () => {
       {/* Background Image */}
       <Box
         component="img"
-        src="/images/clients/clients-banner.avif"
+        src={backgroundImage}
         alt="Clients Banner"
         sx={{
           position: 'absolute',
-          top: 0,
-          left: 0,
+          inset: 0,
           width: '100%',
           height: '100%',
           objectFit: 'cover',
@@ -41,14 +40,11 @@ const Banner = () => {
         }}
       />
 
-      {/* Dim Overlay */}
+      {/* Overlay */}
       <Box
         sx={{
           position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
+          inset: 0,
           backgroundColor: 'rgba(0, 0, 0, 0.73)',
           zIndex: 1,
         }}
@@ -64,60 +60,43 @@ const Banner = () => {
           px: { xs: 3, md: 4 },
         }}
       >
-        <Box
+        <Typography
+          variant="h1"
           sx={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            gap: 3,
+            fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' },
+            fontWeight: 700,
+            color: offWhiteColor,
+            lineHeight: 1.2,
+            mb: 2,
           }}
         >
-          {/* Heading */}
-          <Typography
-            variant="h1"
-            component="h1"
-            sx={{
-              fontSize: { xs: '2.5rem', sm: '3.5rem', md: '4rem', lg: '5rem' },
-              fontWeight: 700,
-              color: offWhiteColor,
-              lineHeight: 1.2,
-              mb: 1,
-            }}
-          >
-            Our{' '}
-            <Box component="span" sx={{ color: primaryColor }}>
-              Clients
-            </Box>
-            <br />
-            <Box component="span" sx={{ color: secondaryColor }}>
-              Trusted
-            </Box>{' '}
-            Partners & Success Stories
-          </Typography>
+          {heading.line1}{' '}
+          <Box component="span" sx={{ color: primaryColor }}>
+            {heading.highlight1}
+          </Box>
+          <br />
+          <Box component="span" sx={{ color: secondaryColor }}>
+            {heading.line2Highlight}
+          </Box>{' '}
+          {heading.line2}
+        </Typography>
 
-          {/* Subheading */}
-          <Typography
-            variant="h5"
-            component="p"
-            sx={{
-              fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
-              fontWeight: 400,
-              color: offWhiteColor,
-              maxWidth: '800px',
-              lineHeight: 1.6,
-              mb: 2,
-              textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
-            }}
-          >
-            We're proud to serve a diverse range of clients across Saudi Arabia. 
-            From commercial buildings to residential complexes, we deliver trusted 
-            security and automation solutions.
-          </Typography>
-        </Box>
+        <Typography
+          variant="h5"
+          sx={{
+            fontSize: { xs: '1rem', sm: '1.2rem', md: '1.4rem' },
+            color: offWhiteColor,
+            maxWidth: '800px',
+            mx: 'auto',
+            lineHeight: 1.6,
+            textShadow: '1px 1px 4px rgba(0,0,0,0.5)',
+          }}
+        >
+          {subHeading}
+        </Typography>
       </Container>
     </Box>
   );
 };
 
 export default Banner;
-
