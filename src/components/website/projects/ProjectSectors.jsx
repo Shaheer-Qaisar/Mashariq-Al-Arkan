@@ -18,6 +18,7 @@ import {
   Store,
 } from '@mui/icons-material';
 import { keyframes } from '@emotion/react';
+
 import {
   primaryColor,
   primaryLight,
@@ -27,6 +28,8 @@ import {
   offBlackText,
   offBlackTextLight,
 } from '@/components/utils/Colors';
+
+import Main from './ProjectsData.json';
 
 const fadeInUp = keyframes`
   from {
@@ -39,7 +42,18 @@ const fadeInUp = keyframes`
   }
 `;
 
+//  Icon mapping (icons remain the same)
+const iconMap = {
+  Factory,
+  Home,
+  School,
+  BusinessCenter,
+  LocalHospital,
+  Store,
+};
+
 const ProjectSectors = () => {
+   const data=Main.sectorData
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -52,78 +66,12 @@ const ProjectSectors = () => {
           }
         });
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, [isVisible]);
-
-  const sectors = [
-    {
-      id: 1,
-      title: 'Industrial',
-      icon: Factory,
-      description: 'Comprehensive solutions for warehouses, factories, and logistics facilities.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 0,
-    },
-    {
-      id: 2,
-      title: 'Residential',
-      icon: Home,
-      description: 'Smart home automation and security for residential compounds and villas.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 100,
-    },
-    {
-      id: 3,
-      title: 'Education',
-      icon: School,
-      description: 'Modern security and automation systems for schools and universities.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 200,
-    },
-    {
-      id: 4,
-      title: 'Commercial',
-      icon: BusinessCenter,
-      description: 'Business solutions for offices, retail spaces, and commercial buildings.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 300,
-    },
-    {
-      id: 5,
-      title: 'Healthcare',
-      icon: LocalHospital,
-      description: 'Specialized systems for hospitals and medical facilities.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 400,
-    },
-    {
-      id: 6,
-      title: 'Retail',
-      icon: Store,
-      description: 'Integrated solutions for shopping malls and retail outlets.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 500,
-    },
-  ];
 
   return (
     <Box
@@ -137,7 +85,7 @@ const ProjectSectors = () => {
       }}
     >
       <Container maxWidth="xl">
-        {/* Section Header */}
+        {/* Header */}
         <Box
           sx={{
             textAlign: 'center',
@@ -149,47 +97,50 @@ const ProjectSectors = () => {
         >
           <Typography
             variant="h2"
-            component="h2"
             sx={{
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
-              fontWeight: 700,
+              fontSize: data.typography.heading.fontSize,
+              fontWeight: data.typography.heading.fontWeight,
               color: offBlackText,
               mb: 2,
             }}
           >
-            Projects Across{' '}
+            {data.section.title.text}{' '}
             <Box component="span" sx={{ color: primaryColor }}>
-              Sectors
+              {data.section.title.highlight}
             </Box>
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
               color: offBlackTextLight,
-              fontSize: { xs: '1rem', md: '1.1rem' },
+              fontSize: data.typography.subheading.fontSize,
               maxWidth: '700px',
               mx: 'auto',
             }}
           >
-            We deliver tailored solutions across diverse industries and sectors
+            {data.section.description}
           </Typography>
         </Box>
 
-        {/* Sectors Grid */}
+        {/* Grid */}
         <Grid container spacing={4}>
-          {sectors.map((sector) => {
-            const IconComponent = sector.icon;
+          {data.sectors.map((sector) => {
+            const IconComponent = iconMap[sector.icon];
+            const color =
+              sector.colorType === 'primary' ? primaryColor : secondaryColor;
+            const lightColor =
+              sector.colorType === 'primary' ? primaryLight : secondaryLight;
+
             return (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={sector.id}>
                 <Card
                   sx={{
                     height: '100%',
                     borderRadius: '24px',
-                    background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
-                    border: `2px solid ${sector.lightColor}`,
-                    boxShadow: `0 8px 32px ${sector.lightColor}40`,
-                    position: 'relative',
-                    overflow: 'visible',
+                    background: offWhiteColor,
+                    border: `2px solid ${lightColor}`,
+                    boxShadow: `0 8px 32px ${lightColor}40`,
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible
@@ -200,54 +151,42 @@ const ProjectSectors = () => {
                       : 'none',
                     '&:hover': {
                       transform: 'translateY(-12px) scale(1.02)',
-                      boxShadow: `0 20px 60px ${sector.lightColor}80`,
-                      borderColor: sector.color,
+                      boxShadow: `0 20px 60px ${lightColor}80`,
+                      borderColor: color,
                       '& .sector-icon': {
                         transform: 'scale(1.1) rotate(5deg)',
-                        color: sector.color,
+                        color,
                       },
                     },
                   }}
                 >
                   <CardContent sx={{ p: { xs: 3, md: 4 }, textAlign: 'center' }}>
                     {/* Icon */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mb: 3,
-                      }}
-                    >
+                    <Box sx={{ mb: 3 }}>
                       <Box
                         className="sector-icon"
                         sx={{
                           width: 100,
                           height: 100,
                           borderRadius: '50%',
-                          background: `linear-gradient(135deg, ${sector.lightColor} 0%, ${sector.color}20 100%)`,
+                          background: `linear-gradient(135deg, ${lightColor} 0%, ${color}20 100%)`,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
                           transition: 'all 0.5s ease',
+                          margin: '0 auto',
                         }}
                       >
-                        <IconComponent
-                          sx={{
-                            fontSize: '3.5rem',
-                            color: sector.color,
-                            transition: 'all 0.5s ease',
-                          }}
-                        />
+                        <IconComponent sx={{ fontSize: '3.5rem', color }} />
                       </Box>
                     </Box>
 
                     {/* Title */}
                     <Typography
                       variant="h4"
-                      component="h3"
                       sx={{
-                        fontSize: { xs: '1.75rem', md: '2rem' },
-                        fontWeight: 700,
+                        fontSize: data.typography.cardTitle.fontSize,
+                        fontWeight: data.typography.cardTitle.fontWeight,
                         color: offBlackText,
                         mb: 2,
                       }}
@@ -259,9 +198,9 @@ const ProjectSectors = () => {
                     <Typography
                       variant="body1"
                       sx={{
+                        fontSize: data.typography.cardDescription.fontSize,
                         color: offBlackTextLight,
                         lineHeight: 1.8,
-                        fontSize: { xs: '0.95rem', md: '1rem' },
                       }}
                     >
                       {sector.description}
@@ -278,4 +217,3 @@ const ProjectSectors = () => {
 };
 
 export default ProjectSectors;
-

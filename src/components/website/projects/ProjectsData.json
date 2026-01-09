@@ -113,6 +113,244 @@
     "label": "Explore Projects",
     "link": "/projects"
   }
+},
+"statisticsData":{
+  "section": {
+    "title": {
+      "text": "Project",
+      "highlight": "Statistics"
+    },
+    "description": "Our track record speaks for itself - delivering excellence across Saudi Arabia"
+  },
+  "typography": {
+    "title": {
+      "fontSize": {
+        "xs": "2rem",
+        "sm": "2.5rem",
+        "md": "3rem",
+        "lg": "3.5rem"
+      },
+      "fontWeight": 700
+    },
+    "description": {
+      "fontSize": {
+        "xs": "1rem",
+        "md": "1.1rem"
+      }
+    },
+    "number": {
+      "fontSize": {
+        "xs": "2.5rem",
+        "md": "3.5rem"
+      },
+      "fontWeight": 700
+    },
+    "label": {
+      "fontSize": {
+        "xs": "1rem",
+        "md": "1.1rem"
+      },
+      "fontWeight": 600
+    }
+  },
+  "statistics": [
+    {
+      "id": 1,
+      "icon": "CheckCircle",
+      "number": "150+",
+      "label": "Projects Completed",
+      "colorType": "secondary",
+      "delay": 0
+    },
+    {
+      "id": 2,
+      "icon": "LocationOn",
+      "number": "50+",
+      "label": "Cities Served",
+      "colorType": "primary",
+      "delay": 100
+    },
+    {
+      "id": 3,
+      "icon": "Build",
+      "number": "95%",
+      "label": "Client Satisfaction",
+      "colorType": "secondary",
+      "delay": 200
+    },
+    {
+      "id": 4,
+      "icon": "TrendingUp",
+      "number": "10+",
+      "label": "Years Experience",
+      "colorType": "primary",
+      "delay": 300
+    }
+  ]
+},
+"sectorData":{
+  "section": {
+    "title": {
+      "text": "Projects Across",
+      "highlight": "Sectors"
+    },
+    "description": "We deliver tailored solutions across diverse industries and sectors"
+  },
+  "typography": {
+    "heading": {
+      "fontSize": {
+        "xs": "2rem",
+        "sm": "2.5rem",
+        "md": "3rem",
+        "lg": "3.5rem"
+      },
+      "fontWeight": 700
+    },
+    "subheading": {
+      "fontSize": {
+        "xs": "1rem",
+        "md": "1.1rem"
+      }
+    },
+    "cardTitle": {
+      "fontSize": {
+        "xs": "1.75rem",
+        "md": "2rem"
+      },
+      "fontWeight": 700
+    },
+    "cardDescription": {
+      "fontSize": {
+        "xs": "0.95rem",
+        "md": "1rem"
+      }
+    }
+  },
+  "sectors": [
+    {
+      "id": 1,
+      "title": "Industrial",
+      "description": "Comprehensive solutions for warehouses, factories, and logistics facilities.",
+      "icon": "Factory",
+      "colorType": "secondary",
+      "delay": 0
+    },
+    {
+      "id": 2,
+      "title": "Residential",
+      "description": "Smart home automation and security for residential compounds and villas.",
+      "icon": "Home",
+      "colorType": "primary",
+      "delay": 100
+    },
+    {
+      "id": 3,
+      "title": "Education",
+      "description": "Modern security and automation systems for schools and universities.",
+      "icon": "School",
+      "colorType": "secondary",
+      "delay": 200
+    },
+    {
+      "id": 4,
+      "title": "Commercial",
+      "description": "Business solutions for offices, retail spaces, and commercial buildings.",
+      "icon": "BusinessCenter",
+      "colorType": "primary",
+      "delay": 300
+    },
+    {
+      "id": 5,
+      "title": "Healthcare",
+      "description": "Specialized systems for hospitals and medical facilities.",
+      "icon": "LocalHospital",
+      "colorType": "secondary",
+      "delay": 400
+    },
+    {
+      "id": 6,
+      "title": "Retail",
+      "description": "Integrated solutions for shopping malls and retail outlets.",
+      "icon": "Store",
+      "colorType": "primary",
+      "delay": 500
+    }
+  ]
+},
+"processData":{
+  "section": {
+    "title": {
+      "line1": "Our Project",
+      "highlight": "Process"
+    },
+    "subtitle": "A systematic approach ensuring successful project delivery from start to finish"
+  },
+  "steps": [
+    {
+      "id": 1,
+      "label": "Consultation & Planning",
+      "description": "We begin with a comprehensive consultation to understand your needs, assess your facility, and develop a customized project plan."
+    },
+    {
+      "id": 2,
+      "label": "Design & Engineering",
+      "description": "Our expert team creates detailed designs and engineering plans, ensuring optimal solutions that meet all requirements and standards."
+    },
+    {
+      "id": 3,
+      "label": "Installation & Implementation",
+      "description": "Professional installation with minimal disruption, following strict quality standards and safety protocols throughout the process."
+    },
+    {
+      "id": 4,
+      "label": "Testing & Handover",
+      "description": "Comprehensive testing, staff training, and smooth handover with complete documentation and ongoing support."
+    }
+  ]
+},
+"whyChooseUs":{
+  "section": {
+    "title": {
+      "line1": "Why Choose",
+      "highlight": "Our Projects"
+    },
+    "subtitle": "What sets our project delivery apart from the rest"
+  },
+  "benefits": [
+    {
+      "id": 1,
+      "title": "Expert Engineering",
+      "description": "Our team of certified engineers ensures every project meets the highest technical standards."
+    },
+    {
+      "id": 2,
+      "title": "Fast Delivery",
+      "description": "Efficient project management ensures timely completion without compromising quality."
+    },
+    {
+      "id": 3,
+      "title": "Quality Assurance",
+      "description": "Rigorous testing and quality control processes guarantee reliable, long-lasting solutions."
+    },
+    {
+      "id": 4,
+      "title": "Comprehensive Support",
+      "description": "Ongoing maintenance and 24/7 support to keep your systems running smoothly."
+    },
+    {
+      "id": 5,
+      "title": "Proven Track Record",
+      "description": "150+ successful projects across Saudi Arabia demonstrate our expertise and reliability."
+    },
+    {
+      "id": 6,
+      "title": "Secure Solutions",
+      "description": "Enterprise-grade security systems protecting your assets, people, and operations."
+    }
+  ]
 }
+
+
+
 
 }

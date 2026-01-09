@@ -28,6 +28,9 @@ import {
   offBlackTextLight,
 } from '@/components/utils/Colors';
 
+import Main from './ProjectsData.json';
+
+/* animation unchanged */
 const fadeInUp = keyframes`
   from {
     opacity: 0;
@@ -39,7 +42,18 @@ const fadeInUp = keyframes`
   }
 `;
 
+/* icon mapping (icons remain exactly the same) */
+const iconMap = {
+  1: Engineering,
+  2: Speed,
+  3: Verified,
+  4: Support,
+  5: TrendingUp,
+  6: Shield,
+};
+
 const WhyChooseOurProjects = () => {
+  const data=Main.whyChooseUs
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -52,78 +66,24 @@ const WhyChooseOurProjects = () => {
           }
         });
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, [isVisible]);
 
-  const benefits = [
-    {
-      id: 1,
-      title: 'Expert Engineering',
-      icon: Engineering,
-      description: 'Our team of certified engineers ensures every project meets the highest technical standards.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 0,
-    },
-    {
-      id: 2,
-      title: 'Fast Delivery',
-      icon: Speed,
-      description: 'Efficient project management ensures timely completion without compromising quality.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 100,
-    },
-    {
-      id: 3,
-      title: 'Quality Assurance',
-      icon: Verified,
-      description: 'Rigorous testing and quality control processes guarantee reliable, long-lasting solutions.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 200,
-    },
-    {
-      id: 4,
-      title: 'Comprehensive Support',
-      icon: Support,
-      description: 'Ongoing maintenance and 24/7 support to keep your systems running smoothly.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 300,
-    },
-    {
-      id: 5,
-      title: 'Proven Track Record',
-      icon: TrendingUp,
-      description: '150+ successful projects across Saudi Arabia demonstrate our expertise and reliability.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 400,
-    },
-    {
-      id: 6,
-      title: 'Secure Solutions',
-      icon: Shield,
-      description: 'Enterprise-grade security systems protecting your assets, people, and operations.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 500,
-    },
-  ];
+  /* enrich JSON data without changing design logic */
+  const benefits = data.benefits.map((item, index) => ({
+    ...item,
+    icon: iconMap[item.id],
+    color: index % 2 === 0 ? secondaryColor : primaryColor,
+    lightColor: index % 2 === 0 ? secondaryLight : primaryLight,
+    delay: index * 100,
+  }));
 
   return (
     <Box
@@ -157,11 +117,12 @@ const WhyChooseOurProjects = () => {
               mb: 2,
             }}
           >
-            Why Choose{' '}
+            {data.section.title.line1}{' '}
             <Box component="span" sx={{ color: primaryColor }}>
-              Our Projects
+              {data.section.title.highlight}
             </Box>
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
@@ -171,7 +132,7 @@ const WhyChooseOurProjects = () => {
               mx: 'auto',
             }}
           >
-            What sets our project delivery apart from the rest
+            {data.section.subtitle}
           </Typography>
         </Box>
 
@@ -179,6 +140,7 @@ const WhyChooseOurProjects = () => {
         <Grid container spacing={4}>
           {benefits.map((benefit) => {
             const IconComponent = benefit.icon;
+
             return (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={benefit.id}>
                 <Card
@@ -188,8 +150,6 @@ const WhyChooseOurProjects = () => {
                     background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
                     border: `2px solid ${benefit.lightColor}`,
                     boxShadow: `0 8px 32px ${benefit.lightColor}40`,
-                    position: 'relative',
-                    overflow: 'visible',
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible
@@ -211,13 +171,7 @@ const WhyChooseOurProjects = () => {
                 >
                   <CardContent sx={{ p: { xs: 3, md: 4 } }}>
                     {/* Icon */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mb: 3,
-                      }}
-                    >
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
                       <Box
                         className="benefit-icon"
                         sx={{
@@ -235,7 +189,6 @@ const WhyChooseOurProjects = () => {
                           sx={{
                             fontSize: '3.5rem',
                             color: benefit.color,
-                            transition: 'all 0.5s ease',
                           }}
                         />
                       </Box>
@@ -280,4 +233,3 @@ const WhyChooseOurProjects = () => {
 };
 
 export default WhyChooseOurProjects;
-

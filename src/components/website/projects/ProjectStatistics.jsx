@@ -16,6 +16,7 @@ import {
   Build,
 } from '@mui/icons-material';
 import { keyframes } from '@emotion/react';
+
 import {
   primaryColor,
   primaryLight,
@@ -25,6 +26,8 @@ import {
   offBlackText,
   offBlackTextLight,
 } from '@/components/utils/Colors';
+
+import Main from './ProjectsData.json';
 
 const fadeInUp = keyframes`
   from {
@@ -37,7 +40,16 @@ const fadeInUp = keyframes`
   }
 `;
 
+//  Icon mapping (icons stay exactly the same)
+const iconMap = {
+  CheckCircle,
+  LocationOn,
+  Build,
+  TrendingUp,
+};
+
 const ProjectStatistics = () => {
+  const data =Main.statisticsData
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -50,60 +62,12 @@ const ProjectStatistics = () => {
           }
         });
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
   }, [isVisible]);
-
-  const statistics = [
-    {
-      id: 1,
-      icon: CheckCircle,
-      number: '150+',
-      label: 'Projects Completed',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 0,
-    },
-    {
-      id: 2,
-      icon: LocationOn,
-      number: '50+',
-      label: 'Cities Served',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 100,
-    },
-    {
-      id: 3,
-      icon: Build,
-      number: '95%',
-      label: 'Client Satisfaction',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 200,
-    },
-    {
-      id: 4,
-      icon: TrendingUp,
-      number: '10+',
-      label: 'Years Experience',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 300,
-    },
-  ];
 
   return (
     <Box
@@ -116,7 +80,7 @@ const ProjectStatistics = () => {
       }}
     >
       <Container maxWidth="xl">
-        {/* Section Header */}
+        {/* Header */}
         <Box
           sx={{
             textAlign: 'center',
@@ -128,119 +92,102 @@ const ProjectStatistics = () => {
         >
           <Typography
             variant="h2"
-            component="h2"
             sx={{
-              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
-              fontWeight: 700,
+              fontSize: data.typography.title.fontSize,
+              fontWeight: data.typography.title.fontWeight,
               color: offBlackText,
               mb: 2,
             }}
           >
-            Project{' '}
+            {data.section.title.text}{' '}
             <Box component="span" sx={{ color: secondaryColor }}>
-              Statistics
+              {data.section.title.highlight}
             </Box>
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
               color: offBlackTextLight,
-              fontSize: { xs: '1rem', md: '1.1rem' },
+              fontSize: data.typography.description.fontSize,
               maxWidth: '700px',
               mx: 'auto',
             }}
           >
-            Our track record speaks for itself - delivering excellence across Saudi Arabia
+            {data.section.description}
           </Typography>
         </Box>
 
-        {/* Statistics Grid */}
+        {/* Cards */}
         <Grid container spacing={4}>
-          {statistics.map((stat) => {
-            const IconComponent = stat.icon;
+          {data.statistics.map((stat) => {
+            const IconComponent = iconMap[stat.icon];
+            const color = stat.colorType === 'primary' ? primaryColor : secondaryColor;
+            const lightColor =
+              stat.colorType === 'primary' ? primaryLight : secondaryLight;
+
             return (
               <Grid size={{ xs: 12, sm: 6, md: 3 }} key={stat.id}>
                 <Card
                   sx={{
                     height: '100%',
                     borderRadius: '24px',
-                    background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
-                    border: `2px solid ${stat.lightColor}`,
-                    boxShadow: `0 8px 32px ${stat.lightColor}40`,
-                    position: 'relative',
-                    overflow: 'visible',
+                    background: offWhiteColor,
+                    border: `2px solid ${lightColor}`,
+                    boxShadow: `0 8px 32px ${lightColor}40`,
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
-                    opacity: isVisible ? 1 : 0,
-                    transform: isVisible
-                      ? 'translateY(0) scale(1)'
-                      : 'translateY(50px) scale(0.9)',
                     animation: isVisible
                       ? `${fadeInUp} 0.8s ease-out ${stat.delay}ms forwards`
                       : 'none',
                     '&:hover': {
                       transform: 'translateY(-12px) scale(1.02)',
-                      boxShadow: `0 20px 60px ${stat.lightColor}80`,
-                      borderColor: stat.color,
+                      boxShadow: `0 20px 60px ${lightColor}80`,
+                      borderColor: color,
                       '& .stat-icon': {
                         transform: 'scale(1.1) rotate(5deg)',
-                        color: stat.color,
+                        color,
                       },
                     },
                   }}
                 >
-                  <CardContent sx={{ p: { xs: 3, md: 4 }, textAlign: 'center' }}>
-                    {/* Icon */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mb: 3,
-                      }}
-                    >
+                  <CardContent sx={{ textAlign: 'center', p: { xs: 3, md: 4 } }}>
+                    <Box sx={{ mb: 3 }}>
                       <Box
                         className="stat-icon"
                         sx={{
                           width: 80,
                           height: 80,
                           borderRadius: '50%',
-                          background: `linear-gradient(135deg, ${stat.lightColor} 0%, ${stat.color}20 100%)`,
+                          background: `linear-gradient(135deg, ${lightColor} 0%, ${color}20 100%)`,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
+                          margin: '0 auto',
                           transition: 'all 0.5s ease',
                         }}
                       >
-                        <IconComponent
-                          sx={{
-                            fontSize: '2.5rem',
-                            color: stat.color,
-                            transition: 'all 0.5s ease',
-                          }}
-                        />
+                        <IconComponent sx={{ fontSize: '2.5rem', color }} />
                       </Box>
                     </Box>
 
-                    {/* Number */}
                     <Typography
                       variant="h3"
-                      component="div"
                       sx={{
-                        fontSize: { xs: '2.5rem', md: '3.5rem' },
-                        fontWeight: 700,
-                        color: stat.color,
+                        fontSize: data.typography.number.fontSize,
+                        fontWeight: data.typography.number.fontWeight,
+                        color,
                         mb: 1,
                       }}
                     >
                       {stat.number}
                     </Typography>
 
-                    {/* Label */}
                     <Typography
                       variant="h6"
                       sx={{
+                        fontSize: data.typography.label.fontSize,
+                        fontWeight: data.typography.label.fontWeight,
                         color: offBlackText,
-                        fontSize: { xs: '1rem', md: '1.1rem' },
-                        fontWeight: 600,
                       }}
                     >
                       {stat.label}
@@ -257,4 +204,3 @@ const ProjectStatistics = () => {
 };
 
 export default ProjectStatistics;
-

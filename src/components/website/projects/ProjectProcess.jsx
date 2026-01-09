@@ -6,10 +6,6 @@ import {
   Container,
   Typography,
   Grid,
-  Stepper,
-  Step,
-  StepLabel,
-  StepContent,
   Card,
   CardContent,
 } from '@mui/material';
@@ -31,6 +27,9 @@ import {
   offBlackTextLight,
 } from '@/components/utils/Colors';
 
+import Main from './ProjectsData.json';
+
+/* animations untouched */
 const fadeInUp = keyframes`
   from {
     opacity: 0;
@@ -42,7 +41,15 @@ const fadeInUp = keyframes`
   }
 `;
 
+const iconMap = {
+  1: Search,
+  2: DesignServices,
+  3: Build,
+  4: CheckCircle,
+};
+
 const ProjectProcess = () => {
+   const data=Main.processData
   const [isVisible, setIsVisible] = useState(false);
   const sectionRef = useRef(null);
 
@@ -55,60 +62,23 @@ const ProjectProcess = () => {
           }
         });
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
 
     return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
+      if (sectionRef.current) observer.unobserve(sectionRef.current);
     };
   }, [isVisible]);
 
-  const steps = [
-    {
-      id: 1,
-      label: 'Consultation & Planning',
-      icon: Search,
-      description: 'We begin with a comprehensive consultation to understand your needs, assess your facility, and develop a customized project plan.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 0,
-    },
-    {
-      id: 2,
-      label: 'Design & Engineering',
-      icon: DesignServices,
-      description: 'Our expert team creates detailed designs and engineering plans, ensuring optimal solutions that meet all requirements and standards.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 200,
-    },
-    {
-      id: 3,
-      label: 'Installation & Implementation',
-      icon: Build,
-      description: 'Professional installation with minimal disruption, following strict quality standards and safety protocols throughout the process.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 400,
-    },
-    {
-      id: 4,
-      label: 'Testing & Handover',
-      icon: CheckCircle,
-      description: 'Comprehensive testing, staff training, and smooth handover with complete documentation and ongoing support.',
-      color: primaryColor,
-      lightColor: primaryLight,
-      delay: 600,
-    },
-  ];
+  const steps = data.steps.map((step, index) => ({
+    ...step,
+    icon: iconMap[step.id],
+    color: index % 2 === 0 ? secondaryColor : primaryColor,
+    lightColor: index % 2 === 0 ? secondaryLight : primaryLight,
+    delay: index * 200,
+  }));
 
   return (
     <Box
@@ -121,7 +91,7 @@ const ProjectProcess = () => {
       }}
     >
       <Container maxWidth="lg">
-        {/* Section Header */}
+        {/* Header */}
         <Box
           sx={{
             textAlign: 'center',
@@ -141,11 +111,12 @@ const ProjectProcess = () => {
               mb: 2,
             }}
           >
-            Our Project{' '}
+            {data.section.title.line1}{' '}
             <Box component="span" sx={{ color: secondaryColor }}>
-              Process
+              {data.section.title.highlight}
             </Box>
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
@@ -155,15 +126,16 @@ const ProjectProcess = () => {
               mx: 'auto',
             }}
           >
-            A systematic approach ensuring successful project delivery from start to finish
+            {data.section.subtitle}
           </Typography>
         </Box>
 
-        {/* Process Steps */}
+        {/* Cards */}
         <Grid container spacing={4}>
           {steps.map((step, index) => {
             const IconComponent = step.icon;
             const isLast = index === steps.length - 1;
+
             return (
               <Grid size={{ xs: 12, md: 6 }} key={step.id}>
                 <Card
@@ -173,8 +145,6 @@ const ProjectProcess = () => {
                     background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
                     border: `2px solid ${step.lightColor}`,
                     boxShadow: `0 8px 32px ${step.lightColor}40`,
-                    position: 'relative',
-                    overflow: 'visible',
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible
@@ -195,15 +165,8 @@ const ProjectProcess = () => {
                   }}
                 >
                   <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-                    {/* Step Number and Icon */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 2,
-                        mb: 3,
-                      }}
-                    >
+                    {/* Icon + Title */}
+                    <Box sx={{ display: 'flex', gap: 2, mb: 3 }}>
                       <Box
                         className="process-icon"
                         sx={{
@@ -215,26 +178,23 @@ const ProjectProcess = () => {
                           alignItems: 'center',
                           justifyContent: 'center',
                           transition: 'all 0.5s ease',
-                          flexShrink: 0,
                         }}
                       >
                         <IconComponent
                           sx={{
                             fontSize: '2.5rem',
                             color: step.color,
-                            transition: 'all 0.5s ease',
                           }}
                         />
                       </Box>
-                      <Box sx={{ flex: 1 }}>
+
+                      <Box>
                         <Typography
                           variant="h5"
-                          component="h3"
                           sx={{
                             fontSize: { xs: '1.5rem', md: '1.75rem' },
                             fontWeight: 700,
                             color: offBlackText,
-                            mb: 0.5,
                           }}
                         >
                           {step.label}
@@ -264,21 +224,9 @@ const ProjectProcess = () => {
                       {step.description}
                     </Typography>
 
-                    {/* Arrow (except for last item) */}
                     {!isLast && (
-                      <Box
-                        sx={{
-                          display: { xs: 'none', md: 'flex' },
-                          justifyContent: 'center',
-                          mt: 3,
-                        }}
-                      >
-                        <ArrowForward
-                          sx={{
-                            fontSize: '2rem',
-                            color: step.lightColor,
-                          }}
-                        />
+                      <Box sx={{ display: { xs: 'none', md: 'flex' }, mt: 3 }}>
+                        <ArrowForward sx={{ fontSize: '2rem', color: step.lightColor }} />
                       </Box>
                     )}
                   </CardContent>
@@ -293,4 +241,3 @@ const ProjectProcess = () => {
 };
 
 export default ProjectProcess;
-
