@@ -372,7 +372,7 @@ const ProjectDetail = () => {
   }
 
   return (
-    <Box sx={{ backgroundColor: offWhiteColor, minHeight: '100vh' }}>
+    <Box sx={{ backgroundColor: offWhiteColor }}>
       {/* Banner */}
       <Box
         sx={{
@@ -707,7 +707,7 @@ const ProjectDetail = () => {
         </Grid>
 
         {/* Gallery */}
-          <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }} >
+          <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } ,border:1,px:0}} >
                   {/* Header */}
                   <Box sx={{ textAlign: "center", mb: 4 }}>
                     <Chip
@@ -749,14 +749,15 @@ const ProjectDetail = () => {
                       gap: { xs: "10px", sm: "15px" },
                       justifyContent: "center",
                     }}
+                    border={1}
                   >
                     {(project?.galleryImages || []).map((img, index) => (
                       <Box
                         key={index}
                         sx={{
                           width: {
-                            xs: `${img.width.xs}` || "180px",
-                            sm: `${img.width.sm}` || "260px",
+                            xs: `${img.width.xs}` ,
+                            sm: `${img.width.sm}`,
                           },
                           height: "220px",
                           borderRadius: "18px",
