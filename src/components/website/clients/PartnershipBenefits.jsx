@@ -21,11 +21,12 @@ import { keyframes } from '@emotion/react';
 import {
   secondaryColor,
   secondaryLight,
-  secondaryHover,
   offWhiteColor,
   offBlackText,
   offBlackTextLight,
 } from '@/components/utils/Colors';
+
+import data from './ClientData.json';
 
 const fadeInUp = keyframes`
   from {
@@ -39,13 +40,18 @@ const fadeInUp = keyframes`
 `;
 
 const pulse = keyframes`
-  0%, 100% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 `;
+
+const iconMap = {
+  Handshake,
+  Shield,
+  Speed,
+  Support,
+  Verified,
+  TrendingUp,
+};
 
 const PartnershipBenefits = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -53,85 +59,17 @@ const PartnershipBenefits = () => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && !isVisible) {
-            setIsVisible(true);
-          }
-        });
+      ([entry]) => {
+        if (entry.isIntersecting) setIsVisible(true);
       },
-      {
-        threshold: 0.2,
-      }
+      { threshold: 0.2 }
     );
 
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
+    if (sectionRef.current) observer.observe(sectionRef.current);
+    return () => observer.disconnect();
+  }, []);
 
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, [isVisible]);
-
-  const benefits = [
-    {
-      id: 1,
-      title: 'Trusted Partnership',
-      icon: Handshake,
-      description: 'We build long-term relationships with our clients, ensuring consistent quality and reliability in every project.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 0,
-    },
-    {
-      id: 2,
-      title: 'Enhanced Security',
-      icon: Shield,
-      description: 'Comprehensive security solutions that protect your assets, people, and data with cutting-edge technology.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 100,
-    },
-    {
-      id: 3,
-      title: 'Fast Implementation',
-      icon: Speed,
-      description: 'Efficient project execution with minimal disruption to your operations, delivered on time and within budget.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 200,
-    },
-    {
-      id: 4,
-      title: '24/7 Support',
-      icon: Support,
-      description: 'Round-the-clock technical support and maintenance services to keep your systems running smoothly.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 300,
-    },
-    {
-      id: 5,
-      title: 'Certified Solutions',
-      icon: Verified,
-      description: 'All our products and services meet international standards and certifications for quality assurance.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 400,
-    },
-    {
-      id: 6,
-      title: 'Scalable Growth',
-      icon: TrendingUp,
-      description: 'Solutions designed to grow with your business, easily expandable and adaptable to future needs.',
-      color: secondaryColor,
-      lightColor: secondaryLight,
-      delay: 500,
-    },
-  ];
+  const { header, benefits } = data.benefitsData;
 
   return (
     <Box
@@ -144,38 +82,8 @@ const PartnershipBenefits = () => {
         background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${secondaryLight}15 100%)`,
       }}
     >
-      {/* Decorative Background Elements */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: '-120px',
-          left: '-120px',
-          width: '450px',
-          height: '450px',
-          borderRadius: '50%',
-          background: `radial-gradient(circle, ${secondaryLight} 0%, transparent 70%)`,
-          filter: 'blur(90px)',
-          opacity: 0.4,
-          zIndex: 0,
-        }}
-      />
-      <Box
-        sx={{
-          position: 'absolute',
-          bottom: '-100px',
-          right: '-100px',
-          width: '400px',
-          height: '400px',
-          borderRadius: '50%',
-          background: `radial-gradient(circle, ${secondaryLight} 0%, transparent 70%)`,
-          filter: 'blur(80px)',
-          opacity: 0.3,
-          zIndex: 0,
-        }}
-      />
-
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
-        {/* Section Header */}
+        {/* Header */}
         <Box
           sx={{
             textAlign: 'center',
@@ -187,7 +95,6 @@ const PartnershipBenefits = () => {
         >
           <Typography
             variant="h2"
-            component="h2"
             sx={{
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
               fontWeight: 700,
@@ -195,13 +102,13 @@ const PartnershipBenefits = () => {
               mb: 2,
             }}
           >
-            Partnership{' '}
+            {header.title}{' '}
             <Box component="span" sx={{ color: secondaryColor }}>
-              Benefits
+              {header.highlight}
             </Box>
           </Typography>
+
           <Typography
-            variant="body1"
             sx={{
               color: offBlackTextLight,
               fontSize: { xs: '1rem', md: '1.1rem' },
@@ -209,14 +116,15 @@ const PartnershipBenefits = () => {
               mx: 'auto',
             }}
           >
-            Why leading businesses choose Mashariq Al-Arkan as their trusted security and automation partner
+            {header.description}
           </Typography>
         </Box>
 
-        {/* Benefits Grid */}
+        {/* Cards */}
         <Grid container spacing={4}>
           {benefits.map((benefit) => {
-            const IconComponent = benefit.icon;
+            const Icon = iconMap[benefit.icon];
+
             return (
               <Grid size={{ xs: 12, sm: 6, md: 4 }} key={benefit.id}>
                 <Card
@@ -224,10 +132,8 @@ const PartnershipBenefits = () => {
                     height: '100%',
                     borderRadius: '24px',
                     background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
-                    border: `2px solid ${benefit.lightColor}`,
-                    boxShadow: `0 8px 32px ${benefit.lightColor}40`,
-                    position: 'relative',
-                    overflow: 'visible',
+                    border: `2px solid ${secondaryColor}`,
+                    boxShadow: `0 8px 32px ${secondaryColor}40`,
                     transition: 'all 0.5s cubic-bezier(0.4, 0, 0.2, 1)',
                     opacity: isVisible ? 1 : 0,
                     transform: isVisible
@@ -239,90 +145,53 @@ const PartnershipBenefits = () => {
                     '&::before': {
                       content: '""',
                       position: 'absolute',
-                      top: -2,
-                      left: -2,
-                      right: -2,
-                      bottom: -2,
-                      background: `linear-gradient(135deg, ${benefit.color}, ${benefit.lightColor})`,
+                      inset: -2,
+                      background: `linear-gradient(135deg, ${secondaryColor}, ${secondaryLight})`,
                       borderRadius: '24px',
-                      zIndex: -1,
                       opacity: 0,
                       transition: 'opacity 0.5s ease',
+                      zIndex: -1,
                     },
                     '&:hover': {
                       transform: 'translateY(-12px) scale(1.02)',
-                      boxShadow: `0 20px 60px ${benefit.lightColor}80`,
-                      borderColor: benefit.color,
-                      '&::before': {
-                        opacity: 0.3,
-                      },
+                      boxShadow: `0 20px 60px ${secondaryLight}80`,
+                      borderColor: secondaryColor,
+                      '&::before': { opacity: 0.3 },
                       '& .benefit-icon': {
                         transform: 'scale(1.1) rotate(5deg)',
-                        color: benefit.color,
                         animation: `${pulse} 2s ease-in-out infinite`,
+                        color: secondaryColor,
                       },
                       '& .benefit-title': {
-                        color: benefit.color,
                         transform: 'translateX(8px)',
+                        color: secondaryColor,
                       },
                     },
                   }}
                 >
                   <CardContent sx={{ p: { xs: 3, md: 4 } }}>
-                    {/* Icon */}
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        mb: 3,
-                      }}
-                    >
+                    <Box sx={{ display: 'flex', justifyContent: 'center', mb: 3 }}>
                       <Box
                         sx={{
                           width: 100,
                           height: 100,
                           borderRadius: '50%',
-                          background: `linear-gradient(135deg, ${benefit.lightColor} 0%, ${benefit.color}20 100%)`,
+                          background: `linear-gradient(135deg, ${secondaryLight} 0%, ${secondaryColor}20 100%)`,
                           display: 'flex',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          position: 'relative',
-                          transition: 'all 0.5s ease',
-                          '&::after': {
-                            content: '""',
-                            position: 'absolute',
-                            width: '100%',
-                            height: '100%',
-                            borderRadius: '50%',
-                            border: `3px solid ${benefit.color}`,
-                            opacity: 0,
-                            transform: 'scale(1.2)',
-                            transition: 'all 0.5s ease',
-                          },
+                          color:secondaryColor
                         }}
-                        className="icon-container"
                       >
-                        <IconComponent
-                          className="benefit-icon"
-                          sx={{
-                            fontSize: '3.5rem',
-                            color: benefit.color,
-                            transition: 'all 0.5s ease',
-                            zIndex: 1,
-                          }}
-                        />
+                        <Icon className="benefit-icon" sx={{ fontSize: '3.5rem' }} />
                       </Box>
                     </Box>
 
-                    {/* Title */}
                     <Typography
                       className="benefit-title"
                       variant="h4"
-                      component="h3"
                       sx={{
-                        fontSize: { xs: '1.75rem', md: '2rem' },
                         fontWeight: 700,
-                        color: offBlackText,
                         textAlign: 'center',
                         mb: 2,
                         transition: 'all 0.3s ease',
@@ -331,14 +200,11 @@ const PartnershipBenefits = () => {
                       {benefit.title}
                     </Typography>
 
-                    {/* Description */}
                     <Typography
-                      variant="body1"
                       sx={{
-                        color: offBlackTextLight,
                         textAlign: 'center',
+                        color: offBlackTextLight,
                         lineHeight: 1.8,
-                        fontSize: { xs: '0.95rem', md: '1rem' },
                       }}
                     >
                       {benefit.description}
@@ -355,4 +221,3 @@ const PartnershipBenefits = () => {
 };
 
 export default PartnershipBenefits;
-

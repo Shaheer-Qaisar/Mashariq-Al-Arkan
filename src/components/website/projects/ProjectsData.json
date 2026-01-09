@@ -1,0 +1,118 @@
+{
+  "banner": {
+    "images": [
+      "/images/home-banner/garage-door-1.webp",
+      "/images/home-banner/digital-lock.jpg",
+      "/images/home-banner/parking-barrier.jpg"
+    ],
+
+    "overlay": {
+      "color": "rgba(0, 0, 0, 0.73)"
+    },
+
+    "typingWords": [
+      "Innovative",
+      "Successful",
+      "Excellence",
+      "Quality",
+      "Impact"
+    ],
+
+    "heading": {
+      "text": {
+        "middle": "Projects",
+        "highlight": "Delivered",
+        "lineBreak": "Across",
+        "location": "Saudi Arabia"
+      },
+      "styles": {
+        "fontSize": {
+          "xs": "2.5rem",
+          "sm": "3.5rem",
+          "md": "4rem",
+          "lg": "5rem"
+        },
+        "fontWeight": 700,
+        "lineHeight": 1.2,
+        "marginBottom": 1
+      }
+    },
+
+    "subHeading": {
+      "text": "Explore our portfolio of successful projects spanning industrial, residential, and educational sectors. Each project showcases our commitment to excellence and innovation.",
+      "styles": {
+        "fontSize": {
+          "xs": "1rem",
+          "sm": "1.2rem",
+          "md": "1.4rem"
+        },
+        "fontWeight": 400,
+        "maxWidth": "800px",
+        "lineHeight": 1.6,
+        "marginBottom": 2,
+        "textShadow": "1px 1px 4px rgba(0, 0, 0, 0.5)"
+      }
+    },
+
+    "cta": {
+      "primary": {
+        "label": "Start Your Project",
+        "href": "/contact"
+      },
+      "secondary": {
+        "label": "Our Services",
+        "href": "/services"
+      }
+    }
+  },
+  "projectsCards":{
+  "header": {
+    "title": "Our",
+    "highlight": "Projects",
+    "description": "Explore our portfolio of successful projects across various sectors"
+  },
+  "projects": [
+    {
+      "id": 1,
+      "title": "Logistics Hub Loading Bays",
+      "sector": "Industrial",
+      "location": {
+        "city": "Riyadh",
+        "country": "Saudi Arabia"
+      },
+      "year": 2024,
+      "services": ["Garage Doors", "Dock Equipment"],
+      "image": "/images/home-banner/garage-door-1.webp"
+    },
+    {
+      "id": 2,
+      "title": "Premium Residential Compound",
+      "sector": "Residential",
+      "location": {
+        "city": "Jeddah",
+        "country": "Saudi Arabia"
+      },
+      "year": 2023,
+      "services": ["Gate Operators", "Access Control", "CCTV"],
+      "image": "/images/home-banner/digital-lock.jpg"
+    },
+    {
+      "id": 3,
+      "title": "University Parking Expansion",
+      "sector": "Education",
+      "location": {
+        "city": "Dammam",
+        "country": "Saudi Arabia"
+      },
+      "year": 2022,
+      "services": ["Road Barriers", "Networking"],
+      "image": "/images/home-banner/parking-barrier.jpg"
+    }
+  ],
+  "exploreButton": {
+    "label": "Explore Projects",
+    "link": "/projects"
+  }
+}
+
+}

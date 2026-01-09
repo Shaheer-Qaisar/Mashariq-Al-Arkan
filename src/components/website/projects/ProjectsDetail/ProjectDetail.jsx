@@ -707,7 +707,7 @@ const ProjectDetail = () => {
         </Grid>
 
         {/* Gallery */}
-          <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }}>
+          <Container maxWidth="xl" sx={{ py: { xs: 6, md: 10 } }} >
                   {/* Header */}
                   <Box sx={{ textAlign: "center", mb: 4 }}>
                     <Chip

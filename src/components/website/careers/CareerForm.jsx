@@ -1,3 +1,5 @@
+'use client';
+
 import {
   Box,
   Button,
@@ -14,16 +16,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { toast } from "react-toastify";
 import { useState } from "react";
 
-const professions = [
-  "Software Engineer",
-  "Electrician",
-  "Security Technician",
-  "Network Engineer",
-  "Project Manager",
-  "Other",
-];
+import data from "./CareerData.json";
 
 export default function CareerForm() {
+  const {careerForm} =data
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -44,12 +40,12 @@ export default function CareerForm() {
     if (!file) return;
 
     if (file.size > 10 * 1024 * 1024) {
-      toast.error("File must be under 10MB");
+      toast.error(careerForm.messages.fileSizeError);
       return;
     }
 
     if (file.type !== "application/pdf") {
-      toast.error("Only PDF files are allowed");
+      toast.error(careerForm.messages.fileTypeError);
       return;
     }
 
@@ -60,16 +56,15 @@ export default function CareerForm() {
     e.preventDefault();
 
     if (!cvFile) {
-      toast.error("Please upload your CV (PDF)");
+      toast.error(careerForm.messages.noCvError);
       return;
     }
 
     if (!captchaVerified) {
-      toast.error("Please verify captcha");
+      toast.error(careerForm.messages.captchaError);
       return;
     }
 
-    // ✅ PRINT EVERYTHING TO CONSOLE
     console.log("Form Data:", formData);
     console.log("Uploaded CV:", {
       name: cvFile.name,
@@ -77,9 +72,8 @@ export default function CareerForm() {
       type: cvFile.type,
     });
 
-    toast.success("Form submitted (check console)");
+    toast.success(careerForm.messages.success);
 
-    // Optional reset
     setFormData({
       name: "",
       phone: "",
@@ -92,7 +86,7 @@ export default function CareerForm() {
   };
 
   return (
-    <Grid size={{ xs: 12, md: 6 }} minWidth={600} my={[4]} justifySelf={'center'}>
+    <Grid size={{ xs: 12, md: 6 }} minWidth={600} my={[4]} justifySelf="center">
       <Box
         component="form"
         onSubmit={handleSubmit}
@@ -104,7 +98,7 @@ export default function CareerForm() {
         }}
       >
         <Typography variant="h5" fontWeight={600} mb={3}>
-          Apply Now
+          {careerForm.title}
         </Typography>
 
         <Stack spacing={3}>
@@ -113,25 +107,24 @@ export default function CareerForm() {
             <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
-                label="Name"
+                label={careerForm.labels.name}
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
                 required
                 InputLabelProps={{ required: false }}
-
               />
             </Grid>
+
             <Grid size={{ xs: 12, sm: 6 }}>
               <TextField
                 fullWidth
-                label="Phone"
+                label={careerForm.labels.phone}
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
                 required
                 InputLabelProps={{ required: false }}
-
               />
             </Grid>
           </Grid>
@@ -140,25 +133,24 @@ export default function CareerForm() {
           <TextField
             fullWidth
             type="email"
-            label="Email"
+            label={careerForm.labels.email}
             name="email"
             value={formData.email}
             onChange={handleChange}
             required
             InputLabelProps={{ required: false }}
-
           />
 
           {/* Profession */}
           <FormControl fullWidth required>
-            <InputLabel>Your Profession</InputLabel>
+            <InputLabel>{careerForm.labels.profession}</InputLabel>
             <Select
               name="profession"
               value={formData.profession}
               onChange={handleChange}
-              label="Your Profession"
+              label={careerForm.labels.profession}
             >
-              {professions.map((p) => (
+              {careerForm.professions.map((p) => (
                 <MenuItem key={p} value={p}>
                   {p}
                 </MenuItem>
@@ -168,7 +160,7 @@ export default function CareerForm() {
 
           {/* CV Upload */}
           <Button variant="outlined" component="label">
-            {cvFile ? `Selected: ${cvFile.name}` : "Upload CV (PDF, max 10MB)"}
+            {cvFile ? `Selected: ${cvFile.name}` : careerForm.placeholders.cvUpload}
             <input
               type="file"
               hidden
@@ -182,18 +174,17 @@ export default function CareerForm() {
             fullWidth
             multiline
             rows={5}
-            label="Cover Letter"
+            label={careerForm.labels.coverLetter}
             name="coverLetter"
             value={formData.coverLetter}
             onChange={handleChange}
             required
             InputLabelProps={{ required: false }}
-
           />
 
           {/* CAPTCHA */}
           <ReCAPTCHA
-            sitekey="6LcvwT4sAAAAAHiTvP-GIVGs7NbcMVbdpdu8XjaA"
+            sitekey={careerForm.captcha.siteKey}
             onChange={() => setCaptchaVerified(true)}
           />
 
@@ -204,7 +195,7 @@ export default function CareerForm() {
             disabled={!captchaVerified}
             sx={{ py: 1.5 }}
           >
-            Submit Application
+            {careerForm.buttons.submit}
           </Button>
         </Stack>
       </Box>

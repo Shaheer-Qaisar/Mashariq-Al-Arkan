@@ -30,43 +30,17 @@ import {
   offBlackTextLight,
 } from '@/components/utils/Colors';
 
+import data from './ProjectsData.json';
+
 const ProjectsCards = ({ showExploreButton = true }) => {
   const [visibleCards, setVisibleCards] = useState(new Set());
   const cardRefs = useRef([]);
   const [mousePosition, setMousePosition] = useState({ x: 50, y: 50 });
   const containerRef = useRef(null);
 
-  const projects = [
-    {
-      id: 1,
-      title: 'Logistics Hub Loading Bays',
-      sector: 'Industrial',
-      location: { city: 'Riyadh', country: 'Saudi Arabia' },
-      year: 2024,
-      services: ['Garage Doors', 'Dock Equipment'],
-      image: '/images/home-banner/garage-door-1.webp',
-    },
-    {
-      id: 2,
-      title: 'Premium Residential Compound',
-      sector: 'Residential',
-      location: { city: 'Jeddah', country: 'Saudi Arabia' },
-      year: 2023,
-      services: ['Gate Operators', 'Access Control', 'CCTV'],
-      image: '/images/home-banner/digital-lock.jpg',
-    },
-    {
-      id: 3,
-      title: 'University Parking Expansion',
-      sector: 'Education',
-      location: { city: 'Dammam', country: 'Saudi Arabia' },
-      year: 2022,
-      services: ['Road Barriers', 'Networking'],
-      image: '/images/home-banner/parking-barrier.jpg',
-    },
-  ];
+  const { header, projects, exploreButton } = data.projectsCards;
 
-  // Mouse tracking for background animation
+  // Mouse tracking
   useEffect(() => {
     const handleMouseMove = (e) => {
       if (containerRef.current) {
@@ -80,13 +54,11 @@ const ProjectsCards = ({ showExploreButton = true }) => {
     const container = containerRef.current;
     if (container) {
       container.addEventListener('mousemove', handleMouseMove);
-      return () => {
-        container.removeEventListener('mousemove', handleMouseMove);
-      };
+      return () => container.removeEventListener('mousemove', handleMouseMove);
     }
   }, []);
 
-  // Intersection Observer for scroll animations
+  // Intersection Observer
   useEffect(() => {
     const observers = [];
     cardRefs.current.forEach((card, index) => {
@@ -99,19 +71,14 @@ const ProjectsCards = ({ showExploreButton = true }) => {
               }
             });
           },
-          {
-            threshold: 0.2,
-            rootMargin: '0px 0px -50px 0px',
-          }
+          { threshold: 0.2, rootMargin: '0px 0px -50px 0px' }
         );
         observer.observe(card);
         observers.push(observer);
       }
     });
 
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
+    return () => observers.forEach((observer) => observer.disconnect());
   }, []);
 
   return (
@@ -126,98 +93,26 @@ const ProjectsCards = ({ showExploreButton = true }) => {
         transition: 'background 0.3s ease-out',
       }}
     >
-      {/* Animated Background Patterns */}
-      <Box
-        sx={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          opacity: 0.1,
-          zIndex: 0,
-          overflow: 'hidden',
-        }}
-      >
-        {/* Animated Circles */}
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '400px',
-            height: '400px',
-            borderRadius: '50%',
-            background: `radial-gradient(circle, ${secondaryColor} 0%, transparent 70%)`,
-            top: '10%',
-            left: '-100px',
-            animation: 'float 20s ease-in-out infinite',
-            filter: 'blur(60px)',
-          }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '500px',
-            height: '500px',
-            borderRadius: '50%',
-            background: `radial-gradient(circle, ${secondaryColor} 0%, transparent 70%)`,
-            bottom: '10%',
-            right: '-150px',
-            animation: 'float 25s ease-in-out infinite reverse',
-            filter: 'blur(80px)',
-          }}
-        />
-        <Box
-          sx={{
-            position: 'absolute',
-            width: '350px',
-            height: '350px',
-            borderRadius: '50%',
-            background: `radial-gradient(circle, ${secondaryLight} 0%, transparent 70%)`,
-            top: '50%',
-            left: '50%',
-            animation: 'float 30s ease-in-out infinite',
-            filter: 'blur(70px)',
-          }}
-        />
-
-        {/* Grid Pattern */}
-        <Box
-          sx={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundImage: `
-              linear-gradient(${secondaryColor}08 1px, transparent 1px),
-              linear-gradient(90deg, ${secondaryColor}08 1px, transparent 1px)
-            `,
-            backgroundSize: '50px 50px',
-            animation: 'gridMove 20s linear infinite',
-          }}
-        />
-      </Box>
-
       <Container maxWidth="xl" sx={{ position: 'relative', zIndex: 1 }}>
-        {/* Header Section */}
-        <Box sx={{ textAlign: 'center', mb: 8 }} data-aos="fade-up" >
+        {/* Header */}
+        <Box sx={{ textAlign: 'center', mb: 8 }} data-aos="fade-up">
           <Typography
-            variant="h2"
-            component="h1"
+           
             sx={{
               fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
               fontWeight: 700,
               color: offBlackText,
               mb: 2,
               fontFamily: "'Quicksand', sans-serif",
-              textShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
+               textShadow: '0 2px 10px rgba(0, 0, 0, 0.1)',
             }}
           >
-            Our{' '}
+            {header.title}{' '}
             <Box component="span" sx={{ color: secondaryColor }}>
-              Projects
+              {header.highlight}
             </Box>
           </Typography>
+
           <Typography
             variant="body1"
             sx={{
@@ -228,25 +123,19 @@ const ProjectsCards = ({ showExploreButton = true }) => {
               fontFamily: "'Quicksand', sans-serif",
             }}
           >
-            Explore our portfolio of successful projects across various sectors
+            {header.description}
           </Typography>
         </Box>
 
-        {/* Projects Grid */}
+        {/* Cards */}
         <Grid container spacing={4}>
           {projects.map((project, index) => (
-            <Grid size={{ xs: 12, md: 6,lg:4}} key={project.id}
-            
-              data-aos={index === 0 ? "fade-right" : index === 1 ? "fade-up" : "fade-left"}
-              data-aos-delay={ 200}
-            >
+            <Grid size={{ xs: 12, md: 6, lg: 4 }} key={project.id}>
               <Card
                 component={Link}
                 href={`/projects/${project.id}`}
-                ref={(el) => {
-                  cardRefs.current[index] = el;
-                }}
-                sx={{
+                ref={(el) => (cardRefs.current[index] = el)}
+                 sx={{
                   cursor: 'pointer',
                   textDecoration: 'none',
                   position: 'relative',
@@ -277,61 +166,28 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                     },
                   },
                 }}
+
               >
-                {/* Project Image */}
+                {/* Image */}
                 <Box
-                  sx={{
+                  component="img"
+                  src={project.image}
+                  alt={project.title}
+                   sx={{
                     position: 'relative',
                     width: '100%',
                     height: { xs: '250px', md: '300px' },
                     overflow: 'hidden',
                   }}
-                >
-                  <Box
-                    className="project-overlay"
-                    sx={{
-                      position: 'absolute',
-                      top: 0,
-                      left: 0,
-                      right: 0,
-                      bottom: 0,
-                      background: `linear-gradient(135deg, ${secondaryColor}40 0%, ${secondaryColor}60 100%)`,
-                      opacity: 0,
-                      transition: 'opacity 0.4s ease',
-                      zIndex: 1,
-                    }}
-                  />
-                  <Box
-                    className="project-image"
-                    component="img"
-                    src={project.image}
-                    alt={project.title}
-                    sx={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      transition: 'transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)',
-                    }}
-                  />
-                </Box>
 
-                {/* Project Content */}
-                <CardContent
-                  sx={{
-                    p: 3,
-                    flexGrow: 1,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    background: 'rgba(255, 255, 255, 0.5)',
-                    backdropFilter: 'blur(10px)',
-                  }}
-                >
-                  {/* Sector Badge */}
+                />
+
+                <CardContent>
                   <Chip
                     label={project.sector}
                     size="small"
-                    icon={<Business sx={{ fontSize: '1rem !important' }} />}
-                    sx={{
+                    icon={<Business  sx={{ fontSize: '1rem !important' }} />}
+                     sx={{
                       alignSelf: 'flex-start',
                       mb: 2,
                       backgroundColor: `${secondaryColor}15`,
@@ -341,11 +197,10 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                       fontFamily: "'Quicksand', sans-serif",
                       border: `1px solid ${secondaryColor}30`,
                     }}
+
                   />
 
-                  {/* Title */}
-                  <Typography
-                    variant="h5"
+                  <Typography variant="h5"
                     component="h3"
                     sx={{
                       color: offBlackText,
@@ -355,12 +210,29 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                       fontFamily: "'Quicksand', sans-serif",
                       lineHeight: 1.3,
                     }}
-                  >
+>
                     {project.title}
                   </Typography>
 
-                  {/* Location and Year */}
-                  <Stack direction="row" spacing={2} sx={{ mb: 2 }}>
+                  <Stack direction="row" spacing={2} mb={2}>
+                       <Box
+                      sx={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: 0.5,
+                        color: offBlackTextLight,
+                      }}
+                    >
+
+                        <LocationOn fontSize="small" sx={{ fontSize: '1.1rem', color: secondaryColor }} /> 
+                        <Typography variant="body2"  sx={{
+                          fontSize: '0.85rem',
+                          fontFamily: "'Quicksand', sans-serif",
+                        }}
+>                      {project.location.city}{', '}
+                      {project.location.country}
+                    </Typography>
+                      </Box>
                     <Box
                       sx={{
                         display: 'flex',
@@ -369,40 +241,20 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                         color: offBlackTextLight,
                       }}
                     >
-                      <LocationOn sx={{ fontSize: '1.1rem', color: secondaryColor }} />
-                      <Typography
-                        variant="body2"
-                        sx={{
+
+                       <CalendarToday fontSize="small" sx={{ fontSize: '1.1rem', color: secondaryColor }} />
+                       <Typography variant="body2"  sx={{
                           fontSize: '0.85rem',
                           fontFamily: "'Quicksand', sans-serif",
                         }}
-                      >
-                        {project.location.city}, {project.location.country}
-                      </Typography>
+>
+                      {project.year}
+                    </Typography>
                     </Box>
-                    <Box
-                      sx={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: 0.5,
-                        color: offBlackTextLight,
-                      }}
-                    >
-                      <CalendarToday sx={{ fontSize: '1.1rem', color: secondaryColor }} />
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          fontSize: '0.85rem',
-                          fontFamily: "'Quicksand', sans-serif",
-                        }}
-                      >
-                        {project.year}
-                      </Typography>
-                    </Box>
+                    
                   </Stack>
 
-                  {/* Services */}
-                  <Box sx={{ mt: 'auto' }}>
+                   <Box sx={{ mt: 'auto' }}>
                     <Box
                       sx={{
                         display: 'flex',
@@ -445,27 +297,22 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                       ))}
                     </Stack>
                   </Box>
+
                 </CardContent>
               </Card>
             </Grid>
           ))}
         </Grid>
 
-        {/* Explore Projects Button */}
+        {/* Button */}
         {showExploreButton && (
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              mt: { xs: 5, md: 6 },
-            }}
-          >
+          <Box sx={{ textAlign: 'center', mt: 6 }}>
             <Button
               component={Link}
-              href="/projects"
+              href={exploreButton.link}
+              endIcon={<ArrowForward />}
               variant="outlined"
-              endIcon={<ArrowForward sx={{ fontSize: '0.9rem' }} />}
-              sx={{
+               sx={{
                 borderColor: `${secondaryColor}60`,
                 color: secondaryColor,
                 fontSize: { xs: '0.8rem', md: '0.9rem' },
@@ -491,8 +338,9 @@ const ProjectsCards = ({ showExploreButton = true }) => {
                   transition: 'transform 0.4s ease',
                 },
               }}
+
             >
-              Explore Projects
+              {exploreButton.label}
             </Button>
           </Box>
         )}

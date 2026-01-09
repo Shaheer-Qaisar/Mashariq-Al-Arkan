@@ -12,7 +12,11 @@ import {
   offWhiteColor,
 } from '@/components/utils/Colors';
 
+import data from './CareerData.json';
+
 const Banner = () => {
+  const { banner } = data;
+
   return (
     <Box
       sx={{
@@ -28,8 +32,8 @@ const Banner = () => {
       {/* Background Image */}
       <Box
         component="img"
-        src="/images/careers/careers-banner.avif"
-        alt="Careers Banner"
+        src={banner.background.image}
+        alt={banner.background.alt}
         sx={{
           position: 'absolute',
           top: 0,
@@ -49,7 +53,7 @@ const Banner = () => {
           left: 0,
           width: '100%',
           height: '100%',
-          backgroundColor: 'rgba(0, 0, 0, 0.73)',
+          backgroundColor: banner.background.overlayColor,
           zIndex: 1,
         }}
       />
@@ -84,15 +88,15 @@ const Banner = () => {
               mb: 1,
             }}
           >
-            Join Our{' '}
+            {banner.heading.line1}{' '}
             <Box component="span" sx={{ color: primaryColor }}>
-              Team
+              {banner.heading.highlight1}
             </Box>
             <br />
             <Box component="span" sx={{ color: secondaryColor }}>
-              Careers
+              {banner.heading.highlight2}
             </Box>{' '}
-            at Mashariq Al-Arkan
+            {banner.heading.line2}
           </Typography>
 
           {/* Subheading */}
@@ -109,9 +113,7 @@ const Banner = () => {
               textShadow: '1px 1px 4px rgba(0, 0, 0, 0.5)',
             }}
           >
-            Build your career with a leading security and automation solutions provider. 
-            Explore exciting opportunities to grow, innovate, and make an impact in 
-            the industry.
+            {banner.subheading}
           </Typography>
         </Box>
       </Container>
@@ -120,4 +122,3 @@ const Banner = () => {
 };
 
 export default Banner;
-

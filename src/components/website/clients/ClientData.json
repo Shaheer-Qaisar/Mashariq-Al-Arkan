@@ -156,71 +156,56 @@
   ]
 },
 "benefitsData":{
-  
-  "sectionHeader": {
+  "header": {
     "title": "Partnership",
     "highlight": "Benefits",
-    "description": "Why leading businesses choose Mashariq Al-Arkan as their trusted security and automation partner",
-    "titleFontSize": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
-    "titleFontWeight": 700,
-    "descriptionFontSize": { "xs": "1rem", "md": "1.1rem" }
+    "description": "Why leading businesses choose Mashariq Al-Arkan as their trusted security and automation partner"
   },
   "benefits": [
     {
       "id": 1,
       "title": "Trusted Partnership",
       "description": "We build long-term relationships with our clients, ensuring consistent quality and reliability in every project.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 0,
-      "icon": "Handshake"
+      "icon": "Handshake",
+      "delay": 0
     },
     {
       "id": 2,
       "title": "Enhanced Security",
       "description": "Comprehensive security solutions that protect your assets, people, and data with cutting-edge technology.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 100,
-      "icon": "Shield"
+      "icon": "Shield",
+      "delay": 100
     },
     {
       "id": 3,
       "title": "Fast Implementation",
       "description": "Efficient project execution with minimal disruption to your operations, delivered on time and within budget.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 200,
-      "icon": "Speed"
+      "icon": "Speed",
+      "delay": 200
     },
     {
       "id": 4,
       "title": "24/7 Support",
       "description": "Round-the-clock technical support and maintenance services to keep your systems running smoothly.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 300,
-      "icon": "Support"
+      "icon": "Support",
+      "delay": 300
     },
     {
       "id": 5,
       "title": "Certified Solutions",
       "description": "All our products and services meet international standards and certifications for quality assurance.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 400,
-      "icon": "Verified"
+      "icon": "Verified",
+      "delay": 400
     },
     {
       "id": 6,
       "title": "Scalable Growth",
       "description": "Solutions designed to grow with your business, easily expandable and adaptable to future needs.",
-      "color": "#FF5722",
-      "lightColor": "#FF8A50",
-      "delay": 500,
-      "icon": "TrendingUp"
+      "icon": "TrendingUp",
+      "delay": 500
     }
   ]
 }
+
 
 }
