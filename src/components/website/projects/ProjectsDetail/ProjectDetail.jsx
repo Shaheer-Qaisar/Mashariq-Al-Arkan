@@ -1,8 +1,19 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { Box, Container, Typography, Button, Grid, Card, CardContent, Chip, Stack, Divider } from '@mui/material';
-import Link from 'next/link';
+import React from "react";
+import {
+  Box,
+  Container,
+  Typography,
+  Button,
+  Grid,
+  Card,
+  CardContent,
+  Chip,
+  Stack,
+  Divider,
+} from "@mui/material";
+import Link from "next/link";
 import {
   LocationOn,
   CalendarToday,
@@ -10,8 +21,8 @@ import {
   Build,
   ArrowBack,
   CheckCircle,
-} from '@mui/icons-material';
-import { useParams } from 'next/navigation';
+} from "@mui/icons-material";
+import { useParams } from "next/navigation";
 import {
   primaryColor,
   primaryLight,
@@ -20,76 +31,78 @@ import {
   offWhiteColor,
   offBlackText,
   offBlackTextLight,
-} from '@/components/utils/Colors';
+} from "@/components/utils/Colors";
 
 const projects = [
   {
     id: 1,
-    title: 'Logistics Hub Loading Bays',
-    sector: 'Industrial',
-    location: { city: 'Riyadh', country: 'Saudi Arabia' },
+    title: "Logistics Hub Loading Bays",
+    sector: "Industrial",
+    location: { city: "Riyadh", country: "Saudi Arabia" },
     year: 2024,
-    services: ['Garage Doors', 'Dock Equipment'],
-    image: '/images/home-banner/garage-door-1.webp',
-    description: 'A comprehensive logistics hub featuring state-of-the-art loading bay systems with automated garage doors and advanced dock equipment. This project transformed the facility\'s operational efficiency and safety standards.',
-    overview: 'This large-scale industrial project involved the installation of automated loading bay systems across multiple facilities. The solution includes high-performance garage doors, dock levelers, and integrated access control systems.',
+    services: ["Garage Doors", "Dock Equipment"],
+    image: "/images/home-banner/garage-door-1.webp",
+    description:
+      "A comprehensive logistics hub featuring state-of-the-art loading bay systems with automated garage doors and advanced dock equipment. This project transformed the facility's operational efficiency and safety standards.",
+    overview:
+      "This large-scale industrial project involved the installation of automated loading bay systems across multiple facilities. The solution includes high-performance garage doors, dock levelers, and integrated access control systems.",
     features: [
-      'Automated garage door systems with remote control',
-      'Heavy-duty dock equipment for various vehicle types',
-      'Integrated access control and security systems',
-      'Weather-resistant and energy-efficient solutions',
-      '24/7 monitoring and maintenance support',
+      "Automated garage door systems with remote control",
+      "Heavy-duty dock equipment for various vehicle types",
+      "Integrated access control and security systems",
+      "Weather-resistant and energy-efficient solutions",
+      "24/7 monitoring and maintenance support",
     ],
     challenges: [
-      'Coordinating installation across multiple loading bays',
-      'Ensuring minimal disruption to daily operations',
-      'Meeting strict safety and compliance standards',
+      "Coordinating installation across multiple loading bays",
+      "Ensuring minimal disruption to daily operations",
+      "Meeting strict safety and compliance standards",
     ],
     solutions: [
-      'Phased installation approach during off-peak hours',
-      'Custom-designed solutions for each bay\'s requirements',
-      'Comprehensive training for facility staff',
+      "Phased installation approach during off-peak hours",
+      "Custom-designed solutions for each bay's requirements",
+      "Comprehensive training for facility staff",
     ],
-      galleryImages: [
+    galleryImages: [
       {
         image: "/images/cable/cable15.jpeg",
-        width: { xs: "180px", sm: "300px" },
+        width: { xs: "180px", sm: "230px" },
         caption: "Structured Cabling\nCommercial installation",
       },
       {
         image: "/images/cable/cable16.jpeg",
-        width: { xs: "120px", sm: "270px" },
+        width: { xs: "120px", sm: "210px" },
         caption: "Network Infrastructure\nOffice setup",
       },
       {
         image: "/images/cable/cable17.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "230px" },
         caption: "Fiber Cabling\nHigh-speed networks",
       },
       {
         image: "/images/cable/cable19.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "220px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable18.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "150px" },
         caption: "Cable Management\nClean routing",
       },
       {
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "250px" },
 
         image: "/images/cable/cable4.jpg",
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable20.jpeg",
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "240px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable8.jpeg",
-        width: { xs: "180px", sm: "275px" },
+        width: { xs: "180px", sm: "205px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -99,17 +112,17 @@ const projects = [
       },
       {
         image: "/images/cable/cable10.jpeg",
-        width: { xs: "120px", sm: "185px" },
+        width: { xs: "120px", sm: "115px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable11.jpeg",
-        width: { xs: "120px", sm: "330px" },
+        width: { xs: "120px", sm: "260px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable12.jpeg",
-        width: { xs: "180px", sm: "340px" },
+        width: { xs: "180px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -119,79 +132,80 @@ const projects = [
       },
       {
         image: "/images/cable/cable14.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
     ],
-
   },
   {
     id: 2,
-    title: 'Premium Residential Compound',
-    sector: 'Residential',
-    location: { city: 'Jeddah', country: 'Saudi Arabia' },
+    title: "Premium Residential Compound",
+    sector: "Residential",
+    location: { city: "Jeddah", country: "Saudi Arabia" },
     year: 2023,
-    services: ['Gate Operators', 'Access Control', 'CCTV'],
-    image: '/images/home-banner/digital-lock.jpg',
-    description: 'A luxury residential compound featuring integrated security and access control solutions. The project includes automated gate systems, smart access control, and comprehensive CCTV surveillance.',
-    overview: 'This premium residential development required a complete security and access control infrastructure. The solution provides residents with seamless entry, enhanced security, and peace of mind.',
+    services: ["Gate Operators", "Access Control", "CCTV"],
+    image: "/images/home-banner/digital-lock.jpg",
+    description:
+      "A luxury residential compound featuring integrated security and access control solutions. The project includes automated gate systems, smart access control, and comprehensive CCTV surveillance.",
+    overview:
+      "This premium residential development required a complete security and access control infrastructure. The solution provides residents with seamless entry, enhanced security, and peace of mind.",
     features: [
-      'Automated gate operators with smart access',
-      'Biometric and card-based access control systems',
-      'High-definition CCTV surveillance network',
-      'Mobile app integration for remote access',
-      'Visitor management and intercom systems',
+      "Automated gate operators with smart access",
+      "Biometric and card-based access control systems",
+      "High-definition CCTV surveillance network",
+      "Mobile app integration for remote access",
+      "Visitor management and intercom systems",
     ],
     challenges: [
-      'Integrating multiple security systems seamlessly',
-      'Ensuring user-friendly interfaces for residents',
-      'Maintaining aesthetic appeal of the compound',
+      "Integrating multiple security systems seamlessly",
+      "Ensuring user-friendly interfaces for residents",
+      "Maintaining aesthetic appeal of the compound",
     ],
     solutions: [
-      'Unified control platform for all systems',
-      'Comprehensive resident training programs',
-      'Custom-designed solutions matching architectural style',
+      "Unified control platform for all systems",
+      "Comprehensive resident training programs",
+      "Custom-designed solutions matching architectural style",
     ],
-      galleryImages: [
+ galleryImages: [
       {
         image: "/images/cable/cable15.jpeg",
-        width: { xs: "180px", sm: "300px" },
+        width: { xs: "180px", sm: "230px" },
         caption: "Structured Cabling\nCommercial installation",
       },
       {
         image: "/images/cable/cable16.jpeg",
-        width: { xs: "120px", sm: "270px" },
+        width: { xs: "120px", sm: "210px" },
         caption: "Network Infrastructure\nOffice setup",
       },
       {
         image: "/images/cable/cable17.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "230px" },
         caption: "Fiber Cabling\nHigh-speed networks",
       },
       {
         image: "/images/cable/cable19.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "220px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable18.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "150px" },
         caption: "Cable Management\nClean routing",
       },
       {
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "250px" },
 
         image: "/images/cable/cable4.jpg",
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable20.jpeg",
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "240px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable8.jpeg",
-        width: { xs: "180px", sm: "275px" },
+        width: { xs: "180px", sm: "205px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -201,17 +215,17 @@ const projects = [
       },
       {
         image: "/images/cable/cable10.jpeg",
-        width: { xs: "120px", sm: "185px" },
+        width: { xs: "120px", sm: "115px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable11.jpeg",
-        width: { xs: "120px", sm: "330px" },
+        width: { xs: "120px", sm: "260px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable12.jpeg",
-        width: { xs: "180px", sm: "340px" },
+        width: { xs: "180px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -221,79 +235,80 @@ const projects = [
       },
       {
         image: "/images/cable/cable14.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
     ],
-
   },
   {
     id: 3,
-    title: 'University Parking Expansion',
-    sector: 'Education',
-    location: { city: 'Dammam', country: 'Saudi Arabia' },
+    title: "University Parking Expansion",
+    sector: "Education",
+    location: { city: "Dammam", country: "Saudi Arabia" },
     year: 2022,
-    services: ['Road Barriers', 'Networking'],
-    image: '/images/home-banner/parking-barrier.jpg',
-    description: 'An intelligent parking management system for a major university expansion. The project includes automated road barriers, parking guidance systems, and integrated network infrastructure.',
-    overview: 'This educational institution required a modern parking solution to accommodate growing student and staff populations. The system optimizes space utilization and improves traffic flow.',
+    services: ["Road Barriers", "Networking"],
+    image: "/images/home-banner/parking-barrier.jpg",
+    description:
+      "An intelligent parking management system for a major university expansion. The project includes automated road barriers, parking guidance systems, and integrated network infrastructure.",
+    overview:
+      "This educational institution required a modern parking solution to accommodate growing student and staff populations. The system optimizes space utilization and improves traffic flow.",
     features: [
-      'Automated road barriers with license plate recognition',
-      'Real-time parking space availability system',
-      'Integrated network infrastructure for connectivity',
-      'Mobile payment and reservation systems',
-      'Comprehensive traffic management solutions',
+      "Automated road barriers with license plate recognition",
+      "Real-time parking space availability system",
+      "Integrated network infrastructure for connectivity",
+      "Mobile payment and reservation systems",
+      "Comprehensive traffic management solutions",
     ],
     challenges: [
-      'Managing high traffic volumes during peak hours',
-      'Integrating with existing campus systems',
-      'Ensuring reliable operation in all weather conditions',
+      "Managing high traffic volumes during peak hours",
+      "Integrating with existing campus systems",
+      "Ensuring reliable operation in all weather conditions",
     ],
     solutions: [
-      'Intelligent traffic flow algorithms',
-      'Seamless integration with campus management systems',
-      'Weather-resistant hardware and redundant systems',
+      "Intelligent traffic flow algorithms",
+      "Seamless integration with campus management systems",
+      "Weather-resistant hardware and redundant systems",
     ],
-      galleryImages: [
+    galleryImages: [
       {
         image: "/images/cable/cable15.jpeg",
-        width: { xs: "180px", sm: "300px" },
+        width: { xs: "180px", sm: "230px" },
         caption: "Structured Cabling\nCommercial installation",
       },
       {
         image: "/images/cable/cable16.jpeg",
-        width: { xs: "120px", sm: "270px" },
+        width: { xs: "120px", sm: "210px" },
         caption: "Network Infrastructure\nOffice setup",
       },
       {
         image: "/images/cable/cable17.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "230px" },
         caption: "Fiber Cabling\nHigh-speed networks",
       },
       {
         image: "/images/cable/cable19.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "220px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable18.jpeg",
-        width: { xs: "180px", sm: "270px" },
+        width: { xs: "180px", sm: "150px" },
         caption: "Cable Management\nClean routing",
       },
       {
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "250px" },
 
         image: "/images/cable/cable4.jpg",
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable20.jpeg",
-        width: { xs: "120px", sm: "320px" },
+        width: { xs: "120px", sm: "240px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable8.jpeg",
-        width: { xs: "180px", sm: "275px" },
+        width: { xs: "180px", sm: "205px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -303,17 +318,17 @@ const projects = [
       },
       {
         image: "/images/cable/cable10.jpeg",
-        width: { xs: "120px", sm: "185px" },
+        width: { xs: "120px", sm: "115px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable11.jpeg",
-        width: { xs: "120px", sm: "330px" },
+        width: { xs: "120px", sm: "260px" },
         caption: "Cable Management\nClean routing",
       },
       {
         image: "/images/cable/cable12.jpeg",
-        width: { xs: "180px", sm: "340px" },
+        width: { xs: "180px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
       {
@@ -323,11 +338,10 @@ const projects = [
       },
       {
         image: "/images/cable/cable14.jpeg",
-        width: { xs: "120px", sm: "300px" },
+        width: { xs: "120px", sm: "290px" },
         caption: "Cable Management\nClean routing",
       },
     ],
-
   },
 ];
 
@@ -341,13 +355,13 @@ const ProjectDetail = () => {
     return (
       <Box
         sx={{
-          minHeight: '60vh',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
+          minHeight: "60vh",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          flexDirection: "column",
           backgroundColor: offWhiteColor,
-          textAlign: 'center',
+          textAlign: "center",
           px: 2,
         }}
       >
@@ -361,7 +375,7 @@ const ProjectDetail = () => {
           sx={{
             backgroundColor: secondaryColor,
             color: offWhiteColor,
-            textTransform: 'none',
+            textTransform: "none",
             fontWeight: 600,
           }}
         >
@@ -376,14 +390,14 @@ const ProjectDetail = () => {
       {/* Banner */}
       <Box
         sx={{
-          position: 'relative',
-          width: '100%',
-          height: '100vh',
-          minHeight: '100vh',
-          overflow: 'hidden',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          position: "relative",
+          width: "100%",
+          height: "100vh",
+          minHeight: "100vh",
+          overflow: "hidden",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       >
         {/* Background Image */}
@@ -392,12 +406,12 @@ const ProjectDetail = () => {
           src={project.image}
           alt={project.title}
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
             zIndex: 0,
           }}
         />
@@ -405,12 +419,12 @@ const ProjectDetail = () => {
         {/* Dim Overlay */}
         <Box
           sx={{
-            position: 'absolute',
+            position: "absolute",
             top: 0,
             left: 0,
-            width: '100%',
-            height: '100%',
-            backgroundColor: 'rgba(0, 0, 0, 0.7)',
+            width: "100%",
+            height: "100%",
+            backgroundColor: "rgba(0, 0, 0, 0.7)",
             zIndex: 1,
           }}
         />
@@ -419,9 +433,9 @@ const ProjectDetail = () => {
         <Container
           maxWidth="lg"
           sx={{
-            position: 'relative',
+            position: "relative",
             zIndex: 2,
-            textAlign: 'center',
+            textAlign: "center",
             px: { xs: 3, md: 4 },
           }}
         >
@@ -429,7 +443,7 @@ const ProjectDetail = () => {
             variant="h2"
             component="h1"
             sx={{
-              fontSize: { xs: '2.2rem', sm: '3rem', md: '3.5rem', lg: '4rem' },
+              fontSize: { xs: "2.2rem", sm: "3rem", md: "3.5rem", lg: "4rem" },
               fontWeight: 700,
               color: offWhiteColor,
               mb: 2,
@@ -441,9 +455,9 @@ const ProjectDetail = () => {
             variant="body1"
             sx={{
               color: offWhiteColor,
-              fontSize: { xs: '1rem', md: '1.1rem' },
-              maxWidth: '700px',
-              mx: 'auto',
+              fontSize: { xs: "1rem", md: "1.1rem" },
+              maxWidth: "700px",
+              mx: "auto",
               lineHeight: 1.7,
               mb: 3,
             }}
@@ -453,27 +467,36 @@ const ProjectDetail = () => {
 
           {/* Project Meta Info */}
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
+            direction={{ xs: "column", sm: "row" }}
             spacing={3}
             justifyContent="center"
             alignItems="center"
             sx={{ mt: 4 }}
           >
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <LocationOn sx={{ color: primaryColor, fontSize: '1.5rem' }} />
-              <Typography variant="body1" sx={{ color: offWhiteColor, fontWeight: 500 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <LocationOn sx={{ color: primaryColor, fontSize: "1.5rem" }} />
+              <Typography
+                variant="body1"
+                sx={{ color: offWhiteColor, fontWeight: 500 }}
+              >
                 {project.location.city}, {project.location.country}
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <CalendarToday sx={{ color: primaryColor, fontSize: '1.5rem' }} />
-              <Typography variant="body1" sx={{ color: offWhiteColor, fontWeight: 500 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <CalendarToday sx={{ color: primaryColor, fontSize: "1.5rem" }} />
+              <Typography
+                variant="body1"
+                sx={{ color: offWhiteColor, fontWeight: 500 }}
+              >
                 {project.year}
               </Typography>
             </Box>
-            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
-              <Business sx={{ color: primaryColor, fontSize: '1.5rem' }} />
-              <Typography variant="body1" sx={{ color: offWhiteColor, fontWeight: 500 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+              <Business sx={{ color: primaryColor, fontSize: "1.5rem" }} />
+              <Typography
+                variant="body1"
+                sx={{ color: offWhiteColor, fontWeight: 500 }}
+              >
                 {project.sector}
               </Typography>
             </Box>
@@ -491,9 +514,9 @@ const ProjectDetail = () => {
           sx={{
             mb: 4,
             color: secondaryColor,
-            textTransform: 'none',
+            textTransform: "none",
             fontWeight: 600,
-            '&:hover': {
+            "&:hover": {
               backgroundColor: `${secondaryColor}10`,
             },
           }}
@@ -507,7 +530,7 @@ const ProjectDetail = () => {
             variant="h4"
             component="h2"
             sx={{
-              fontSize: { xs: '1.8rem', md: '2.2rem' },
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
               fontWeight: 700,
               color: offBlackText,
               mb: 3,
@@ -519,7 +542,7 @@ const ProjectDetail = () => {
             variant="body1"
             sx={{
               color: offBlackTextLight,
-              fontSize: { xs: '0.98rem', md: '1.05rem' },
+              fontSize: { xs: "0.98rem", md: "1.05rem" },
               lineHeight: 1.8,
             }}
           >
@@ -535,7 +558,7 @@ const ProjectDetail = () => {
             variant="h4"
             component="h2"
             sx={{
-              fontSize: { xs: '1.8rem', md: '2.2rem' },
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
               fontWeight: 700,
               color: offBlackText,
               mb: 3,
@@ -548,26 +571,28 @@ const ProjectDetail = () => {
               <Grid size={{ xs: 12, sm: 6 }} key={index}>
                 <Box
                   sx={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
+                    display: "flex",
+                    alignItems: "flex-start",
                     gap: 2,
                     p: 2,
-                    borderRadius: '12px',
+                    borderRadius: "12px",
                     backgroundColor: `${secondaryLight}10`,
                     border: `1px solid ${secondaryLight}30`,
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
+                    transition: "all 0.3s ease",
+                    "&:hover": {
                       backgroundColor: `${secondaryLight}20`,
-                      transform: 'translateX(8px)',
+                      transform: "translateX(8px)",
                     },
                   }}
                 >
-                  <CheckCircle sx={{ color: secondaryColor, fontSize: '1.5rem', mt: 0.5 }} />
+                  <CheckCircle
+                    sx={{ color: secondaryColor, fontSize: "1.5rem", mt: 0.5 }}
+                  />
                   <Typography
                     variant="body1"
                     sx={{
                       color: offBlackText,
-                      fontSize: { xs: '0.95rem', md: '1rem' },
+                      fontSize: { xs: "0.95rem", md: "1rem" },
                       lineHeight: 1.6,
                     }}
                   >
@@ -587,7 +612,7 @@ const ProjectDetail = () => {
             variant="h4"
             component="h2"
             sx={{
-              fontSize: { xs: '1.8rem', md: '2.2rem' },
+              fontSize: { xs: "1.8rem", md: "2.2rem" },
               fontWeight: 700,
               color: offBlackText,
               mb: 3,
@@ -600,12 +625,12 @@ const ProjectDetail = () => {
               <Chip
                 key={idx}
                 label={service}
-                icon={<Build sx={{ fontSize: '1rem !important' }} />}
+                icon={<Build sx={{ fontSize: "1rem !important" }} />}
                 sx={{
                   backgroundColor: `${secondaryColor}15`,
                   color: secondaryColor,
                   fontWeight: 600,
-                  fontSize: '0.9rem',
+                  fontSize: "0.9rem",
                   px: 1,
                   py: 2.5,
                   border: `1px solid ${secondaryColor}30`,
@@ -622,8 +647,8 @@ const ProjectDetail = () => {
           <Grid size={{ xs: 12, md: 6 }}>
             <Card
               sx={{
-                height: '100%',
-                borderRadius: '16px',
+                height: "100%",
+                borderRadius: "16px",
                 border: `2px solid ${primaryLight}`,
                 boxShadow: `0 4px 20px ${primaryLight}40`,
               }}
@@ -633,7 +658,7 @@ const ProjectDetail = () => {
                   variant="h5"
                   component="h3"
                   sx={{
-                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    fontSize: { xs: "1.5rem", md: "1.75rem" },
                     fontWeight: 700,
                     color: primaryColor,
                     mb: 3,
@@ -651,7 +676,7 @@ const ProjectDetail = () => {
                         color: offBlackTextLight,
                         mb: 2,
                         lineHeight: 1.8,
-                        fontSize: { xs: '0.95rem', md: '1rem' },
+                        fontSize: { xs: "0.95rem", md: "1rem" },
                       }}
                     >
                       {challenge}
@@ -665,8 +690,8 @@ const ProjectDetail = () => {
           <Grid size={{ xs: 12, md: 6 }}>
             <Card
               sx={{
-                height: '100%',
-                borderRadius: '16px',
+                height: "100%",
+                borderRadius: "16px",
                 border: `2px solid ${secondaryLight}`,
                 boxShadow: `0 4px 20px ${secondaryLight}40`,
               }}
@@ -676,7 +701,7 @@ const ProjectDetail = () => {
                   variant="h5"
                   component="h3"
                   sx={{
-                    fontSize: { xs: '1.5rem', md: '1.75rem' },
+                    fontSize: { xs: "1.5rem", md: "1.75rem" },
                     fontWeight: 700,
                     color: secondaryColor,
                     mb: 3,
@@ -694,7 +719,7 @@ const ProjectDetail = () => {
                         color: offBlackTextLight,
                         mb: 2,
                         lineHeight: 1.8,
-                        fontSize: { xs: '0.95rem', md: '1rem' },
+                        fontSize: { xs: "0.95rem", md: "1rem" },
                       }}
                     >
                       {solution}
@@ -707,124 +732,130 @@ const ProjectDetail = () => {
         </Grid>
 
         {/* Gallery */}
-          <Container maxWidth="lg" sx={{ py: { xs: 6, md: 10 } ,border:1,px:0}} >
-                  {/* Header */}
-                  <Box sx={{ textAlign: "center", mb: 4 }}>
-                    <Chip
-                      label="Gallery"
-                      sx={{
-                        bgcolor: "#f0f0f0",
-                        fontWeight: 600,
-                        borderRadius: "50px",
-                        px: { xs: 1, sm: 3 },
-                        py: 2,
-                      }}
-                    />
-                  </Box>
-        
-                  <Typography
-                    variant="h4"
-                    sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
-                  >
-                    Our Latest Projects
-                  </Typography>
-        
+        <Container
+          maxWidth="lg"
+          sx={{ py: { xs: 6, md: 10 }, px: 0 }}
+        >
+          {/* Header */}
+          <Box sx={{ textAlign: "center", mb: 4 }}>
+            <Chip
+              label="Gallery"
+              sx={{
+                bgcolor: "#f0f0f0",
+                fontWeight: 600,
+                borderRadius: "50px",
+                px: { xs: 1, sm: 3 },
+                py: 2,
+              }}
+            />
+          </Box>
+
+          <Typography
+            variant="h4"
+            sx={{ textAlign: "center", mb: 2, fontWeight: 700 }}
+          >
+            Our Latest Projects
+          </Typography>
+
+          <Typography
+            sx={{
+              textAlign: "center",
+              mb: 6,
+              color: "text.secondary",
+              maxWidth: 800,
+              mx: "auto",
+            }}
+          >
+            Explore our professional installations and completed solutions.
+          </Typography>
+
+          {/* Gallery Grid */}
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              gap: { xs: "10px", sm: "10px" },
+              justifyContent: "center",
+              alignItems: "flex-start",
+            }}
+          >
+            {(project?.galleryImages || []).map((img, index) => (
+              <Box
+                key={index}
+                sx={{
+                  width: {
+                    xs: img.width?.xs,
+                    sm: img.width?.sm,
+                  },
+                  height: "220px",
+                  borderRadius: "18px",
+                  overflow: "hidden",
+                  position: "relative",
+                  boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
+                  cursor: "pointer",
+
+                  flexShrink: 0,
+                  flexGrow: 0,
+                  flexBasis: "auto",
+
+                  "&:hover img": {
+                    transform: "scale(1.08)",
+                  },
+                }}
+              >
+                <Box
+                  component="img"
+                  src={img.image}
+                  alt={img.caption}
+                  sx={{
+                    width: "100%", 
+                    height: "100%",
+                    objectFit: "cover",
+                    display: "block", 
+                    transition: "transform 0.5s ease",
+                  }}
+                />
+                {/* Hover Overlay */}
+                <Box
+                  sx={{
+                    position: "absolute",
+                    inset: 0,
+                    bgcolor: "rgba(0,0,0,0.65)",
+                    display: "flex",
+                    alignItems: "flex-end",
+                    justifyContent: "center",
+                    opacity: 0,
+                    transition: "opacity 0.4s ease",
+                    p: 2,
+                    "&:hover": {
+                      opacity: 1,
+                    },
+                  }}
+                >
                   <Typography
                     sx={{
+                      color: "#fff",
+                      fontWeight: 600,
+                      fontSize: "0.95rem",
                       textAlign: "center",
-                      mb: 6,
-                      color: "text.secondary",
-                      maxWidth: 800,
-                      mx: "auto",
+                      whiteSpace: "pre-line",
                     }}
                   >
-                    Explore our professional installations and completed solutions.
+                    {img.caption}
                   </Typography>
-        
-                  {/* Gallery Grid */}
-                  <Box
-                    sx={{
-                      display: "flex",
-                      flexWrap: "wrap",
-                      gap: { xs: "10px", sm: "15px" },
-                      justifyContent: "center",
-                    }}
-                    border={1}
-                  >
-                    {(project?.galleryImages || []).map((img, index) => (
-                      <Box
-                        key={index}
-                        sx={{
-                          width: {
-                            xs: `${img.width.xs}` ,
-                            sm: `${img.width.sm}`,
-                          },
-                          height: "220px",
-                          borderRadius: "18px",
-                          overflow: "hidden",
-                          position: "relative",
-                          boxShadow: "0 8px 24px rgba(0,0,0,0.15)",
-                          cursor: "pointer",
-                          flexShrink: 0,
-        
-                          "&:hover img": {
-                            transform: "scale(1.08)",
-                          },
-                        }}
-                      >
-                        <Box
-                          component="img"
-                          src={img.image}
-                          alt={img.caption}
-                          sx={{
-                            width: "100%",
-                            height: "100%",
-                            objectFit: "cover",
-                            transition: "transform 0.5s ease",
-                          }}
-                        />
-        
-                        {/* Hover Overlay */}
-                        <Box
-                          sx={{
-                            position: "absolute",
-                            inset: 0,
-                            bgcolor: "rgba(0,0,0,0.65)",
-                            display: "flex",
-                            alignItems: "flex-end",
-                            justifyContent: "center",
-                            opacity: 0,
-                            transition: "opacity 0.4s ease",
-                            p: 2,
-                            "&:hover": {
-                              opacity: 1,
-                            },
-                          }}
-                        >
-                          <Typography
-                            sx={{
-                              color: "#fff",
-                              fontWeight: 600,
-                              fontSize: "0.95rem",
-                              textAlign: "center",
-                              whiteSpace: "pre-line",
-                            }}
-                          >
-                            {img.caption}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    ))}
-                  </Box>
-                </Container>
+                </Box>
+              </Box>
+            ))}
+          </Box>
+        </Container>
 
         {/* Call to Action */}
         <Box
           sx={{
             mt: 8,
-            textAlign: 'center',
+            textAlign: "center",
             p: 4,
-            borderRadius: '16px',
+            borderRadius: "16px",
             background: `linear-gradient(135deg, ${secondaryLight}15 0%, ${primaryLight}15 100%)`,
             border: `2px solid ${secondaryLight}30`,
           }}
@@ -833,7 +864,7 @@ const ProjectDetail = () => {
             variant="h5"
             component="h3"
             sx={{
-              fontSize: { xs: '1.5rem', md: '1.75rem' },
+              fontSize: { xs: "1.5rem", md: "1.75rem" },
               fontWeight: 700,
               color: offBlackText,
               mb: 2,
@@ -846,8 +877,8 @@ const ProjectDetail = () => {
             sx={{
               color: offBlackTextLight,
               mb: 3,
-              maxWidth: '600px',
-              mx: 'auto',
+              maxWidth: "600px",
+              mx: "auto",
             }}
           >
             Contact us to discuss how we can help with your next project
@@ -859,11 +890,11 @@ const ProjectDetail = () => {
             sx={{
               backgroundColor: secondaryColor,
               color: offWhiteColor,
-              textTransform: 'none',
+              textTransform: "none",
               fontWeight: 600,
               px: 4,
               py: 1.5,
-              '&:hover': {
+              "&:hover": {
                 backgroundColor: secondaryColor,
               },
             }}

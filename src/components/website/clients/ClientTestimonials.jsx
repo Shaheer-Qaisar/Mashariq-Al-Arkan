@@ -35,10 +35,10 @@ const fadeInUp = keyframes`
   }
 `;
 
-import data from './ClientData.json'
+import data from "./ClientData.json";
 
 const ClientTestimonials = () => {
-  const {sectionHeader,testimonials} =data.testimonialData
+  const { sectionHeader, testimonials } = data.testimonialData;
   const [isVisible, setIsVisible] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isDragging, setIsDragging] = useState(false);
@@ -214,352 +214,373 @@ const ClientTestimonials = () => {
         }}
       />
       <Box>
-      <Container maxWidth="xl">
-        <Box textAlign="center">
-          <Typography
-            variant="h2"
-            sx={sectionHeader.typography.h2}
-          >
-            {sectionHeader.title.split(sectionHeader.highlight)[0]}
-            <Box component="span" sx={{ color: primaryColor }}>
-              {sectionHeader.highlight}
-            </Box>
-            {sectionHeader.title.split(sectionHeader.highlight)[1]}
-          </Typography>
-          <Typography variant="body1" sx={sectionHeader.typography.body1}>
-            {sectionHeader.description}
-          </Typography>
-        </Box>
-
-        {/* Testimonials Slider */}
-        <Box
-          sx={{
-            justifyContent: "center",
-            position: "relative",
-            mb: 6,
-            px: { xs: 4, md: 6 },
-          }}
-          onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
-        >
-          {/* Navigation Arrows */}
-          <IconButton
-            onClick={prevSlide}
-            sx={{
-              position: "absolute",
-              left: { xs: 2, sm: -12, md: -24 },
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 3,
-
-              width: { xs: 36, sm: 44, md: 50 },
-              height: { xs: 36, sm: 44, md: 50 },
-
-              backgroundColor: offWhiteColor,
-              color: primaryColor,
-              border: `2px solid ${primaryLight}`,
-              boxShadow: `0 4px 20px ${primaryLight}60`,
-
-              "&:hover": {
-                backgroundColor: primaryColor,
-                color: offWhiteColor,
-              },
-            }}
-          >
-            <ChevronLeft />
-          </IconButton>
-
-          <IconButton
-            onClick={nextSlide}
-            sx={{
-              position: "absolute",
-              right: { xs: 2, sm: -12, md: -24 },
-              top: "50%",
-              transform: "translateY(-50%)",
-              zIndex: 3,
-              width: { xs: 36, sm: 44, md: 50 },
-              height: { xs: 36, sm: 44, md: 50 },
-
-              backgroundColor: offWhiteColor,
-              color: primaryColor,
-              border: `2px solid ${primaryLight}`,
-              boxShadow: `0 4px 20px ${primaryLight}60`,
-
-              "&:hover": {
-                backgroundColor: primaryColor,
-                color: offWhiteColor,
-              },
-            }}
-          >
-            <ChevronRight />
-          </IconButton>
-
-          {/* Slider Container */}
-          <Box
-            ref={sliderRef}
-            onMouseDown={handleMouseDown}
-            onMouseMove={handleMouseMove}
-            onMouseUp={handleMouseUp}
-            onMouseLeave={handleMouseLeave}
-            onTouchStart={handleTouchStart}
-            onTouchMove={handleTouchMove}
-            onTouchEnd={handleTouchEnd}
-            sx={{
-              overflow: "hidden",
-              cursor: isDragging ? "grabbing" : "grab",
-              userSelect: "none",
-              position: "relative",
-            }}
-          >
-            <Box
+        <Container maxWidth="xl">
+          <Box textAlign="center">
+            <Typography
+              variant="h2"
               sx={{
-                display: "flex",
-                transform: `translateX(-${
-                  currentIndex * (100 / slidesPerView)
-                }%)`,
-                transition: isDragging
-                  ? "none"
-                  : "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                fontSize: {
+                  xs: "2rem",
+                  sm: "2.5rem",
+                  md: "3rem",
+                  lg: "3.5rem",
+                },
+                fontWeight: 700,
+                color: offBlackText,
+                mb: 2,
+                textAlign: "center",
               }}
             >
-              {testimonials.map((testimonial, index) => {
-                // Calculate the width based on slides per view
-                const slideWidth = 100 / slidesPerView;
-                return (
-                  <Box
-                    key={testimonial.id}
-                    alignSelf={"center"}
-                    sx={{
-                      flex: `0 0 ${100 / slidesPerView}%`,
-                      maxWidth: `${100 / slidesPerView}%`,
-                      px: { xs: 1.5, md: 2 },
-                      flexShrink: 0,
-                      opacity: isVisible ? 1 : 0,
-                      animation: isVisible
-                        ? `${fadeInUp} 0.8s ease-out ${index * 100}ms forwards`
-                        : "none",
-                    }}
-                  >
-                    <Card
-                    
+              {sectionHeader.title.split(sectionHeader.highlight)[0]}
+              <Box component="span" sx={{ color: primaryColor }}>
+                {sectionHeader.highlight}
+              </Box>
+              {sectionHeader.title.split(sectionHeader.highlight)[1]}
+            </Typography>
+
+            <Typography
+              sx={{
+                fontSize: { xs: "1rem", md: "1.1rem" },
+                color: offBlackTextLight,
+                maxWidth: "700px",
+                mx: "auto",
+                textAlign: "center",
+                mb: 6,
+              }}
+            >
+              {sectionHeader.description}
+            </Typography>
+          </Box>
+
+          {/* Testimonials Slider */}
+          <Box
+            sx={{
+              justifyContent: "center",
+              position: "relative",
+              mb: 6,
+              px: { xs: 4, md: 6 },
+            }}
+            onMouseEnter={() => setIsPaused(true)}
+            onMouseLeave={() => setIsPaused(false)}
+          >
+            {/* Navigation Arrows */}
+            <IconButton
+              onClick={prevSlide}
+              sx={{
+                position: "absolute",
+                left: { xs: 2, sm: -12, md: -24 },
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 3,
+
+                width: { xs: 36, sm: 44, md: 50 },
+                height: { xs: 36, sm: 44, md: 50 },
+
+                backgroundColor: offWhiteColor,
+                color: primaryColor,
+                border: `2px solid ${primaryLight}`,
+                boxShadow: `0 4px 20px ${primaryLight}60`,
+
+                "&:hover": {
+                  backgroundColor: primaryColor,
+                  color: offWhiteColor,
+                },
+              }}
+            >
+              <ChevronLeft />
+            </IconButton>
+
+            <IconButton
+              onClick={nextSlide}
+              sx={{
+                position: "absolute",
+                right: { xs: 2, sm: -12, md: -24 },
+                top: "50%",
+                transform: "translateY(-50%)",
+                zIndex: 3,
+                width: { xs: 36, sm: 44, md: 50 },
+                height: { xs: 36, sm: 44, md: 50 },
+
+                backgroundColor: offWhiteColor,
+                color: primaryColor,
+                border: `2px solid ${primaryLight}`,
+                boxShadow: `0 4px 20px ${primaryLight}60`,
+
+                "&:hover": {
+                  backgroundColor: primaryColor,
+                  color: offWhiteColor,
+                },
+              }}
+            >
+              <ChevronRight />
+            </IconButton>
+
+            {/* Slider Container */}
+            <Box
+              ref={sliderRef}
+              onMouseDown={handleMouseDown}
+              onMouseMove={handleMouseMove}
+              onMouseUp={handleMouseUp}
+              onMouseLeave={handleMouseLeave}
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+              sx={{
+                overflow: "hidden",
+                cursor: isDragging ? "grabbing" : "grab",
+                userSelect: "none",
+                position: "relative",
+              }}
+            >
+              <Box
+                sx={{
+                  display: "flex",
+                  transform: `translateX(-${
+                    currentIndex * (100 / slidesPerView)
+                  }%)`,
+                  transition: isDragging
+                    ? "none"
+                    : "transform 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              >
+                {testimonials.map((testimonial, index) => {
+                  // Calculate the width based on slides per view
+                  const slideWidth = 100 / slidesPerView;
+                  return (
+                    <Box
+                      key={testimonial.id}
+                      alignSelf={"center"}
                       sx={{
-                         height: { xs:450, sm: 400, md: 420 },
-                         my: 2,
-                        display: "flex",
-                        flexDirection: "column",
-                        borderRadius: 4,
-                        maxWidth: "400px",
-                        mx: "auto",
-                        borderRadius: "24px",
-                        background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
-                        border: `2px solid ${primaryLight}`,
-                        boxShadow: `0 8px 32px ${primaryLight}40`,
-                        position: "relative",
-                        overflow: "visible",
-                        transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
-                        "&::before": {
-                          content: '""',
-                          position: "absolute",
-                          top: -2,
-                          left: -2,
-                          right: -2,
-                          bottom: -2,
-                          background: `linear-gradient(135deg, ${primaryColor}, ${primaryLight})`,
-                          borderRadius: "24px",
-                          zIndex: -1,
-                          opacity: 0,
-                          transition: "opacity 0.5s ease",
-                        },
-                        "&:hover": {
-                          transform: "translateY(-12px) scale(1.02)",
-                          boxShadow: `0 20px 60px ${primaryLight}80`,
-                          borderColor: primaryColor,
-                          "&::before": {
-                            opacity: 0.3,
-                          },
-                          "& .quote-icon": {
-                            transform: "scale(1.1) rotate(5deg)",
-                            color: primaryColor,
-                          },
-                        },
+                        flex: `0 0 ${100 / slidesPerView}%`,
+                        maxWidth: `${100 / slidesPerView}%`,
+                        px: { xs: 1.5, md: 2 },
+                        flexShrink: 0,
+                        opacity: isVisible ? 1 : 0,
+                        animation: isVisible
+                          ? `${fadeInUp} 0.8s ease-out ${
+                              index * 100
+                            }ms forwards`
+                          : "none",
                       }}
                     >
-                      <CardContent
+                      <Card
                         sx={{
-                          p: { xs: 3, md: 4 },
+                          height: { xs: 450, sm: 400, md: 420 },
+                          my: 2,
                           display: "flex",
                           flexDirection: "column",
-                          flexGrow: 1,
+                          borderRadius: 4,
+                          maxWidth: "400px",
+                          mx: "auto",
+                          borderRadius: "24px",
+                          background: `linear-gradient(135deg, ${offWhiteColor} 0%, ${offWhiteColor} 100%)`,
+                          border: `2px solid ${primaryLight}`,
+                          boxShadow: `0 8px 32px ${primaryLight}40`,
+                          position: "relative",
+                          overflow: "visible",
+                          transition: "all 0.5s cubic-bezier(0.4, 0, 0.2, 1)",
+                          "&::before": {
+                            content: '""',
+                            position: "absolute",
+                            top: -2,
+                            left: -2,
+                            right: -2,
+                            bottom: -2,
+                            background: `linear-gradient(135deg, ${primaryColor}, ${primaryLight})`,
+                            borderRadius: "24px",
+                            zIndex: -1,
+                            opacity: 0,
+                            transition: "opacity 0.5s ease",
+                          },
+                          "&:hover": {
+                            transform: "translateY(-12px) scale(1.02)",
+                            boxShadow: `0 20px 60px ${primaryLight}80`,
+                            borderColor: primaryColor,
+                            "&::before": {
+                              opacity: 0.3,
+                            },
+                            "& .quote-icon": {
+                              transform: "scale(1.1) rotate(5deg)",
+                              color: primaryColor,
+                            },
+                          },
                         }}
                       >
-                        {/* Quote Icon */}
-                        <Box
+                        <CardContent
                           sx={{
+                            p: { xs: 3, md: 4 },
                             display: "flex",
-                            gap: 1,
-                            pt: 1,
+                            flexDirection: "column",
+                            flexGrow: 1,
                           }}
                         >
+                          {/* Quote Icon */}
                           <Box
-                            className="quote-icon"
                             sx={{
-                              width: 60,
-                              height: 60,
-                              borderRadius: "16px",
-                              background: `linear-gradient(135deg, ${primaryLight} 0%, ${primaryColor}20 100%)`,
                               display: "flex",
-                              alignItems: "center",
-                              justifyContent: "center",
-                              transition: "all 0.5s ease",
+                              gap: 1,
+                              pt: 1,
                             }}
                           >
-                            <FormatQuote
+                            <Box
+                              className="quote-icon"
                               sx={{
-                                fontSize: "2.5rem",
-                                color: primaryColor,
+                                width: 60,
+                                height: 60,
+                                borderRadius: "16px",
+                                background: `linear-gradient(135deg, ${primaryLight} 0%, ${primaryColor}20 100%)`,
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center",
+                                transition: "all 0.5s ease",
+                              }}
+                            >
+                              <FormatQuote
+                                sx={{
+                                  fontSize: "2.5rem",
+                                  color: primaryColor,
+                                }}
+                              />
+                            </Box>
+                          </Box>
+
+                          {/* Testimonial Text */}
+                          <Typography
+                            variant="body1"
+                            sx={{
+                              color: offBlackTextLight,
+                              lineHeight: 1.8,
+                              fontSize: { xs: "0.85rem", md: "1rem" },
+                              mb: 3,
+                              fontStyle: "italic",
+                            }}
+                          >
+                            {testimonial.testimonial}
+                          </Typography>
+
+                          {/* Rating */}
+                          <Box sx={{ mb: { xs: 1, sm: 3 } }}>
+                            <Rating
+                              value={testimonial.rating}
+                              readOnly
+                              sx={{
+                                "& .MuiRating-iconFilled": {
+                                  color: primaryColor,
+                                },
                               }}
                             />
                           </Box>
-                        </Box>
 
-                        {/* Testimonial Text */}
-                        <Typography
-                          variant="body1"
-                          sx={{
-                            color: offBlackTextLight,
-                            lineHeight: 1.8,
-                            fontSize: { xs: "0.85rem", md: "1rem" },
-                            mb: 3,
-                            fontStyle: "italic",
-                          }}
-                        >
-                          {testimonial.testimonial}
-                        </Typography>
-
-                        {/* Rating */}
-                        <Box sx={{ mb: {xs:1,sm:3} }}>
-                          <Rating
-                            value={testimonial.rating}
-                            readOnly
+                          {/* Client Info */}
+                          <Box
                             sx={{
-                              "& .MuiRating-iconFilled": {
-                                color: primaryColor,
-                              },
-                            }}
-                          />
-                        </Box>
-
-                        {/* Client Info */}
-                        <Box
-                          sx={{
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 2,
-                          }}
-                        >
-                          <Avatar
-                            sx={{
-                              width: 56,
-                              height: 56,
-                              backgroundColor: primaryColor,
-                              color: offWhiteColor,
-                              fontWeight: 700,
-                              fontSize: "1.25rem",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 2,
                             }}
                           >
-                            {testimonial.avatar}
-                          </Avatar>
-                          <Box>
-                            <Typography
-                              variant="h6"
+                            <Avatar
                               sx={{
-                                fontWeight: 600,
-                                color: offBlackText,
-                                fontSize: {xs:"0.85rem",sm:"1.1rem"},
-                                mb: 0.5,
+                                width: 56,
+                                height: 56,
+                                backgroundColor: primaryColor,
+                                color: offWhiteColor,
+                                fontWeight: 700,
+                                fontSize: "1.25rem",
                               }}
                             >
-                              {testimonial.name}
-                            </Typography>
-                            <Typography
-                              variant="body2"
-                              sx={{
-                                color: offBlackTextLight,
-                                fontSize: {xs:"0.75rem",sm:"0.9rem"},
-                              }}
-                            >
-                              {testimonial.position}
-                            </Typography>
-                            <Typography
-                              variant="body2"
-                              sx={{
-                                color: primaryColor,
-                                fontSize: "0.85rem",
-                                fontWeight: 500,
-                              }}
-                            >
-                              {testimonial.company}
-                            </Typography>
+                              {testimonial.avatar}
+                            </Avatar>
+                            <Box>
+                              <Typography
+                                variant="h6"
+                                sx={{
+                                  fontWeight: 600,
+                                  color: offBlackText,
+                                  fontSize: { xs: "0.85rem", sm: "1.1rem" },
+                                  mb: 0.5,
+                                }}
+                              >
+                                {testimonial.name}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  color: offBlackTextLight,
+                                  fontSize: { xs: "0.75rem", sm: "0.9rem" },
+                                }}
+                              >
+                                {testimonial.position}
+                              </Typography>
+                              <Typography
+                                variant="body2"
+                                sx={{
+                                  color: primaryColor,
+                                  fontSize: "0.85rem",
+                                  fontWeight: 500,
+                                }}
+                              >
+                                {testimonial.company}
+                              </Typography>
+                            </Box>
                           </Box>
-                        </Box>
-                      </CardContent>
-                    </Card>
-                  </Box>
+                        </CardContent>
+                      </Card>
+                    </Box>
+                  );
+                })}
+              </Box>
+            </Box>
+
+            {/* Dots Navigation */}
+            <Box
+              sx={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                gap: 1.5,
+                mt: 4,
+              }}
+            >
+              {Array.from({ length: dotsCount }).map((_, index) => {
+                const isActive = currentIndex === index;
+
+                return (
+                  <Box
+                    key={index}
+                    onClick={() => goToSlide(index)}
+                    sx={{
+                      width: isActive ? 32 : 12,
+                      height: 12,
+                      borderRadius: isActive ? "6px" : "50%",
+                      backgroundColor: isActive ? primaryColor : primaryLight,
+                      cursor: "pointer",
+                      transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
+                      position: "relative",
+                      "&:hover": {
+                        backgroundColor: primaryColor,
+                        transform: "scale(1.2)",
+                      },
+                      "&::after": {
+                        content: '""',
+                        position: "absolute",
+                        inset: -4,
+                        borderRadius: "50%",
+                        border: `2px solid ${
+                          isActive ? primaryColor : "transparent"
+                        }`,
+                        opacity: isActive ? 0.3 : 0,
+                        transition: "all 0.3s ease",
+                      },
+                    }}
+                  />
                 );
               })}
             </Box>
           </Box>
-
-          {/* Dots Navigation */}
-          <Box
-            sx={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 1.5,
-              mt: 4,
-            }}
-          >
-            {Array.from({ length: dotsCount }).map((_, index) => {
-              const isActive = currentIndex === index;
-
-              return (
-                <Box
-                  key={index}
-                  onClick={() => goToSlide(index)}
-                  sx={{
-                    width: isActive ? 32 : 12,
-                    height: 12,
-                    borderRadius: isActive ? "6px" : "50%",
-                    backgroundColor: isActive ? primaryColor : primaryLight,
-                    cursor: "pointer",
-                    transition: "all 0.4s cubic-bezier(0.4, 0, 0.2, 1)",
-                    position: "relative",
-                    "&:hover": {
-                      backgroundColor: primaryColor,
-                      transform: "scale(1.2)",
-                    },
-                    "&::after": {
-                      content: '""',
-                      position: "absolute",
-                      inset: -4,
-                      borderRadius: "50%",
-                      border: `2px solid ${
-                        isActive ? primaryColor : "transparent"
-                      }`,
-                      opacity: isActive ? 0.3 : 0,
-                      transition: "all 0.3s ease",
-                    },
-                  }}
-                />
-              );
-            })}
-          </Box>
-        </Box>
-      </Container>
+        </Container>
+      </Box>
     </Box>
-    </Box>
-
   );
 };
 

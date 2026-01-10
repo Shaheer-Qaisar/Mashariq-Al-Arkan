@@ -90,15 +90,15 @@ const Statistics = () => {
         <Box maxWidth={["auto","auto","50%"]} data-aos="fade-right">
           {/* Heading */}
           <Typography
-            variant="h2"
-            component="h2"
-            sx={{
-              fontSize: headingFont.fontSize,
-              fontWeight: headingFont.fontWeight,
-              lineHeight: headingFont.lineHeight,
-              mb: headingFont.marginBottom
-            }}
-          >
+              component="h2"
+              sx={{
+                fontSize: { xs: '2rem', md: '2.5rem', lg: '3rem' },
+                fontWeight: 700,
+                lineHeight: 1.2,
+                mb: 3,
+                color: primaryColor
+              }}
+            >
             {heading.map((h, i) => (
               <Box key={i} component="span" sx={{ color: colorMap[h.color], display: h.display }}>
                 {h.text}
@@ -108,42 +108,41 @@ const Statistics = () => {
 
           {/* Description */}
           <Typography
-            variant="body1"
-            sx={{
-              color: colorMap[description.color],
-              fontSize: description.fontSize,
-              lineHeight: description.lineHeight,
-              mb: description.marginBottom,
-              maxWidth: description.maxWidth
-            }}
-          >
+              sx={{
+                color: offBlackTextLight,
+                fontSize: { xs: '0.95rem', md: '1.1rem' },
+                lineHeight: 1.7,
+                mb: 4,
+                maxWidth: '90%'
+              }}
+            >
             {description.text}
           </Typography>
 
           {/* Button */}
-          <Button
-            component={Link}
-            href={button.link}
-            variant="contained"
-            endIcon={<ArrowForward />}
-            sx={{
-              background: `linear-gradient(to right, ${colorMap[button.gradient.from]} 0%, ${colorMap[button.gradient.to]} 100%)`,
-              color: colorMap[button.color],
-              fontWeight: button.fontWeight,
-              fontSize: button.fontSize,
-              px: button.padding.px,
-              py: button.padding.py,
-              borderRadius: button.borderRadius,
-              textTransform: button.textTransform,
-              boxShadow: `0 4px 15px ${colorMap[button.gradient.to]}`,
-              '&:hover': {
-                background: `linear-gradient(to right, ${colorMap[button.hoverGradient.from]} 0%, ${colorMap[button.hoverGradient.to]} 100%)`,
-                boxShadow: `0 6px 20px ${colorMap[button.gradient.to]}`,
-                transform: 'translateY(-2px)'
-              },
-              transition: 'all 0.3s ease'
-            }}
-          >
+           <Button
+              component={Link}
+              href="/contact"
+              variant="contained"
+              endIcon={<ArrowForward />}
+              sx={{
+                background: `linear-gradient(to right, ${primaryColor} 0%, ${primaryLight} 100%)`,
+                color: offWhiteColor,
+                fontWeight: 600,
+                fontSize: '1rem',
+                px: 4,
+                py: 1,
+                borderRadius: 100,
+                textTransform: 'none',
+                boxShadow: `0 4px 15px ${primaryLight}`,
+                transition: 'all 0.3s ease',
+                '&:hover': {
+                  background: `linear-gradient(to right, ${primaryHover} 0%, ${primaryColor} 100%)`,
+                  boxShadow: `0 6px 20px ${primaryLight}`,
+                  transform: 'translateY(-2px)'
+                }
+              }}
+            >
             {button.text}
           </Button>
         </Box>

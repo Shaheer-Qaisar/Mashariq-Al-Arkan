@@ -1,8 +1,8 @@
 // Primary (Yellow–Orange)
 export const primaryColor = "rgba(210, 172, 42, 1)"
 export const primaryHover = "rgba(195, 158, 38, 1)"
-export const primaryLight = "rgba(230, 200, 90, 0.5)"
 export const primaryDark = "rgba(176, 144, 31, 1)"
+export const primaryLight = "rgba(230, 200, 90, 0.5)"
 
 // Secondary (Blue)
 export const secondaryColor = "rgba(0, 90, 171, 1)"

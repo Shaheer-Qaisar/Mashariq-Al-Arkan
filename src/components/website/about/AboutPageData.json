@@ -8,19 +8,9 @@
       { "text": "Mashariq", "color": "secondaryColor" },
       { "text": "Al-Arkan", "color": "offWhiteColor" }
     ],
-    "headingFont": {
-      "fontSize": { "xs": "2.5rem", "sm": "3.5rem", "md": "4rem", "lg": "5rem" },
-      "fontWeight": 700,
-      "lineHeight": 1.2
-    },
+    
     "subheading": {
-      "text": "Leading provider of end-to-end entrance systems and security solutions. We design, supply, install, and maintain comprehensive building automation and security systems across Saudi Arabia.",
-      "fontSize": { "xs": "1rem", "sm": "1.2rem", "md": "1.4rem" },
-      "fontWeight": 400,
-      "color": "offWhiteColor",
-      "maxWidth": "800px",
-      "lineHeight": 1.6,
-      "textShadow": "1px 1px 4px rgba(0, 0, 0, 0.5)"
+      "text": "Leading provider of end-to-end entrance systems and security solutions. We design, supply, install, and maintain comprehensive building automation and security systems across Saudi Arabia."
     }
   },
 
@@ -28,20 +18,9 @@
     "sectionHeader": {
       "title": "Our Principles",
       "highlight": "Principles",
-      "description": "The foundation of everything we do",
-      "titleFont": {
-        "fontFamily": "'Quicksand', sans-serif",
-        "fontWeight": 700,
-        "fontSizes": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
-        "color": "offBlackText",
-        "highlightColor": "primaryColor"
-      },
-      "descriptionFont": {
-        "fontFamily": "'Quicksand', sans-serif",
-        "fontSizes": { "xs": "1rem", "md": "1.1rem" },
-        "color": "offBlackTextLight",
-        "maxWidth": "700px"
-      }
+      "description": "The foundation of everything we do"
+      
+      
     },
     "principles": [
       {
@@ -90,31 +69,12 @@
       { "text": "Proven Track Record", "color": "primaryColor", "display": "block" },
       { "text": "of Excellence", "color": "primaryColor", "display": "block" }
     ],
-    "headingFont": {
-      "fontSize": { "xs": "2rem", "md": "2.5rem", "lg": "3rem" },
-      "fontWeight": 700,
-      "lineHeight": 1.2,
-      "marginBottom": 3
-    },
     "description": {
-      "text": "Harness the power of cutting-edge security technology and innovative entrance systems to protect your assets and deliver comprehensive, high-impact security solutions for residential, commercial, and industrial projects.",
-      "color": "offBlackTextLight",
-      "fontSize": { "xs": "0.95rem", "md": "1.1rem" },
-      "lineHeight": 1.7,
-      "marginBottom": 4,
-      "maxWidth": "90%"
+      "text": "Harness the power of cutting-edge security technology and innovative entrance systems to protect your assets and deliver comprehensive, high-impact security solutions for residential, commercial, and industrial projects."
     },
     "button": {
       "text": "Talk to Expert",
-      "link": "/contact",
-      "gradient": { "from": "primaryColor", "to": "primaryLight" },
-      "hoverGradient": { "from": "primaryHover", "to": "primaryColor" },
-      "color": "offWhiteColor",
-      "fontWeight": 600,
-      "fontSize": "1rem",
-      "padding": { "px": 4, "py": 1 },
-      "borderRadius": 100,
-      "textTransform": "none"
+      "link": "/contact"
     },
     "stats": [
       { "value": 500, "suffix": "+", "label": "Projects Delivered" },
@@ -136,30 +96,13 @@
       { "text": "Why", "color": "offBlackText", "display": "block" },
       { "text": "Choose Us?", "color": "secondaryColor", "display": "block" }
     ],
-    "headingFont": {
-      "fontSize": { "xs": "2rem", "sm": "2.5rem", "md": "3rem", "lg": "3.5rem" },
-      "fontWeight": 700,
-      "lineHeight": 1.2,
-      "marginBottom": 3
-    },
+   
     "description": {
-      "text": "Mashariq Al-Arkan delivers innovative security and automation solutions with cutting-edge technology and expertise.",
-      "color": "offBlackTextLight",
-      "fontSize": { "xs": "0.95rem", "md": "1.1rem" },
-      "lineHeight": 1.8,
-      "marginBottom": 4
+      "text": "Mashariq Al-Arkan delivers innovative security and automation solutions with cutting-edge technology and expertise."
     },
     "button": {
       "text": "Explore More",
-      "link": "/services",
-      "gradient": { "from": "secondaryColor", "to": "secondaryLight" },
-      "hoverGradient": { "from": "secondaryHover", "to": "secondaryColor" },
-      "color": "offWhiteColor",
-      "fontWeight": 600,
-      "fontSize": "1rem",
-      "padding": { "px": 4, "py": 1.5 },
-      "borderRadius": "8px",
-      "textTransform": "none"
+      "link": "/services"
     },
     "benefits": [
       {
@@ -193,51 +136,39 @@
     ]
   },
 "faq": {
-  "section": {
-    "backgroundColor": "offWhiteColor",
-    "padding": { "xs": 6, "md": 10 }
-  },
   "tag": {
-    "text": "FAQ's",
-    "backgroundColor": "#f5f5f5",
-    "color": "offBlackText"
+    "text": "FAQ's"
   },
   "heading": [
-    { "text": "Got Questions?", "color": "primaryColor", "display": "block" },
-    { "text": "We've Got Answers!", "color": "offBlackText", "display": "block" }
+    { "text": "Got Questions?", "color": "primaryColor" },
+    { "text": "We've Got Answers!", "color": "offBlackText" }
   ],
-  "headingFont": {
-    "fontSize": {
-      "xs": "2rem",
-      "sm": "2.5rem",
-      "md": "2.8rem",
-      "lg": "3.5rem"
-    },
-    "fontWeight": 700,
-    "lineHeight": 1.2,
-    "marginBottom": 2
-  },
+  
   "description": {
-    "text": "Find quick answers to common questions or reach out to our support team for personalized assistance.",
-    "fontSize": "1rem",
-    "lineHeight": 1.7,
-    "marginBottom": 4
+    "text": "Find quick answers to common questions or reach out to our support team for personalized assistance."
   },
   "button": {
     "text": "Contact Us",
-    "link": "/contact",
-    "gradient": { "from": "primaryColor", "to": "primaryLight" },
-    "hoverGradient": { "from": "primaryHover", "to": "primaryColor" },
-    "color": "offBlackText",
-    "fontWeight": 600,
-    "fontSize": "1rem",
-    "padding": { "px": 4, "py": 1.5 },
-    "borderRadius": "8px",
-    "textTransform": "none"
+    "link": "/contact"
   },
   "faqs": [
     {
       "id": 0,
+      "question": "What services does Mashariq Al-Arkan provide?",
+      "answer": "We provide security, automation, parking, surveillance, networking, and wireless solutions."
+    },
+     {
+      "id": 1,
+      "question": "What services does Mashariq Al-Arkan provide?",
+      "answer": "We provide security, automation, parking, surveillance, networking, and wireless solutions."
+    },
+     {
+      "id": 2,
+      "question": "What services does Mashariq Al-Arkan provide?",
+      "answer": "We provide security, automation, parking, surveillance, networking, and wireless solutions."
+    },
+     {
+      "id": 3,
       "question": "What services does Mashariq Al-Arkan provide?",
       "answer": "We provide security, automation, parking, surveillance, networking, and wireless solutions."
     }

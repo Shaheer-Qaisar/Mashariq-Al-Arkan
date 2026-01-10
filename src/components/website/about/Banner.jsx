@@ -16,7 +16,7 @@ const colorMap = {
 };
 
 const Banner = () => {
-  const { backgroundImage, overlayColor, heading, headingFont, subheading } =
+  const { backgroundImage, overlayColor, heading, subheading } =
     aboutData.banner;
 
   return (
@@ -78,14 +78,14 @@ const Banner = () => {
           <Typography
             component="h1"
             sx={{
-              fontSize: headingFont?.fontSize ?? {
+              fontSize: {
                 xs: "2.5rem",
                 sm: "3.5rem",
                 md: "4rem",
                 lg: "5rem",
               },
-              fontWeight: headingFont?.fontWeight ?? 700,
-              lineHeight: headingFont?.lineHeight ?? 1.2,
+              fontWeight: 700,
+              lineHeight: 1.2,
               color: offWhiteColor,
             }}
           >
@@ -104,12 +104,12 @@ const Banner = () => {
           <Typography
             component="p"
             sx={{
-              fontSize: subheading.fontSize,
-              fontWeight: subheading.fontWeight,
-              lineHeight: subheading.lineHeight,
-              maxWidth: subheading.maxWidth,
-              color: colorMap[subheading.color],
-              textShadow: subheading.textShadow,
+              fontSize: { xs: "1rem", sm: "1.2rem", md: "1.4rem" },
+              fontWeight: 400,
+              lineHeight: 1.6,
+              maxWidth: "800px",
+              color: offWhiteColor,
+              textShadow: "1px 1px 4px rgba(0, 0, 0, 0.5)",
             }}
           >
             {subheading.text}

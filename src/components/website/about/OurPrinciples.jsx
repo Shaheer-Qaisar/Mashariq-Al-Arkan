@@ -54,31 +54,38 @@ const OurPrinciples = () => {
     <Box ref={sectionRef} component="section" sx={{ py: { xs: 8, md: 12 }, backgroundColor: offWhiteColor, overflow: 'hidden' }}>
       <Container maxWidth="xl">
         {/* Section Header */}
-        <Box sx={{ textAlign: 'center', mb: { xs: 6, md: 10 }, opacity: isVisible ? 1 : 0, transform: isVisible ? 'translateY(0)' : 'translateY(30px)', transition: 'all 0.8s ease-out' }}>
+       <Box
+          sx={{
+            textAlign: 'center',
+            mb: { xs: 6, md: 10 },
+            opacity: isVisible ? 1 : 0,
+            transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+            transition: 'all 0.8s ease-out'
+          }}
+        >
           <Typography
-            variant="h2"
             component="h2"
             sx={{
-              fontSize: sectionHeader.titleFont.fontSizes,
-              fontWeight: sectionHeader.titleFont.fontWeight,
+              fontFamily: "'Quicksand', sans-serif",
+              fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem', lg: '3.5rem' },
+              fontWeight: 700,
               color: offBlackText,
-              mb: 2,
-              fontFamily: sectionHeader.titleFont.fontFamily
+              mb: 2
             }}
           >
-            {sectionHeader.title.split(' ')[0]}{' '}
+            Our{' '}
             <Box component="span" sx={{ color: primaryColor }}>
               {sectionHeader.highlight}
             </Box>
           </Typography>
+
           <Typography
-            variant="body1"
             sx={{
+              fontFamily: "'Quicksand', sans-serif",
+              fontSize: { xs: '1rem', md: '1.1rem' },
               color: offBlackTextLight,
-              fontSize: sectionHeader.descriptionFont.fontSizes,
-              maxWidth: sectionHeader.descriptionFont.maxWidth,
-              mx: 'auto',
-              fontFamily: sectionHeader.descriptionFont.fontFamily
+              maxWidth: '700px',
+              mx: 'auto'
             }}
           >
             {sectionHeader.description}

@@ -16,7 +16,7 @@ import aboutData from '@/components/website/about/AboutPageData.json';
 
 const FAQ = () => {
   const [expanded, setExpanded] = useState(1); // Start with second item expanded
-  const { section, tag, heading, headingFont, description, button, faqs } = aboutData.faq;
+  const { tag, heading, description, button, faqs } = aboutData.faq;
 
   const handleChange = (panel) => (event, isExpanded) => {
     setExpanded(isExpanded ? panel : false);
@@ -27,7 +27,7 @@ const FAQ = () => {
       px={[2,4,6,12]}
       sx={{
         backgroundColor: offWhiteColor,
-        py: section.padding
+        py: { xs: 6, md: 10 }
       }}
     >
       <Grid container spacing={6} alignItems="flex-start">
@@ -37,16 +37,16 @@ const FAQ = () => {
             {/* FAQ Tag */}
             <Chip
               label={tag.text}
-              sx={{
-                backgroundColor: tag.backgroundColor,
-                color: offBlackText,
-                fontWeight: tag.fontWeight,
-                fontSize: tag.fontSize,
-                px: tag.padding,
-                py: tag.padding,
-                borderRadius: tag.borderRadius,
-                mb: tag.marginBottom
-              }}
+             sx={{
+              backgroundColor: '#f5f5f5',
+              color: offBlackText,
+              fontWeight: 600,
+              fontSize: '0.85rem',
+              px: 2,
+              py: 1,
+              borderRadius: '50px',
+              mb: 2
+            }}
             />
 
             {/* Heading */}
@@ -54,14 +54,20 @@ const FAQ = () => {
               variant="h2"
               component="h2"
               sx={{
-                fontSize: headingFont.fontSize,
-                fontWeight: headingFont.fontWeight,
-                lineHeight: headingFont.lineHeight,
-                mb: headingFont.marginBottom
+              fontSize: {
+                xs: '2rem',
+                sm: '2.5rem',
+                md: '2.8rem',
+                lg: '3.5rem'
+              },
+              fontWeight: 700,
+              lineHeight: 1.2,
+              mb: 2
+            
               }}
             >
               {heading.map((h, i) => (
-                <Box key={i} component="span" sx={{ color: h.color === "primaryColor" ? primaryColor : offBlackText, display: h.display }}>
+                <Box key={i} component="span" sx={{ color: h.color === "primaryColor" ? primaryColor : offBlackText, display: 'block' }}>
                   {h.text}
                 </Box>
               ))}
@@ -69,13 +75,12 @@ const FAQ = () => {
 
             {/* Description */}
             <Typography
-              variant="body1"
               sx={{
-                color: offBlackTextLight,
-                fontSize: description.fontSize,
-                lineHeight: description.lineHeight,
-                mb: description.marginBottom
-              }}
+              color: offBlackTextLight,
+              fontSize: '1rem',
+              lineHeight: 1.7,
+              mb: 4
+            }}
             >
               {description.text}
             </Typography>
@@ -86,23 +91,31 @@ const FAQ = () => {
               href={button.link}
               variant="contained"
               endIcon={<ArrowForward />}
-              sx={{
-                background: `linear-gradient(to right, ${primaryColor} 0%, ${primaryLight} 100%)`,
-                color: offBlackText,
-                fontWeight: button.fontWeight,
-                fontSize: button.fontSize,
-                px: button.padding.px,
-                py: button.padding.py,
-                borderRadius: button.borderRadius,
-                textTransform: button.textTransform,
-                boxShadow: `0 4px 15px ${primaryLight}`,
-                '&:hover': {
-                  background: `linear-gradient(to right, ${primaryHover} 0%, ${primaryColor} 100%)`,
-                  boxShadow: `0 6px 20px ${primaryLight}`,
-                  transform: 'translateY(-2px)'
-                },
-                transition: 'all 0.3s ease'
-              }}
+             sx={{
+              background: `linear-gradient(
+                to right,
+                ${primaryColor} 0%,
+                ${primaryLight} 100%
+              )`,
+              color: offBlackText,
+              fontWeight: 600,
+              fontSize: '1rem',
+              px: 4,
+              py: 1.5,
+              borderRadius: '8px',
+              textTransform: 'none',
+              boxShadow: `0 4px 15px ${primaryLight}`,
+              transition: 'all 0.3s ease',
+              '&:hover': {
+                background: `linear-gradient(
+                  to right,
+                  ${primaryHover} 0%,
+                  ${primaryColor} 100%
+                )`,
+                boxShadow: `0 6px 20px ${primaryLight}`,
+                transform: 'translateY(-2px)'
+              }
+            }}
             >
               {button.text}
             </Button>
